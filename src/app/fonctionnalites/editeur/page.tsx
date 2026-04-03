@@ -1,5 +1,12 @@
 import CTABanner from "../../components/CTABanner";
+import BrowserMockup from "../../components/BrowserMockup";
 import { Check } from "@untitledui/icons";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Éditeur 39+ blocs | Syllabis — Quiz, vidéos, mind maps et plus",
+  description: "Éditeur style Notion avec 39+ blocs interactifs : quiz, médias riches, blocs pédagogiques, visualisation. Thèmes et autosave.",
+};
 
 const blockCategories = [
   {
@@ -146,6 +153,10 @@ export default function EditeurPage() {
           </div>
         </div>
       </section>
+
+      <div className="mt-12 mb-16 max-w-4xl mx-auto px-4 sm:px-8">
+        <BrowserMockup src="/screenshots/formation-creation.png" alt="Vue des blocs de compétences générés dans l'éditeur Syllabis" />
+      </div>
 
       {/* ── Extras ── */}
       <section className="py-16 sm:py-24 bg-neutral-50">

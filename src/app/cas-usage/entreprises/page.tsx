@@ -1,5 +1,11 @@
 import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Entreprises | Syllabis — Digitalisez la formation interne",
+  description: "Créez du contenu e-learning de qualité pour vos collaborateurs sans expertise pédagogique. Export SCORM vers votre LMS.",
+};
 
 const problems = [
   "Former les collaborateurs à distance est un défi",

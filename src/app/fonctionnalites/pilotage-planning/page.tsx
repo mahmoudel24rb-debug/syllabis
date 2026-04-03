@@ -1,5 +1,12 @@
 import CTABanner from "../../components/CTABanner";
+import BrowserMockup from "../../components/BrowserMockup";
 import { Check } from "@untitledui/icons";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pilotage & Planning | Syllabis — Calendrier, tableau et export Excel",
+  description: "Gérez vos formations avec vue calendrier, tableau édition inline, assignment formateurs et export Excel 7 onglets.",
+};
 
 const features = [
   {
@@ -93,6 +100,10 @@ export default function PilotagePlanningPage() {
           </div>
         </div>
       </section>
+
+      <div className="mt-12 mb-16 max-w-4xl mx-auto px-4 sm:px-8">
+        <BrowserMockup src="/screenshots/formation-dashboard.png" alt="Dashboard de formation avec graphiques Syllabis" />
+      </div>
 
       {/* ── Excel export detail ── */}
       <section className="py-16 sm:py-24 bg-neutral-50">

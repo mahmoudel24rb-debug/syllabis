@@ -45,11 +45,11 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 pb-12 border-b border-white/10">
           {footerLinks.map((group) => (
             <div key={group.title}>
-              <h3 className="text-sm font-semibold text-neutral-400 mb-4">{group.title}</h3>
+              <h3 className="text-sm font-semibold text-white/50 mb-4">{group.title}</h3>
               <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-md text-neutral-300 hover:text-white transition-colors">
+                    <Link href={link.href} className="text-md text-white/70 hover:text-white transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -67,7 +67,7 @@ export default function Footer() {
             </div>
             <span className="text-lg font-semibold text-white">Syllabis</span>
           </div>
-          <p className="text-md text-neutral-500">&copy; 2025 Syllabis. Tous droits réservés.</p>
+          <p className="text-md text-white/40">&copy; 2025 Syllabis. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

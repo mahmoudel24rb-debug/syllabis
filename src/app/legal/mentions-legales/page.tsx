@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Mentions légales | Syllabis",
-  description: "Mentions légales du site Syllabis.",
+  description: "Mentions légales du site syllabis.fr. Éditeur, hébergeur, propriété intellectuelle et contact.",
 };
 
 export default function MentionsLegalesPage() {

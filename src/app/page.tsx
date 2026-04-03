@@ -3,7 +3,8 @@ import { client } from "@/sanity/client";
 import { SERVICES_QUERY } from "@/sanity/queries";
 import Services from "./components/Services";
 import CTABanner from "./components/CTABanner";
-import { Upload01, Zap, CpuChip01, Edit04, Download01, Check } from "@untitledui/icons";
+import BrowserMockup from "./components/BrowserMockup";
+import { Upload01, Zap, CpuChip01, Edit04, Download01, Check, X } from "@untitledui/icons";
 
 interface Service {
   _id: string;
@@ -79,94 +80,50 @@ export default async function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 hero-grid hero-grid-mask" />
         <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-24">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-amber-300 bg-amber-50 pl-1 pr-3 py-1 mb-4">
-              <span className="flex items-center gap-1.5 rounded-full bg-white border border-amber-300 px-2.5 py-0.5 text-xs font-semibold text-amber-800">
-                <span className="w-2 h-2 rounded-full bg-amber-400" />
-                Nouveau
-              </span>
-              <span className="text-sm font-medium text-amber-800 flex items-center gap-1">
-                Génération vidéo & podcast par IA
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3.33 8h9.34M8.67 4l4 4-4 4" />
-                </svg>
-              </span>
-            </div>
-
-            <h1 className="text-display-lg sm:text-display-xl font-semibold text-neutral-900">
-              Du référentiel à la formation e-learning.{" "}
-              <span className="text-brand-600">En quelques minutes.</span>
-            </h1>
-
-            <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Syllabis transforme un PDF de certification (RNCP, BTS, CAP, CQP,
-              BPJEPS) en formation complète — structure, contenu interactif,
-              quiz, vidéos — grâce à l&apos;IA.
-            </p>
-
-            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link
-                href="#comment-ca-marche"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-300 bg-white px-5 py-3 text-md font-semibold text-neutral-700 shadow-xs hover:bg-neutral-50 transition-colors"
-              >
-                Voir comment ça marche
-              </Link>
-              <Link
-                href="/demo"
-                className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-brand-600 bg-brand-600 px-5 py-3 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors"
-              >
-                Demander une démo
-              </Link>
-            </div>
-          </div>
-
-          {/* Mockup: PDF → Formation */}
-          <div className="mt-16 relative mx-auto max-w-[900px]">
-            <div className="rounded-2xl border border-neutral-200 bg-white shadow-3xl overflow-hidden p-6 sm:p-10">
-              <div className="flex flex-col sm:flex-row items-center gap-6">
-                {/* PDF side */}
-                <div className="flex-1 rounded-xl border border-neutral-200 bg-neutral-50 p-5 text-center">
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-red-500">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                      <polyline points="14 2 14 8 20 8" />
-                    </svg>
-                  </div>
-                  <p className="text-sm font-semibold text-neutral-900">Référentiel RNCP</p>
-                  <p className="text-xs text-neutral-500 mt-1">TP_Developpeur_Web.pdf</p>
-                </div>
-
-                {/* Arrow */}
-                <div className="flex flex-col items-center gap-1 shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-brand-600 flex items-center justify-center">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                  <span className="text-xs font-medium text-brand-600">3 min</span>
-                </div>
-
-                {/* Formation side */}
-                <div className="flex-1 rounded-xl border border-emerald-200 bg-emerald-50 p-5">
-                  <div className="space-y-2">
-                    {[
-                      { label: "3 Blocs de compétences", icon: "folder" },
-                      { label: "12 Modules", icon: "book" },
-                      { label: "48 Séances", icon: "file" },
-                      { label: "Quiz & Vidéos inclus", icon: "play" },
-                    ].map((item) => (
-                      <div key={item.label} className="flex items-center gap-2.5 bg-white rounded-lg px-3 py-2 border border-emerald-100">
-                        <div className="w-6 h-6 rounded bg-brand-100 flex items-center justify-center">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgb(16 185 129)" strokeWidth="2" strokeLinecap="round">
-                            <polyline points="20 6 9 17 4 12" />
-                          </svg>
-                        </div>
-                        <span className="text-sm font-medium text-neutral-900">{item.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-amber-300 bg-amber-50 pl-1 pr-3 py-1 mb-4">
+                <span className="flex items-center gap-1.5 rounded-full bg-white border border-amber-300 px-2.5 py-0.5 text-xs font-semibold text-amber-800">
+                  <span className="w-2 h-2 rounded-full bg-amber-400" />
+                  Nouveau
+                </span>
+                <span className="text-sm font-medium text-amber-800 flex items-center gap-1">
+                  Génération vidéo & podcast par IA
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3.33 8h9.34M8.67 4l4 4-4 4" />
+                  </svg>
+                </span>
               </div>
+
+              <h1 className="text-display-lg sm:text-display-xl font-semibold text-neutral-900">
+                Du référentiel à la formation e-learning.{" "}
+                <span className="text-brand-600">En quelques minutes.</span>
+              </h1>
+
+              <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl">
+                Syllabis transforme un PDF de certification (RNCP, BTS, CAP, CQP,
+                BPJEPS) en formation complète — structure, contenu interactif,
+                quiz, vidéos — grâce à l&apos;IA.
+              </p>
+
+              <div className="mt-12 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
+                <Link
+                  href="#comment-ca-marche"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-300 bg-white px-5 py-3 text-md font-semibold text-neutral-700 shadow-xs hover:bg-neutral-50 transition-colors"
+                >
+                  Voir comment ça marche
+                </Link>
+                <Link
+                  href="/demo"
+                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-brand-600 bg-brand-600 px-5 py-3 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors"
+                >
+                  Demander une démo
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <BrowserMockup src="/screenshots/global-dashboard.png" alt="Dashboard Syllabis" priority />
             </div>
           </div>
         </div>
@@ -264,16 +221,16 @@ export default async function Home() {
             {/* Table header */}
             <div className="grid grid-cols-3 gap-4 mb-4 px-4">
               <span className="text-sm font-semibold text-neutral-500">Étape</span>
-              <span className="text-sm font-semibold text-neutral-500 text-center">Manuellement</span>
-              <span className="text-sm font-semibold text-brand-600 text-center">Avec Syllabis</span>
+              <span className="text-sm font-semibold text-red-600 text-center">Manuellement</span>
+              <span className="text-sm font-semibold text-emerald-600 text-center">Avec Syllabis</span>
             </div>
             {/* Rows */}
             <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden divide-y divide-neutral-100">
               {comparison.map((row) => (
                 <div key={row.label} className="grid grid-cols-3 gap-4 px-5 py-4 items-center">
                   <span className="text-sm font-medium text-neutral-900">{row.label}</span>
-                  <span className="text-sm text-neutral-500 text-center">{row.before}</span>
-                  <span className="text-sm font-semibold text-brand-600 text-center">{row.after}</span>
+                  <span className="text-sm text-red-600 text-center"><X className="size-4 text-red-400 inline mr-1" />{row.before}</span>
+                  <span className="text-sm text-emerald-600 font-semibold text-center"><Check className="size-4 text-emerald-500 inline mr-1" />{row.after}</span>
                 </div>
               ))}
             </div>
@@ -282,13 +239,13 @@ export default async function Home() {
       </section>
 
       {/* ── Chiffres clés ── */}
-      <section className="py-16 sm:py-24">
+      <section className="py-16 sm:py-24 bg-gray-50">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="rounded-2xl border border-neutral-200 bg-white p-8 sm:p-12">
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
               {metrics.map((m) => (
-                <div key={m.label} className="text-center">
-                  <div className="text-display-sm font-semibold text-brand-600">
+                <div key={m.label} className="text-center border-r border-gray-200 last:border-0">
+                  <div className="text-4xl font-bold text-[#0A1E3D]">
                     {m.value}
                   </div>
                   <div className="text-sm text-neutral-600 mt-1">{m.label}</div>

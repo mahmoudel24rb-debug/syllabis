@@ -1,5 +1,11 @@
 import CTABanner from "../../components/CTABanner";
 import { Check } from "@untitledui/icons";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Export SCORM | Syllabis — Compatible tous LMS, SCORM 1.2 & 2004",
+  description: "Exportez vos formations en SCORM 1.2 et 2004. Compatible Moodle, Canvas, Docebo. Player React moderne avec tracking complet.",
+};
 
 const scormFeatures = [
   {

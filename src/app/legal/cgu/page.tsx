@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Conditions générales d'utilisation | Syllabis",
+  title: "CGU | Syllabis — Conditions générales d'utilisation",
   description:
-    "Conditions générales d'utilisation de la plateforme Syllabis.",
+    "Conditions générales d'utilisation de la plateforme Syllabis. Accès, inscription, propriété intellectuelle, responsabilités.",
 };
 
 export default function CGUPage() {

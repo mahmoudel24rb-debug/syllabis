@@ -1,5 +1,11 @@
 import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Organismes de formation | Syllabis — Industrialisez vos formations",
+  description: "De 3 semaines à 3 minutes. Syllabis permet aux OF de créer des formations certifiantes conformes RNCP à grande échelle.",
+};
 
 const problems = [
   "50 à 200 formations à produire chaque année",

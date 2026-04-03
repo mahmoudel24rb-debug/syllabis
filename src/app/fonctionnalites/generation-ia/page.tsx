@@ -1,5 +1,12 @@
 import CTABanner from "../../components/CTABanner";
+import BrowserMockup from "../../components/BrowserMockup";
 import { Check } from "@untitledui/icons";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Génération IA | Syllabis — Du PDF au cours complet en 3 minutes",
+  description: "Uploadez un référentiel RNCP et l'IA génère la formation complète : blocs, modules, séances, quiz. 6 certifications supportées.",
+};
 
 const certifications = [
   "TP (Titre Professionnel)",
@@ -79,6 +86,10 @@ export default function GenerationIAPage() {
               de certification, blocs de compétences, modules, heures, prérequis,
               RNCP ID. Génération de toute la hiérarchie pédagogique.
             </p>
+          </div>
+
+          <div className="mt-12 max-w-4xl mx-auto px-4 sm:px-8">
+            <BrowserMockup src="/screenshots/creer-formation.png" alt="Écran de création de formation Syllabis" />
           </div>
         </div>
       </section>
@@ -174,6 +185,10 @@ export default function GenerationIAPage() {
           </div>
         </div>
       </section>
+
+      <div className="mt-12 mb-16 max-w-4xl mx-auto px-4 sm:px-8">
+        <BrowserMockup src="/screenshots/formation-creation.png" alt="Blocs de compétences générés par Syllabis" />
+      </div>
 
       {/* ── CTA ── */}
       <CTABanner

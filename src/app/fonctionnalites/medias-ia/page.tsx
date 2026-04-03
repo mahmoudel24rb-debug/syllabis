@@ -1,4 +1,10 @@
 import CTABanner from "../../components/CTABanner";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Médias IA | Syllabis — Vidéos, podcasts et quiz générés automatiquement",
+  description: "Générez 7 types de médias depuis votre contenu : vidéos, podcasts, quiz, flashcards, mind maps, infographies, tableaux.",
+};
 
 const mediaTypes = [
   {

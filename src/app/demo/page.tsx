@@ -1,5 +1,11 @@
 import CTABanner from "../components/CTABanner";
 import { Check } from "@untitledui/icons";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Demander une démo | Syllabis — Voyez l'IA générer une formation en direct",
+  description: "Réservez 30 minutes de démo. Upload d'un vrai référentiel, génération en direct, tour de l'éditeur et export SCORM.",
+};
 
 const demoIncludes = [
   "Upload d\u2019un vrai référentiel",
@@ -132,8 +138,8 @@ export default function DemoPage() {
                   ))}
                 </ul>
 
-                <div className="mt-8 pt-8 border-t border-neutral-200 text-center">
-                  <div className="text-display-sm font-semibold text-brand-600">
+                <div className="mt-8 bg-[#FEF3C7] border border-[#F59E0B]/30 rounded-xl p-6 text-center">
+                  <div className="text-display-sm font-semibold text-[#0A1E3D]">
                     De 3 semaines à 3 minutes
                   </div>
                   <p className="mt-2 text-sm text-neutral-600">

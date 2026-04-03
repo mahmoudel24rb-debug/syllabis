@@ -1,5 +1,11 @@
 import Link from "next/link";
 import CTABanner from "../components/CTABanner";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cas d'usage | Syllabis — OF, formateurs, entreprises, EdTech",
+  description: "Découvrez comment Syllabis s'adapte aux organismes de formation, formateurs indépendants, entreprises et startups EdTech.",
+};
 
 const useCases = [
   {

@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "À propos | Syllabis",
+  title: "À propos | Syllabis — Notre mission et notre vision",
   description:
-    "Découvrez la mission de Syllabis : démocratiser la création de formations e-learning grâce à l'IA.",
+    "Démocratiser la création de formations e-learning grâce à l'IA. Découvrez la vision, les valeurs et la stack technique de Syllabis.",
 };
 
 const values = [

@@ -1,5 +1,12 @@
 import CTABanner from "../../components/CTABanner";
+import BrowserMockup from "../../components/BrowserMockup";
 import { Check } from "@untitledui/icons";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Multi-tenant | Syllabis — Organisations, rôles et analytics",
+  description: "Gérez plusieurs organisations avec branding custom, 5 rôles, branch access, cost tracking IA et analytics avancés.",
+};
 
 const features = [
   {
@@ -117,6 +124,10 @@ export default function MultiTenantPage() {
           </div>
         </div>
       </section>
+
+      <div className="mt-12 mb-16 max-w-4xl mx-auto px-4 sm:px-8">
+        <BrowserMockup src="/screenshots/global-dashboard.png" alt="Dashboard multi-utilisateurs Syllabis" />
+      </div>
 
       {/* ── 5 Roles ── */}
       <section className="py-16 sm:py-24 bg-neutral-50">

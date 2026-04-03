@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact | Syllabis — Parlons de votre projet",
+  description: "Contactez l'équipe Syllabis. Une question, un besoin spécifique, une offre sur mesure — nous répondons sous 24h.",
+};
+
 export default function ContactPage() {
   return (
     <>

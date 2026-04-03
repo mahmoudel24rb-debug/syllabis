@@ -1,5 +1,11 @@
 import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "EdTech & Startups | Syllabis — Plateforme multi-tenant et API",
+  description: "Intégrez Syllabis via 227+ endpoints API. Multi-tenant, branding custom, organisations multiples pour votre plateforme.",
+};
 
 const problems = [
   "Besoin d\u2019une architecture multi-tenant robuste",

@@ -1,5 +1,11 @@
 import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Formateurs indépendants | Syllabis — Créez sans équipe technique",
+  description: "Uploadez votre référentiel, l'IA génère tout. Créez des formations certifiantes professionnelles en autonomie complète.",
+};
 
 const problems = [
   "Créer seul, sans équipe de conception pédagogique",

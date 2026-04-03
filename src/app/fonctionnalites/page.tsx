@@ -1,7 +1,14 @@
 import Link from "next/link";
 import CTABanner from "../components/CTABanner";
+import BrowserMockup from "../components/BrowserMockup";
 import { Zap, Edit04, VideoRecorder, Download01, Calendar, Building07, ArrowRight } from "@untitledui/icons";
 import type { ComponentType } from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fonctionnalités | Syllabis — 6 modules pour créer des formations e-learning",
+  description: "Découvrez les 6 piliers de Syllabis : génération IA, éditeur 39+ blocs, médias IA, export SCORM, pilotage et multi-tenant.",
+};
 
 const featureIconMap: Record<string, ComponentType<{ className?: string }>> = {
   "Génération IA": Zap,
@@ -80,6 +87,10 @@ export default function FonctionnalitesPage() {
               6 modules intégrés, de l&apos;analyse du référentiel au
               déploiement sur votre LMS.
             </p>
+          </div>
+
+          <div className="mt-12 max-w-4xl mx-auto">
+            <BrowserMockup src="/screenshots/global-dashboard.png" alt="Dashboard global Syllabis" />
           </div>
         </div>
       </section>
