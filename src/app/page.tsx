@@ -57,7 +57,7 @@ const steps = [
 const metrics = [
   { value: "39+", label: "Blocs interactifs" },
   { value: "6", label: "Certifications supportées" },
-  { value: "227+", label: "Endpoints API" },
+  { value: "5", label: "Rôles utilisateur" },
   { value: "4", label: "Modèles IA" },
   { value: "7", label: "Types de médias" },
   { value: "2", label: "Formats SCORM" },
@@ -109,20 +109,20 @@ export default async function Home() {
               <div className="mt-12 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
                 <Link
                   href="#comment-ca-marche"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-300 bg-white px-5 py-3 text-md font-semibold text-neutral-700 shadow-xs hover:bg-neutral-50 transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-300 bg-white px-5 py-3 text-md font-semibold text-neutral-700 shadow-xs hover:bg-neutral-50 transition-colors order-2 sm:order-1"
                 >
                   Voir comment ça marche
                 </Link>
                 <Link
                   href="/demo"
-                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-brand-600 bg-brand-600 px-5 py-3 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-brand-600 bg-brand-600 px-5 py-3 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors order-1 sm:order-2"
                 >
                   Demander une démo
                 </Link>
               </div>
             </div>
 
-            <div>
+            <div className="mt-8 lg:mt-0">
               <BrowserMockup src="/screenshots/global-dashboard.png" alt="Dashboard Syllabis" priority />
             </div>
           </div>
@@ -136,7 +136,7 @@ export default async function Home() {
             {[
               "39+ blocs interactifs",
               "6 certifications supportées",
-              "227+ endpoints API",
+              "4 modèles IA disponibles",
               "Export SCORM 1.2 & 2004",
             ].map((text) => (
               <span key={text} className="flex items-center gap-2">
@@ -181,11 +181,11 @@ export default async function Home() {
                 </div>
                 {/* Content */}
                 <div className="pb-6">
-                  <div className="flex items-center gap-2 mb-1">
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
                     <h3 className="text-lg font-semibold text-neutral-900">
                       {step.title}
                     </h3>
-                    <span className="rounded-full bg-amber-50 border border-amber-300 px-2.5 py-0.5 text-xs font-medium text-amber-800">
+                    <span className="rounded-full bg-amber-50 border border-amber-300 px-2.5 py-0.5 text-xs font-medium text-amber-800 whitespace-nowrap">
                       {step.time}
                     </span>
                   </div>
@@ -219,18 +219,18 @@ export default async function Home() {
 
           <div className="max-w-2xl mx-auto">
             {/* Table header */}
-            <div className="grid grid-cols-3 gap-4 mb-4 px-4">
-              <span className="text-sm font-semibold text-neutral-500">Étape</span>
-              <span className="text-sm font-semibold text-red-600 text-center">Manuellement</span>
-              <span className="text-sm font-semibold text-emerald-600 text-center">Avec Syllabis</span>
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4 px-4">
+              <span className="text-xs sm:text-sm font-semibold text-neutral-500">Étape</span>
+              <span className="text-xs sm:text-sm font-semibold text-red-600 text-center">Manuellement</span>
+              <span className="text-xs sm:text-sm font-semibold text-emerald-600 text-center">Avec Syllabis</span>
             </div>
             {/* Rows */}
             <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden divide-y divide-neutral-100">
               {comparison.map((row) => (
-                <div key={row.label} className="grid grid-cols-3 gap-4 px-5 py-4 items-center">
-                  <span className="text-sm font-medium text-neutral-900">{row.label}</span>
-                  <span className="text-sm text-red-600 text-center"><X className="size-4 text-red-400 inline mr-1" />{row.before}</span>
-                  <span className="text-sm text-emerald-600 font-semibold text-center"><Check className="size-4 text-emerald-500 inline mr-1" />{row.after}</span>
+                <div key={row.label} className="grid grid-cols-3 gap-2 sm:gap-4 px-3 sm:px-5 py-3 sm:py-4 items-center">
+                  <span className="text-xs sm:text-sm font-medium text-neutral-900">{row.label}</span>
+                  <span className="text-xs sm:text-sm text-red-600 text-center flex items-center justify-center gap-0.5 sm:gap-1"><X className="size-3 sm:size-4 text-red-400 shrink-0" />{row.before}</span>
+                  <span className="text-xs sm:text-sm text-emerald-600 font-semibold text-center flex items-center justify-center gap-0.5 sm:gap-1"><Check className="size-3 sm:size-4 text-emerald-500 shrink-0" />{row.after}</span>
                 </div>
               ))}
             </div>
@@ -244,7 +244,7 @@ export default async function Home() {
           <div className="rounded-2xl border border-neutral-200 bg-white p-8 sm:p-12">
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
               {metrics.map((m) => (
-                <div key={m.label} className="text-center border-r border-gray-200 last:border-0">
+                <div key={m.label} className="text-center lg:border-r border-gray-200 lg:last:border-0">
                   <div className="text-4xl font-bold text-[#0A1E3D]">
                     {m.value}
                   </div>

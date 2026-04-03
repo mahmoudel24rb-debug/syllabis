@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "@untitledui/icons";
 import {
   MagicWand02,
   File06,
@@ -48,6 +49,15 @@ const iconMap: Record<string, ComponentType<{ size?: number; color?: string; cla
   Building07,
 };
 
+const featureLinkMap: Record<string, string> = {
+  "Génération IA complète": "/fonctionnalites/generation-ia",
+  "Éditeur 39+ blocs interactifs": "/fonctionnalites/editeur",
+  "Médias IA (NotebookLM)": "/fonctionnalites/medias-ia",
+  "Export SCORM universel": "/fonctionnalites/export-scorm",
+  "Pilotage & Planning": "/fonctionnalites/pilotage-planning",
+  "Multi-tenant & Enterprise": "/fonctionnalites/multi-tenant",
+};
+
 function ServiceIcon({ name }: { name: string }) {
   const Icon = iconMap[name];
   if (Icon) {
@@ -88,6 +98,15 @@ export default function Services({ services }: { services: Service[] }) {
               <p className="text-md text-neutral-600 leading-relaxed">
                 {service.description}
               </p>
+              {featureLinkMap[service.title] && (
+                <Link
+                  href={featureLinkMap[service.title]}
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-700 mt-3"
+                >
+                  En savoir plus
+                  <ArrowRight className="size-4" />
+                </Link>
+              )}
             </div>
           ))}
         </div>

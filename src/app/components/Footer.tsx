@@ -66,7 +66,7 @@ export default function Footer() {
             <Image src="/sylbi.png" alt="Sylbi" width={36} height={36} className="size-9 rounded-lg" />
             <span className="text-lg font-bold text-white">Syllabis</span>
           </div>
-          <p className="text-md text-white/40">&copy; 2025 Syllabis. Tous droits réservés.</p>
+          <p className="text-md text-white/40">&copy; 2026 Syllabis. Tous droits réservés.</p>
         </div>
       </div>
     </footer>
