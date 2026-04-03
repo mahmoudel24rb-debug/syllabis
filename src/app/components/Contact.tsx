@@ -8,7 +8,8 @@ export default function Contact() {
             Parlons de votre projet
           </h2>
           <p className="mt-5 text-lg text-neutral-600">
-            Contactez-nous pour un devis gratuit et sans engagement.
+            Une question sur Syllabis ? Besoin d&apos;une offre sur mesure pour
+            votre organisme ? Ecrivez-nous.
           </p>
         </div>
 
@@ -52,7 +53,7 @@ export default function Contact() {
               </label>
               <textarea
                 rows={5}
-                placeholder="Decrivez votre projet..."
+                placeholder="Decrivez votre besoin en formation..."
                 className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-md text-neutral-900 placeholder:text-neutral-500 shadow-xs focus:border-brand-300 focus:ring-4 focus:ring-brand-100 outline-none resize-none transition-colors"
               />
             </div>

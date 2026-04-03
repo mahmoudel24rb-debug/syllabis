@@ -1,33 +1,33 @@
 const posts = [
   {
-    category: "Design",
+    category: "IA & Education",
     categoryColor: "text-brand-600 bg-brand-50",
-    title: "Comment creer un site web qui convertit en 2026",
+    title: "Comment l'IA revolutionne la creation de formations en ligne",
     excerpt:
-      "Les meilleures pratiques UX et les tendances design pour maximiser votre taux de conversion.",
-    author: "Sophie Martin",
-    initials: "SM",
-    date: "20 mars 2026",
+      "Decouvrez comment les outils d'intelligence artificielle permettent de creer des cours 10x plus vite sans sacrifier la qualite pedagogique.",
+    author: "Marie Tran",
+    initials: "MT",
+    date: "28 mars 2026",
   },
   {
-    category: "SEO",
+    category: "Tutoriel",
     categoryColor: "text-blue-600 bg-blue-50",
-    title: "Guide complet du referencement naturel",
+    title: "Creer un cours e-learning complet en 30 minutes",
     excerpt:
-      "Tout ce que vous devez savoir pour positionner votre site en premiere page de Google.",
-    author: "Thomas Dupont",
-    initials: "TD",
-    date: "18 mars 2026",
+      "Guide pas a pas pour generer, personnaliser et publier votre premier cours avec Syllabis, de A a Z.",
+    author: "Antoine Bernard",
+    initials: "AB",
+    date: "25 mars 2026",
   },
   {
-    category: "Marketing",
+    category: "Pedagogie",
     categoryColor: "text-pink-600 bg-pink-50",
-    title: "Strategies marketing digital pour PME",
+    title: "Les 5 principes d'un quiz efficace pour vos formations",
     excerpt:
-      "Les leviers les plus efficaces pour developper votre visibilite en ligne avec un budget maitrise.",
-    author: "Julie Renard",
-    initials: "JR",
-    date: "15 mars 2026",
+      "Concevez des evaluations qui mesurent vraiment l'apprentissage et motivent vos apprenants a progresser.",
+    author: "Claire Lemoine",
+    initials: "CL",
+    date: "22 mars 2026",
   },
 ];
 
@@ -42,11 +42,11 @@ export default function Blog() {
               Notre blog
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Dernieres publications
+              Ressources & guides
             </h2>
             <p className="mt-5 text-lg text-neutral-600 max-w-xl">
-              Conseils, guides et strategies pour developper votre presence
-              digitale.
+              Conseils, tutoriels et bonnes pratiques pour creer des formations
+              en ligne efficaces.
             </p>
           </div>
           <a

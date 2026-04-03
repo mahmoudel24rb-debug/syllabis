@@ -1,33 +1,33 @@
 const faqs = [
   {
-    question: "Combien coute un site web ?",
+    question: "Comment l'IA genere-t-elle un cours ?",
     answer:
-      "Le prix depend de la complexite du projet. Un site vitrine demarre a partir de 2 000\u20ac, un site e-commerce a partir de 5 000\u20ac. Nous etablissons un devis personnalise apres avoir compris vos besoins.",
+      "Vous entrez un sujet ou une description, et notre IA analyse le domaine pour generer automatiquement un plan de cours structure, le contenu de chaque module, des quiz d'evaluation et des supports PDF ou video. Vous pouvez ensuite editer et personnaliser chaque element.",
   },
   {
-    question: "Quels sont les delais de realisation ?",
+    question: "Quels formats de cours sont disponibles ?",
     answer:
-      "Un site vitrine est generalement livre en 4 a 6 semaines. Un projet plus complexe (e-commerce, application web) peut prendre 8 a 12 semaines. Nous definissons ensemble un planning precis des le debut.",
+      "Syllabis genere des cours en plusieurs formats : modules e-learning interactifs (SCORM), documents PDF structures, presentations video avec voix off IA, et quiz auto-corriges. Vous pouvez combiner ces formats dans un meme cours.",
   },
   {
-    question: "Est-ce que je peux modifier mon site moi-meme ?",
+    question: "Est-ce que je peux modifier le contenu genere ?",
     answer:
-      "Oui, tous nos sites sont livres avec un systeme de gestion de contenu (CMS) intuitif. Nous vous formons a son utilisation pour que vous puissiez mettre a jour vos contenus en toute autonomie.",
+      "Absolument. L'IA genere une premiere version complete que vous pouvez editer librement : modifier les textes, reorganiser les modules, ajouter vos propres ressources, ajuster les quiz. Vous gardez un controle total sur le contenu final.",
   },
   {
-    question: "Proposez-vous un service de maintenance ?",
+    question: "Y a-t-il un essai gratuit ?",
     answer:
-      "Oui, nous proposons des forfaits de maintenance mensuelle incluant les mises a jour de securite, les sauvegardes, le monitoring et le support technique.",
+      "Oui, vous pouvez creer votre premier cours gratuitement sans carte bancaire. L'essai gratuit inclut la generation de 3 cours complets avec export PDF et quiz. Pour les formats video et e-learning, un abonnement est necessaire.",
   },
   {
-    question: "Comment se deroule un projet type ?",
+    question: "Syllabis est-il adapte aux organismes de formation ?",
     answer:
-      "Notre processus suit 4 etapes : decouverte et brief, conception et maquettes, developpement et integration, puis tests et mise en ligne. Vous etes implique a chaque etape.",
+      "Oui, nous proposons des offres dediees aux organismes de formation avec gestion multi-utilisateurs, export SCORM pour vos LMS, personnalisation avec votre charte graphique et suivi des apprenants integre.",
   },
   {
-    question: "Travaillez-vous uniquement avec des entreprises locales ?",
+    question: "Mes contenus sont-ils proteges ?",
     answer:
-      "Non, nous travaillons avec des clients partout en France et a l'international. Basee a Nancy, notre equipe collabore aussi bien en presentiel qu'a distance.",
+      "Vos cours vous appartiennent a 100%. Nous ne reutilisons jamais vos contenus pour entrainer nos modeles. Vos donnees sont hebergees en Europe et chiffrees. Vous pouvez exporter ou supprimer vos cours a tout moment.",
   },
 ];
 
@@ -42,8 +42,8 @@ export default function FAQ() {
             Questions frequentes
           </h2>
           <p className="mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-            Tout ce que vous devez savoir sur nos services et notre
-            fonctionnement.
+            Tout ce que vous devez savoir sur Syllabis et la creation de cours
+            par IA.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function FAQ() {
         {/* Still have questions */}
         <div className="mt-16 rounded-2xl bg-neutral-50 p-8 sm:p-12 text-center max-w-3xl mx-auto">
           <div className="flex justify-center -space-x-2 mb-5">
-            {["AL", "PB", "LS"].map((initials, i) => (
+            {["CL", "MT", "AB"].map((initials, i) => (
               <div
                 key={i}
                 className="w-12 h-12 rounded-full border-2 border-white bg-brand-100 flex items-center justify-center text-brand-600 font-semibold text-sm"
@@ -94,8 +94,8 @@ export default function FAQ() {
             Encore des questions ?
           </h3>
           <p className="text-md text-neutral-600 mb-6">
-            Notre equipe est la pour vous aider. Contactez-nous et nous vous
-            repondrons dans les plus brefs delais.
+            Notre equipe est disponible pour vous accompagner dans la prise en
+            main de Syllabis.
           </p>
           <a
             href="#contact"

@@ -8,9 +8,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Syllabis | Agence digitale",
+  title: "Syllabis | Creez vos cours en ligne avec l'IA",
   description:
-    "Nous concevons des sites web performants, des strategies SEO sur mesure et des campagnes marketing qui convertissent.",
+    "Generez des cours complets en quelques clics : modules e-learning, PDF, videos et quiz. L'IA qui transforme vos idees en formations professionnelles.",
 };
 
 export default function RootLayout({

@@ -1,8 +1,8 @@
 export default function Navbar() {
   const links = [
-    { label: "Services", href: "#services", hasDropdown: true },
-    { label: "A propos", href: "#about", hasDropdown: false },
-    { label: "FAQ", href: "#faq", hasDropdown: false },
+    { label: "Fonctionnalites", href: "#services", hasDropdown: true },
+    { label: "Comment ca marche", href: "#about", hasDropdown: false },
+    { label: "Tarifs", href: "#faq", hasDropdown: false },
     { label: "Blog", href: "#blog", hasDropdown: true },
     { label: "Contact", href: "#contact", hasDropdown: false },
   ];
@@ -60,7 +60,7 @@ export default function Navbar() {
             href="#contact"
             className="hidden sm:inline-flex items-center rounded-lg border border-brand-600 bg-brand-600 px-4 py-2.5 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors"
           >
-            Devis gratuit
+            Essai gratuit
           </a>
           <button className="lg:hidden p-2 rounded-lg hover:bg-neutral-50 transition-colors">
             <svg

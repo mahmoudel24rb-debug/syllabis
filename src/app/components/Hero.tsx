@@ -13,7 +13,7 @@ export default function Hero() {
               Nouveau
             </span>
             <span className="text-sm font-medium text-brand-700 flex items-center gap-1">
-              Decouvrez notre offre agence
+              Generation de cours video par IA
               <svg
                 width="16"
                 height="16"
@@ -31,14 +31,14 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className="text-display-lg sm:text-display-xl font-semibold text-neutral-900">
-            Des solutions digitales pour grandir plus vite
+            Creez des cours en ligne en quelques clics
           </h1>
 
           {/* Subheadline */}
           <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-            Nous concevons des sites web performants, des strategies SEO sur
-            mesure et des campagnes marketing qui convertissent vos visiteurs en
-            clients. Plus de 150 entreprises nous font confiance.
+            Notre IA genere des formations completes — modules e-learning, PDF,
+            videos et quiz — a partir d&apos;un simple sujet. Passe de l&apos;idee au
+            cours publie en quelques minutes.
           </p>
 
           {/* CTAs */}
@@ -61,18 +61,18 @@ export default function Hero() {
                 <circle cx="12" cy="12" r="10" />
                 <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
               </svg>
-              Demo
+              Voir la demo
             </a>
             <a
               href="#contact"
               className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-brand-600 bg-brand-600 px-5 py-3 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors"
             >
-              Demander un devis
+              Commencer gratuitement
             </a>
           </div>
         </div>
 
-        {/* Dashboard mockup — detailed app UI */}
+        {/* App mockup — course creation UI */}
         <div className="mt-16 relative mx-auto max-w-[1100px]">
           <div className="rounded-t-2xl border border-b-0 border-neutral-200 bg-white shadow-3xl overflow-hidden">
             <div className="flex">
@@ -104,11 +104,11 @@ export default function Hero() {
                 <div className="px-3 py-2 space-y-0.5">
                   {[
                     { icon: "home", label: "Accueil", active: false },
-                    { icon: "dashboard", label: "Dashboard", active: true },
-                    { icon: "folder", label: "Projets", active: false },
-                    { icon: "tasks", label: "Taches", badge: "8", active: false },
+                    { icon: "dashboard", label: "Mes cours", active: true },
+                    { icon: "folder", label: "Bibliotheque", active: false },
+                    { icon: "tasks", label: "Quiz & Exercices", badge: "3", active: false },
                     { icon: "chart", label: "Analytics", active: false },
-                    { icon: "users", label: "Clients", active: false },
+                    { icon: "users", label: "Apprenants", active: false },
                   ].map((item) => (
                     <div
                       key={item.label}
@@ -135,28 +135,22 @@ export default function Hero() {
                 {/* Top bar */}
                 <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-100">
                   <h2 className="text-lg font-semibold text-neutral-900">
-                    Mon dashboard
+                    Mes cours
                   </h2>
                   <div className="hidden sm:flex items-center gap-2">
-                    <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-neutral-200 text-xs font-medium text-neutral-600 bg-white hover:bg-neutral-50">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M12 3v1m0 16v1m8.66-13.5l-.87.5M4.21 16l-.87.5M21 12h-1M4 12H3m16.66 4.5l-.87-.5M4.21 8l-.87-.5" strokeLinecap="round" />
-                        <circle cx="12" cy="12" r="4" />
-                      </svg>
-                      Quoi de neuf ?
-                    </button>
                     <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-neutral-200 text-xs font-medium text-neutral-600 bg-white hover:bg-neutral-50">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
                         <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
                       </svg>
-                      Copier le lien
+                      Importer
                     </button>
-                    <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-neutral-200 text-xs font-medium text-neutral-600 bg-white hover:bg-neutral-50">
-                      Voir le site
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                    <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-brand-600 bg-brand-600 text-xs font-medium text-white hover:bg-brand-700">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
                       </svg>
+                      Nouveau cours IA
                     </button>
                   </div>
                 </div>
@@ -165,9 +159,9 @@ export default function Hero() {
                 <div className="px-6 py-5">
                   <div className="grid grid-cols-3 gap-4 mb-5">
                     {[
-                      { icon: "revenue", label: "Chiffre d'affaires", value: "8 746,22\u20ac", change: "+2.4%", up: true },
-                      { icon: "views", label: "Pages vues", value: "12 440", change: "+6.2%", up: true },
-                      { icon: "active", label: "Actifs maintenant", value: "96", change: "+0.8%", up: true },
+                      { icon: "revenue", label: "Cours publies", value: "47", change: "+5 ce mois" },
+                      { icon: "views", label: "Apprenants actifs", value: "1 284", change: "+12.3%" },
+                      { icon: "active", label: "Taux de completion", value: "89%", change: "+3.2%" },
                     ].map((stat) => (
                       <div
                         key={stat.label}
@@ -196,86 +190,52 @@ export default function Hero() {
                     ))}
                   </div>
 
-                  {/* Chart section */}
+                  {/* Recent courses list */}
                   <div className="rounded-xl border border-neutral-200 bg-white p-5">
                     <div className="flex items-center justify-between mb-4">
-                      <div>
-                        <p className="text-xs text-neutral-500">Revenus nets</p>
-                        <div className="flex items-baseline gap-2 mt-0.5">
-                          <span className="text-xl font-semibold text-neutral-900">
-                            7 804,16&euro;
-                          </span>
-                          <span className="flex items-center gap-0.5 text-xs font-medium text-green-600">
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                              <path d="M6 9.5V2.5M6 2.5L2.5 6M6 2.5L9.5 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                            2.4%
-                          </span>
-                        </div>
-                      </div>
+                      <p className="text-sm font-semibold text-neutral-900">Cours recents</p>
                       <div className="hidden sm:flex items-center gap-1">
-                        {["12 mois", "30 jours", "7 jours", "24h"].map(
-                          (period, i) => (
+                        {["Tous", "Publies", "Brouillons"].map(
+                          (tab, i) => (
                             <button
-                              key={period}
+                              key={tab}
                               className={`px-2.5 py-1 rounded-md text-xs font-medium ${
                                 i === 0
                                   ? "bg-neutral-100 text-neutral-900"
                                   : "text-neutral-500 hover:bg-neutral-50"
                               }`}
                             >
-                              {period}
+                              {tab}
                             </button>
                           )
                         )}
-                        <button className="flex items-center gap-1 ml-1 px-2.5 py-1 rounded-md border border-neutral-200 text-xs font-medium text-neutral-600">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                            <line x1="4" y1="21" x2="4" y2="14" />
-                            <line x1="4" y1="10" x2="4" y2="3" />
-                            <line x1="12" y1="21" x2="12" y2="12" />
-                            <line x1="12" y1="8" x2="12" y2="3" />
-                            <line x1="20" y1="21" x2="20" y2="16" />
-                            <line x1="20" y1="12" x2="20" y2="3" />
-                            <line x1="1" y1="14" x2="7" y2="14" />
-                            <line x1="9" y1="8" x2="15" y2="8" />
-                            <line x1="17" y1="16" x2="23" y2="16" />
-                          </svg>
-                          Filtres
-                        </button>
                       </div>
                     </div>
-                    {/* SVG Chart line */}
-                    <div className="h-[100px] sm:h-[140px] relative">
-                      <svg
-                        viewBox="0 0 600 120"
-                        className="w-full h-full"
-                        preserveAspectRatio="none"
-                      >
-                        <defs>
-                          <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="rgb(127 86 217)" stopOpacity="0.12" />
-                            <stop offset="100%" stopColor="rgb(127 86 217)" stopOpacity="0" />
-                          </linearGradient>
-                        </defs>
-                        <path
-                          d="M0,95 C30,90 60,85 90,80 C120,75 150,88 180,82 C210,76 240,60 270,55 C300,50 330,58 360,52 C390,46 420,35 450,40 C480,45 510,30 540,22 C570,14 585,10 600,8"
-                          fill="none"
-                          stroke="rgb(127 86 217)"
-                          strokeWidth="2"
-                        />
-                        <path
-                          d="M0,95 C30,90 60,85 90,80 C120,75 150,88 180,82 C210,76 240,60 270,55 C300,50 330,58 360,52 C390,46 420,35 450,40 C480,45 510,30 540,22 C570,14 585,10 600,8 L600,120 L0,120Z"
-                          fill="url(#chartGrad)"
-                        />
-                        {/* Dashed line */}
-                        <path
-                          d="M0,98 C40,95 80,92 120,90 C160,88 200,95 240,90 C280,85 320,78 360,72 C400,66 440,62 480,55 C520,48 560,40 600,35"
-                          fill="none"
-                          stroke="rgb(180 180 200)"
-                          strokeWidth="1.5"
-                          strokeDasharray="6 4"
-                        />
-                      </svg>
+                    {/* Course rows */}
+                    <div className="space-y-3">
+                      {[
+                        { title: "Introduction au Machine Learning", format: "E-learning + PDF", modules: "12 modules", status: "Publie", statusColor: "bg-green-50 text-green-700" },
+                        { title: "Les bases du marketing digital", format: "Video + Quiz", modules: "8 modules", status: "Publie", statusColor: "bg-green-50 text-green-700" },
+                        { title: "Gestion de projet Agile", format: "PDF + Quiz", modules: "6 modules", status: "Brouillon", statusColor: "bg-neutral-100 text-neutral-600" },
+                      ].map((course) => (
+                        <div key={course.title} className="flex items-center justify-between py-2.5 border-b border-neutral-100 last:border-0">
+                          <div className="flex items-center gap-3 min-w-0">
+                            <div className="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center shrink-0">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(127 86 217)" strokeWidth="2" strokeLinecap="round">
+                                <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+                              </svg>
+                            </div>
+                            <div className="min-w-0">
+                              <p className="text-sm font-medium text-neutral-900 truncate">{course.title}</p>
+                              <p className="text-xs text-neutral-500">{course.format} &middot; {course.modules}</p>
+                            </div>
+                          </div>
+                          <span className={`shrink-0 ml-3 px-2 py-0.5 rounded-full text-xs font-medium ${course.statusColor}`}>
+                            {course.status}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -301,11 +261,9 @@ function SidebarIcon({ name }: { name: string }) {
       );
     case "dashboard":
       return (
-        <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="3" width="7" height="7" rx="1" />
-          <rect x="14" y="3" width="7" height="7" rx="1" />
-          <rect x="3" y="14" width="7" height="7" rx="1" />
-          <rect x="14" y="14" width="7" height="7" rx="1" />
+        <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+          <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
         </svg>
       );
     case "folder":
@@ -348,22 +306,23 @@ function StatIcon({ name }: { name: string }) {
     case "revenue":
       return (
         <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M16 8h-4a2 2 0 100 4h2a2 2 0 110 4H8M12 6v2m0 8v2" />
+          <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
         </svg>
       );
     case "views":
       return (
         <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-          <circle cx="12" cy="12" r="3" />
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
         </svg>
       );
     case "active":
       return (
         <svg className={cls} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-          <circle cx="12" cy="12" r="10" />
-          <polyline points="12 6 12 12 16 14" />
+          <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
         </svg>
       );
     default:

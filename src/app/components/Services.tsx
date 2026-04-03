@@ -13,14 +13,14 @@ export default function Services({ services }: { services: Service[] }) {
         {/* Section header */}
         <div className="text-center mb-16">
           <p className="text-sm font-semibold text-brand-600 mb-3">
-            Nos services
+            Fonctionnalites
           </p>
           <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-            Des solutions pour chaque besoin
+            Tout ce qu&apos;il faut pour creer des cours pro
           </h2>
           <p className="mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-            Des solutions completes pour developper votre activite en ligne et
-            atteindre vos objectifs de croissance.
+            De la generation du contenu a la publication, Syllabis automatise
+            chaque etape de la creation de formations en ligne.
           </p>
         </div>
 

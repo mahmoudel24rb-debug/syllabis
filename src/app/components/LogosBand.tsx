@@ -1,10 +1,10 @@
 const logos = [
-  "TechCorp",
-  "Innovate",
-  "DigitalFlow",
-  "CloudNine",
-  "StartupX",
-  "NetWave",
+  "Sorbonne",
+  "OpenClassrooms",
+  "Simplon",
+  "ESSEC",
+  "Docendi",
+  "Skillup",
 ];
 
 export default function LogosBand() {
@@ -12,7 +12,7 @@ export default function LogosBand() {
     <section className="py-16 sm:py-24">
       <div className="mx-auto max-w-container px-4 sm:px-8">
         <p className="text-center text-md text-neutral-600 mb-8">
-          Plus de 150 entreprises nous font deja confiance
+          Plus de 2 000 formateurs et organismes creent deja avec Syllabis
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-6 items-center justify-items-center">
           {logos.map((name) => (

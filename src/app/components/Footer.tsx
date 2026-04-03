@@ -1,20 +1,19 @@
 const footerLinks = [
   {
-    title: "Services",
+    title: "Produit",
     links: [
-      "Creation de sites",
-      "Referencement SEO",
-      "Marketing digital",
-      "Design UX/UI",
-      "E-commerce",
-      "Maintenance",
+      "Fonctionnalites",
+      "Cours PDF",
+      "Cours video",
+      "E-learning SCORM",
+      "Quiz & Evaluations",
+      "Tarifs",
     ],
   },
   {
     title: "Entreprise",
     links: [
       "A propos",
-      "Equipe",
       "Blog",
       "Carrieres",
       "Contact",
@@ -24,21 +23,22 @@ const footerLinks = [
   {
     title: "Ressources",
     links: [
-      "Guides gratuits",
-      "Etudes de cas",
-      "Newsletter",
-      "Evenements",
-      "Support",
-      "FAQ",
+      "Centre d'aide",
+      "Tutoriels",
+      "API & Docs",
+      "Communaute",
+      "Webinaires",
+      "Changelog",
     ],
   },
   {
     title: "Legal",
     links: [
       "Mentions legales",
-      "Politique de confidentialite",
-      "CGV",
+      "Confidentialite",
+      "CGU",
       "Cookies",
+      "RGPD",
     ],
   },
 ];
