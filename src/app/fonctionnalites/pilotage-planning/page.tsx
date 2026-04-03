@@ -1,4 +1,5 @@
 import CTABanner from "../../components/CTABanner";
+import { Check } from "@untitledui/icons";
 
 const features = [
   {
@@ -79,17 +80,7 @@ export default function PilotagePlanningPage() {
                 className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
               >
                 <div className="w-10 h-10 rounded-lg bg-brand-50 border border-brand-100 flex items-center justify-center mb-4">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="rgb(10 30 61)"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
+                  <Check className="size-5 text-[#0A1E3D]" />
                 </div>
                 <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                   {feature.title}

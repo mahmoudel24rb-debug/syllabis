@@ -3,6 +3,7 @@ import { client } from "@/sanity/client";
 import { SERVICES_QUERY } from "@/sanity/queries";
 import Services from "./components/Services";
 import CTABanner from "./components/CTABanner";
+import { Upload01, Zap, CpuChip01, Edit04, Download01, Check } from "@untitledui/icons";
 
 interface Service {
   _id: string;
@@ -20,30 +21,35 @@ const steps = [
     time: "3 secondes",
     title: "Uploadez votre référentiel",
     desc: "Importez un PDF de certification (RNCP, BTS, CAP, CQP, BPJEPS) ou décrivez votre formation en texte libre.",
+    icon: Upload01,
   },
   {
     number: "02",
     time: "Instantané",
     title: "L'IA analyse et structure",
     desc: "Détection automatique du type de certification, blocs de compétences, modules, heures et prérequis.",
+    icon: Zap,
   },
   {
     number: "03",
     time: "2-5 minutes",
     title: "Génération du contenu complet",
     desc: "Séances, quiz, exercices, architectures pédagogiques — tout est généré automatiquement.",
+    icon: CpuChip01,
   },
   {
     number: "04",
     time: "Personnalisation",
     title: "Éditez avec 39+ blocs",
     desc: "Quiz interactifs, vidéos, podcasts, mind maps, flashcards — personnalisez chaque élément.",
+    icon: Edit04,
   },
   {
     number: "05",
     time: "Déploiement",
     title: "Exportez et déployez",
     desc: "Export SCORM 1.2 & 2004 vers n'importe quel LMS, ou planning formateurs avec calendrier.",
+    icon: Download01,
   },
 ];
 
@@ -177,7 +183,7 @@ export default async function Home() {
               "Export SCORM 1.2 & 2004",
             ].map((text) => (
               <span key={text} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />
+                <Check className="size-4 text-brand-600" />
                 {text}
               </span>
             ))}
@@ -209,8 +215,8 @@ export default async function Home() {
               >
                 {/* Number + line */}
                 <div className="flex flex-col items-center shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-bold">
-                    {step.number}
+                  <div className="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center">
+                    <step.icon className="size-5" />
                   </div>
                   {i < steps.length - 1 && (
                     <div className="w-px h-12 bg-neutral-200 mt-2" />

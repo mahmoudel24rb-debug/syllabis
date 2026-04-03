@@ -1,4 +1,5 @@
 import CTABanner from "../components/CTABanner";
+import { Check } from "@untitledui/icons";
 
 const demoIncludes = [
   "Upload d\u2019un vrai référentiel",
@@ -125,17 +126,7 @@ export default function DemoPage() {
                       key={item}
                       className="flex items-start gap-3 text-sm text-neutral-700"
                     >
-                      <svg
-                        className="w-5 h-5 text-brand-600 shrink-0 mt-0.5"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
+                      <Check className="size-5 text-[#0A1E3D] shrink-0" />
                       {item}
                     </li>
                   ))}

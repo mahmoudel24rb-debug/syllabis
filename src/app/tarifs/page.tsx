@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CTABanner from "../components/CTABanner";
+import { Check } from "@untitledui/icons";
 
 const plans = [
   {
@@ -138,17 +139,7 @@ export default function TarifsPage() {
                       key={feature}
                       className="flex items-start gap-3 text-sm text-neutral-700"
                     >
-                      <svg
-                        className="w-5 h-5 text-brand-600 shrink-0 mt-0.5"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
+                      <Check className="size-5 text-emerald-500 shrink-0" />
                       {feature}
                     </li>
                   ))}

@@ -1,44 +1,49 @@
 import Link from "next/link";
 import CTABanner from "../components/CTABanner";
+import { Zap, Edit04, VideoRecorder, Download01, Calendar, Building07, ArrowRight } from "@untitledui/icons";
+import type { ComponentType } from "react";
+
+const featureIconMap: Record<string, ComponentType<{ className?: string }>> = {
+  "Génération IA": Zap,
+  "Éditeur 39+ blocs": Edit04,
+  "Médias IA": VideoRecorder,
+  "Export SCORM": Download01,
+  "Pilotage & Planning": Calendar,
+  "Multi-tenant": Building07,
+};
 
 const features = [
   {
-    icon: "🤖",
     title: "Génération IA",
     href: "/fonctionnalites/generation-ia",
     description:
       "Upload d'un référentiel RNCP en PDF, l'IA analyse et génère toute la hiérarchie pédagogique en quelques minutes.",
   },
   {
-    icon: "✏️",
     title: "Éditeur 39+ blocs",
     href: "/fonctionnalites/editeur",
     description:
       "Éditeur style Notion avec quiz interactifs, médias riches, blocs pédagogiques et visualisation.",
   },
   {
-    icon: "🎬",
     title: "Médias IA",
     href: "/fonctionnalites/medias-ia",
     description:
       "Génération automatique de vidéos, podcasts, quiz, flashcards, mind maps à partir du contenu.",
   },
   {
-    icon: "📦",
     title: "Export SCORM",
     href: "/fonctionnalites/export-scorm",
     description:
       "Export SCORM 1.2 & 2004 compatible avec tous les LMS, player React moderne.",
   },
   {
-    icon: "📅",
     title: "Pilotage & Planning",
     href: "/fonctionnalites/pilotage-planning",
     description:
       "Vue calendrier, tableau, assignment formateurs, export Excel 7 onglets.",
   },
   {
-    icon: "🏢",
     title: "Multi-tenant",
     href: "/fonctionnalites/multi-tenant",
     description:
@@ -88,9 +93,14 @@ export default function FonctionnalitesPage() {
                 key={feature.title}
                 className="group rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 hover:border-brand-200 hover:shadow-lg transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-2xl mb-5">
-                  {feature.icon}
-                </div>
+                {(() => {
+                  const Icon = featureIconMap[feature.title];
+                  return (
+                    <div className="flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 mb-5">
+                      {Icon && <Icon className="size-6 text-[#0A1E3D]" />}
+                    </div>
+                  );
+                })()}
                 <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                   {feature.title}
                 </h3>
@@ -102,18 +112,7 @@ export default function FonctionnalitesPage() {
                   className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 group-hover:text-brand-700 transition-colors"
                 >
                   Découvrir
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M3.33 8h9.34M8.67 4l4 4-4 4" />
-                  </svg>
+                  <ArrowRight className="size-4" />
                 </Link>
               </div>
             ))}
