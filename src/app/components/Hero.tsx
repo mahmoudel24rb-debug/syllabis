@@ -7,12 +7,12 @@ export default function Hero() {
       <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-0">
         <div className="max-w-3xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-brand-200 bg-brand-50 pl-1 pr-3 py-1 mb-4">
-            <span className="flex items-center gap-1.5 rounded-full bg-white border border-brand-200 px-2.5 py-0.5 text-xs font-semibold text-brand-700">
-              <span className="w-2 h-2 rounded-full bg-brand-500" />
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-amber-300 bg-amber-50 pl-1 pr-3 py-1 mb-4">
+            <span className="flex items-center gap-1.5 rounded-full bg-white border border-amber-300 px-2.5 py-0.5 text-xs font-semibold text-amber-800">
+              <span className="w-2 h-2 rounded-full bg-amber-400" />
               Nouveau
             </span>
-            <span className="text-sm font-medium text-brand-700 flex items-center gap-1">
+            <span className="text-sm font-medium text-amber-800 flex items-center gap-1">
               Generation de cours video par IA
               <svg
                 width="16"
@@ -221,7 +221,7 @@ export default function Hero() {
                         <div key={course.title} className="flex items-center justify-between py-2.5 border-b border-neutral-100 last:border-0">
                           <div className="flex items-center gap-3 min-w-0">
                             <div className="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center shrink-0">
-                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(127 86 217)" strokeWidth="2" strokeLinecap="round">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgb(10 30 61)" strokeWidth="2" strokeLinecap="round">
                                 <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
                                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
                               </svg>

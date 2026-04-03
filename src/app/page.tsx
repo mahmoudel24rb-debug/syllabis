@@ -74,12 +74,12 @@ export default async function Home() {
         <div className="absolute inset-0 hero-grid hero-grid-mask" />
         <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-24">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-brand-200 bg-brand-50 pl-1 pr-3 py-1 mb-4">
-              <span className="flex items-center gap-1.5 rounded-full bg-white border border-brand-200 px-2.5 py-0.5 text-xs font-semibold text-brand-700">
-                <span className="w-2 h-2 rounded-full bg-brand-500" />
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-amber-300 bg-amber-50 pl-1 pr-3 py-1 mb-4">
+              <span className="flex items-center gap-1.5 rounded-full bg-white border border-amber-300 px-2.5 py-0.5 text-xs font-semibold text-amber-800">
+                <span className="w-2 h-2 rounded-full bg-amber-400" />
                 Nouveau
               </span>
-              <span className="text-sm font-medium text-brand-700 flex items-center gap-1">
+              <span className="text-sm font-medium text-amber-800 flex items-center gap-1">
                 Generation video & podcast par IA
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3.33 8h9.34M8.67 4l4 4-4 4" />
@@ -141,7 +141,7 @@ export default async function Home() {
                 </div>
 
                 {/* Formation side */}
-                <div className="flex-1 rounded-xl border border-brand-200 bg-brand-50 p-5">
+                <div className="flex-1 rounded-xl border border-emerald-200 bg-emerald-50 p-5">
                   <div className="space-y-2">
                     {[
                       { label: "3 Blocs de competences", icon: "folder" },
@@ -149,9 +149,9 @@ export default async function Home() {
                       { label: "48 Seances", icon: "file" },
                       { label: "Quiz & Videos inclus", icon: "play" },
                     ].map((item) => (
-                      <div key={item.label} className="flex items-center gap-2.5 bg-white rounded-lg px-3 py-2 border border-brand-100">
+                      <div key={item.label} className="flex items-center gap-2.5 bg-white rounded-lg px-3 py-2 border border-emerald-100">
                         <div className="w-6 h-6 rounded bg-brand-100 flex items-center justify-center">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgb(127 86 217)" strokeWidth="2" strokeLinecap="round">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgb(16 185 129)" strokeWidth="2" strokeLinecap="round">
                             <polyline points="20 6 9 17 4 12" />
                           </svg>
                         </div>
@@ -222,7 +222,7 @@ export default async function Home() {
                     <h3 className="text-lg font-semibold text-neutral-900">
                       {step.title}
                     </h3>
-                    <span className="rounded-full bg-brand-50 border border-brand-200 px-2.5 py-0.5 text-xs font-medium text-brand-700">
+                    <span className="rounded-full bg-amber-50 border border-amber-300 px-2.5 py-0.5 text-xs font-medium text-amber-800">
                       {step.time}
                     </span>
                   </div>

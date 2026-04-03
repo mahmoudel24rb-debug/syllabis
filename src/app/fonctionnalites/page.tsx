@@ -62,8 +62,8 @@ export default function FonctionnalitesPage() {
         <div className="absolute inset-0 hero-grid hero-grid-mask" />
         <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-20">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 mb-4">
-              <span className="text-sm font-medium text-brand-700">
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-300 bg-amber-50 px-3 py-1 mb-4">
+              <span className="text-sm font-medium text-amber-800">
                 6 modules integres
               </span>
             </div>

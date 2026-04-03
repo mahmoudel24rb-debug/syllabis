@@ -39,10 +39,10 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 pt-16 sm:pt-24 pb-12">
+    <footer className="bg-[#0A1E3D] pt-16 sm:pt-24 pb-12">
       <div className="mx-auto max-w-container px-4 sm:px-8">
         {/* Link columns */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 pb-12 border-b border-neutral-800">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 pb-12 border-b border-white/10">
           {footerLinks.map((group) => (
             <div key={group.title}>
               <h3 className="text-sm font-semibold text-neutral-400 mb-4">{group.title}</h3>

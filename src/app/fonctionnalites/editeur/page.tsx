@@ -82,8 +82,8 @@ export default function EditeurPage() {
         <div className="absolute inset-0 hero-grid hero-grid-mask" />
         <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-20">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 mb-4">
-              <span className="text-sm font-medium text-brand-700">
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-300 bg-amber-50 px-3 py-1 mb-4">
+              <span className="text-sm font-medium text-amber-800">
                 Editeur
               </span>
             </div>
@@ -169,7 +169,7 @@ export default function EditeurPage() {
                     height="20"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="rgb(127 86 217)"
+                    stroke="rgb(10 30 61)"
                     strokeWidth="2"
                     strokeLinecap="round"
                   >

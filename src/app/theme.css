@@ -60,18 +60,30 @@
     --shadow-2xl: 0px 24px 48px -12px rgba(0, 0, 0, 0.18), 0px 4px 4px -2px rgba(0, 0, 0, 0.04);
     --shadow-3xl: 0px 32px 64px -12px rgba(0, 0, 0, 0.14), 0px 5px 5px -2.5px rgba(0, 0, 0, 0.04);
 
-    /* BRAND COLOR PALETTE */
-    --color-brand-50: rgb(249 245 255);
-    --color-brand-100: rgb(244 235 255);
-    --color-brand-200: rgb(233 215 254);
-    --color-brand-300: rgb(214 187 251);
-    --color-brand-400: rgb(182 146 246);
-    --color-brand-500: rgb(158 119 237);
-    --color-brand-600: rgb(127 86 217);
-    --color-brand-700: rgb(105 65 198);
-    --color-brand-800: rgb(83 56 158);
-    --color-brand-900: rgb(66 48 125);
-    --color-brand-950: rgb(44 28 95);
+    /* BRAND COLOR PALETTE — Navy */
+    --color-brand-50: rgb(235 240 249);
+    --color-brand-100: rgb(214 225 242);
+    --color-brand-200: rgb(173 195 229);
+    --color-brand-300: rgb(122 156 209);
+    --color-brand-400: rgb(71 117 189);
+    --color-brand-500: rgb(36 76 144);
+    --color-brand-600: rgb(10 30 61);
+    --color-brand-700: rgb(26 54 93);
+    --color-brand-800: rgb(10 30 61);
+    --color-brand-900: rgb(7 21 43);
+    --color-brand-950: rgb(4 12 26);
+
+    /* ACCENT COLOR PALETTE — Ambre */
+    --color-amber-50: rgb(254 243 199);
+    --color-amber-100: rgb(253 230 138);
+    --color-amber-200: rgb(252 211 77);
+    --color-amber-300: rgb(251 191 36);
+    --color-amber-400: rgb(245 158 11);
+    --color-amber-500: rgb(217 119 6);
+    --color-amber-600: rgb(180 83 9);
+    --color-amber-700: rgb(146 64 14);
+    --color-amber-800: rgb(120 53 15);
+    --color-amber-900: rgb(99 49 18);
 
     /* TEXT, BORDER, FOREGROUND, BACKGROUND COLOR VARIABLES */
     --color-text-primary: var(--color-neutral-900);
