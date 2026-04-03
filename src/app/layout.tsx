@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Syllabis | Du referentiel a la formation e-learning par l'IA",
+  title: "Syllabis | Du référentiel à la formation e-learning par l'IA",
   description:
-    "Syllabis transforme un referentiel de certification (RNCP, BTS, CAP) en formation e-learning complete — structure, contenu interactif, quiz, videos — en quelques minutes grace a l'IA.",
+    "Syllabis transforme un référentiel de certification (RNCP, BTS, CAP) en formation e-learning complète — structure, contenu interactif, quiz, vidéos — en quelques minutes grâce à l'IA.",
 };
 
 export default function RootLayout({

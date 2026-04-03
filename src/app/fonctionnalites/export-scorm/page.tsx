@@ -4,32 +4,32 @@ const scormFeatures = [
   {
     title: "SCORM 1.2 & 2004",
     description:
-      "Deux formats d'export pour une compatibilite maximale avec tous les LMS du marche.",
+      "Deux formats d'export pour une compatibilité maximale avec tous les LMS du marché.",
   },
   {
     title: "Player React moderne",
     description:
-      "Player SCORM developpe en React avec interface moderne, responsive et performante.",
+      "Player SCORM développé en React avec interface moderne, responsive et performante.",
   },
   {
     title: "Tracking complet",
     description:
-      "Suivi detaille : score, taux de completion, temps passe, reponses aux quiz.",
+      "Suivi détaillé : score, taux de complétion, temps passé, réponses aux quiz.",
   },
   {
     title: "Navigation par chapitres",
     description:
-      "Table des matieres interactive avec navigation par chapitres et progression visuelle.",
+      "Table des matières interactive avec navigation par chapitres et progression visuelle.",
   },
   {
     title: "Tokens SCORM avec expiration",
     description:
-      "Systeme de tokens securises avec date d'expiration pour controler l'acces aux contenus.",
+      "Système de tokens sécurisés avec date d'expiration pour contrôler l'accès aux contenus.",
   },
   {
     title: "Export en un clic",
     description:
-      "Generez votre package SCORM complet et telechargez-le en un seul clic.",
+      "Générez votre package SCORM complet et téléchargez-le en un seul clic.",
   },
 ];
 
@@ -60,13 +60,13 @@ export default function ExportScormPage() {
             <h1 className="text-display-md sm:text-display-lg font-semibold text-neutral-900">
               Export SCORM —{" "}
               <span className="text-brand-600">
-                Deploiement LMS universel
+                Déploiement LMS universel
               </span>
             </h1>
             <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto">
               Exportez vos formations en packages SCORM 1.2 et 2004 compatibles
               avec tous les LMS. Player React moderne, tracking complet,
-              deploiement instantane.
+              déploiement instantané.
             </p>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function ExportScormPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Fonctionnalites
+              Fonctionnalités
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
               Un export SCORM professionnel
@@ -119,14 +119,14 @@ export default function ExportScormPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Compatibilite
+              Compatibilité
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
               Compatible avec tous les LMS majeurs
             </h2>
             <p className="mt-5 text-lg text-neutral-600 max-w-2xl mx-auto">
               Votre package SCORM fonctionne directement sur les plateformes LMS
-              les plus utilisees.
+              les plus utilisées.
             </p>
           </div>
           <div className="max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -152,16 +152,16 @@ export default function ExportScormPage() {
               Tracking
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Suivi detaille de la progression
+              Suivi détaillé de la progression
             </h2>
           </div>
           <div className="max-w-2xl mx-auto rounded-2xl border border-neutral-200 bg-white overflow-hidden divide-y divide-neutral-100">
             {[
-              { label: "Score", detail: "Note obtenue aux quiz et evaluations" },
-              { label: "Completion", detail: "Pourcentage de progression dans le cours" },
-              { label: "Temps passe", detail: "Duree totale et par chapitre" },
-              { label: "Reponses", detail: "Detail des reponses aux quiz avec corrections" },
-              { label: "Tentatives", detail: "Nombre de tentatives par activite" },
+              { label: "Score", detail: "Note obtenue aux quiz et évaluations" },
+              { label: "Complétion", detail: "Pourcentage de progression dans le cours" },
+              { label: "Temps passé", detail: "Durée totale et par chapitre" },
+              { label: "Réponses", detail: "Détail des réponses aux quiz avec corrections" },
+              { label: "Tentatives", detail: "Nombre de tentatives par activité" },
             ].map((item) => (
               <div
                 key={item.label}
@@ -194,11 +194,11 @@ export default function ExportScormPage() {
 
       {/* ── CTA ── */}
       <CTABanner
-        title="Deployez sur votre LMS en un clic"
-        description="Exportez en SCORM 1.2 ou 2004 et integrez directement dans Moodle, Canvas, Docebo ou tout autre LMS."
-        primaryLabel="Demander une demo"
+        title="Déployez sur votre LMS en un clic"
+        description="Exportez en SCORM 1.2 ou 2004 et intégrez directement dans Moodle, Canvas, Docebo ou tout autre LMS."
+        primaryLabel="Demander une démo"
         primaryHref="/demo"
-        secondaryLabel="Toutes les fonctionnalites"
+        secondaryLabel="Toutes les fonctionnalités"
         secondaryHref="/fonctionnalites"
       />
     </>

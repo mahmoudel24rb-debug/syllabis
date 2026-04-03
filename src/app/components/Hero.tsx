@@ -13,7 +13,7 @@ export default function Hero() {
               Nouveau
             </span>
             <span className="text-sm font-medium text-amber-800 flex items-center gap-1">
-              Generation de cours video par IA
+              Génération de cours vidéo par IA
               <svg
                 width="16"
                 height="16"
@@ -31,14 +31,14 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className="text-display-lg sm:text-display-xl font-semibold text-neutral-900">
-            Creez des cours en ligne en quelques clics
+            Créez des cours en ligne en quelques clics
           </h1>
 
           {/* Subheadline */}
           <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-            Notre IA genere des formations completes — modules e-learning, PDF,
-            videos et quiz — a partir d&apos;un simple sujet. Passe de l&apos;idee au
-            cours publie en quelques minutes.
+            Notre IA génère des formations complètes — modules e-learning, PDF,
+            vidéos et quiz — à partir d&apos;un simple sujet. Passe de l&apos;idée au
+            cours publié en quelques minutes.
           </p>
 
           {/* CTAs */}
@@ -61,7 +61,7 @@ export default function Hero() {
                 <circle cx="12" cy="12" r="10" />
                 <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
               </svg>
-              Voir la demo
+              Voir la démo
             </a>
             <a
               href="#contact"
@@ -105,7 +105,7 @@ export default function Hero() {
                   {[
                     { icon: "home", label: "Accueil", active: false },
                     { icon: "dashboard", label: "Mes cours", active: true },
-                    { icon: "folder", label: "Bibliotheque", active: false },
+                    { icon: "folder", label: "Bibliothèque", active: false },
                     { icon: "tasks", label: "Quiz & Exercices", badge: "3", active: false },
                     { icon: "chart", label: "Analytics", active: false },
                     { icon: "users", label: "Apprenants", active: false },
@@ -159,9 +159,9 @@ export default function Hero() {
                 <div className="px-6 py-5">
                   <div className="grid grid-cols-3 gap-4 mb-5">
                     {[
-                      { icon: "revenue", label: "Cours publies", value: "47", change: "+5 ce mois" },
+                      { icon: "revenue", label: "Cours publiés", value: "47", change: "+5 ce mois" },
                       { icon: "views", label: "Apprenants actifs", value: "1 284", change: "+12.3%" },
-                      { icon: "active", label: "Taux de completion", value: "89%", change: "+3.2%" },
+                      { icon: "active", label: "Taux de complétion", value: "89%", change: "+3.2%" },
                     ].map((stat) => (
                       <div
                         key={stat.label}
@@ -193,9 +193,9 @@ export default function Hero() {
                   {/* Recent courses list */}
                   <div className="rounded-xl border border-neutral-200 bg-white p-5">
                     <div className="flex items-center justify-between mb-4">
-                      <p className="text-sm font-semibold text-neutral-900">Cours recents</p>
+                      <p className="text-sm font-semibold text-neutral-900">Cours récents</p>
                       <div className="hidden sm:flex items-center gap-1">
-                        {["Tous", "Publies", "Brouillons"].map(
+                        {["Tous", "Publiés", "Brouillons"].map(
                           (tab, i) => (
                             <button
                               key={tab}
@@ -214,8 +214,8 @@ export default function Hero() {
                     {/* Course rows */}
                     <div className="space-y-3">
                       {[
-                        { title: "Introduction au Machine Learning", format: "E-learning + PDF", modules: "12 modules", status: "Publie", statusColor: "bg-green-50 text-green-700" },
-                        { title: "Les bases du marketing digital", format: "Video + Quiz", modules: "8 modules", status: "Publie", statusColor: "bg-green-50 text-green-700" },
+                        { title: "Introduction au Machine Learning", format: "E-learning + PDF", modules: "12 modules", status: "Publié", statusColor: "bg-green-50 text-green-700" },
+                        { title: "Les bases du marketing digital", format: "Vidéo + Quiz", modules: "8 modules", status: "Publié", statusColor: "bg-green-50 text-green-700" },
                         { title: "Gestion de projet Agile", format: "PDF + Quiz", modules: "6 modules", status: "Brouillon", statusColor: "bg-neutral-100 text-neutral-600" },
                       ].map((course) => (
                         <div key={course.title} className="flex items-center justify-between py-2.5 border-b border-neutral-100 last:border-0">

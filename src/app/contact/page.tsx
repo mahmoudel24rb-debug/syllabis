@@ -13,7 +13,7 @@ export default function ContactPage() {
               Contactez-nous
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Une question ? Un besoin specifique ? Notre equipe vous repond.
+              Une question ? Un besoin spécifique ? Notre équipe vous répond.
             </p>
           </div>
         </div>
@@ -68,10 +68,10 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block text-sm font-medium text-neutral-700 mb-1.5">
-                    Role
+                    Rôle
                   </label>
                   <select className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-md text-neutral-900 shadow-xs focus:border-brand-300 focus:ring-4 focus:ring-brand-100 outline-none transition-colors">
-                    <option value="">Selectionnez votre role</option>
+                    <option value="">Sélectionnez votre rôle</option>
                     <option value="of">Organisme de formation</option>
                     <option value="formateur">Formateur</option>
                     <option value="entreprise">Entreprise</option>
@@ -86,7 +86,7 @@ export default function ContactPage() {
                   </label>
                   <textarea
                     rows={5}
-                    placeholder="Decrivez votre besoin..."
+                    placeholder="Décrivez votre besoin..."
                     className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-md text-neutral-900 placeholder:text-neutral-500 shadow-xs focus:border-brand-300 focus:ring-4 focus:ring-brand-100 outline-none resize-none transition-colors"
                   />
                 </div>
@@ -121,7 +121,7 @@ export default function ContactPage() {
                   {/* Social */}
                   <div>
                     <p className="text-sm font-medium text-neutral-500 mb-3">
-                      Reseaux sociaux
+                      Réseaux sociaux
                     </p>
                     <div className="flex gap-3">
                       {["LinkedIn", "Twitter"].map((network) => (
@@ -138,7 +138,7 @@ export default function ContactPage() {
                   {/* Response time */}
                   <div className="pt-6 border-t border-neutral-200">
                     <p className="text-sm text-neutral-600">
-                      Nous repondons generalement sous{" "}
+                      Nous répondons généralement sous{" "}
                       <span className="font-semibold text-neutral-900">
                         24 heures
                       </span>{" "}

@@ -2,32 +2,32 @@ import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
 
 const problems = [
-  "50 a 200 formations a produire chaque annee",
-  "Production manuelle chronophage et repetitive",
-  "Conformite RNCP a respecter pour chaque referentiel",
-  "Equipes de conception pedagogique surchargees",
+  "50 à 200 formations à produire chaque année",
+  "Production manuelle chronophage et répétitive",
+  "Conformité RNCP à respecter pour chaque référentiel",
+  "Équipes de conception pédagogique surchargées",
 ];
 
 const solutions = [
   {
-    title: "Generation IA",
+    title: "Génération IA",
     description:
-      "Upload d\u2019un referentiel RNCP en PDF, l\u2019IA analyse et genere toute la hierarchie pedagogique automatiquement.",
+      "Upload d\u2019un référentiel RNCP en PDF, l\u2019IA analyse et génère toute la hiérarchie pédagogique automatiquement.",
   },
   {
     title: "Export SCORM",
     description:
-      "Export SCORM 1.2 & 2004 compatible avec tous les LMS du marche. Player React moderne.",
+      "Export SCORM 1.2 & 2004 compatible avec tous les LMS du marché. Player React moderne.",
   },
   {
     title: "Planning & Pilotage",
     description:
-      "Vue calendrier, tableau, assignment formateurs, export Excel 7 onglets pour piloter votre activite.",
+      "Vue calendrier, tableau, assignment formateurs, export Excel 7 onglets pour piloter votre activité.",
   },
   {
     title: "Multi-tenant",
     description:
-      "Organisations, 5 roles, branch access, cost tracking et analytics pour gerer plusieurs centres.",
+      "Organisations, 5 rôles, branch access, cost tracking et analytics pour gérer plusieurs centres.",
   },
 ];
 
@@ -72,10 +72,10 @@ export default function OrganismesFormationPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="max-w-3xl mx-auto">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Le probleme
+              Le problème
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              La production manuelle ne passe pas a l&apos;echelle
+              La production manuelle ne passe pas à l&apos;échelle
             </h2>
             <ul className="mt-8 space-y-4">
               {problems.map((p) => (
@@ -138,10 +138,10 @@ export default function OrganismesFormationPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <div className="text-display-md sm:text-display-lg font-semibold text-brand-600">
-              De 3 semaines a 3 minutes
+              De 3 semaines à 3 minutes
             </div>
             <p className="mt-4 text-lg text-neutral-600">
-              pour creer une formation complete a partir d&apos;un referentiel de
+              pour créer une formation complète à partir d&apos;un référentiel de
               certification.
             </p>
           </div>
@@ -150,9 +150,9 @@ export default function OrganismesFormationPage() {
 
       {/* ── CTA ── */}
       <CTABanner
-        title="Demander une demo pour votre OF"
-        description="Decouvrez comment Syllabis peut industrialiser la production de vos formations."
-        primaryLabel="Demander une demo"
+        title="Demander une démo pour votre OF"
+        description="Découvrez comment Syllabis peut industrialiser la production de vos formations."
+        primaryLabel="Demander une démo"
         primaryHref="/demo"
       />
     </>

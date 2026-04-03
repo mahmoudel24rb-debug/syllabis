@@ -7,9 +7,9 @@ const useCases = [
     title: "Organismes de formation",
     href: "/cas-usage/organismes-formation",
     description:
-      "Industrialisez la production de 50-200 formations/an avec l\u2019IA. Conformite RNCP, export SCORM, planning formateurs.",
+      "Industrialisez la production de 50-200 formations/an avec l\u2019IA. Conformité RNCP, export SCORM, planning formateurs.",
     features: [
-      "Generation IA depuis referentiels",
+      "Génération IA depuis référentiels",
       "Export SCORM 1.2 & 2004",
       "Planning & pilotage",
       "Multi-tenant",
@@ -20,10 +20,10 @@ const useCases = [
     title: "Formateurs independants",
     href: "/cas-usage/formateurs-independants",
     description:
-      "Creez des formations certifiantes sans equipe technique. Upload, generation, publication en quelques minutes.",
+      "Créez des formations certifiantes sans équipe technique. Upload, génération, publication en quelques minutes.",
     features: [
-      "Generation IA complete",
-      "Editeur 39+ blocs",
+      "Génération IA complète",
+      "Éditeur 39+ blocs",
       "Export SCORM",
       "Interface intuitive",
     ],
@@ -33,12 +33,12 @@ const useCases = [
     title: "Entreprises",
     href: "/cas-usage/entreprises",
     description:
-      "Digitalisez la formation interne de vos collaborateurs. Contenu e-learning de qualite sans expertise pedagogique.",
+      "Digitalisez la formation interne de vos collaborateurs. Contenu e-learning de qualité sans expertise pédagogique.",
     features: [
-      "Editeur visuel",
-      "Medias IA",
+      "Éditeur visuel",
+      "Médias IA",
       "Export SCORM",
-      "Analytics integres",
+      "Analytics intégrés",
     ],
   },
   {
@@ -68,10 +68,10 @@ export default function CasUsagePage() {
               Cas d&apos;usage
             </p>
             <h1 className="text-display-md sm:text-display-lg font-semibold text-neutral-900">
-              Syllabis s&apos;adapte a votre realite
+              Syllabis s&apos;adapte à votre réalité
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Decouvrez comment nos utilisateurs transforment leurs referentiels
+              Découvrez comment nos utilisateurs transforment leurs référentiels
               en formations.
             </p>
           </div>
@@ -139,9 +139,9 @@ export default function CasUsagePage() {
 
       {/* ── CTA ── */}
       <CTABanner
-        title="Pret a decouvrir Syllabis ?"
-        description="Demandez une demo personnalisee selon votre cas d'usage."
-        primaryLabel="Demander une demo"
+        title="Prêt à découvrir Syllabis ?"
+        description="Demandez une démo personnalisée selon votre cas d'usage."
+        primaryLabel="Demander une démo"
         primaryHref="/demo"
       />
     </>

@@ -9,7 +9,7 @@ const blockCategories = [
     blocks: [
       "QCM",
       "Vrai/Faux",
-      "Texte a trou",
+      "Texte à trou",
       "Drag & Drop",
       "Tri",
       "Scenario branching",
@@ -17,20 +17,20 @@ const blockCategories = [
     ],
   },
   {
-    title: "Medias riches",
+    title: "Médias riches",
     count: 6,
     color: "bg-purple-50 border-purple-100 text-purple-700",
     iconBg: "bg-purple-100",
-    blocks: ["Video", "Audio", "Images IA", "Code", "Embed", "Podcast"],
+    blocks: ["Vidéo", "Audio", "Images IA", "Code", "Embed", "Podcast"],
   },
   {
-    title: "Blocs pedagogiques",
+    title: "Blocs pédagogiques",
     count: 9,
     color: "bg-green-50 border-green-100 text-green-700",
     iconBg: "bg-green-100",
     blocks: [
       "Objectifs",
-      "Definitions",
+      "Définitions",
       "Citations",
       "Callout",
       "Alertes",
@@ -57,19 +57,19 @@ const blockCategories = [
 
 const extras = [
   {
-    title: "Systeme de themes",
-    description: "10+ presets de themes pour personnaliser l'apparence de vos formations.",
+    title: "Système de thèmes",
+    description: "10+ presets de thèmes pour personnaliser l'apparence de vos formations.",
   },
   {
     title: "Slash commands",
-    description: "Tapez / pour inserer n'importe quel bloc instantanement, comme dans Notion.",
+    description: "Tapez / pour insérer n'importe quel bloc instantanément, comme dans Notion.",
   },
   {
-    title: "Autosave temps reel",
-    description: "Chaque modification est sauvegardee automatiquement. Aucune perte de donnees.",
+    title: "Autosave temps réel",
+    description: "Chaque modification est sauvegardée automatiquement. Aucune perte de données.",
   },
   {
-    title: "Mode preview instantane",
+    title: "Mode preview instantané",
     description: "Visualisez le rendu final de votre formation en un clic, tel que l'apprenant le verra.",
   },
 ];
@@ -84,18 +84,18 @@ export default function EditeurPage() {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-300 bg-amber-50 px-3 py-1 mb-4">
               <span className="text-sm font-medium text-amber-800">
-                Editeur
+                Éditeur
               </span>
             </div>
             <h1 className="text-display-md sm:text-display-lg font-semibold text-neutral-900">
-              Editeur de contenu avec{" "}
+              Éditeur de contenu avec{" "}
               <span className="text-brand-600">39+ blocs interactifs</span>
             </h1>
             <p className="mt-4 text-xl sm:text-2xl font-medium text-neutral-700">
-              Un editeur style Notion pense pour la pedagogie
+              Un éditeur style Notion pensé pour la pédagogie
             </p>
             <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto">
-              Creez du contenu pedagogique riche avec des quiz, des medias, des
+              Créez du contenu pédagogique riche avec des quiz, des médias, des
               blocs structurels et des visualisations — le tout dans une
               interface fluide et intuitive.
             </p>
@@ -108,10 +108,10 @@ export default function EditeurPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              4 categories de blocs
+              4 catégories de blocs
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              39+ blocs a votre disposition
+              39+ blocs à votre disposition
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -154,7 +154,7 @@ export default function EditeurPage() {
               Et aussi
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Une experience d&apos;edition optimale
+              Une expérience d&apos;édition optimale
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -190,11 +190,11 @@ export default function EditeurPage() {
 
       {/* ── CTA ── */}
       <CTABanner
-        title="Decouvrez l'editeur en action"
-        description="Demandez une demo pour voir comment creer du contenu pedagogique avec 39+ blocs interactifs."
-        primaryLabel="Demander une demo"
+        title="Découvrez l'éditeur en action"
+        description="Demandez une démo pour voir comment créer du contenu pédagogique avec 39+ blocs interactifs."
+        primaryLabel="Demander une démo"
         primaryHref="/demo"
-        secondaryLabel="Toutes les fonctionnalites"
+        secondaryLabel="Toutes les fonctionnalités"
         secondaryHref="/fonctionnalites"
       />
     </>

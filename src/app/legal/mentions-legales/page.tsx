@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mentions legales | Syllabis",
-  description: "Mentions legales du site Syllabis.",
+  title: "Mentions légales | Syllabis",
+  description: "Mentions légales du site Syllabis.",
 };
 
 export default function MentionsLegalesPage() {
@@ -10,35 +10,35 @@ export default function MentionsLegalesPage() {
     <section className="py-16 sm:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-8">
         <h1 className="text-display-sm font-semibold text-neutral-900 mb-12">
-          Mentions legales
+          Mentions légales
         </h1>
 
         <div className="space-y-10 text-md text-neutral-600 leading-relaxed">
-          {/* Editeur */}
+          {/* Éditeur */}
           <div>
             <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-              Editeur du site
+              Éditeur du site
             </h2>
             <p>
-              Le site syllabis.fr est edite par la societe Syllabis SAS, au
+              Le site syllabis.fr est édité par la société Syllabis SAS, au
               capital de [montant] euros.
             </p>
             <ul className="mt-3 space-y-1">
               <li>
-                <span className="font-medium text-neutral-900">Siege social :</span>{" "}
-                [Adresse complete], France
+                <span className="font-medium text-neutral-900">Siège social :</span>{" "}
+                [Adresse complète], France
               </li>
               <li>
                 <span className="font-medium text-neutral-900">SIRET :</span>{" "}
-                [Numero SIRET]
+                [Numéro SIRET]
               </li>
               <li>
                 <span className="font-medium text-neutral-900">RCS :</span>{" "}
-                [Ville] B [Numero]
+                [Ville] B [Numéro]
               </li>
               <li>
                 <span className="font-medium text-neutral-900">TVA intracommunautaire :</span>{" "}
-                FR [Numero]
+                FR [Numéro]
               </li>
             </ul>
           </div>
@@ -48,41 +48,41 @@ export default function MentionsLegalesPage() {
             <h2 className="text-lg font-semibold text-neutral-900 mb-3">
               Directeur de la publication
             </h2>
-            <p>[Nom du directeur de publication], en qualite de President.</p>
+            <p>[Nom du directeur de publication], en qualité de Président.</p>
           </div>
 
-          {/* Hebergeur */}
+          {/* Hébergeur */}
           <div>
             <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-              Hebergeur
+              Hébergeur
             </h2>
-            <p>Le site est heberge par :</p>
+            <p>Le site est hébergé par :</p>
             <ul className="mt-3 space-y-1">
               <li>
                 <span className="font-medium text-neutral-900">Vercel Inc.</span>
               </li>
-              <li>440 N Barranca Ave #4133, Covina, CA 91723, Etats-Unis</li>
+              <li>440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</li>
               <li>Site web : vercel.com</li>
             </ul>
           </div>
 
-          {/* Propriete intellectuelle */}
+          {/* Propriété intellectuelle */}
           <div>
             <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-              Propriete intellectuelle
+              Propriété intellectuelle
             </h2>
             <p>
-              L&apos;ensemble des contenus presents sur le site syllabis.fr
-              (textes, images, graphismes, logos, icones, logiciels) est la
-              propriete exclusive de Syllabis SAS ou de ses partenaires et est
-              protege par les lois francaises et internationales relatives a la
-              propriete intellectuelle.
+              L&apos;ensemble des contenus présents sur le site syllabis.fr
+              (textes, images, graphismes, logos, icônes, logiciels) est la
+              propriété exclusive de Syllabis SAS ou de ses partenaires et est
+              protégé par les lois françaises et internationales relatives à la
+              propriété intellectuelle.
             </p>
             <p className="mt-3">
-              Toute reproduction, representation, modification, publication ou
-              adaptation de tout ou partie des elements du site, quel que soit le
-              moyen ou le procede utilise, est interdite sans autorisation
-              ecrite prealable de Syllabis SAS.
+              Toute reproduction, représentation, modification, publication ou
+              adaptation de tout ou partie des éléments du site, quel que soit le
+              moyen ou le procédé utilisé, est interdite sans autorisation
+              écrite préalable de Syllabis SAS.
             </p>
           </div>
 
@@ -92,8 +92,8 @@ export default function MentionsLegalesPage() {
               Contact
             </h2>
             <p>
-              Pour toute question relative aux mentions legales, vous pouvez
-              nous contacter a l&apos;adresse suivante :
+              Pour toute question relative aux mentions légales, vous pouvez
+              nous contacter à l&apos;adresse suivante :
             </p>
             <p className="mt-2 font-medium text-neutral-900">
               contact@syllabis.fr

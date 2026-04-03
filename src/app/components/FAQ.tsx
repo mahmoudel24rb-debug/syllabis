@@ -1,33 +1,33 @@
 const faqs = [
   {
-    question: "Comment l'IA genere-t-elle un cours ?",
+    question: "Comment l'IA génère-t-elle un cours ?",
     answer:
-      "Vous entrez un sujet ou une description, et notre IA analyse le domaine pour generer automatiquement un plan de cours structure, le contenu de chaque module, des quiz d'evaluation et des supports PDF ou video. Vous pouvez ensuite editer et personnaliser chaque element.",
+      "Vous entrez un sujet ou une description, et notre IA analyse le domaine pour générer automatiquement un plan de cours structuré, le contenu de chaque module, des quiz d'évaluation et des supports PDF ou vidéo. Vous pouvez ensuite éditer et personnaliser chaque élément.",
   },
   {
     question: "Quels formats de cours sont disponibles ?",
     answer:
-      "Syllabis genere des cours en plusieurs formats : modules e-learning interactifs (SCORM), documents PDF structures, presentations video avec voix off IA, et quiz auto-corriges. Vous pouvez combiner ces formats dans un meme cours.",
+      "Syllabis génère des cours en plusieurs formats : modules e-learning interactifs (SCORM), documents PDF structurés, présentations vidéo avec voix off IA, et quiz auto-corrigés. Vous pouvez combiner ces formats dans un même cours.",
   },
   {
-    question: "Est-ce que je peux modifier le contenu genere ?",
+    question: "Est-ce que je peux modifier le contenu généré ?",
     answer:
-      "Absolument. L'IA genere une premiere version complete que vous pouvez editer librement : modifier les textes, reorganiser les modules, ajouter vos propres ressources, ajuster les quiz. Vous gardez un controle total sur le contenu final.",
+      "Absolument. L'IA génère une première version complète que vous pouvez éditer librement : modifier les textes, réorganiser les modules, ajouter vos propres ressources, ajuster les quiz. Vous gardez un contrôle total sur le contenu final.",
   },
   {
     question: "Y a-t-il un essai gratuit ?",
     answer:
-      "Oui, vous pouvez creer votre premier cours gratuitement sans carte bancaire. L'essai gratuit inclut la generation de 3 cours complets avec export PDF et quiz. Pour les formats video et e-learning, un abonnement est necessaire.",
+      "Oui, vous pouvez créer votre premier cours gratuitement sans carte bancaire. L'essai gratuit inclut la génération de 3 cours complets avec export PDF et quiz. Pour les formats vidéo et e-learning, un abonnement est nécessaire.",
   },
   {
-    question: "Syllabis est-il adapte aux organismes de formation ?",
+    question: "Syllabis est-il adapté aux organismes de formation ?",
     answer:
-      "Oui, nous proposons des offres dediees aux organismes de formation avec gestion multi-utilisateurs, export SCORM pour vos LMS, personnalisation avec votre charte graphique et suivi des apprenants integre.",
+      "Oui, nous proposons des offres dédiées aux organismes de formation avec gestion multi-utilisateurs, export SCORM pour vos LMS, personnalisation avec votre charte graphique et suivi des apprenants intégré.",
   },
   {
-    question: "Mes contenus sont-ils proteges ?",
+    question: "Mes contenus sont-ils protégés ?",
     answer:
-      "Vos cours vous appartiennent a 100%. Nous ne reutilisons jamais vos contenus pour entrainer nos modeles. Vos donnees sont hebergees en Europe et chiffrees. Vous pouvez exporter ou supprimer vos cours a tout moment.",
+      "Vos cours vous appartiennent à 100%. Nous ne réutilisons jamais vos contenus pour entraîner nos modèles. Vos données sont hébergées en Europe et chiffrées. Vous pouvez exporter ou supprimer vos cours à tout moment.",
   },
 ];
 
@@ -39,10 +39,10 @@ export default function FAQ() {
         <div className="text-center mb-16">
           <p className="text-sm font-semibold text-brand-600 mb-3">FAQ</p>
           <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-            Questions frequentes
+            Questions fréquentes
           </h2>
           <p className="mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-            Tout ce que vous devez savoir sur Syllabis et la creation de cours
+            Tout ce que vous devez savoir sur Syllabis et la création de cours
             par IA.
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function FAQ() {
             Encore des questions ?
           </h3>
           <p className="text-md text-neutral-600 mb-6">
-            Notre equipe est disponible pour vous accompagner dans la prise en
+            Notre équipe est disponible pour vous accompagner dans la prise en
             main de Syllabis.
           </p>
           <a

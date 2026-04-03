@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "A propos | Syllabis",
+  title: "À propos | Syllabis",
   description:
-    "Decouvrez la mission de Syllabis : democratiser la creation de formations e-learning grace a l'IA.",
+    "Découvrez la mission de Syllabis : démocratiser la création de formations e-learning grâce à l'IA.",
 };
 
 const values = [
@@ -18,7 +18,7 @@ const values = [
     ),
     title: "Innovation",
     description:
-      "Repousser les limites de l'IA pour la pedagogie. Nous investissons dans la recherche pour offrir des outils toujours plus intelligents et pertinents.",
+      "Repousser les limites de l'IA pour la pédagogie. Nous investissons dans la recherche pour offrir des outils toujours plus intelligents et pertinents.",
   },
   {
     icon: (
@@ -27,9 +27,9 @@ const values = [
         <polyline points="22 4 12 14.01 9 11.01" />
       </svg>
     ),
-    title: "Qualite pedagogique",
+    title: "Qualité pédagogique",
     description:
-      "Chaque formation generee respecte les standards RNCP et Qualiopi. La rigueur pedagogique n'est jamais sacrifiee au profit de la vitesse.",
+      "Chaque formation générée respecte les standards RNCP et Qualiopi. La rigueur pédagogique n'est jamais sacrifiée au profit de la vitesse.",
   },
   {
     icon: (
@@ -40,17 +40,17 @@ const values = [
         <path d="M16 3.13a4 4 0 010 7.75" />
       </svg>
     ),
-    title: "Accessibilite",
+    title: "Accessibilité",
     description:
-      "Rendre la creation e-learning accessible a tous, pas seulement aux experts. Un formateur independant merite les memes outils qu'un grand groupe.",
+      "Rendre la création e-learning accessible à tous, pas seulement aux experts. Un formateur indépendant mérite les mêmes outils qu'un grand groupe.",
   },
 ];
 
 const techStack = [
   { name: "React", label: "Frontend" },
   { name: "NestJS", label: "Backend" },
-  { name: "PostgreSQL", label: "Base de donnees" },
-  { name: "Gemini", label: "IA generative" },
+  { name: "PostgreSQL", label: "Base de données" },
+  { name: "Gemini", label: "IA générative" },
 ];
 
 export default function AProposPage() {
@@ -62,13 +62,13 @@ export default function AProposPage() {
         <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-20">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              A propos
+              À propos
             </p>
             <h1 className="text-display-sm sm:text-display-lg font-semibold text-neutral-900">
-              A propos de Syllabis
+              À propos de Syllabis
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Democratiser la creation de formations e-learning grace a
+              Démocratiser la création de formations e-learning grâce à
               l&apos;IA.
             </p>
           </div>
@@ -86,10 +86,10 @@ export default function AProposPage() {
               Un constat simple
             </h2>
             <p className="text-lg text-neutral-600 leading-relaxed">
-              Le marche de la formation professionnelle produit des milliers de
-              referentiels chaque annee. Pourtant, transformer ces documents en
-              formations e-learning reste un processus manuel, long et couteux.
-              Syllabis est ne de ce constat.
+              Le marché de la formation professionnelle produit des milliers de
+              référentiels chaque année. Pourtant, transformer ces documents en
+              formations e-learning reste un processus manuel, long et coûteux.
+              Syllabis est né de ce constat.
             </p>
           </div>
         </div>
@@ -106,9 +106,9 @@ export default function AProposPage() {
               La formation e-learning pour tous
             </h2>
             <p className="text-lg text-neutral-600 leading-relaxed">
-              Permettre a n&apos;importe quel organisme de formation, formateur
-              independant ou entreprise de creer des formations e-learning de
-              qualite professionnelle en quelques minutes, pas en quelques
+              Permettre à n&apos;importe quel organisme de formation, formateur
+              indépendant ou entreprise de créer des formations e-learning de
+              qualité professionnelle en quelques minutes, pas en quelques
               semaines.
             </p>
           </div>
@@ -159,7 +159,7 @@ export default function AProposPage() {
               Une stack moderne et fiable
             </h2>
             <p className="text-md text-neutral-600 mb-12">
-              Infrastructure moderne, hebergement europeen, donnees chiffrees.
+              Infrastructure moderne, hébergement européen, données chiffrées.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -187,14 +187,14 @@ export default function AProposPage() {
               Rejoignez les 2000+ formateurs qui utilisent Syllabis
             </h2>
             <p className="text-lg text-neutral-600 max-w-xl mx-auto mb-8">
-              Decouvrez comment transformer vos referentiels en formations
-              e-learning completes en quelques minutes.
+              Découvrez comment transformer vos référentiels en formations
+              e-learning complètes en quelques minutes.
             </p>
             <Link
               href="/demo"
               className="inline-flex items-center justify-center rounded-lg border border-brand-600 bg-brand-600 px-5 py-3 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors"
             >
-              Demander une demo
+              Demander une démo
             </Link>
           </div>
         </div>

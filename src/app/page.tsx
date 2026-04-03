@@ -18,49 +18,49 @@ const steps = [
   {
     number: "01",
     time: "3 secondes",
-    title: "Uploadez votre referentiel",
-    desc: "Importez un PDF de certification (RNCP, BTS, CAP, CQP, BPJEPS) ou decrivez votre formation en texte libre.",
+    title: "Uploadez votre référentiel",
+    desc: "Importez un PDF de certification (RNCP, BTS, CAP, CQP, BPJEPS) ou décrivez votre formation en texte libre.",
   },
   {
     number: "02",
-    time: "Instantane",
+    time: "Instantané",
     title: "L'IA analyse et structure",
-    desc: "Detection automatique du type de certification, blocs de competences, modules, heures et prerequis.",
+    desc: "Détection automatique du type de certification, blocs de compétences, modules, heures et prérequis.",
   },
   {
     number: "03",
     time: "2-5 minutes",
-    title: "Generation du contenu complet",
-    desc: "Seances, quiz, exercices, architectures pedagogiques — tout est genere automatiquement.",
+    title: "Génération du contenu complet",
+    desc: "Séances, quiz, exercices, architectures pédagogiques — tout est généré automatiquement.",
   },
   {
     number: "04",
     time: "Personnalisation",
-    title: "Editez avec 39+ blocs",
-    desc: "Quiz interactifs, videos, podcasts, mind maps, flashcards — personnalisez chaque element.",
+    title: "Éditez avec 39+ blocs",
+    desc: "Quiz interactifs, vidéos, podcasts, mind maps, flashcards — personnalisez chaque élément.",
   },
   {
     number: "05",
-    time: "Deploiement",
-    title: "Exportez et deployez",
+    time: "Déploiement",
+    title: "Exportez et déployez",
     desc: "Export SCORM 1.2 & 2004 vers n'importe quel LMS, ou planning formateurs avec calendrier.",
   },
 ];
 
 const metrics = [
   { value: "39+", label: "Blocs interactifs" },
-  { value: "6", label: "Certifications supportees" },
+  { value: "6", label: "Certifications supportées" },
   { value: "227+", label: "Endpoints API" },
-  { value: "4", label: "Modeles IA" },
-  { value: "7", label: "Types de medias" },
+  { value: "4", label: "Modèles IA" },
+  { value: "7", label: "Types de médias" },
   { value: "2", label: "Formats SCORM" },
 ];
 
 const comparison = [
-  { label: "Analyser un referentiel", before: "2-3 jours", after: "3 secondes" },
-  { label: "Structurer la formation", before: "1 semaine", after: "Instantane" },
-  { label: "Rediger le contenu", before: "2-3 semaines", after: "2-5 minutes" },
-  { label: "Creer les quiz", before: "2-3 jours", after: "Inclus" },
+  { label: "Analyser un référentiel", before: "2-3 jours", after: "3 secondes" },
+  { label: "Structurer la formation", before: "1 semaine", after: "Instantané" },
+  { label: "Rédiger le contenu", before: "2-3 semaines", after: "2-5 minutes" },
+  { label: "Créer les quiz", before: "2-3 jours", after: "Inclus" },
   { label: "Exporter en SCORM", before: "Outil externe", after: "1 clic" },
 ];
 
@@ -80,7 +80,7 @@ export default async function Home() {
                 Nouveau
               </span>
               <span className="text-sm font-medium text-amber-800 flex items-center gap-1">
-                Generation video & podcast par IA
+                Génération vidéo & podcast par IA
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3.33 8h9.34M8.67 4l4 4-4 4" />
                 </svg>
@@ -88,14 +88,14 @@ export default async function Home() {
             </div>
 
             <h1 className="text-display-lg sm:text-display-xl font-semibold text-neutral-900">
-              Du referentiel a la formation e-learning.{" "}
+              Du référentiel à la formation e-learning.{" "}
               <span className="text-brand-600">En quelques minutes.</span>
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
               Syllabis transforme un PDF de certification (RNCP, BTS, CAP, CQP,
-              BPJEPS) en formation complete — structure, contenu interactif,
-              quiz, videos — grace a l&apos;IA.
+              BPJEPS) en formation complète — structure, contenu interactif,
+              quiz, vidéos — grâce à l&apos;IA.
             </p>
 
             <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -103,13 +103,13 @@ export default async function Home() {
                 href="#comment-ca-marche"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-300 bg-white px-5 py-3 text-md font-semibold text-neutral-700 shadow-xs hover:bg-neutral-50 transition-colors"
               >
-                Voir comment ca marche
+                Voir comment ça marche
               </Link>
               <Link
                 href="/demo"
                 className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-brand-600 bg-brand-600 px-5 py-3 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors"
               >
-                Demander une demo
+                Demander une démo
               </Link>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default async function Home() {
                       <polyline points="14 2 14 8 20 8" />
                     </svg>
                   </div>
-                  <p className="text-sm font-semibold text-neutral-900">Referentiel RNCP</p>
+                  <p className="text-sm font-semibold text-neutral-900">Référentiel RNCP</p>
                   <p className="text-xs text-neutral-500 mt-1">TP_Developpeur_Web.pdf</p>
                 </div>
 
@@ -144,10 +144,10 @@ export default async function Home() {
                 <div className="flex-1 rounded-xl border border-emerald-200 bg-emerald-50 p-5">
                   <div className="space-y-2">
                     {[
-                      { label: "3 Blocs de competences", icon: "folder" },
+                      { label: "3 Blocs de compétences", icon: "folder" },
                       { label: "12 Modules", icon: "book" },
-                      { label: "48 Seances", icon: "file" },
-                      { label: "Quiz & Videos inclus", icon: "play" },
+                      { label: "48 Séances", icon: "file" },
+                      { label: "Quiz & Vidéos inclus", icon: "play" },
                     ].map((item) => (
                       <div key={item.label} className="flex items-center gap-2.5 bg-white rounded-lg px-3 py-2 border border-emerald-100">
                         <div className="w-6 h-6 rounded bg-brand-100 flex items-center justify-center">
@@ -172,7 +172,7 @@ export default async function Home() {
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium text-neutral-600">
             {[
               "39+ blocs interactifs",
-              "6 certifications supportees",
+              "6 certifications supportées",
               "227+ endpoints API",
               "Export SCORM 1.2 & 2004",
             ].map((text) => (
@@ -185,19 +185,19 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ── Comment ca marche (5 etapes) ── */}
+      {/* ── Comment ça marche (5 étapes) ── */}
       <section id="comment-ca-marche" className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Comment ca marche
+              Comment ça marche
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              De l&apos;upload au deploiement en 5 etapes
+              De l&apos;upload au déploiement en 5 étapes
             </h2>
             <p className="mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Passez du referentiel PDF a une formation e-learning complete,
-              prete a deployer sur n&apos;importe quel LMS.
+              Passez du référentiel PDF à une formation e-learning complète,
+              prête à déployer sur n&apos;importe quel LMS.
             </p>
           </div>
 
@@ -244,20 +244,20 @@ export default async function Home() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Avant / Apres
+              Avant / Après
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              De 3 semaines a 3 minutes
+              De 3 semaines à 3 minutes
             </h2>
             <p className="mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Comparez le temps de creation d&apos;une formation avec et sans Syllabis.
+              Comparez le temps de création d&apos;une formation avec et sans Syllabis.
             </p>
           </div>
 
           <div className="max-w-2xl mx-auto">
             {/* Table header */}
             <div className="grid grid-cols-3 gap-4 mb-4 px-4">
-              <span className="text-sm font-semibold text-neutral-500">Etape</span>
+              <span className="text-sm font-semibold text-neutral-500">Étape</span>
               <span className="text-sm font-semibold text-neutral-500 text-center">Manuellement</span>
               <span className="text-sm font-semibold text-brand-600 text-center">Avec Syllabis</span>
             </div>
@@ -275,7 +275,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ── Chiffres cles ── */}
+      {/* ── Chiffres clés ── */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="rounded-2xl border border-neutral-200 bg-white p-8 sm:p-12">
@@ -295,11 +295,11 @@ export default async function Home() {
 
       {/* ── CTA final ── */}
       <CTABanner
-        title="Pret a transformer vos referentiels en formations ?"
-        description="Demandez une demo gratuite et decouvrez comment Syllabis genere une formation complete en quelques minutes."
-        primaryLabel="Demander une demo gratuite"
+        title="Prêt à transformer vos référentiels en formations ?"
+        description="Demandez une démo gratuite et découvrez comment Syllabis génère une formation complète en quelques minutes."
+        primaryLabel="Demander une démo gratuite"
         primaryHref="/demo"
-        secondaryLabel="Voir les fonctionnalites"
+        secondaryLabel="Voir les fonctionnalités"
         secondaryHref="/fonctionnalites"
       />
     </>

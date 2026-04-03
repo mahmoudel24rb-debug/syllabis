@@ -4,51 +4,51 @@ const features = [
   {
     title: "Organisations branding custom",
     description:
-      "Chaque organisation dispose de son propre espace avec logo, couleurs et domaine personnalises.",
+      "Chaque organisation dispose de son propre espace avec logo, couleurs et domaine personnalisés.",
   },
   {
     title: "5 roles utilisateurs",
     description:
-      "Owner, Admin, Concepteur, Formateur, Lecture seule — chaque role avec des permissions granulaires.",
+      "Owner, Admin, Concepteur, Formateur, Lecture seule — chaque rôle avec des permissions granulaires.",
   },
   {
     title: "Branch access",
     description:
-      "Acces par branche organisationnelle : chaque site, agence ou filiale accede uniquement a ses formations.",
+      "Accès par branche organisationnelle : chaque site, agence ou filiale accède uniquement à ses formations.",
   },
   {
     title: "Cost tracking IA",
     description:
-      "Suivi des couts de generation IA par organisation, par utilisateur, par formation. Budget et alertes.",
+      "Suivi des coûts de génération IA par organisation, par utilisateur, par formation. Budget et alertes.",
   },
   {
     title: "Analytics dashboard",
     description:
-      "Tableau de bord analytique : formations creees, medias generes, utilisateurs actifs, tendances.",
+      "Tableau de bord analytique : formations créées, médias générés, utilisateurs actifs, tendances.",
   },
   {
     title: "Emails transactionnels",
     description:
-      "Invitations, notifications, alertes — emails automatiques personnalises pour chaque evenement.",
+      "Invitations, notifications, alertes — emails automatiques personnalisés pour chaque événement.",
   },
 ];
 
 const roles = [
   {
     name: "Owner",
-    description: "Acces complet, gestion de la facturation et des organisations.",
+    description: "Accès complet, gestion de la facturation et des organisations.",
   },
   {
     name: "Admin",
-    description: "Gestion des utilisateurs, parametres, acces a toutes les formations.",
+    description: "Gestion des utilisateurs, paramètres, accès à toutes les formations.",
   },
   {
     name: "Concepteur",
-    description: "Creation et edition de formations, generation IA, export SCORM.",
+    description: "Création et édition de formations, génération IA, export SCORM.",
   },
   {
     name: "Formateur",
-    description: "Acces aux formations assignees, planning, suivi des apprenants.",
+    description: "Accès aux formations assignées, planning, suivi des apprenants.",
   },
   {
     name: "Lecture seule",
@@ -74,12 +74,12 @@ export default function MultiTenantPage() {
               <span className="text-brand-600">Enterprise</span>
             </h1>
             <p className="mt-4 text-xl sm:text-2xl font-medium text-neutral-700">
-              Ideal pour reseaux d&apos;OF, groupes de formation, franchises
+              Idéal pour réseaux d&apos;OF, groupes de formation, franchises
             </p>
             <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto">
-              Gerez plusieurs organisations depuis une seule plateforme.
-              Branding personnalise, roles granulaires, suivi des couts et
-              analytics pour chaque entite.
+              Gérez plusieurs organisations depuis une seule plateforme.
+              Branding personnalisé, rôles granulaires, suivi des coûts et
+              analytics pour chaque entité.
             </p>
           </div>
         </div>
@@ -90,10 +90,10 @@ export default function MultiTenantPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Fonctionnalites Enterprise
+              Fonctionnalités Enterprise
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Tout pour gerer un reseau de formation
+              Tout pour gérer un réseau de formation
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -132,10 +132,10 @@ export default function MultiTenantPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Gestion des roles
+              Gestion des rôles
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              5 roles avec permissions granulaires
+              5 rôles avec permissions granulaires
             </h2>
           </div>
           <div className="max-w-2xl mx-auto rounded-2xl border border-neutral-200 bg-white overflow-hidden divide-y divide-neutral-100">
@@ -158,11 +158,11 @@ export default function MultiTenantPage() {
 
       {/* ── CTA ── */}
       <CTABanner
-        title="Deploiement Enterprise sur mesure"
-        description="Contactez-nous pour configurer Syllabis pour votre reseau de formation, avec branding, roles et analytics."
-        primaryLabel="Contacter l'equipe"
+        title="Déploiement Enterprise sur mesure"
+        description="Contactez-nous pour configurer Syllabis pour votre réseau de formation, avec branding, rôles et analytics."
+        primaryLabel="Contacter l'équipe"
         primaryHref="/demo"
-        secondaryLabel="Toutes les fonctionnalites"
+        secondaryLabel="Toutes les fonctionnalités"
         secondaryHref="/fonctionnalites"
       />
     </>

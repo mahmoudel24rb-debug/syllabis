@@ -9,7 +9,7 @@ export default function Contact() {
           </h2>
           <p className="mt-5 text-lg text-neutral-600">
             Une question sur Syllabis ? Besoin d&apos;une offre sur mesure pour
-            votre organisme ? Ecrivez-nous.
+            votre organisme ? Écrivez-nous.
           </p>
         </div>
 
@@ -18,11 +18,11 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-1.5">
-                  Prenom
+                  Prénom
                 </label>
                 <input
                   type="text"
-                  placeholder="Votre prenom"
+                  placeholder="Votre prénom"
                   className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-md text-neutral-900 placeholder:text-neutral-500 shadow-xs focus:border-brand-300 focus:ring-4 focus:ring-brand-100 outline-none transition-colors"
                 />
               </div>
@@ -53,7 +53,7 @@ export default function Contact() {
               </label>
               <textarea
                 rows={5}
-                placeholder="Decrivez votre besoin en formation..."
+                placeholder="Décrivez votre besoin en formation..."
                 className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-md text-neutral-900 placeholder:text-neutral-500 shadow-xs focus:border-brand-300 focus:ring-4 focus:ring-brand-100 outline-none resize-none transition-colors"
               />
             </div>

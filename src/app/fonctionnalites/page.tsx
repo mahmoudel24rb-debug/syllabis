@@ -4,24 +4,24 @@ import CTABanner from "../components/CTABanner";
 const features = [
   {
     icon: "🤖",
-    title: "Generation IA",
+    title: "Génération IA",
     href: "/fonctionnalites/generation-ia",
     description:
-      "Upload d'un referentiel RNCP en PDF, l'IA analyse et genere toute la hierarchie pedagogique en quelques minutes.",
+      "Upload d'un référentiel RNCP en PDF, l'IA analyse et génère toute la hiérarchie pédagogique en quelques minutes.",
   },
   {
     icon: "✏️",
-    title: "Editeur 39+ blocs",
+    title: "Éditeur 39+ blocs",
     href: "/fonctionnalites/editeur",
     description:
-      "Editeur style Notion avec quiz interactifs, medias riches, blocs pedagogiques et visualisation.",
+      "Éditeur style Notion avec quiz interactifs, médias riches, blocs pédagogiques et visualisation.",
   },
   {
     icon: "🎬",
-    title: "Medias IA",
+    title: "Médias IA",
     href: "/fonctionnalites/medias-ia",
     description:
-      "Generation automatique de videos, podcasts, quiz, flashcards, mind maps a partir du contenu.",
+      "Génération automatique de vidéos, podcasts, quiz, flashcards, mind maps à partir du contenu.",
   },
   {
     icon: "📦",
@@ -48,9 +48,9 @@ const features = [
 
 const stats = [
   { value: "39+", label: "blocs" },
-  { value: "7", label: "types de medias" },
-  { value: "4", label: "modeles IA" },
-  { value: "5", label: "roles" },
+  { value: "7", label: "types de médias" },
+  { value: "4", label: "modèles IA" },
+  { value: "5", label: "rôles" },
   { value: "2", label: "formats SCORM" },
 ];
 
@@ -64,16 +64,16 @@ export default function FonctionnalitesPage() {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-300 bg-amber-50 px-3 py-1 mb-4">
               <span className="text-sm font-medium text-amber-800">
-                6 modules integres
+                6 modules intégrés
               </span>
             </div>
             <h1 className="text-display-md sm:text-display-lg font-semibold text-neutral-900">
-              Tout ce dont vous avez besoin pour creer des formations{" "}
+              Tout ce dont vous avez besoin pour créer des formations{" "}
               <span className="text-brand-600">e-learning</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              6 modules integres, de l&apos;analyse du referentiel au
-              deploiement sur votre LMS.
+              6 modules intégrés, de l&apos;analyse du référentiel au
+              déploiement sur votre LMS.
             </p>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function FonctionnalitesPage() {
                   href={feature.href}
                   className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 group-hover:text-brand-700 transition-colors"
                 >
-                  Decouvrir
+                  Découvrir
                   <svg
                     width="16"
                     height="16"
@@ -140,9 +140,9 @@ export default function FonctionnalitesPage() {
 
       {/* ── CTA ── */}
       <CTABanner
-        title="Pret a decouvrir Syllabis ?"
-        description="Demandez une demo et voyez comment l'IA transforme vos referentiels en formations."
-        primaryLabel="Demander une demo"
+        title="Prêt à découvrir Syllabis ?"
+        description="Demandez une démo et voyez comment l'IA transforme vos référentiels en formations."
+        primaryLabel="Demander une démo"
         primaryHref="/demo"
         secondaryLabel="Voir les tarifs"
         secondaryHref="/tarifs"

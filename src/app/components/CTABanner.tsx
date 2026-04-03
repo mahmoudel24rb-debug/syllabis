@@ -12,7 +12,7 @@ interface CTABannerProps {
 export default function CTABanner({
   title,
   description,
-  primaryLabel = "Demander une demo",
+  primaryLabel = "Demander une démo",
   primaryHref = "/demo",
   secondaryLabel,
   secondaryHref,

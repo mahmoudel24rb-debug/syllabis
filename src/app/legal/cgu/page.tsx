@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Conditions generales d'utilisation | Syllabis",
+  title: "Conditions générales d'utilisation | Syllabis",
   description:
-    "Conditions generales d'utilisation de la plateforme Syllabis.",
+    "Conditions générales d'utilisation de la plateforme Syllabis.",
 };
 
 export default function CGUPage() {
@@ -11,10 +11,10 @@ export default function CGUPage() {
     <section className="py-16 sm:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-8">
         <h1 className="text-display-sm font-semibold text-neutral-900 mb-4">
-          Conditions generales d&apos;utilisation
+          Conditions générales d&apos;utilisation
         </h1>
         <p className="text-sm text-neutral-500 mb-12">
-          Derniere mise a jour : [date]
+          Dernière mise à jour : [date]
         </p>
 
         <div className="space-y-10 text-md text-neutral-600 leading-relaxed">
@@ -24,10 +24,10 @@ export default function CGUPage() {
               1. Objet
             </h2>
             <p>
-              Les presentes conditions generales d&apos;utilisation (ci-apres
-              &quot;CGU&quot;) ont pour objet de definir les modalites et
+              Les présentes conditions générales d&apos;utilisation (ci-après
+              &quot;CGU&quot;) ont pour objet de définir les modalités et
               conditions d&apos;utilisation de la plateforme Syllabis accessible
-              a l&apos;adresse syllabis.fr (ci-apres &quot;la Plateforme&quot;),
+              à l&apos;adresse syllabis.fr (ci-après &quot;la Plateforme&quot;),
               ainsi que les droits et obligations des utilisateurs.
             </p>
           </div>
@@ -35,19 +35,19 @@ export default function CGUPage() {
           {/* Acces au service */}
           <div>
             <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-              2. Acces au service
+              2. Accès au service
             </h2>
             <p>
-              La Plateforme est accessible gratuitement a tout utilisateur
-              disposant d&apos;un acces a Internet. Tous les couts relatifs a
-              l&apos;acces au service (materiel informatique, connexion Internet)
-              sont a la charge de l&apos;utilisateur.
+              La Plateforme est accessible gratuitement à tout utilisateur
+              disposant d&apos;un accès à Internet. Tous les coûts relatifs à
+              l&apos;accès au service (matériel informatique, connexion Internet)
+              sont à la charge de l&apos;utilisateur.
             </p>
             <p className="mt-3">
-              Syllabis se reserve le droit de suspendre ou d&apos;interrompre
-              l&apos;acces a la Plateforme a tout moment pour des raisons de
-              maintenance, de mise a jour ou pour toute autre raison jugee
-              necessaire, sans obligation de preavis.
+              Syllabis se réserve le droit de suspendre ou d&apos;interrompre
+              l&apos;accès à la Plateforme à tout moment pour des raisons de
+              maintenance, de mise à jour ou pour toute autre raison jugée
+              nécessaire, sans obligation de préavis.
             </p>
           </div>
 
@@ -57,46 +57,46 @@ export default function CGUPage() {
               3. Inscription
             </h2>
             <p>
-              L&apos;utilisation de certaines fonctionnalites de la Plateforme
-              necessite la creation d&apos;un compte utilisateur.
-              L&apos;utilisateur s&apos;engage a fournir des informations
-              exactes et a jour lors de son inscription et a maintenir la
-              confidentialite de ses identifiants de connexion.
+              L&apos;utilisation de certaines fonctionnalités de la Plateforme
+              nécessite la création d&apos;un compte utilisateur.
+              L&apos;utilisateur s&apos;engage à fournir des informations
+              exactes et à jour lors de son inscription et à maintenir la
+              confidentialité de ses identifiants de connexion.
             </p>
             <p className="mt-3">
               L&apos;utilisateur est seul responsable de l&apos;utilisation
-              faite de son compte et de toute action effectuee depuis celui-ci.
+              faite de son compte et de toute action effectuée depuis celui-ci.
             </p>
           </div>
 
-          {/* Propriete intellectuelle */}
+          {/* Propriété intellectuelle */}
           <div>
             <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-              4. Propriete intellectuelle
+              4. Propriété intellectuelle
             </h2>
             <p>
-              L&apos;ensemble des elements constituant la Plateforme (textes,
-              graphismes, logiciels, images, videos, sons, plans, logos, marques)
-              sont la propriete exclusive de Syllabis SAS ou de ses partenaires
-              et sont proteges par le droit de la propriete intellectuelle.
+              L&apos;ensemble des éléments constituant la Plateforme (textes,
+              graphismes, logiciels, images, vidéos, sons, plans, logos, marques)
+              sont la propriété exclusive de Syllabis SAS ou de ses partenaires
+              et sont protégés par le droit de la propriété intellectuelle.
             </p>
             <p className="mt-3">
-              Les contenus generes par l&apos;utilisateur via la Plateforme
-              restent sa propriete. Syllabis dispose d&apos;une licence
-              d&apos;utilisation limitee a la fourniture du service.
+              Les contenus générés par l&apos;utilisateur via la Plateforme
+              restent sa propriété. Syllabis dispose d&apos;une licence
+              d&apos;utilisation limitée à la fourniture du service.
             </p>
           </div>
 
-          {/* Responsabilites */}
+          {/* Responsabilités */}
           <div>
             <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-              5. Responsabilites
+              5. Responsabilités
             </h2>
             <p>
-              Syllabis s&apos;engage a fournir un service conforme aux
-              descriptions presentees sur la Plateforme. Toutefois, Syllabis ne
-              saurait etre tenu responsable des dommages directs ou indirects
-              causes a l&apos;utilisateur ou a des tiers du fait de
+              Syllabis s&apos;engage à fournir un service conforme aux
+              descriptions présentées sur la Plateforme. Toutefois, Syllabis ne
+              saurait être tenu responsable des dommages directs ou indirects
+              causés à l&apos;utilisateur ou à des tiers du fait de
               l&apos;utilisation de la Plateforme.
             </p>
             <p className="mt-3">
@@ -107,19 +107,19 @@ export default function CGUPage() {
             </p>
           </div>
 
-          {/* Donnees personnelles */}
+          {/* Données personnelles */}
           <div>
             <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-              6. Donnees personnelles
+              6. Données personnelles
             </h2>
             <p>
-              Le traitement des donnees personnelles collectees dans le cadre de
-              l&apos;utilisation de la Plateforme est decrit dans notre{" "}
+              Le traitement des données personnelles collectées dans le cadre de
+              l&apos;utilisation de la Plateforme est décrit dans notre{" "}
               <a
                 href="/legal/politique-confidentialite"
                 className="text-brand-600 hover:text-brand-700 underline"
               >
-                Politique de confidentialite
+                Politique de confidentialité
               </a>
               .
             </p>
@@ -131,8 +131,8 @@ export default function CGUPage() {
               7. Modification des CGU
             </h2>
             <p>
-              Syllabis se reserve le droit de modifier les presentes CGU a tout
-              moment. Les utilisateurs seront informes de toute modification par
+              Syllabis se réserve le droit de modifier les présentes CGU à tout
+              moment. Les utilisateurs seront informés de toute modification par
               notification sur la Plateforme. La poursuite de l&apos;utilisation
               de la Plateforme apres notification vaut acceptation des nouvelles
               CGU.
@@ -145,9 +145,9 @@ export default function CGUPage() {
               8. Droit applicable
             </h2>
             <p>
-              Les presentes CGU sont regies par le droit francais. Tout litige
-              relatif a leur interpretation ou a leur execution releve de la
-              competence exclusive des tribunaux francais.
+              Les présentes CGU sont régies par le droit français. Tout litige
+              relatif à leur interprétation ou à leur exécution relève de la
+              compétence exclusive des tribunaux français.
             </p>
           </div>
 
@@ -157,8 +157,8 @@ export default function CGUPage() {
               9. Contact
             </h2>
             <p>
-              Pour toute question relative aux presentes CGU, vous pouvez nous
-              contacter a l&apos;adresse suivante :
+              Pour toute question relative aux présentes CGU, vous pouvez nous
+              contacter à l&apos;adresse suivante :
             </p>
             <p className="mt-2 font-medium text-neutral-900">
               contact@syllabis.fr

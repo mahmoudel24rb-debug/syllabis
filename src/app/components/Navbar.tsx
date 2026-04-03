@@ -4,10 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 const features = [
-  { label: "Generation IA", href: "/fonctionnalites/generation-ia", desc: "Du PDF au cours en 3 clics" },
-  { label: "Editeur 39+ blocs", href: "/fonctionnalites/editeur", desc: "Quiz, videos, mind maps..." },
-  { label: "Medias IA", href: "/fonctionnalites/medias-ia", desc: "Videos, podcasts, flashcards" },
-  { label: "Export SCORM", href: "/fonctionnalites/export-scorm", desc: "Deploiement LMS universel" },
+  { label: "Génération IA", href: "/fonctionnalites/generation-ia", desc: "Du PDF au cours en 3 clics" },
+  { label: "Éditeur 39+ blocs", href: "/fonctionnalites/editeur", desc: "Quiz, vidéos, mind maps..." },
+  { label: "Médias IA", href: "/fonctionnalites/medias-ia", desc: "Vidéos, podcasts, flashcards" },
+  { label: "Export SCORM", href: "/fonctionnalites/export-scorm", desc: "Déploiement LMS universel" },
   { label: "Pilotage & Planning", href: "/fonctionnalites/pilotage-planning", desc: "Calendrier et suivi" },
   { label: "Multi-tenant", href: "/fonctionnalites/multi-tenant", desc: "Organisations & Enterprise" },
 ];
@@ -15,7 +15,7 @@ const features = [
 const navLinks = [
   { label: "Tarifs", href: "/tarifs" },
   { label: "Cas d'usage", href: "/cas-usage" },
-  { label: "A propos", href: "/a-propos" },
+  { label: "À propos", href: "/a-propos" },
 ];
 
 export default function Navbar() {
@@ -42,7 +42,7 @@ export default function Navbar() {
             onMouseLeave={() => setFeaturesOpen(false)}
           >
             <button className="flex items-center gap-1 px-3 py-2 text-md font-semibold text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 rounded-md transition-colors">
-              Fonctionnalites
+              Fonctionnalités
               <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" className={`text-neutral-400 transition-transform ${featuresOpen ? "rotate-180" : ""}`}>
                 <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
               </svg>
@@ -68,7 +68,7 @@ export default function Navbar() {
                       href="/fonctionnalites"
                       className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-brand-600 hover:text-brand-700 rounded-lg hover:bg-brand-50 transition-colors"
                     >
-                      Voir toutes les fonctionnalites
+                      Voir toutes les fonctionnalités
                       <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M3.33 8h9.34M8.67 4l4 4-4 4" />
                       </svg>
@@ -96,7 +96,7 @@ export default function Navbar() {
             href="/demo"
             className="hidden sm:inline-flex items-center rounded-lg border border-brand-600 bg-brand-600 px-4 py-2.5 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors"
           >
-            Demander une demo
+            Demander une démo
           </Link>
           <button
             className="lg:hidden p-2 rounded-lg hover:bg-neutral-50 transition-colors"
@@ -121,7 +121,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden mt-2 mx-auto max-w-container bg-white rounded-xl border border-neutral-200 shadow-lg p-4 space-y-1">
           <Link href="/fonctionnalites" className="block px-3 py-2.5 text-md font-semibold text-neutral-900 rounded-lg hover:bg-neutral-50" onClick={() => setMobileOpen(false)}>
-            Fonctionnalites
+            Fonctionnalités
           </Link>
           {features.map((f) => (
             <Link key={f.href} href={f.href} className="block px-6 py-2 text-sm text-neutral-600 rounded-lg hover:bg-neutral-50" onClick={() => setMobileOpen(false)}>
@@ -135,7 +135,7 @@ export default function Navbar() {
           ))}
           <div className="pt-2 border-t border-neutral-100">
             <Link href="/demo" className="block w-full text-center rounded-lg bg-brand-600 px-4 py-2.5 text-md font-semibold text-white hover:bg-brand-700 transition-colors" onClick={() => setMobileOpen(false)}>
-              Demander une demo
+              Demander une démo
             </Link>
           </div>
         </div>

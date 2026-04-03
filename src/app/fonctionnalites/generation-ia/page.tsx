@@ -11,44 +11,44 @@ const certifications = [
 
 const hierarchy = [
   "Formation",
-  "Blocs de competences",
+  "Blocs de compétences",
   "Modules",
-  "Sequences",
-  "Seances",
-  "Architecture pedagogique",
+  "Séquences",
+  "Séances",
+  "Architecture pédagogique",
   "Contenu interactif",
 ];
 
 const keyFeatures = [
   {
-    title: "6 certifications supportees",
+    title: "6 certifications supportées",
     description:
       "TP, BTS, CAP, CQP, BPJEPS et mode Custom pour vos formations sur mesure.",
   },
   {
-    title: "Detection automatique de la structure",
+    title: "Détection automatique de la structure",
     description:
-      "L'IA identifie le type de certification, blocs de competences, modules, heures et prerequis directement depuis le PDF.",
+      "L'IA identifie le type de certification, blocs de compétences, modules, heures et prérequis directement depuis le PDF.",
   },
   {
     title: "Preview avant validation",
     description:
-      "Visualisez la structure generee et ajustez-la avant de lancer la generation de contenu. Feedback loop integre.",
+      "Visualisez la structure générée et ajustez-la avant de lancer la génération de contenu. Feedback loop intégré.",
   },
   {
     title: "Mode 'from scratch'",
     description:
-      "Pas de referentiel ? Decrivez votre formation en texte libre et l'IA genere la structure complete.",
+      "Pas de référentiel ? Décrivez votre formation en texte libre et l'IA génère la structure complète.",
   },
   {
-    title: "4 modeles IA disponibles",
+    title: "4 modèles IA disponibles",
     description:
-      "Choisissez le modele adapte a votre besoin : rapidite, qualite ou equilibre.",
+      "Choisissez le modèle adapté à votre besoin : rapidité, qualité ou équilibre.",
   },
   {
-    title: "Regeneration personnalisee",
+    title: "Régénération personnalisée",
     description:
-      "Ajoutez des instructions specifiques pour regenerer tout ou partie de la formation selon vos criteres.",
+      "Ajoutez des instructions spécifiques pour régénérer tout ou partie de la formation selon vos critères.",
   },
 ];
 
@@ -62,21 +62,21 @@ export default function GenerationIAPage() {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-300 bg-amber-50 px-3 py-1 mb-4">
               <span className="text-sm font-medium text-amber-800">
-                Generation IA
+                Génération IA
               </span>
             </div>
             <h1 className="text-display-md sm:text-display-lg font-semibold text-neutral-900">
-              Generation IA{" "}
-              <span className="text-brand-600">complete</span>
+              Génération IA{" "}
+              <span className="text-brand-600">complète</span>
             </h1>
             <p className="mt-4 text-xl sm:text-2xl font-medium text-neutral-700">
               Du PDF au cours en 3 clics
             </p>
             <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto">
-              Upload d&apos;un referentiel RNCP (TP, BTS, CAP, CQP, BPJEPS) en
-              PDF. L&apos;IA analyse le document et detecte automatiquement type
-              de certification, blocs de competences, modules, heures, prerequis,
-              RNCP ID. Generation de toute la hierarchie pedagogique.
+              Upload d&apos;un référentiel RNCP (TP, BTS, CAP, CQP, BPJEPS) en
+              PDF. L&apos;IA analyse le document et détecte automatiquement type
+              de certification, blocs de compétences, modules, heures, prérequis,
+              RNCP ID. Génération de toute la hiérarchie pédagogique.
             </p>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function GenerationIAPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Hierarchie generee
+              Hiérarchie générée
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
               De la Formation au Contenu
@@ -121,10 +121,10 @@ export default function GenerationIAPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Compatibilite
+              Compatibilité
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              6 types de certifications supportes
+              6 types de certifications supportés
             </h2>
           </div>
           <div className="max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -147,10 +147,10 @@ export default function GenerationIAPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Fonctionnalites cles
+              Fonctionnalités clés
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Tout est pense pour vous faire gagner du temps
+              Tout est pensé pour vous faire gagner du temps
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -186,11 +186,11 @@ export default function GenerationIAPage() {
 
       {/* ── CTA ── */}
       <CTABanner
-        title="Testez la generation IA"
-        description="Uploadez un referentiel et voyez le resultat en quelques minutes."
-        primaryLabel="Demander une demo"
+        title="Testez la génération IA"
+        description="Uploadez un référentiel et voyez le résultat en quelques minutes."
+        primaryLabel="Demander une démo"
         primaryHref="/demo"
-        secondaryLabel="Toutes les fonctionnalites"
+        secondaryLabel="Toutes les fonctionnalités"
         secondaryHref="/fonctionnalites"
       />
     </>

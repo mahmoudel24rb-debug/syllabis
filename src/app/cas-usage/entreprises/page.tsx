@@ -2,32 +2,32 @@ import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
 
 const problems = [
-  "Former les collaborateurs a distance est un defi",
-  "Pas d\u2019expertise pedagogique en interne",
-  "Budget formation limite, pas de prestataire dedie",
-  "Contenu generique qui ne colle pas a vos metiers",
+  "Former les collaborateurs à distance est un défi",
+  "Pas d\u2019expertise pédagogique en interne",
+  "Budget formation limité, pas de prestataire dédié",
+  "Contenu générique qui ne colle pas à vos métiers",
 ];
 
 const features = [
   {
-    title: "Editeur visuel",
+    title: "Éditeur visuel",
     description:
-      "Interface style Notion avec 39+ blocs pedagogiques. Vos equipes RH creent du contenu sans formation technique.",
+      "Interface style Notion avec 39+ blocs pédagogiques. Vos équipes RH créent du contenu sans formation technique.",
   },
   {
-    title: "Medias IA",
+    title: "Médias IA",
     description:
-      "Generation automatique de videos, podcasts, quiz et flashcards a partir du contenu textuel.",
+      "Génération automatique de vidéos, podcasts, quiz et flashcards à partir du contenu textuel.",
   },
   {
     title: "Export SCORM",
     description:
-      "Export SCORM 1.2 & 2004 pour deployer sur votre LMS interne ou plateforme RH.",
+      "Export SCORM 1.2 & 2004 pour déployer sur votre LMS interne ou plateforme RH.",
   },
   {
     title: "Analytics",
     description:
-      "Suivi de la progression, taux de completion, resultats aux quiz pour piloter la formation.",
+      "Suivi de la progression, taux de complétion, résultats aux quiz pour piloter la formation.",
   },
 ];
 
@@ -72,10 +72,10 @@ export default function EntreprisesPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="max-w-3xl mx-auto">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Le probleme
+              Le problème
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Former a distance sans expertise pedagogique
+              Former à distance sans expertise pédagogique
             </h2>
             <ul className="mt-8 space-y-4">
               {problems.map((p) => (
@@ -112,7 +112,7 @@ export default function EntreprisesPage() {
               La solution Syllabis
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Du contenu e-learning de qualite, sans expertise requise
+              Du contenu e-learning de qualité, sans expertise requise
             </h2>
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {features.map((f) => (
@@ -135,9 +135,9 @@ export default function EntreprisesPage() {
 
       {/* ── CTA ── */}
       <CTABanner
-        title="Decouvrir Syllabis pour votre entreprise"
-        description="Voyez comment Syllabis peut digitaliser la formation de vos equipes en quelques minutes."
-        primaryLabel="Demander une demo"
+        title="Découvrir Syllabis pour votre entreprise"
+        description="Voyez comment Syllabis peut digitaliser la formation de vos équipes en quelques minutes."
+        primaryLabel="Demander une démo"
         primaryHref="/demo"
       />
     </>

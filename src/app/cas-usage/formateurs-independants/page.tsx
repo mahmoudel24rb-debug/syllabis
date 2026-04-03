@@ -2,27 +2,27 @@ import Link from "next/link";
 import CTABanner from "../../components/CTABanner";
 
 const problems = [
-  "Creer seul, sans equipe de conception pedagogique",
-  "Pas d\u2019outils adaptes pour produire du e-learning",
-  "Temps de production trop long pour etre rentable",
+  "Créer seul, sans équipe de conception pédagogique",
+  "Pas d\u2019outils adaptés pour produire du e-learning",
+  "Temps de production trop long pour être rentable",
   "Export SCORM complexe et technique",
 ];
 
 const features = [
   {
-    title: "Generation IA",
+    title: "Génération IA",
     description:
-      "Uploadez votre referentiel ou decrivez votre formation en texte libre. L\u2019IA genere toute la structure et le contenu.",
+      "Uploadez votre référentiel ou décrivez votre formation en texte libre. L\u2019IA génère toute la structure et le contenu.",
   },
   {
-    title: "Editeur 39+ blocs",
+    title: "Éditeur 39+ blocs",
     description:
-      "Editeur visuel style Notion avec quiz interactifs, videos, podcasts, flashcards, mind maps et plus.",
+      "Éditeur visuel style Notion avec quiz interactifs, vidéos, podcasts, flashcards, mind maps et plus.",
   },
   {
     title: "Export SCORM",
     description:
-      "Exportez en SCORM 1.2 ou 2004 en un clic. Compatible avec tous les LMS du marche.",
+      "Exportez en SCORM 1.2 ou 2004 en un clic. Compatible avec tous les LMS du marché.",
   },
 ];
 
@@ -53,10 +53,10 @@ export default function FormateursIndependantsPage() {
               Cas d&apos;usage
             </Link>
             <h1 className="text-display-md sm:text-display-lg font-semibold text-neutral-900">
-              Formateurs independants
+              Formateurs indépendants
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Creez des formations certifiantes sans equipe technique
+              Créez des formations certifiantes sans équipe technique
             </p>
           </div>
         </div>
@@ -67,10 +67,10 @@ export default function FormateursIndependantsPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="max-w-3xl mx-auto">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Le probleme
+              Le problème
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Creer du e-learning seul, c&apos;est complique
+              Créer du e-learning seul, c&apos;est compliqué
             </h2>
             <ul className="mt-8 space-y-4">
               {problems.map((p) => (
@@ -107,7 +107,7 @@ export default function FormateursIndependantsPage() {
               La solution Syllabis
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Uploadez votre referentiel, l&apos;IA fait le reste
+              Uploadez votre référentiel, l&apos;IA fait le reste
             </h2>
             <div className="mt-10 space-y-6">
               {features.map((f) => (
@@ -130,8 +130,8 @@ export default function FormateursIndependantsPage() {
 
       {/* ── CTA ── */}
       <CTABanner
-        title="Creez votre premiere formation gratuitement"
-        description="14 jours d'essai gratuit, sans carte bancaire. Uploadez votre premier referentiel en 3 minutes."
+        title="Créez votre première formation gratuitement"
+        description="14 jours d'essai gratuit, sans carte bancaire. Uploadez votre premier référentiel en 3 minutes."
         primaryLabel="Commencer gratuitement"
         primaryHref="/demo"
       />

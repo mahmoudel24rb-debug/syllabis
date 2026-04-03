@@ -4,13 +4,13 @@ import CTABanner from "../components/CTABanner";
 const plans = [
   {
     name: "Starter",
-    audience: "Formateur independant",
-    price: "A partir de 29\u20AC/mois",
+    audience: "Formateur indépendant",
+    price: "À partir de 29\u20AC/mois",
     badge: null,
     features: [
       "5 formations/mois",
       "1 utilisateur",
-      "Blocs editeur de base",
+      "Blocs éditeur de base",
       "Export SCORM 1.2",
       "Support email",
     ],
@@ -21,14 +21,14 @@ const plans = [
   {
     name: "Pro",
     audience: "Organisme de formation",
-    price: "A partir de 99\u20AC/mois",
+    price: "À partir de 99\u20AC/mois",
     badge: "Populaire",
     features: [
-      "Formations illimitees",
-      "Jusqu\u2019a 10 utilisateurs",
-      "Tous les 39+ blocs editeur",
+      "Formations illimitées",
+      "Jusqu\u2019à 10 utilisateurs",
+      "Tous les 39+ blocs éditeur",
       "Export SCORM 1.2 & 2004",
-      "Medias IA (videos, podcasts)",
+      "Médias IA (vidéos, podcasts)",
       "Planning & pilotage",
       "Support prioritaire",
     ],
@@ -46,11 +46,11 @@ const plans = [
       "Multi-organisations",
       "Branding custom",
       "Branch access",
-      "Cost tracking & analytics avances",
+      "Cost tracking & analytics avancés",
       "SSO / API (227+ routes)",
-      "Account manager dedie",
+      "Account manager dédié",
     ],
-    cta: "Contacter l\u2019equipe commerciale",
+    cta: "Contacter l\u2019équipe commerciale",
     href: "/demo",
     highlighted: false,
   },
@@ -65,12 +65,12 @@ const faqs = [
   {
     question: "Puis-je changer de plan ?",
     answer:
-      "Oui, vous pouvez upgrader ou downgrader a tout moment.",
+      "Oui, vous pouvez upgrader ou downgrader à tout moment.",
   },
   {
     question: "Comment fonctionne la facturation IA ?",
     answer:
-      "Les credits IA sont inclus dans chaque plan. Au-dela, facturation a l\u2019usage transparente.",
+      "Les crédits IA sont inclus dans chaque plan. Au-delà, facturation à l\u2019usage transparente.",
   },
   {
     question: "Y a-t-il un engagement minimum ?",
@@ -92,7 +92,7 @@ export default function TarifsPage() {
               Des tarifs simples et transparents
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Choisissez le plan adapte a vos besoins. Sans engagement.
+              Choisissez le plan adapté à vos besoins. Sans engagement.
             </p>
           </div>
         </div>
@@ -214,7 +214,7 @@ export default function TarifsPage() {
 
       {/* ── CTA ── */}
       <CTABanner
-        title="Pret a creer vos formations ?"
+        title="Prêt à créer vos formations ?"
         description="Commencez gratuitement pendant 14 jours, sans carte bancaire."
         primaryLabel="Commencer l'essai gratuit"
         primaryHref="/demo"

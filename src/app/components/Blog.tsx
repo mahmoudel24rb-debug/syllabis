@@ -2,9 +2,9 @@ const posts = [
   {
     category: "IA & Education",
     categoryColor: "text-brand-600 bg-brand-50",
-    title: "Comment l'IA revolutionne la creation de formations en ligne",
+    title: "Comment l'IA révolutionne la création de formations en ligne",
     excerpt:
-      "Decouvrez comment les outils d'intelligence artificielle permettent de creer des cours 10x plus vite sans sacrifier la qualite pedagogique.",
+      "Découvrez comment les outils d'intelligence artificielle permettent de créer des cours 10x plus vite sans sacrifier la qualité pédagogique.",
     author: "Marie Tran",
     initials: "MT",
     date: "28 mars 2026",
@@ -12,9 +12,9 @@ const posts = [
   {
     category: "Tutoriel",
     categoryColor: "text-blue-600 bg-blue-50",
-    title: "Creer un cours e-learning complet en 30 minutes",
+    title: "Créer un cours e-learning complet en 30 minutes",
     excerpt:
-      "Guide pas a pas pour generer, personnaliser et publier votre premier cours avec Syllabis, de A a Z.",
+      "Guide pas à pas pour générer, personnaliser et publier votre premier cours avec Syllabis, de A à Z.",
     author: "Antoine Bernard",
     initials: "AB",
     date: "25 mars 2026",
@@ -24,7 +24,7 @@ const posts = [
     categoryColor: "text-pink-600 bg-pink-50",
     title: "Les 5 principes d'un quiz efficace pour vos formations",
     excerpt:
-      "Concevez des evaluations qui mesurent vraiment l'apprentissage et motivent vos apprenants a progresser.",
+      "Concevez des évaluations qui mesurent vraiment l'apprentissage et motivent vos apprenants à progresser.",
     author: "Claire Lemoine",
     initials: "CL",
     date: "22 mars 2026",
@@ -45,7 +45,7 @@ export default function Blog() {
               Ressources & guides
             </h2>
             <p className="mt-5 text-lg text-neutral-600 max-w-xl">
-              Conseils, tutoriels et bonnes pratiques pour creer des formations
+              Conseils, tutoriels et bonnes pratiques pour créer des formations
               en ligne efficaces.
             </p>
           </div>

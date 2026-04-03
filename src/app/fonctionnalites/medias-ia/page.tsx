@@ -3,31 +3,31 @@ import CTABanner from "../../components/CTABanner";
 const mediaTypes = [
   {
     emoji: "🎥",
-    title: "Videos explicatives",
+    title: "Vidéos explicatives",
     formats: "Explainer / Tutorial",
     description:
-      "Generation automatique de videos pedagogiques a partir du contenu textuel. Deux formats disponibles : explainer (concepts) et tutorial (pas a pas).",
+      "Génération automatique de vidéos pédagogiques à partir du contenu textuel. Deux formats disponibles : explainer (concepts) et tutorial (pas à pas).",
   },
   {
     emoji: "🎙️",
     title: "Podcasts audio",
     formats: "Deep Dive / Briefing",
     description:
-      "Transformez vos cours en podcasts audio. Mode Deep Dive pour des explications approfondies, Briefing pour des resumes concis.",
+      "Transformez vos cours en podcasts audio. Mode Deep Dive pour des explications approfondies, Briefing pour des résumés concis.",
   },
   {
     emoji: "❓",
     title: "Quiz IA",
-    formats: "Niveaux de difficulte",
+    formats: "Niveaux de difficulté",
     description:
-      "Generation de quiz adaptatifs avec niveaux de difficulte progressifs, directement a partir du contenu pedagogique.",
+      "Génération de quiz adaptatifs avec niveaux de difficulté progressifs, directement à partir du contenu pédagogique.",
   },
   {
     emoji: "🗂️",
     title: "Flashcards",
-    formats: "Revision espacee",
+    formats: "Révision espacée",
     description:
-      "Flashcards generees automatiquement avec systeme de revision espacee pour optimiser la memorisation.",
+      "Flashcards générées automatiquement avec système de révision espacée pour optimiser la mémorisation.",
   },
   {
     emoji: "🧠",
@@ -39,16 +39,16 @@ const mediaTypes = [
   {
     emoji: "📊",
     title: "Infographies",
-    formats: "Synthese visuelle",
+    formats: "Synthèse visuelle",
     description:
-      "Creation d'infographies de synthese pour presenter les informations cles de maniere visuelle.",
+      "Création d'infographies de synthèse pour présenter les informations clés de manière visuelle.",
   },
   {
     emoji: "📋",
-    title: "Tableaux de donnees",
+    title: "Tableaux de données",
     formats: "Structuration",
     description:
-      "Organisation automatique des donnees en tableaux structures pour une lecture rapide et claire.",
+      "Organisation automatique des données en tableaux structurés pour une lecture rapide et claire.",
   },
 ];
 
@@ -62,19 +62,19 @@ export default function MediasIAPage() {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-300 bg-amber-50 px-3 py-1 mb-4">
               <span className="text-sm font-medium text-amber-800">
-                Medias IA
+                Médias IA
               </span>
             </div>
             <h1 className="text-display-md sm:text-display-lg font-semibold text-neutral-900">
-              Medias IA —{" "}
+              Médias IA —{" "}
               <span className="text-brand-600">
-                Generation multimedia automatique
+                Génération multimédia automatique
               </span>
             </h1>
             <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto">
-              A partir du contenu pedagogique, generez automatiquement 7 types
-              de medias. Pipeline asynchrone avec suivi de progression en temps
-              reel.
+              À partir du contenu pédagogique, générez automatiquement 7 types
+              de médias. Pipeline asynchrone avec suivi de progression en temps
+              réel.
             </p>
           </div>
         </div>
@@ -85,10 +85,10 @@ export default function MediasIAPage() {
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              7 types de medias
+              7 types de médias
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Du texte au multimedia en un clic
+              Du texte au multimédia en un clic
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -125,20 +125,20 @@ export default function MediasIAPage() {
               Pipeline asynchrone
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Generation en arriere-plan
+              Génération en arrière-plan
             </h2>
             <p className="mt-5 text-lg text-neutral-600 max-w-2xl mx-auto">
-              Lancez la generation et continuez a travailler. Suivi de
-              progression en temps reel, notifications a la fin.
+              Lancez la génération et continuez à travailler. Suivi de
+              progression en temps réel, notifications à la fin.
             </p>
           </div>
           <div className="max-w-2xl mx-auto">
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8">
               {[
-                { step: "1", label: "Selection des medias a generer", status: "Choix" },
+                { step: "1", label: "Sélection des médias à générer", status: "Choix" },
                 { step: "2", label: "Envoi en pipeline asynchrone", status: "Automatique" },
-                { step: "3", label: "Suivi de progression en temps reel", status: "Live" },
-                { step: "4", label: "Integration automatique dans le cours", status: "Fait" },
+                { step: "3", label: "Suivi de progression en temps réel", status: "Live" },
+                { step: "4", label: "Intégration automatique dans le cours", status: "Fait" },
               ].map((item, i) => (
                 <div
                   key={item.step}
@@ -162,11 +162,11 @@ export default function MediasIAPage() {
 
       {/* ── CTA ── */}
       <CTABanner
-        title="Generez vos medias automatiquement"
-        description="Decouvrez comment Syllabis transforme votre contenu textuel en videos, podcasts et plus encore."
-        primaryLabel="Demander une demo"
+        title="Générez vos médias automatiquement"
+        description="Découvrez comment Syllabis transforme votre contenu textuel en vidéos, podcasts et plus encore."
+        primaryLabel="Demander une démo"
         primaryHref="/demo"
-        secondaryLabel="Toutes les fonctionnalites"
+        secondaryLabel="Toutes les fonctionnalités"
         secondaryHref="/fonctionnalites"
       />
     </>

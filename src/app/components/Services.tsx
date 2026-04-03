@@ -57,10 +57,10 @@ export default function Services({ services }: { services: Service[] }) {
             Les 6 piliers
           </p>
           <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-            Tout ce dont vous avez besoin pour creer des formations e-learning
+            Tout ce dont vous avez besoin pour créer des formations e-learning
           </h2>
           <p className="mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-            6 modules integres, de l&apos;analyse du referentiel au deploiement
+            6 modules intégrés, de l&apos;analyse du référentiel au déploiement
             sur votre LMS.
           </p>
         </div>

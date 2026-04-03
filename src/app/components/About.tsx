@@ -1,7 +1,7 @@
 const stats = [
   { value: "2 000+", label: "Formateurs actifs" },
-  { value: "15 000+", label: "Cours generes" },
-  { value: "89%", label: "Taux de completion" },
+  { value: "15 000+", label: "Cours générés" },
+  { value: "89%", label: "Taux de complétion" },
   { value: "4.8/5", label: "Satisfaction" },
 ];
 
@@ -12,8 +12,8 @@ const values = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
-    title: "Generation instantanee",
-    desc: "Decrivez votre sujet et l'IA genere un cours structure avec chapitres, contenus et evaluations en quelques minutes.",
+    title: "Génération instantanée",
+    desc: "Décrivez votre sujet et l'IA génère un cours structuré avec chapitres, contenus et évaluations en quelques minutes.",
   },
   {
     icon: (
@@ -22,7 +22,7 @@ const values = [
       </svg>
     ),
     title: "Multi-format",
-    desc: "Exportez vos cours en PDF, modules e-learning interactifs, presentations video ou quiz auto-corriges.",
+    desc: "Exportez vos cours en PDF, modules e-learning interactifs, présentations vidéo ou quiz auto-corrigés.",
   },
   {
     icon: (
@@ -30,8 +30,8 @@ const values = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
       </svg>
     ),
-    title: "Pedagogie intelligente",
-    desc: "L'IA structure vos contenus selon les meilleures pratiques pedagogiques : objectifs, progression, evaluation.",
+    title: "Pédagogie intelligente",
+    desc: "L'IA structure vos contenus selon les meilleures pratiques pédagogiques : objectifs, progression, évaluation.",
   },
 ];
 
@@ -42,14 +42,14 @@ export default function About() {
         {/* Section header */}
         <div className="text-center mb-16">
           <p className="text-sm font-semibold text-brand-600 mb-3">
-            Comment ca marche
+            Comment ça marche
           </p>
           <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-            De l&apos;idee au cours publie en 3 etapes
+            De l&apos;idée au cours publié en 3 étapes
           </h2>
           <p className="mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
             Syllabis utilise l&apos;intelligence artificielle pour transformer
-            n&apos;importe quel sujet en formation professionnelle complete.
+            n&apos;importe quel sujet en formation professionnelle complète.
           </p>
         </div>
 

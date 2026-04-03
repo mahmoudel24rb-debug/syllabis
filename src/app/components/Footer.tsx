@@ -4,9 +4,9 @@ const footerLinks = [
   {
     title: "Produit",
     links: [
-      { label: "Generation IA", href: "/fonctionnalites/generation-ia" },
-      { label: "Editeur 39+ blocs", href: "/fonctionnalites/editeur" },
-      { label: "Medias IA", href: "/fonctionnalites/medias-ia" },
+      { label: "Génération IA", href: "/fonctionnalites/generation-ia" },
+      { label: "Éditeur 39+ blocs", href: "/fonctionnalites/editeur" },
+      { label: "Médias IA", href: "/fonctionnalites/medias-ia" },
       { label: "Export SCORM", href: "/fonctionnalites/export-scorm" },
       { label: "Pilotage & Planning", href: "/fonctionnalites/pilotage-planning" },
       { label: "Multi-tenant", href: "/fonctionnalites/multi-tenant" },
@@ -15,7 +15,7 @@ const footerLinks = [
   {
     title: "Ressources",
     links: [
-      { label: "Demander une demo", href: "/demo" },
+      { label: "Demander une démo", href: "/demo" },
       { label: "Contact", href: "/contact" },
       { label: "Tarifs", href: "/tarifs" },
     ],
@@ -23,16 +23,16 @@ const footerLinks = [
   {
     title: "Entreprise",
     links: [
-      { label: "A propos", href: "/a-propos" },
+      { label: "À propos", href: "/a-propos" },
       { label: "Cas d'usage", href: "/cas-usage" },
     ],
   },
   {
-    title: "Legal",
+    title: "Légal",
     links: [
-      { label: "Mentions legales", href: "/legal/mentions-legales" },
+      { label: "Mentions légales", href: "/legal/mentions-legales" },
       { label: "CGU", href: "/legal/cgu" },
-      { label: "Confidentialite", href: "/legal/politique-confidentialite" },
+      { label: "Confidentialité", href: "/legal/politique-confidentialite" },
     ],
   },
 ];
@@ -67,7 +67,7 @@ export default function Footer() {
             </div>
             <span className="text-lg font-semibold text-white">Syllabis</span>
           </div>
-          <p className="text-md text-neutral-500">&copy; 2025 Syllabis. Tous droits reserves.</p>
+          <p className="text-md text-neutral-500">&copy; 2025 Syllabis. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

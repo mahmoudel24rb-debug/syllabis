@@ -4,32 +4,32 @@ const features = [
   {
     title: "Vue calendrier drag-drop",
     description:
-      "Planifiez vos formations sur un calendrier interactif. Deplacez les sessions par glisser-deposer, visualisez les conflits.",
+      "Planifiez vos formations sur un calendrier interactif. Déplacez les sessions par glisser-déposer, visualisez les conflits.",
   },
   {
-    title: "Vue tableau edition inline",
+    title: "Vue tableau édition inline",
     description:
-      "Editez directement dans le tableau : dates, formateurs, salles, statuts. Modifications en temps reel.",
+      "Éditez directement dans le tableau : dates, formateurs, salles, statuts. Modifications en temps réel.",
   },
   {
     title: "Assignment formateurs",
     description:
-      "Assignez les formateurs par niveau hierarchique (bloc, module, sequence, seance). Visualisez leur charge.",
+      "Assignez les formateurs par niveau hiérarchique (bloc, module, séquence, séance). Visualisez leur charge.",
   },
   {
     title: "Export Excel 7 onglets",
     description:
-      "Export complet avec 7 onglets : planning general, par formateur, par salle, par bloc, statistiques, heures, couts.",
+      "Export complet avec 7 onglets : planning général, par formateur, par salle, par bloc, statistiques, heures, coûts.",
   },
   {
-    title: "Suivi incoherences d'heures",
+    title: "Suivi incohérences d'heures",
     description:
-      "Detection automatique des incoherences entre heures planifiees et heures du referentiel. Alertes visuelles.",
+      "Détection automatique des incohérences entre heures planifiées et heures du référentiel. Alertes visuelles.",
   },
   {
     title: "Dashboard KPI",
     description:
-      "Tableau de bord avec indicateurs cles : taux de completion, heures realisees, progression par bloc.",
+      "Tableau de bord avec indicateurs clés : taux de complétion, heures réalisées, progression par bloc.",
   },
 ];
 
@@ -51,7 +51,7 @@ export default function PilotagePlanningPage() {
               <span className="text-brand-600">Planning</span>
             </h1>
             <p className="mt-4 text-xl sm:text-2xl font-medium text-neutral-700">
-              Gerez vos formations de bout en bout
+              Gérez vos formations de bout en bout
             </p>
             <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto">
               Calendrier, tableau, assignation formateurs, export Excel — tous
@@ -116,13 +116,13 @@ export default function PilotagePlanningPage() {
           </div>
           <div className="max-w-2xl mx-auto rounded-2xl border border-neutral-200 bg-white overflow-hidden divide-y divide-neutral-100">
             {[
-              "Planning general",
+              "Planning général",
               "Planning par formateur",
               "Planning par salle",
-              "Planning par bloc de competences",
+              "Planning par bloc de compétences",
               "Statistiques globales",
-              "Repartition des heures",
-              "Suivi des couts",
+              "Répartition des heures",
+              "Suivi des coûts",
             ].map((tab, i) => (
               <div key={tab} className="flex items-center gap-4 px-6 py-4">
                 <div className="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-bold shrink-0">
@@ -140,10 +140,10 @@ export default function PilotagePlanningPage() {
       {/* ── CTA ── */}
       <CTABanner
         title="Simplifiez le pilotage de vos formations"
-        description="Calendrier, assignations, export Excel — decouvrez comment Syllabis centralise la gestion de vos formations."
-        primaryLabel="Demander une demo"
+        description="Calendrier, assignations, export Excel — découvrez comment Syllabis centralise la gestion de vos formations."
+        primaryLabel="Demander une démo"
         primaryHref="/demo"
-        secondaryLabel="Toutes les fonctionnalites"
+        secondaryLabel="Toutes les fonctionnalités"
         secondaryHref="/fonctionnalites"
       />
     </>

@@ -14,9 +14,9 @@ export default function Testimonial() {
 
           {/* Quote */}
           <blockquote className="text-display-xs sm:text-display-sm font-medium text-neutral-900 leading-snug">
-            &ldquo;Syllabis a divise par 10 le temps de creation de nos
-            formations. On genere un cours complet avec PDF, quiz et modules
-            video en une apres-midi au lieu de plusieurs semaines.&rdquo;
+            &ldquo;Syllabis a divisé par 10 le temps de création de nos
+            formations. On génère un cours complet avec PDF, quiz et modules
+            vidéo en une après-midi au lieu de plusieurs semaines.&rdquo;
           </blockquote>
 
           {/* Author */}
@@ -29,7 +29,7 @@ export default function Testimonial() {
                 Claire Lemoine
               </p>
               <p className="text-md text-neutral-600">
-                Responsable Pedagogique, OpenClassrooms
+                Responsable Pédagogique, OpenClassrooms
               </p>
             </div>
           </div>
