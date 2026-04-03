@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="relative pt-[88px] overflow-hidden">
@@ -80,11 +82,9 @@ export default function Hero() {
               <div className="hidden sm:flex flex-col w-[240px] border-r border-neutral-200 bg-white shrink-0">
                 {/* Sidebar header */}
                 <div className="px-5 py-5 border-b border-neutral-100">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
-                      <span className="text-white font-bold text-xs">S</span>
-                    </div>
-                    <span className="text-md font-semibold text-neutral-900">
+                  <div className="flex items-center gap-1.5">
+                    <Image src="/sylbi.png" alt="Sylbi" width={28} height={28} className="size-7" />
+                    <span className="text-md font-bold text-[#0A1E3D]">
                       Syllabis
                     </span>
                   </div>

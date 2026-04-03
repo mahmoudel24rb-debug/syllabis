@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = [
   {
@@ -61,11 +62,9 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
-            </div>
-            <span className="text-lg font-semibold text-white">Syllabis</span>
+          <div className="flex items-center gap-1.5">
+            <Image src="/sylbi.png" alt="Sylbi" width={36} height={36} className="size-9" />
+            <span className="text-lg font-bold text-white">Syllabis</span>
           </div>
           <p className="text-md text-white/40">&copy; 2025 Syllabis. Tous droits réservés.</p>
         </div>

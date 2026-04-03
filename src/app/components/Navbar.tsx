@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const features = [
   { label: "Génération IA", href: "/fonctionnalites/generation-ia", desc: "Du PDF au cours en 3 clics" },
@@ -26,11 +27,9 @@ export default function Navbar() {
     <header className="fixed top-0 w-full z-50 px-4 sm:px-5 pt-3">
       <nav className="mx-auto max-w-container bg-white rounded-xl border border-neutral-200 shadow-sm px-4 sm:px-5 flex items-center justify-between h-[64px]">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
-            <span className="text-white font-bold text-sm">S</span>
-          </div>
-          <span className="text-lg font-semibold text-neutral-900">Syllabis</span>
+        <Link href="/" className="flex items-center gap-1.5">
+          <Image src="/sylbi.png" alt="Sylbi" width={36} height={36} className="size-9" />
+          <span className="text-lg font-bold text-[#0A1E3D]">Syllabis</span>
         </Link>
 
         {/* Desktop nav */}
