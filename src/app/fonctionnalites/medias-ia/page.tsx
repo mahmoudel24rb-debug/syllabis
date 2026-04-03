@@ -1,0 +1,174 @@
+import CTABanner from "../../components/CTABanner";
+
+const mediaTypes = [
+  {
+    emoji: "🎥",
+    title: "Videos explicatives",
+    formats: "Explainer / Tutorial",
+    description:
+      "Generation automatique de videos pedagogiques a partir du contenu textuel. Deux formats disponibles : explainer (concepts) et tutorial (pas a pas).",
+  },
+  {
+    emoji: "🎙️",
+    title: "Podcasts audio",
+    formats: "Deep Dive / Briefing",
+    description:
+      "Transformez vos cours en podcasts audio. Mode Deep Dive pour des explications approfondies, Briefing pour des resumes concis.",
+  },
+  {
+    emoji: "❓",
+    title: "Quiz IA",
+    formats: "Niveaux de difficulte",
+    description:
+      "Generation de quiz adaptatifs avec niveaux de difficulte progressifs, directement a partir du contenu pedagogique.",
+  },
+  {
+    emoji: "🗂️",
+    title: "Flashcards",
+    formats: "Revision espacee",
+    description:
+      "Flashcards generees automatiquement avec systeme de revision espacee pour optimiser la memorisation.",
+  },
+  {
+    emoji: "🧠",
+    title: "Mind Maps visuelles",
+    formats: "Cartographie",
+    description:
+      "Visualisation des concepts et de leurs relations sous forme de mind maps interactives.",
+  },
+  {
+    emoji: "📊",
+    title: "Infographies",
+    formats: "Synthese visuelle",
+    description:
+      "Creation d'infographies de synthese pour presenter les informations cles de maniere visuelle.",
+  },
+  {
+    emoji: "📋",
+    title: "Tableaux de donnees",
+    formats: "Structuration",
+    description:
+      "Organisation automatique des donnees en tableaux structures pour une lecture rapide et claire.",
+  },
+];
+
+export default function MediasIAPage() {
+  return (
+    <>
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid hero-grid-mask" />
+        <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-20">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 mb-4">
+              <span className="text-sm font-medium text-brand-700">
+                Medias IA
+              </span>
+            </div>
+            <h1 className="text-display-md sm:text-display-lg font-semibold text-neutral-900">
+              Medias IA —{" "}
+              <span className="text-brand-600">
+                Generation multimedia automatique
+              </span>
+            </h1>
+            <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto">
+              A partir du contenu pedagogique, generez automatiquement 7 types
+              de medias. Pipeline asynchrone avec suivi de progression en temps
+              reel.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7 media types ── */}
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-container px-4 sm:px-8">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-brand-600 mb-3">
+              7 types de medias
+            </p>
+            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+              Du texte au multimedia en un clic
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {mediaTypes.map((media) => (
+              <div
+                key={media.title}
+                className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 hover:border-brand-200 hover:shadow-sm transition-all"
+              >
+                <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-2xl mb-5">
+                  {media.emoji}
+                </div>
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="text-lg font-semibold text-neutral-900">
+                    {media.title}
+                  </h3>
+                </div>
+                <span className="inline-block rounded-full border border-neutral-200 bg-neutral-50 px-2.5 py-0.5 text-xs font-medium text-neutral-600 mb-3">
+                  {media.formats}
+                </span>
+                <p className="text-md text-neutral-600 leading-relaxed">
+                  {media.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pipeline ── */}
+      <section className="py-16 sm:py-24 bg-neutral-50">
+        <div className="mx-auto max-w-container px-4 sm:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold text-brand-600 mb-3">
+              Pipeline asynchrone
+            </p>
+            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+              Generation en arriere-plan
+            </h2>
+            <p className="mt-5 text-lg text-neutral-600 max-w-2xl mx-auto">
+              Lancez la generation et continuez a travailler. Suivi de
+              progression en temps reel, notifications a la fin.
+            </p>
+          </div>
+          <div className="max-w-2xl mx-auto">
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8">
+              {[
+                { step: "1", label: "Selection des medias a generer", status: "Choix" },
+                { step: "2", label: "Envoi en pipeline asynchrone", status: "Automatique" },
+                { step: "3", label: "Suivi de progression en temps reel", status: "Live" },
+                { step: "4", label: "Integration automatique dans le cours", status: "Fait" },
+              ].map((item, i) => (
+                <div
+                  key={item.step}
+                  className={`flex items-center gap-4 py-4 ${i < 3 ? "border-b border-neutral-100" : ""}`}
+                >
+                  <div className="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-bold shrink-0">
+                    {item.step}
+                  </div>
+                  <span className="flex-1 text-md font-medium text-neutral-900">
+                    {item.label}
+                  </span>
+                  <span className="rounded-full bg-brand-50 border border-brand-200 px-2.5 py-0.5 text-xs font-medium text-brand-700">
+                    {item.status}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <CTABanner
+        title="Generez vos medias automatiquement"
+        description="Decouvrez comment Syllabis transforme votre contenu textuel en videos, podcasts et plus encore."
+        primaryLabel="Demander une demo"
+        primaryHref="/demo"
+        secondaryLabel="Toutes les fonctionnalites"
+        secondaryHref="/fonctionnalites"
+      />
+    </>
+  );
+}

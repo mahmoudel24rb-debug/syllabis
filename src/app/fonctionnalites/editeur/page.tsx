@@ -1,0 +1,202 @@
+import CTABanner from "../../components/CTABanner";
+
+const blockCategories = [
+  {
+    title: "Quiz interactifs",
+    count: 7,
+    color: "bg-blue-50 border-blue-100 text-blue-700",
+    iconBg: "bg-blue-100",
+    blocks: [
+      "QCM",
+      "Vrai/Faux",
+      "Texte a trou",
+      "Drag & Drop",
+      "Tri",
+      "Scenario branching",
+      "Hotspot image",
+    ],
+  },
+  {
+    title: "Medias riches",
+    count: 6,
+    color: "bg-purple-50 border-purple-100 text-purple-700",
+    iconBg: "bg-purple-100",
+    blocks: ["Video", "Audio", "Images IA", "Code", "Embed", "Podcast"],
+  },
+  {
+    title: "Blocs pedagogiques",
+    count: 9,
+    color: "bg-green-50 border-green-100 text-green-700",
+    iconBg: "bg-green-100",
+    blocks: [
+      "Objectifs",
+      "Definitions",
+      "Citations",
+      "Callout",
+      "Alertes",
+      "Timeline",
+      "Steps",
+      "Accordion",
+      "Tabs",
+    ],
+  },
+  {
+    title: "Visualisation",
+    count: 5,
+    color: "bg-orange-50 border-orange-100 text-orange-700",
+    iconBg: "bg-orange-100",
+    blocks: [
+      "Mind Map",
+      "Tableaux",
+      "Diagrammes",
+      "Infographies",
+      "Comparaisons",
+    ],
+  },
+];
+
+const extras = [
+  {
+    title: "Systeme de themes",
+    description: "10+ presets de themes pour personnaliser l'apparence de vos formations.",
+  },
+  {
+    title: "Slash commands",
+    description: "Tapez / pour inserer n'importe quel bloc instantanement, comme dans Notion.",
+  },
+  {
+    title: "Autosave temps reel",
+    description: "Chaque modification est sauvegardee automatiquement. Aucune perte de donnees.",
+  },
+  {
+    title: "Mode preview instantane",
+    description: "Visualisez le rendu final de votre formation en un clic, tel que l'apprenant le verra.",
+  },
+];
+
+export default function EditeurPage() {
+  return (
+    <>
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid hero-grid-mask" />
+        <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-20">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 mb-4">
+              <span className="text-sm font-medium text-brand-700">
+                Editeur
+              </span>
+            </div>
+            <h1 className="text-display-md sm:text-display-lg font-semibold text-neutral-900">
+              Editeur de contenu avec{" "}
+              <span className="text-brand-600">39+ blocs interactifs</span>
+            </h1>
+            <p className="mt-4 text-xl sm:text-2xl font-medium text-neutral-700">
+              Un editeur style Notion pense pour la pedagogie
+            </p>
+            <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto">
+              Creez du contenu pedagogique riche avec des quiz, des medias, des
+              blocs structurels et des visualisations — le tout dans une
+              interface fluide et intuitive.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Block categories ── */}
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-container px-4 sm:px-8">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-brand-600 mb-3">
+              4 categories de blocs
+            </p>
+            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+              39+ blocs a votre disposition
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {blockCategories.map((category) => (
+              <div
+                key={category.title}
+                className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <h3 className="text-lg font-semibold text-neutral-900">
+                    {category.title}
+                  </h3>
+                  <span
+                    className={`rounded-full border px-2.5 py-0.5 text-xs font-semibold ${category.color}`}
+                  >
+                    {category.count} blocs
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {category.blocks.map((block) => (
+                    <span
+                      key={block}
+                      className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-sm font-medium text-neutral-700"
+                    >
+                      {block}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Extras ── */}
+      <section className="py-16 sm:py-24 bg-neutral-50">
+        <div className="mx-auto max-w-container px-4 sm:px-8">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-brand-600 mb-3">
+              Et aussi
+            </p>
+            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+              Une experience d&apos;edition optimale
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {extras.map((extra) => (
+              <div
+                key={extra.title}
+                className="rounded-2xl border border-neutral-200 bg-white p-6"
+              >
+                <div className="w-10 h-10 rounded-lg bg-brand-50 border border-brand-100 flex items-center justify-center mb-4">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="rgb(127 86 217)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                  {extra.title}
+                </h3>
+                <p className="text-md text-neutral-600 leading-relaxed">
+                  {extra.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <CTABanner
+        title="Decouvrez l'editeur en action"
+        description="Demandez une demo pour voir comment creer du contenu pedagogique avec 39+ blocs interactifs."
+        primaryLabel="Demander une demo"
+        primaryHref="/demo"
+        secondaryLabel="Toutes les fonctionnalites"
+        secondaryHref="/fonctionnalites"
+      />
+    </>
+  );
+}
