@@ -63,7 +63,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
           <div className="flex items-center gap-1.5">
-            <Image src="/sylbi.png" alt="Sylbi" width={36} height={36} className="size-9" />
+            <Image src="/sylbi.png" alt="Sylbi" width={36} height={36} className="size-9 rounded-lg" />
             <span className="text-lg font-bold text-white">Syllabis</span>
           </div>
           <p className="text-md text-white/40">&copy; 2025 Syllabis. Tous droits réservés.</p>

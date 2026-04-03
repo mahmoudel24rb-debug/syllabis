@@ -28,7 +28,7 @@ export default function Navbar() {
       <nav className="mx-auto max-w-container bg-white rounded-xl border border-neutral-200 shadow-sm px-4 sm:px-5 flex items-center justify-between h-[64px]">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5">
-          <Image src="/sylbi.png" alt="Sylbi" width={36} height={36} className="size-9" />
+          <Image src="/sylbi.png" alt="Sylbi" width={36} height={36} className="size-9 rounded-lg" />
           <span className="text-lg font-bold text-[#0A1E3D]">Syllabis</span>
         </Link>
 
