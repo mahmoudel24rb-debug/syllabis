@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -8,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Syllabis | Creez vos cours en ligne avec l'IA",
+  title: "Syllabis | Du referentiel a la formation e-learning par l'IA",
   description:
-    "Generez des cours complets en quelques clics : modules e-learning, PDF, videos et quiz. L'IA qui transforme vos idees en formations professionnelles.",
+    "Syllabis transforme un referentiel de certification (RNCP, BTS, CAP) en formation e-learning complete — structure, contenu interactif, quiz, videos — en quelques minutes grace a l'IA.",
 };
 
 export default function RootLayout({
@@ -21,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-neutral-900">
-        {children}
+        <Navbar />
+        <main className="flex-1 pt-[88px]">{children}</main>
+        <Footer />
       </body>
     </html>
   );
