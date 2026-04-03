@@ -40,10 +40,10 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A1E3D] pt-16 sm:pt-24 pb-12">
-      <div className="mx-auto max-w-container px-4 sm:px-8">
+    <footer className="bg-[#0A1E3D] pt-12 sm:pt-16 pb-8 sm:pb-12">
+      <div className="mx-auto max-w-container px-6 sm:px-8">
         {/* Link columns */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-10 pb-10 border-b border-white/10">
           {footerLinks.map((group) => (
             <div key={group.title}>
               <h3 className="text-sm font-semibold text-white/50 mb-4">{group.title}</h3>
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6">
           <div className="flex items-center gap-1.5">
             <Image src="/sylbi.png" alt="Sylbi" width={36} height={36} className="size-9 rounded-lg" />
             <span className="text-lg font-bold text-white">Syllabis</span>

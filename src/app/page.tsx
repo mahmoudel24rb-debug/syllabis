@@ -123,7 +123,7 @@ export default async function Home() {
             </div>
 
             <div className="mt-8 lg:mt-0">
-              <BrowserMockup src="/screenshots/global-dashboard.png" alt="Dashboard Syllabis" priority />
+              <BrowserMockup src="/screenshots/creer-formation.png" alt="Créer une formation avec Syllabis" priority />
             </div>
           </div>
         </div>
@@ -181,14 +181,12 @@ export default async function Home() {
                 </div>
                 {/* Content */}
                 <div className="pb-6">
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h3 className="text-lg font-semibold text-neutral-900">
-                      {step.title}
-                    </h3>
-                    <span className="rounded-full bg-amber-50 border border-amber-300 px-2.5 py-0.5 text-xs font-medium text-amber-800 whitespace-nowrap">
-                      {step.time}
-                    </span>
-                  </div>
+                  <h3 className="text-lg font-semibold text-neutral-900">
+                    {step.title}
+                  </h3>
+                  <span className="inline-block rounded-full bg-amber-50 border border-amber-300 px-2.5 py-0.5 text-xs font-medium text-amber-800 whitespace-nowrap mt-1 mb-2">
+                    {step.time}
+                  </span>
                   <p className="text-md text-neutral-600 leading-relaxed">
                     {step.desc}
                   </p>
