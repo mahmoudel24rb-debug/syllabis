@@ -12,6 +12,11 @@ import {
   CpuChip02,
   Edit05,
   Certificate01,
+  Zap,
+  Edit04,
+  Download01,
+  Calendar,
+  Building07,
 } from "@untitledui/icons";
 import type { ComponentType } from "react";
 
@@ -23,7 +28,7 @@ interface Service {
   order: number;
 }
 
-const iconMap: Record<string, ComponentType<{ size?: number; color?: string }>> = {
+const iconMap: Record<string, ComponentType<{ size?: number; color?: string; className?: string }>> = {
   MagicWand02,
   File06,
   VideoRecorder,
@@ -36,6 +41,11 @@ const iconMap: Record<string, ComponentType<{ size?: number; color?: string }>> 
   CpuChip02,
   Edit05,
   Certificate01,
+  Zap,
+  Edit04,
+  Download01,
+  Calendar,
+  Building07,
 };
 
 function ServiceIcon({ name }: { name: string }) {
