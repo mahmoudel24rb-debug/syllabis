@@ -1,56 +1,61 @@
+import { VideoRecorder, Headphones01, HelpCircle, BookOpen01, PuzzlePiece01, BarChart01, Table } from "@untitledui/icons";
 import CTABanner from "../../components/CTABanner";
 import type { Metadata } from "next";
+import type { ComponentType } from "react";
 
 export const metadata: Metadata = {
   title: "Médias IA | Syllabis — Vidéos, podcasts et quiz générés automatiquement",
   description: "Générez 7 types de médias depuis votre contenu : vidéos, podcasts, quiz, flashcards, mind maps, infographies, tableaux.",
 };
 
+const mediaIconMap: Record<string, ComponentType<{ className?: string }>> = {
+  "Vidéos explicatives": VideoRecorder,
+  "Podcasts audio": Headphones01,
+  "Quiz IA": HelpCircle,
+  "Flashcards": BookOpen01,
+  "Mind Maps visuelles": PuzzlePiece01,
+  "Infographies": BarChart01,
+  "Tableaux de données": Table,
+};
+
 const mediaTypes = [
   {
-    emoji: "🎥",
     title: "Vidéos explicatives",
     formats: "Explainer / Tutorial",
     description:
       "Génération automatique de vidéos pédagogiques à partir du contenu textuel. Deux formats disponibles : explainer (concepts) et tutorial (pas à pas).",
   },
   {
-    emoji: "🎙️",
     title: "Podcasts audio",
     formats: "Deep Dive / Briefing",
     description:
       "Transformez vos cours en podcasts audio. Mode Deep Dive pour des explications approfondies, Briefing pour des résumés concis.",
   },
   {
-    emoji: "❓",
     title: "Quiz IA",
     formats: "Niveaux de difficulté",
     description:
       "Génération de quiz adaptatifs avec niveaux de difficulté progressifs, directement à partir du contenu pédagogique.",
   },
   {
-    emoji: "🗂️",
     title: "Flashcards",
     formats: "Révision espacée",
     description:
       "Flashcards générées automatiquement avec système de révision espacée pour optimiser la mémorisation.",
   },
   {
-    emoji: "🧠",
     title: "Mind Maps visuelles",
     formats: "Cartographie",
     description:
       "Visualisation des concepts et de leurs relations sous forme de mind maps interactives.",
   },
   {
-    emoji: "📊",
     title: "Infographies",
     formats: "Synthèse visuelle",
     description:
       "Création d'infographies de synthèse pour présenter les informations clés de manière visuelle.",
   },
   {
-    emoji: "📋",
     title: "Tableaux de données",
     formats: "Structuration",
     description:
@@ -103,8 +108,11 @@ export default function MediasIAPage() {
                 key={media.title}
                 className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 hover:border-brand-200 hover:shadow-sm transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center text-2xl mb-5">
-                  {media.emoji}
+                <div className="flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 mb-5">
+                  {(() => {
+                    const Icon = mediaIconMap[media.title];
+                    return Icon ? <Icon className="size-6 text-[#0A1E3D]" /> : null;
+                  })()}
                 </div>
                 <div className="flex items-center gap-2 mb-2">
                   <h3 className="text-lg font-semibold text-neutral-900">

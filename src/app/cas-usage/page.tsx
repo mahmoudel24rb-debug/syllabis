@@ -1,15 +1,23 @@
 import Link from "next/link";
+import { GraduationHat02, User01, Building07, Rocket02, Check } from "@untitledui/icons";
 import CTABanner from "../components/CTABanner";
-import type { Metadata } from "next";
+import type { Metadata, } from "next";
+import type { ComponentType } from "react";
 
 export const metadata: Metadata = {
   title: "Cas d'usage | Syllabis — OF, formateurs, entreprises, EdTech",
   description: "Découvrez comment Syllabis s'adapte aux organismes de formation, formateurs indépendants, entreprises et startups EdTech.",
 };
 
+const iconMap: Record<string, ComponentType<{ className?: string }>> = {
+  "Organismes de formation": GraduationHat02,
+  "Formateurs independants": User01,
+  "Entreprises": Building07,
+  "EdTech & Startups": Rocket02,
+};
+
 const useCases = [
   {
-    icon: "\uD83C\uDFEB",
     title: "Organismes de formation",
     href: "/cas-usage/organismes-formation",
     description:
@@ -22,7 +30,6 @@ const useCases = [
     ],
   },
   {
-    icon: "\uD83D\uDC64",
     title: "Formateurs independants",
     href: "/cas-usage/formateurs-independants",
     description:
@@ -35,7 +42,6 @@ const useCases = [
     ],
   },
   {
-    icon: "\uD83C\uDFE2",
     title: "Entreprises",
     href: "/cas-usage/entreprises",
     description:
@@ -48,7 +54,6 @@ const useCases = [
     ],
   },
   {
-    icon: "\uD83D\uDE80",
     title: "EdTech & Startups",
     href: "/cas-usage/edtech",
     description:
@@ -94,7 +99,14 @@ export default function CasUsagePage() {
                 href={uc.href}
                 className="group rounded-2xl border border-neutral-200 bg-white p-8 hover:border-brand-200 hover:shadow-lg transition-all"
               >
-                <span className="text-3xl">{uc.icon}</span>
+                {(() => {
+                  const Icon = iconMap[uc.title];
+                  return (
+                    <div className="flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10">
+                      {Icon ? <Icon className="size-6 text-[#0A1E3D]" /> : null}
+                    </div>
+                  );
+                })()}
                 <h3 className="mt-4 text-xl font-semibold text-neutral-900 group-hover:text-brand-600 transition-colors">
                   {uc.title}
                 </h3>
