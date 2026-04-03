@@ -1,9 +1,49 @@
+import {
+  MagicWand02,
+  File06,
+  VideoRecorder,
+  CheckSquare,
+  GraduationHat02,
+  BarChart01,
+  Lightbulb02,
+  BookOpen01,
+  Stars02,
+  CpuChip02,
+  Edit05,
+  Certificate01,
+} from "@untitledui/icons";
+import type { ComponentType } from "react";
+
 interface Service {
   _id: string;
   title: string;
   description: string;
   icon: string;
   order: number;
+}
+
+const iconMap: Record<string, ComponentType<{ size?: number; color?: string }>> = {
+  MagicWand02,
+  File06,
+  VideoRecorder,
+  CheckSquare,
+  GraduationHat02,
+  BarChart01,
+  Lightbulb02,
+  BookOpen01,
+  Stars02,
+  CpuChip02,
+  Edit05,
+  Certificate01,
+};
+
+function ServiceIcon({ name }: { name: string }) {
+  const Icon = iconMap[name];
+  if (Icon) {
+    return <Icon size={24} color="currentColor" />;
+  }
+  // Fallback: if the value is an emoji or unknown name, render as text
+  return <span className="text-2xl">{name}</span>;
 }
 
 export default function Services({ services }: { services: Service[] }) {
@@ -28,8 +68,8 @@ export default function Services({ services }: { services: Service[] }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 sm:gap-y-16">
           {services.map((service) => (
             <div key={service._id} className="text-center">
-              <div className="mx-auto mb-5 flex items-center justify-center w-12 h-12 rounded-lg border border-neutral-200 bg-white shadow-xs text-2xl">
-                {service.icon}
+              <div className="mx-auto mb-5 flex items-center justify-center w-12 h-12 rounded-lg border border-neutral-200 bg-white shadow-xs text-brand-600">
+                <ServiceIcon name={service.icon} />
               </div>
               <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                 {service.title}
