@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Check, X } from "@untitledui/icons";
-import { LayersThree01, Edit04, Download01, AlertTriangle } from "@untitledui/icons";
+import { LayersThree01, Edit04, Download01 } from "@untitledui/icons";
 import CTABanner from "./components/CTABanner";
 import BrowserMockup from "./components/BrowserMockup";
 
@@ -159,9 +159,9 @@ export default function Home() {
               {problems.map((p) => (
                 <div
                   key={p}
-                  className="flex items-start gap-3 rounded-xl border border-neutral-200 bg-white p-5"
+                  className="flex items-center gap-3 rounded-xl border border-neutral-200 bg-white p-5"
                 >
-                  <AlertTriangle className="size-5 text-amber-500 shrink-0 mt-0.5" />
+                  <span className="shrink-0 w-2 h-2 rounded-full bg-amber-400" />
                   <span className="text-md text-neutral-800">{p}</span>
                 </div>
               ))}
@@ -188,9 +188,9 @@ export default function Home() {
               {solutions.map((s, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-4 rounded-xl border border-neutral-200 bg-white p-5"
+                  className="flex items-center gap-4 rounded-xl border border-neutral-200 bg-white p-5"
                 >
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-bold">
+                  <div className="shrink-0 w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-bold leading-none">
                     {i + 1}
                   </div>
                   <p className="text-md text-neutral-700 leading-relaxed">
