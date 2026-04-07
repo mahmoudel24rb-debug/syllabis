@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { Check, X, ArrowRight } from "@untitledui/icons";
-import { LayersThree01, Edit04, Download01 } from "@untitledui/icons";
+import { Check, X, ArrowRight, LayersThree01, Edit04, Download01 } from "@untitledui/icons";
 import { Button } from "@/components/base/buttons/button";
 import CTABanner from "./components/CTABanner";
 
@@ -129,36 +128,43 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           2. CE QUE FAIT SYLLABIS — style landing-page-12
           ══════════════════════════════════════════════ */}
-      <section id="decouvrir" className="relative overflow-hidden pt-16 md:pt-24 md:pb-24">
+      <section id="decouvrir" className="relative overflow-hidden pt-16 md:pt-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
-          {/* Text */}
-          <div className="mx-auto max-w-3xl text-center mb-16 md:mb-20">
-            <p className="text-sm font-semibold text-brand-600 mb-3">
-              Ce que fait Syllabis
-            </p>
-            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              De la fiche RNCP à la formation complète
-            </h2>
-            <p className="mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Syllabis vous assiste dans la création de vos formations — de
-              l&apos;arborescence pédagogique jusqu&apos;à la création de
-              contenu — et vous assure une{" "}
-              <strong className="text-neutral-900">conformité absolue</strong>{" "}
-              entre les attentes des certificateurs et la validation des
-              compétences des apprenants.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left — Text */}
+            <div className="max-w-lg">
+              <p className="text-sm font-semibold text-brand-600 mb-3">
+                Ce que fait Syllabis
+              </p>
+              <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+                De la fiche RNCP à la formation complète
+              </h2>
+              <p className="mt-5 text-lg text-neutral-600 leading-relaxed">
+                Syllabis vous assiste dans la création de vos formations — de
+                l&apos;arborescence pédagogique jusqu&apos;à la création de
+                contenu — et vous assure une{" "}
+                <strong className="text-neutral-900">conformité absolue</strong>{" "}
+                entre les attentes des certificateurs et la validation des
+                compétences des apprenants.
+              </p>
+              <div className="mt-8">
+                <Button color="primary" size="lg" href="/fonctionnalites" iconTrailing={<ArrowRight data-icon />}>
+                  Découvrir les fonctionnalités
+                </Button>
+              </div>
+            </div>
 
-          {/* Mockup — PC frame style landing-page-12 */}
-          <div className="mx-auto max-w-5xl">
-            <div className="rounded-[8px] bg-[#0A1E3D] p-0.5 shadow-[0_32px_64px_-12px_rgba(10,30,61,0.25),0_0_0_1px_rgba(10,30,61,0.08)] md:rounded-[24px] md:p-1">
-              <Image
-                src="/screenshots/mindmap.jpg"
-                alt="Arborescence pédagogique — Mind Map Syllabis"
-                width={1280}
-                height={800}
-                className="w-full h-auto rounded-[6px] md:rounded-[20px]"
-              />
+            {/* Right — Mockup desktop, débordant à droite */}
+            <div className="relative lg:-mr-[15%] xl:-mr-[20%]">
+              <div className="rounded-[8px] bg-[#0A1E3D] p-0.5 shadow-[0_32px_64px_-12px_rgba(10,30,61,0.25),0_0_0_1px_rgba(10,30,61,0.08)] md:rounded-[24px] md:p-1">
+                <Image
+                  src="/screenshots/mindmap.jpg"
+                  alt="Arborescence pédagogique — Mind Map Syllabis"
+                  width={1280}
+                  height={800}
+                  className="w-full h-auto rounded-[6px] md:rounded-[20px]"
+                />
+              </div>
             </div>
           </div>
         </div>

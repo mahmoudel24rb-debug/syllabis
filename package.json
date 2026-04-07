@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",
+    "@tailwindcss/typography": "^0.5.19",
     "@untitledui/icons": "^0.0.22",
     "next": "16.2.2",
     "next-sanity": "^12.2.1",
@@ -27,6 +28,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
+    "postcss": "^8.5.8",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
