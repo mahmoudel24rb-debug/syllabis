@@ -39,6 +39,37 @@ body {
     font-kerning: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Grid pattern for hero background */
+.hero-grid {
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+}
+
+.hero-grid-mask {
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 70%);
+}
+
+details summary::marker {
+    display: none;
+    content: "";
+}
+
+details[open] summary ~ * {
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Hide the default expand arrow on Safari.  */
 details summary::-webkit-details-marker {
     display: none;
