@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/base/buttons/button";
 
 interface CTABannerProps {
@@ -29,14 +30,12 @@ export default function CTABanner({
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
             {secondaryLabel && secondaryHref && (
-              <Button
-                color="secondary"
-                size="xl"
+              <Link
                 href={secondaryHref}
-                className="w-full sm:w-auto border-white/20 bg-[#1A365D] text-white hover:bg-[#1A365D]/80 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_1px_2px_0_rgba(0,0,0,0.3)]"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/10 px-4.5 py-3 text-md font-semibold text-white hover:bg-white/20 transition-colors"
               >
                 {secondaryLabel}
-              </Button>
+              </Link>
             )}
             <Button color="primary" size="xl" href={primaryHref} className="w-full sm:w-auto">
               {primaryLabel}
