@@ -1,56 +1,50 @@
 import Link from "next/link";
+import { AlertTriangle, Check } from "@untitledui/icons";
 import type { Metadata } from "next";
+import CTABanner from "../components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "À propos | Syllabis — Notre mission et notre vision",
+  title: "À propos | Syllabis — Organisme de formation depuis 25 ans",
   description:
-    "Démocratiser la création de formations e-learning grâce à l'IA. Découvrez la vision, les valeurs et la stack technique de Syllabis.",
+    "Créé par un organisme de formation, pour les organismes de formation. Découvrez pourquoi nous avons lancé Syllabis en 2025.",
 };
+
+const problems = [
+  "Réduction des niveaux de prise en charge (NPEC)",
+  "Exigences des certificateurs de plus en plus fortes",
+  "Développement des formations ouvertes à distance (FOAD)",
+  "Dépendance aux formateurs externes",
+];
+
+const solutions = [
+  "Créer des programmes pédagogiques complets, assistés par l\u2019IA, pour répondre plus rapidement aux appels d\u2019offres.",
+  "Générer l\u2019ensemble de nos contenus, pour permettre aux formateurs indépendants de se concentrer sur l\u2019animation des formations.",
+  "Prouver en un export l\u2019alignement parfait entre les validations des compétences et les objectifs pédagogiques, pour réduire la lourdeur administrative.",
+];
+
+const results = [
+  { value: "+20%", label: "de FOAD en moyenne dans nos formations" },
+  { value: "100%", label: "de maîtrise du contenu dispensé aux élèves" },
+  { value: "×3", label: "appels d\u2019offres traités, avec 20 à 30% de conversion" },
+  { value: "÷7", label: "le temps de création d\u2019un titre professionnel" },
+];
 
 const values = [
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-        <path d="M2 17l10 5 10-5" />
-        <path d="M2 12l10 5 10-5" />
-      </svg>
-    ),
-    title: "Innovation",
+    title: "Conformité",
     description:
-      "Repousser les limites de l'IA pour la pédagogie. Nous investissons dans la recherche pour offrir des outils toujours plus intelligents et pertinents.",
+      "Alignement parfait entre les attentes des certificateurs et la validation des compétences des apprenants. RNCP, Qualiopi, France Compétences.",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-        <polyline points="22 4 12 14.01 9 11.01" />
-      </svg>
-    ),
-    title: "Qualité pédagogique",
+    title: "Productivité",
     description:
-      "Chaque formation générée respecte les standards RNCP et Qualiopi. La rigueur pédagogique n'est jamais sacrifiée au profit de la vitesse.",
+      "Division par 7 du temps de création d\u2019un titre professionnel. Plus d\u2019appels d\u2019offres traités, avec un meilleur taux de conversion.",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 00-3-3.87" />
-        <path d="M16 3.13a4 4 0 010 7.75" />
-      </svg>
-    ),
-    title: "Accessibilité",
+    title: "Autonomie",
     description:
-      "Rendre la création e-learning accessible à tous, pas seulement aux experts. Un formateur indépendant mérite les mêmes outils qu'un grand groupe.",
+      "Reprenez le contrôle sur vos contenus pédagogiques. Réduisez votre dépendance aux formateurs externes et maîtrisez ce qui est dispensé à vos élèves.",
   },
-];
-
-const techStack = [
-  { name: "React", label: "Frontend" },
-  { name: "NestJS", label: "Backend" },
-  { name: "PostgreSQL", label: "Base de données" },
-  { name: "Gemini", label: "IA générative" },
 ];
 
 export default function AProposPage() {
@@ -65,52 +59,98 @@ export default function AProposPage() {
               À propos
             </p>
             <h1 className="text-display-sm sm:text-display-lg font-semibold text-neutral-900">
-              À propos de Syllabis
+              Organisme de formation depuis 25 ans
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Démocratiser la création de formations e-learning grâce à
-              l&apos;IA.
+              Créé par un organisme de formation, pour les organismes de
+              formation.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── Vision ── */}
+      {/* ── Le constat ── */}
       <section className="py-16 sm:py-24 bg-neutral-50">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="max-w-3xl mx-auto">
-            <p className="text-sm font-semibold text-brand-600 mb-3">
-              Notre vision
-            </p>
-            <h2 className="text-display-sm font-semibold text-neutral-900 mb-6">
-              Un constat simple
-            </h2>
-            <p className="text-lg text-neutral-600 leading-relaxed">
-              Le marché de la formation professionnelle produit des milliers de
-              référentiels chaque année. Pourtant, transformer ces documents en
-              formations e-learning reste un processus manuel, long et coûteux.
-              Syllabis est né de ce constat.
-            </p>
+            <div className="text-center mb-12">
+              <h2 className="text-display-sm font-semibold text-neutral-900">
+                Nous assistons aux premières loges à la mutation de notre secteur
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+              {problems.map((p) => (
+                <div
+                  key={p}
+                  className="flex items-start gap-3 rounded-xl border border-neutral-200 bg-white p-5"
+                >
+                  <AlertTriangle className="size-5 text-amber-500 shrink-0 mt-0.5" />
+                  <span className="text-md text-neutral-800">{p}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="rounded-xl bg-[#0A1E3D] p-6 sm:p-8 text-center">
+              <p className="text-md sm:text-lg text-white/90 leading-relaxed">
+                Ces bouleversements ont un impact direct sur nos marges et la
+                rentabilité de nos structures.{" "}
+                <span className="font-semibold text-white">
+                  Ainsi nous avons lancé la création de Syllabis en 2025.
+                </span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Mission ── */}
+      {/* ── Ce que permet Syllabis ── */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="max-w-3xl mx-auto">
-            <p className="text-sm font-semibold text-brand-600 mb-3">
-              Notre mission
-            </p>
-            <h2 className="text-display-sm font-semibold text-neutral-900 mb-6">
-              La formation e-learning pour tous
-            </h2>
-            <p className="text-lg text-neutral-600 leading-relaxed">
-              Permettre à n&apos;importe quel organisme de formation, formateur
-              indépendant ou entreprise de créer des formations e-learning de
-              qualité professionnelle en quelques minutes, pas en quelques
-              semaines.
-            </p>
+            <div className="text-center mb-8">
+              <h2 className="text-display-xs sm:text-display-sm font-semibold text-neutral-900">
+                Un outil permettant de :
+              </h2>
+            </div>
+            <div className="space-y-4 mb-16">
+              {solutions.map((s, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-4 rounded-xl border border-neutral-200 bg-white p-5"
+                >
+                  <div className="shrink-0 w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-bold">
+                    {i + 1}
+                  </div>
+                  <p className="text-md text-neutral-700 leading-relaxed">
+                    {s}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Résultats */}
+            <div className="text-center mb-8">
+              <p className="text-sm font-semibold text-brand-600 mb-3">
+                Résultats
+              </p>
+              <h3 className="text-display-xs sm:text-display-sm font-semibold text-neutral-900">
+                Des résultats concrets
+              </h3>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {results.map((r) => (
+                <div
+                  key={r.value}
+                  className="rounded-xl border border-neutral-200 bg-white p-6 text-center"
+                >
+                  <div className="text-3xl sm:text-4xl font-bold text-[#0A1E3D]">
+                    {r.value}
+                  </div>
+                  <p className="text-sm text-neutral-600 mt-2">{r.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -123,24 +163,23 @@ export default function AProposPage() {
               Nos valeurs
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Ce qui nous guide au quotidien
+              Ce qui nous guide
             </h2>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {values.map((value) => (
+            {values.map((v) => (
               <div
-                key={value.title}
+                key={v.title}
                 className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
               >
-                <div className="w-12 h-12 rounded-lg bg-brand-50 border border-brand-100 flex items-center justify-center text-brand-600 mb-5">
-                  {value.icon}
+                <div className="w-12 h-12 rounded-lg bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 flex items-center justify-center text-[#0A1E3D] mb-5">
+                  <Check className="size-6" />
                 </div>
                 <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-                  {value.title}
+                  {v.title}
                 </h3>
                 <p className="text-md text-neutral-600 leading-relaxed">
-                  {value.description}
+                  {v.description}
                 </p>
               </div>
             ))}
@@ -148,57 +187,13 @@ export default function AProposPage() {
         </div>
       </section>
 
-      {/* ── Stack technique ── */}
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-sm font-semibold text-brand-600 mb-3">
-              Technologie
-            </p>
-            <h2 className="text-display-sm font-semibold text-neutral-900 mb-4">
-              Une stack moderne et fiable
-            </h2>
-            <p className="text-md text-neutral-600 mb-12">
-              Infrastructure moderne, hébergement européen, données chiffrées.
-            </p>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {techStack.map((tech) => (
-                <div
-                  key={tech.name}
-                  className="rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-5 text-center"
-                >
-                  <p className="text-md font-semibold text-neutral-900">
-                    {tech.name}
-                  </p>
-                  <p className="text-sm text-neutral-500 mt-1">{tech.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── CTA ── */}
-      <section className="py-16 sm:py-24 bg-neutral-50">
-        <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="rounded-2xl border border-brand-200 bg-brand-50 p-8 sm:p-12 text-center">
-            <h2 className="text-display-sm font-semibold text-neutral-900 mb-4">
-              Rejoignez les 2000+ formateurs qui utilisent Syllabis
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-xl mx-auto mb-8">
-              Découvrez comment transformer vos référentiels en formations
-              e-learning complètes en quelques minutes.
-            </p>
-            <Link
-              href="/demo"
-              className="inline-flex items-center justify-center rounded-lg border border-brand-600 bg-brand-600 px-5 py-3 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors"
-            >
-              Demander une démo
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTABanner
+        title="Prêt à décupler la productivité de votre organisme ?"
+        description="Demandez une démo et découvrez comment Syllabis divise par 7 le temps de création de vos formations."
+        primaryLabel="Demander une démo"
+        primaryHref="/demo"
+      />
     </>
   );
 }

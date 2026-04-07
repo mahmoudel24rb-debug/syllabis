@@ -1,82 +1,61 @@
 import Link from "next/link";
-import { client } from "@/sanity/client";
-import { SERVICES_QUERY } from "@/sanity/queries";
-import Services from "./components/Services";
+import { Check, X } from "@untitledui/icons";
+import { LayersThree01, Edit04, Download01, AlertTriangle } from "@untitledui/icons";
 import CTABanner from "./components/CTABanner";
 import BrowserMockup from "./components/BrowserMockup";
-import { Upload01, Zap, CpuChip01, Edit04, Download01, Check, X } from "@untitledui/icons";
 
-interface Service {
-  _id: string;
-  title: string;
-  description: string;
-  icon: string;
-  order: number;
-}
-
-const options = { next: { revalidate: 30 } };
-
-const steps = [
-  {
-    number: "01",
-    time: "3 secondes",
-    title: "Uploadez votre référentiel",
-    desc: "Importez un PDF de certification (RNCP, BTS, CAP, CQP, BPJEPS) ou décrivez votre formation en texte libre.",
-    icon: Upload01,
-  },
-  {
-    number: "02",
-    time: "Instantané",
-    title: "L'IA analyse et structure",
-    desc: "Détection automatique du type de certification, blocs de compétences, modules, heures et prérequis.",
-    icon: Zap,
-  },
-  {
-    number: "03",
-    time: "2-5 minutes",
-    title: "Génération du contenu complet",
-    desc: "Séances, quiz, exercices, architectures pédagogiques — tout est généré automatiquement.",
-    icon: CpuChip01,
-  },
-  {
-    number: "04",
-    time: "Personnalisation",
-    title: "Éditez avec 39+ blocs",
-    desc: "Quiz interactifs, vidéos, podcasts, mind maps, flashcards — personnalisez chaque élément.",
-    icon: Edit04,
-  },
-  {
-    number: "05",
-    time: "Déploiement",
-    title: "Exportez et déployez",
-    desc: "Export SCORM 1.2 & 2004 vers n'importe quel LMS, ou planning formateurs avec calendrier.",
-    icon: Download01,
-  },
+const problems = [
+  "Réduction des niveaux de prise en charge (NPEC)",
+  "Exigences des certificateurs de plus en plus fortes",
+  "Développement des formations ouvertes à distance (FOAD)",
+  "Dépendance aux formateurs externes",
 ];
 
-const metrics = [
-  { value: "39+", label: "Blocs interactifs" },
-  { value: "6", label: "Certifications supportées" },
-  { value: "5", label: "Rôles utilisateur" },
-  { value: "4", label: "Modèles IA" },
-  { value: "7", label: "Types de médias" },
-  { value: "2", label: "Formats SCORM" },
+const solutions = [
+  "Créer des programmes pédagogiques complets, assistés par l\u2019IA, pour répondre plus rapidement aux appels d\u2019offres.",
+  "Générer l\u2019ensemble de nos contenus, pour permettre aux formateurs indépendants de se concentrer sur l\u2019animation des formations.",
+  "Prouver en un export l\u2019alignement parfait entre les validations des compétences et les objectifs pédagogiques, pour réduire la lourdeur administrative.",
+];
+
+const results = [
+  { value: "+20%", label: "de FOAD en moyenne dans nos formations" },
+  { value: "100%", label: "de maîtrise du contenu dispensé aux élèves" },
+  { value: "×3", label: "appels d\u2019offres traités, avec 20 à 30% de conversion" },
+  { value: "÷7", label: "le temps de création d\u2019un titre professionnel" },
 ];
 
 const comparison = [
-  { label: "Analyser un référentiel", before: "2-3 jours", after: "3 secondes" },
-  { label: "Structurer la formation", before: "1 semaine", after: "Instantané" },
-  { label: "Rédiger le contenu", before: "2-3 semaines", after: "2-5 minutes" },
-  { label: "Créer les quiz", before: "2-3 jours", after: "Inclus" },
-  { label: "Exporter en SCORM", before: "Outil externe", after: "1 clic" },
+  { label: "Création de l\u2019arborescence pédagogique, du bloc à la séance", before: "80h", after: "8h" },
+  { label: "Création du contenu + validation des compétences", before: "1 600h", after: "80h" },
+  { label: "Contrôle qualité", before: "40h", after: "40h" },
+  { label: "TOTAL", before: "1 720h", after: "128h" },
 ];
 
-export default async function Home() {
-  const services = await client.fetch<Service[]>(SERVICES_QUERY, {}, options);
+const features = [
+  {
+    icon: LayersThree01,
+    title: "Arborescence pédagogique",
+    description:
+      "À partir d\u2019une fiche RNCP, Syllabis vous permet de créer vos blocs, modules, séquences et séances pédagogiques.",
+  },
+  {
+    icon: Edit04,
+    title: "Création de contenu",
+    description:
+      "Création du contenu des formations pour les séances en FOAD et en présentiel. Génération d\u2019images, vidéos, quiz...",
+  },
+  {
+    icon: Download01,
+    title: "Export SCORM",
+    description:
+      "Export en format SCORM pour utilisation dans un LMS tiers. Déployez vos formations sur n\u2019importe quelle plateforme.",
+  },
+];
 
+export default function Home() {
   return (
     <>
-      {/* ── Hero ── */}
+      {/* ── 1. Hero ── */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 hero-grid hero-grid-mask" />
         <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-24">
@@ -87,31 +66,30 @@ export default async function Home() {
                   <span className="w-2 h-2 rounded-full bg-amber-400" />
                   Nouveau
                 </span>
-                <span className="text-sm font-medium text-amber-800 flex items-center gap-1">
-                  Génération vidéo & podcast par IA
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M3.33 8h9.34M8.67 4l4 4-4 4" />
-                  </svg>
+                <span className="text-sm font-medium text-amber-800">
+                  Créé par un OF, pour les OF
                 </span>
               </div>
 
               <h1 className="text-display-lg sm:text-display-xl font-semibold text-neutral-900">
-                Du référentiel à la formation e-learning.{" "}
-                <span className="text-brand-600">En quelques minutes.</span>
+                Le copilote IA des{" "}
+                <span className="text-brand-600">organismes de formation</span>
               </h1>
 
-              <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl">
-                Syllabis transforme un PDF de certification (RNCP, BTS, CAP, CQP,
-                BPJEPS) en formation complète — structure, contenu interactif,
-                quiz, vidéos — grâce à l&apos;IA.
+              <p className="mt-4 text-xl sm:text-2xl font-medium text-neutral-700">
+                Pour une conformité absolue et une productivité décuplée.
               </p>
 
-              <div className="mt-12 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
+              <p className="mt-3 text-md text-neutral-500 italic">
+                Créé par un organisme de formation, pour les organismes de formation.
+              </p>
+
+              <div className="mt-10 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
                 <Link
-                  href="#comment-ca-marche"
+                  href="#decouvrir"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-300 bg-white px-5 py-3 text-md font-semibold text-neutral-700 shadow-xs hover:bg-neutral-50 transition-colors order-2 sm:order-1"
                 >
-                  Voir comment ça marche
+                  Découvrir Syllabis
                 </Link>
                 <Link
                   href="/demo"
@@ -123,21 +101,202 @@ export default async function Home() {
             </div>
 
             <div className="mt-8 lg:mt-0">
-              <BrowserMockup src="/screenshots/creer-formation.png" alt="Créer une formation avec Syllabis" priority />
+              <BrowserMockup
+                src="/screenshots/formation-creation.png"
+                alt="Arborescence pédagogique générée par Syllabis"
+                priority
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Social proof band ── */}
-      <section className="py-8 sm:py-12 border-y border-neutral-200 bg-neutral-50">
+      {/* ── 2. Ce que fait Syllabis ── */}
+      <section id="decouvrir" className="py-16 sm:py-24 bg-neutral-50">
         <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium text-neutral-600">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-sm font-semibold text-brand-600 mb-3">
+              Ce que fait Syllabis
+            </p>
+            <p className="text-display-xs sm:text-display-sm font-medium text-neutral-900 leading-snug">
+              À partir d&apos;une fiche RNCP, Syllabis vous assiste dans la
+              création de vos formations — de l&apos;arborescence pédagogique
+              jusqu&apos;à la création de contenu — et vous assure une{" "}
+              <span className="text-brand-600">conformité absolue</span> entre
+              les attentes des certificateurs et la validation des compétences
+              des apprenants.
+            </p>
+          </div>
+
+          <div className="mt-12 max-w-4xl mx-auto">
+            <BrowserMockup
+              src="/screenshots/creer-formation.png"
+              alt="Création de formation avec Syllabis"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. Qui sommes-nous — Le constat ── */}
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-container px-4 sm:px-8">
+          <div className="max-w-3xl mx-auto">
+            {/* Constat */}
+            <div className="text-center mb-12">
+              <p className="text-sm font-semibold text-brand-600 mb-3">
+                Qui sommes-nous
+              </p>
+              <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+                Organisme de formation depuis 25 ans
+              </h2>
+              <p className="mt-5 text-lg text-neutral-600">
+                Nous assistons aux premières loges à la mutation de notre secteur.
+              </p>
+            </div>
+
+            {/* 4 problèmes */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+              {problems.map((p) => (
+                <div
+                  key={p}
+                  className="flex items-start gap-3 rounded-xl border border-neutral-200 bg-white p-5"
+                >
+                  <AlertTriangle className="size-5 text-amber-500 shrink-0 mt-0.5" />
+                  <span className="text-md text-neutral-800">{p}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Transition */}
+            <div className="rounded-xl bg-[#0A1E3D] p-6 sm:p-8 text-center mb-16">
+              <p className="text-md sm:text-lg text-white/90 leading-relaxed">
+                Ces bouleversements ont un impact direct sur nos marges et la
+                rentabilité de nos structures.{" "}
+                <span className="font-semibold text-white">
+                  Ainsi nous avons lancé la création de Syllabis en 2025.
+                </span>
+              </p>
+            </div>
+
+            {/* 3 solutions */}
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-semibold text-neutral-900">
+                Un outil permettant de :
+              </h3>
+            </div>
+            <div className="space-y-4 mb-16">
+              {solutions.map((s, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-4 rounded-xl border border-neutral-200 bg-white p-5"
+                >
+                  <div className="shrink-0 w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-bold">
+                    {i + 1}
+                  </div>
+                  <p className="text-md text-neutral-700 leading-relaxed">
+                    {s}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Résultats */}
+            <div className="text-center mb-8">
+              <p className="text-sm font-semibold text-brand-600 mb-3">
+                Résultats
+              </p>
+              <h3 className="text-display-xs sm:text-display-sm font-semibold text-neutral-900">
+                Des résultats concrets
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {results.map((r) => (
+                <div
+                  key={r.value}
+                  className="rounded-xl border border-neutral-200 bg-white p-6 text-center"
+                >
+                  <div className="text-3xl sm:text-4xl font-bold text-[#0A1E3D]">
+                    {r.value}
+                  </div>
+                  <p className="text-sm text-neutral-600 mt-2">{r.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. Tableau comparatif réel ── */}
+      <section className="py-16 sm:py-24 bg-neutral-50">
+        <div className="mx-auto max-w-container px-4 sm:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold text-brand-600 mb-3">
+              Avant / Après
+            </p>
+            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+              Divisé par 7 le temps de création
+            </h2>
+            <p className="mt-5 text-lg text-neutral-600">
+              Exemple avec le titre : <strong>Formateur pour adultes</strong>
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4 px-4">
+              <span className="text-xs sm:text-sm font-semibold text-neutral-500">
+                Étape
+              </span>
+              <span className="text-xs sm:text-sm font-semibold text-red-600 text-center">
+                Sans Syllabis
+              </span>
+              <span className="text-xs sm:text-sm font-semibold text-emerald-600 text-center">
+                Avec Syllabis
+              </span>
+            </div>
+
+            <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden divide-y divide-neutral-100">
+              {comparison.map((row) => {
+                const isTotal = row.label === "TOTAL";
+                return (
+                  <div
+                    key={row.label}
+                    className={`grid grid-cols-3 gap-2 sm:gap-4 px-3 sm:px-5 py-3 sm:py-4 items-center ${
+                      isTotal ? "bg-neutral-50 font-bold" : ""
+                    }`}
+                  >
+                    <span
+                      className={`text-xs sm:text-sm text-neutral-900 ${
+                        isTotal ? "font-bold" : "font-medium"
+                      }`}
+                    >
+                      {row.label}
+                    </span>
+                    <span className="text-xs sm:text-sm text-red-600 text-center flex items-center justify-center gap-0.5 sm:gap-1">
+                      <X className="size-3 sm:size-4 text-red-400 shrink-0" />
+                      {row.before}
+                    </span>
+                    <span className="text-xs sm:text-sm text-emerald-600 font-semibold text-center flex items-center justify-center gap-0.5 sm:gap-1">
+                      <Check className="size-3 sm:size-4 text-emerald-500 shrink-0" />
+                      {row.after}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. Chiffres clés (bandeau) ── */}
+      <section className="py-8 sm:py-12 border-y border-neutral-200 bg-white">
+        <div className="mx-auto max-w-container px-4 sm:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm font-medium text-neutral-700">
             {[
-              "39+ blocs interactifs",
-              "6 certifications supportées",
-              "4 modèles IA disponibles",
-              "Export SCORM 1.2 & 2004",
+              "+20% de FOAD",
+              "×3 appels d\u2019offres",
+              "÷7 temps de création",
+              "100% maîtrise du contenu",
             ].map((text) => (
               <span key={text} className="flex items-center gap-2">
                 <Check className="size-4 text-brand-600" />
@@ -148,119 +307,46 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ── Comment ça marche (5 étapes) ── */}
-      <section id="comment-ca-marche" className="py-16 sm:py-24">
+      {/* ── 6. Fonctionnalités (3 blocs) ── */}
+      <section id="fonctionnalites" className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-brand-600 mb-3">
-              Comment ça marche
+              Fonctionnalités
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              De l&apos;upload au déploiement en 5 étapes
+              Principales fonctionnalités
             </h2>
-            <p className="mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Passez du référentiel PDF à une formation e-learning complète,
-              prête à déployer sur n&apos;importe quel LMS.
-            </p>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-6">
-            {steps.map((step, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {features.map((f) => (
               <div
-                key={step.number}
-                className="flex gap-5 sm:gap-8 items-start"
+                key={f.title}
+                className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 hover:shadow-lg hover:border-brand-200 transition-all"
               >
-                {/* Number + line */}
-                <div className="flex flex-col items-center shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center">
-                    <step.icon className="size-5" />
-                  </div>
-                  {i < steps.length - 1 && (
-                    <div className="w-px h-12 bg-neutral-200 mt-2" />
-                  )}
+                <div className="flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 mb-5">
+                  <f.icon className="size-6 text-[#0A1E3D]" />
                 </div>
-                {/* Content */}
-                <div className="pb-6">
-                  <h3 className="text-lg font-semibold text-neutral-900">
-                    {step.title}
-                  </h3>
-                  <span className="inline-block rounded-full bg-amber-50 border border-amber-300 px-2.5 py-0.5 text-xs font-medium text-amber-800 whitespace-nowrap mt-1 mb-2">
-                    {step.time}
-                  </span>
-                  <p className="text-md text-neutral-600 leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                  {f.title}
+                </h3>
+                <p className="text-md text-neutral-600 leading-relaxed">
+                  {f.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 6 Piliers (dynamic Sanity) ── */}
-      <Services services={services} />
-
-      {/* ── Avant / Apres ── */}
-      <section className="py-16 sm:py-24 bg-neutral-50">
-        <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-brand-600 mb-3">
-              Avant / Après
-            </p>
-            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              De 3 semaines à 3 minutes
-            </h2>
-            <p className="mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Comparez le temps de création d&apos;une formation avec et sans Syllabis.
-            </p>
-          </div>
-
-          <div className="max-w-2xl mx-auto">
-            {/* Table header */}
-            <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4 px-4">
-              <span className="text-xs sm:text-sm font-semibold text-neutral-500">Étape</span>
-              <span className="text-xs sm:text-sm font-semibold text-red-600 text-center">Manuellement</span>
-              <span className="text-xs sm:text-sm font-semibold text-emerald-600 text-center">Avec Syllabis</span>
-            </div>
-            {/* Rows */}
-            <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden divide-y divide-neutral-100">
-              {comparison.map((row) => (
-                <div key={row.label} className="grid grid-cols-3 gap-2 sm:gap-4 px-3 sm:px-5 py-3 sm:py-4 items-center">
-                  <span className="text-xs sm:text-sm font-medium text-neutral-900">{row.label}</span>
-                  <span className="text-xs sm:text-sm text-red-600 text-center flex items-center justify-center gap-0.5 sm:gap-1"><X className="size-3 sm:size-4 text-red-400 shrink-0" />{row.before}</span>
-                  <span className="text-xs sm:text-sm text-emerald-600 font-semibold text-center flex items-center justify-center gap-0.5 sm:gap-1"><Check className="size-3 sm:size-4 text-emerald-500 shrink-0" />{row.after}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Chiffres clés ── */}
-      <section className="py-16 sm:py-24 bg-gray-50">
-        <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="rounded-2xl border border-neutral-200 bg-white p-8 sm:p-12">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
-              {metrics.map((m) => (
-                <div key={m.label} className="text-center lg:border-r border-gray-200 lg:last:border-0">
-                  <div className="text-4xl font-bold text-[#0A1E3D]">
-                    {m.value}
-                  </div>
-                  <div className="text-sm text-neutral-600 mt-1">{m.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA final ── */}
+      {/* ── 7. CTA final ── */}
       <CTABanner
-        title="Prêt à transformer vos référentiels en formations ?"
-        description="Demandez une démo gratuite et découvrez comment Syllabis génère une formation complète en quelques minutes."
-        primaryLabel="Demander une démo gratuite"
+        title="Prêt à décupler la productivité de votre organisme ?"
+        description="Demandez une démo et découvrez comment Syllabis divise par 7 le temps de création de vos formations."
+        primaryLabel="Demander une démo"
         primaryHref="/demo"
-        secondaryLabel="Voir les fonctionnalités"
+        secondaryLabel="Découvrir les fonctionnalités"
         secondaryHref="/fonctionnalites"
       />
     </>

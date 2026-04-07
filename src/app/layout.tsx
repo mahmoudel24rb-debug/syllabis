@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Syllabis | Du référentiel à la formation e-learning par l'IA",
+  title: "Syllabis | Le copilote IA des organismes de formation",
   description:
-    "Syllabis transforme un référentiel de certification (RNCP, BTS, CAP) en formation e-learning complète — structure, contenu interactif, quiz, vidéos — en quelques minutes grâce à l'IA.",
+    "Conformité absolue et productivité décuplée. Syllabis assiste les organismes de formation dans la création de programmes pédagogiques complets à partir de fiches RNCP.",
 };
 
 export default function RootLayout({
