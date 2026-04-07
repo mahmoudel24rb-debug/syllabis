@@ -110,18 +110,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hero mockup — single screen below text */}
+          {/* Hero mockup — browser frame */}
           <div className="mt-16 md:mt-20 mx-auto max-w-5xl">
-            <div className="rounded-[8px] bg-[#0A1E3D] p-0.5 shadow-[0_32px_64px_-12px_rgba(10,30,61,0.25),0_0_0_1px_rgba(10,30,61,0.08)] md:rounded-[24px] md:p-1">
-              <Image
-                src="/screenshots/creer-formation.png"
-                alt="Dashboard Syllabis — Création de formation"
-                width={1280}
-                height={800}
-                className="w-full h-auto rounded-[6px] md:rounded-[20px]"
-                priority
-              />
-            </div>
+            <BrowserMockup
+              src="/screenshots/creer-formation.png"
+              alt="Dashboard Syllabis — Création de formation"
+              priority
+            />
           </div>
         </div>
       </section>
@@ -410,24 +405,87 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right — mockup PC débordant */}
+            {/* Right — mockup browser débordant */}
             <div className="relative lg:-mr-[15%] xl:-mr-[20%]">
-              <div className="rounded-[8px] bg-[#0A1E3D] p-0.5 shadow-[0_32px_64px_-12px_rgba(10,30,61,0.25),0_0_0_1px_rgba(10,30,61,0.08)] md:rounded-[24px] md:p-1">
-                <Image
-                  src="/screenshots/editor.png"
-                  alt="Éditeur de contenu Syllabis"
-                  width={1280}
-                  height={800}
-                  className="w-full h-auto rounded-[6px] md:rounded-[20px]"
-                />
-              </div>
+              <BrowserMockup
+                src="/screenshots/editor.png"
+                alt="Éditeur de contenu Syllabis"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════
-          7. CTA FINAL
+          7. FAQ
+          ══════════════════════════════════════════════ */}
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-container px-4 sm:px-8">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-brand-600 mb-3">FAQ</p>
+            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+              Questions fréquentes
+            </h2>
+            <p className="mt-5 text-lg text-neutral-600 max-w-2xl mx-auto">
+              Tout ce que vous devez savoir sur Syllabis.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto divide-y divide-neutral-200">
+            {[
+              {
+                q: "À quels types de certifications Syllabis est-il adapté ?",
+                a: "Syllabis supporte les titres professionnels (TP), BTS, CAP, CQP, BPJEPS et les certifications personnalisées. L\u2019IA analyse la fiche RNCP et détecte automatiquement la structure.",
+              },
+              {
+                q: "Combien de temps faut-il pour créer une formation complète ?",
+                a: "En moyenne, l\u2019arborescence pédagogique est générée en quelques minutes. La création du contenu complet prend entre 1h et 8h selon la complexité du titre, contre plusieurs centaines d\u2019heures manuellement.",
+              },
+              {
+                q: "Est-ce que je garde le contrôle sur le contenu généré ?",
+                a: "Absolument. L\u2019IA génère une première version que vous pouvez modifier, réorganiser et enrichir librement. Vous restez maître de votre contenu pédagogique à 100%.",
+              },
+              {
+                q: "Comment fonctionne l\u2019export SCORM ?",
+                a: "Syllabis exporte en SCORM 1.2 et 2004, compatibles avec tous les LMS du marché : Moodle, Canvas, Docebo, TalentLMS, etc. Le tracking (score, complétion, temps) est inclus.",
+              },
+              {
+                q: "Syllabis est-il adapté aux organismes multi-sites ?",
+                a: "Oui. Notre offre Enterprise inclut la gestion multi-organisations avec branding personnalisé, 5 niveaux de rôles et un suivi des coûts IA par entité.",
+              },
+              {
+                q: "Peut-on tester Syllabis avant de s\u2019engager ?",
+                a: "Oui, nous proposons une démo personnalisée de 30 minutes où nous générons une formation à partir de votre propre référentiel. Sans engagement.",
+              },
+            ].map((faq) => (
+              <details key={faq.q} className="group py-6">
+                <summary className="flex items-center justify-between cursor-pointer list-none">
+                  <h3 className="text-lg font-semibold text-neutral-900 pr-4">
+                    {faq.q}
+                  </h3>
+                  <span className="shrink-0 size-10 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-400 group-open:text-brand-600 group-open:border-brand-200 transition-colors">
+                    <svg
+                      className="size-5 transition-transform group-open:rotate-45"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-2 text-md text-neutral-600 leading-relaxed pr-14">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
+          8. CTA FINAL
           ══════════════════════════════════════════════ */}
       <CTABanner
         title="Prêt à décupler la productivité de votre organisme ?"
