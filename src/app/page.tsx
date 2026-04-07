@@ -29,10 +29,10 @@ const solutions = [
 ];
 
 const results = [
-  { value: "+20%", label: "de FOAD en moyenne dans nos formations" },
-  { value: "100%", label: "de maîtrise du contenu dispensé aux élèves" },
-  { value: "×3", label: "appels d\u2019offres traités, avec 20 à 30% de conversion" },
-  { value: "÷7", label: "le temps de création d\u2019un titre professionnel" },
+  { value: "+20%", title: "de FOAD", desc: "En moyenne dans nos formations, grâce à la digitalisation du contenu." },
+  { value: "100%", title: "Maîtrise du contenu", desc: "Le contenu dispensé aux élèves est entièrement créé et contrôlé en interne." },
+  { value: "×3", title: "Appels d\u2019offres traités", desc: "Avec un taux de conversion équivalent de 20 à 30%." },
+  { value: "÷7", title: "Temps de création", desc: "Pour créer un titre professionnel complet, de l\u2019arborescence au contenu." },
 ];
 
 const comparison = [
@@ -240,30 +240,55 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Résultats */}
-            <div className="text-center mb-10">
-              <p className="text-sm font-semibold text-brand-600 mb-3">
-                Résultats
-              </p>
-              <h3 className="text-display-xs sm:text-display-sm font-semibold text-neutral-900">
-                Des résultats concrets
-              </h3>
-            </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      {/* ── Résultats — style landing-page-14 ── */}
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-container px-4 sm:px-8">
+          {/* Header */}
+          <div className="max-w-xl mb-12 md:mb-16">
+            <p className="text-sm font-semibold text-brand-600 mb-3">
+              Résultats
+            </p>
+            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+              Des résultats concrets
+            </h2>
+            <p className="mt-5 text-lg text-neutral-600">
+              Les chiffres parlent d&apos;eux-mêmes. Voici ce que Syllabis a changé
+              pour notre organisme de formation.
+            </p>
+          </div>
+
+          {/* 2-col: stats grid left, image right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Stats 2x2 */}
+            <div className="grid grid-cols-2 gap-x-8 gap-y-10">
               {results.map((r) => (
-                <div
-                  key={r.value}
-                  className="rounded-2xl border border-neutral-200 bg-white p-5 text-center"
-                >
-                  <div className="text-2xl sm:text-3xl font-bold text-[#0A1E3D]">
+                <div key={r.value}>
+                  <div className="text-display-md sm:text-display-lg font-semibold text-brand-600">
                     {r.value}
                   </div>
-                  <p className="text-xs sm:text-sm text-neutral-500 mt-2 leading-snug">
-                    {r.label}
+                  <p className="mt-2 text-md font-semibold text-neutral-900">
+                    {r.title}
+                  </p>
+                  <p className="mt-1 text-sm text-neutral-500">
+                    {r.desc}
                   </p>
                 </div>
               ))}
+            </div>
+
+            {/* Image */}
+            <div className="rounded-2xl overflow-hidden">
+              <Image
+                src="/screenshots/global-dashboard.png"
+                alt="Dashboard Syllabis — résultats concrets"
+                width={640}
+                height={480}
+                className="w-full h-auto rounded-2xl"
+              />
             </div>
           </div>
         </div>
