@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Check, X, ArrowRight, LayersThree01, Edit04, Download01 } from "@untitledui/icons";
 import { Button } from "@/components/base/buttons/button";
 import CTABanner from "./components/CTABanner";
+import BrowserMockup from "./components/BrowserMockup";
 
 const problems = [
   {
@@ -280,16 +281,11 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Image — mockup PC frame */}
-            <div className="rounded-[8px] bg-[#0A1E3D] p-0.5 shadow-[0_32px_64px_-12px_rgba(10,30,61,0.25),0_0_0_1px_rgba(10,30,61,0.08)] md:rounded-[24px] md:p-1">
-              <Image
-                src="/screenshots/global-dashboard.png"
-                alt="Dashboard Syllabis — résultats concrets"
-                width={1280}
-                height={800}
-                className="w-full h-auto rounded-[6px] md:rounded-[20px]"
-              />
-            </div>
+            {/* Image — browser mockup Safari style */}
+            <BrowserMockup
+              src="/screenshots/global-dashboard.png"
+              alt="Dashboard Syllabis — résultats concrets"
+            />
           </div>
         </div>
       </section>
