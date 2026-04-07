@@ -280,14 +280,14 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Image */}
-            <div className="rounded-2xl overflow-hidden">
+            {/* Image — mockup PC frame */}
+            <div className="rounded-[8px] bg-[#0A1E3D] p-0.5 shadow-[0_32px_64px_-12px_rgba(10,30,61,0.25),0_0_0_1px_rgba(10,30,61,0.08)] md:rounded-[24px] md:p-1">
               <Image
                 src="/screenshots/global-dashboard.png"
                 alt="Dashboard Syllabis — résultats concrets"
-                width={640}
-                height={480}
-                className="w-full h-auto rounded-2xl"
+                width={1280}
+                height={800}
+                className="w-full h-auto rounded-[6px] md:rounded-[20px]"
               />
             </div>
           </div>
