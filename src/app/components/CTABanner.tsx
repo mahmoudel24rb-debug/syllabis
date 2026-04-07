@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Button } from "@/components/base/buttons/button";
 
 interface CTABannerProps {
   title: string;
@@ -24,24 +24,23 @@ export default function CTABanner({
           <h2 className="text-display-sm sm:text-display-md font-semibold text-white">
             {title}
           </h2>
-          <p className="mt-5 text-lg sm:text-xl text-neutral-300 max-w-2xl mx-auto">
+          <p className="mt-5 text-lg sm:text-xl text-white/70 max-w-2xl mx-auto">
             {description}
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
             {secondaryLabel && secondaryHref && (
-              <Link
+              <Button
+                color="secondary"
+                size="xl"
                 href={secondaryHref}
-                className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-white/20 bg-[#1A365D] px-[18px] py-3 text-md font-semibold text-white shadow-xs hover:bg-[#1A365D]/80 transition-colors"
+                className="w-full sm:w-auto border-white/20 bg-[#1A365D] text-white hover:bg-[#1A365D]/80 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_1px_2px_0_rgba(0,0,0,0.3)]"
               >
                 {secondaryLabel}
-              </Link>
+              </Button>
             )}
-            <Link
-              href={primaryHref}
-              className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-brand-500 bg-brand-600 px-[18px] py-3 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors"
-            >
+            <Button color="primary" size="xl" href={primaryHref} className="w-full sm:w-auto">
               {primaryLabel}
-            </Link>
+            </Button>
           </div>
         </div>
       </div>

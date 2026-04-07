@@ -1,14 +1,26 @@
-import Link from "next/link";
-import { Check, X } from "@untitledui/icons";
+import Image from "next/image";
+import { Check, X, ArrowRight } from "@untitledui/icons";
 import { LayersThree01, Edit04, Download01 } from "@untitledui/icons";
+import { Button } from "@/components/base/buttons/button";
 import CTABanner from "./components/CTABanner";
-import BrowserMockup from "./components/BrowserMockup";
 
 const problems = [
-  "Réduction des niveaux de prise en charge (NPEC)",
-  "Exigences des certificateurs de plus en plus fortes",
-  "Développement des formations ouvertes à distance (FOAD)",
-  "Dépendance aux formateurs externes",
+  {
+    title: "Réduction des NPEC",
+    desc: "Baisse des niveaux de prise en charge, compression des marges.",
+  },
+  {
+    title: "Exigences certificateurs",
+    desc: "Les certificateurs demandent toujours plus de preuves de conformité.",
+  },
+  {
+    title: "Développement de la FOAD",
+    desc: "Obligation de digitaliser les formations ouvertes à distance.",
+  },
+  {
+    title: "Dépendance formateurs",
+    desc: "Dépendance coûteuse aux formateurs externes pour la création de contenu.",
+  },
 ];
 
 const solutions = [
@@ -55,55 +67,58 @@ const features = [
 export default function Home() {
   return (
     <>
-      {/* ── 1. Hero ── */}
-      <section className="relative overflow-hidden">
+      {/* ══════════════════════════════════════════════
+          1. HERO — style landing-page-01
+          ══════════════════════════════════════════════ */}
+      <section className="relative pt-16 md:pt-24">
+        {/* Grid dot background */}
         <div className="absolute inset-0 hero-grid hero-grid-mask" />
-        <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-amber-300 bg-amber-50 pl-1 pr-3 py-1 mb-4">
-                <span className="flex items-center gap-1.5 rounded-full bg-white border border-amber-300 px-2.5 py-0.5 text-xs font-semibold text-amber-800">
-                  <span className="w-2 h-2 rounded-full bg-amber-400" />
-                  Nouveau
-                </span>
-                <span className="text-sm font-medium text-amber-800">
-                  Créé par un OF, pour les OF
-                </span>
-              </div>
 
-              <h1 className="text-display-lg sm:text-display-xl font-semibold text-neutral-900">
-                Le copilote IA des{" "}
-                <span className="text-brand-600">organismes de formation</span>
-              </h1>
-
-              <p className="mt-4 text-xl sm:text-2xl font-medium text-neutral-700">
-                Pour une conformité absolue et une productivité décuplée.
-              </p>
-
-              <p className="mt-3 text-md text-neutral-500 italic">
-                Créé par un organisme de formation, pour les organismes de formation.
-              </p>
-
-              <div className="mt-10 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
-                <Link
-                  href="#decouvrir"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-300 bg-white px-5 py-3 text-md font-semibold text-neutral-700 shadow-xs hover:bg-neutral-50 transition-colors order-2 sm:order-1"
-                >
-                  Découvrir Syllabis
-                </Link>
-                <Link
-                  href="/demo"
-                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-brand-600 bg-brand-600 px-5 py-3 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors order-1 sm:order-2"
-                >
-                  Demander une démo
-                </Link>
-              </div>
+        <div className="relative mx-auto max-w-container px-4 sm:px-8">
+          {/* Text content — centered */}
+          <div className="mx-auto max-w-3xl text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-amber-300 bg-amber-50 pl-1 pr-3.5 py-1 mb-6">
+              <span className="flex items-center gap-1.5 rounded-full bg-white border border-amber-300 px-2.5 py-0.5 text-xs font-semibold text-amber-800">
+                <span className="w-2 h-2 rounded-full bg-amber-400" />
+                Nouveau
+              </span>
+              <span className="text-sm font-medium text-amber-800">
+                Créé par un OF, pour les OF
+              </span>
             </div>
 
-            <div className="mt-8 lg:mt-0">
-              <BrowserMockup
-                src="/screenshots/formation-creation.png"
-                alt="Arborescence pédagogique générée par Syllabis"
+            {/* Headline */}
+            <h1 className="text-display-md sm:text-display-lg md:text-display-xl font-semibold text-neutral-900">
+              Le copilote IA des organismes de formation
+            </h1>
+
+            {/* Subheadline */}
+            <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
+              Pour une conformité absolue et une productivité décuplée. Créé par
+              un organisme de formation, pour les organismes de formation.
+            </p>
+
+            {/* CTAs */}
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Button color="secondary" size="xl" href="#decouvrir" iconTrailing={<ArrowRight data-icon />}>
+                Découvrir Syllabis
+              </Button>
+              <Button color="primary" size="xl" href="/demo">
+                Demander une démo
+              </Button>
+            </div>
+          </div>
+
+          {/* Hero mockup — single screen below text */}
+          <div className="mt-16 md:mt-20 mx-auto max-w-5xl">
+            <div className="rounded-[8px] bg-[#0A1E3D] p-0.5 shadow-[0_32px_64px_-12px_rgba(10,30,61,0.25),0_0_0_1px_rgba(10,30,61,0.08)] md:rounded-[24px] md:p-1">
+              <Image
+                src="/screenshots/creer-formation.png"
+                alt="Dashboard Syllabis — Création de formation"
+                width={1280}
+                height={800}
+                className="w-full h-auto rounded-[6px] md:rounded-[20px]"
                 priority
               />
             </div>
@@ -111,89 +126,108 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 2. Ce que fait Syllabis ── */}
-      <section id="decouvrir" className="py-16 sm:py-24 bg-neutral-50">
+      {/* ══════════════════════════════════════════════
+          2. CE QUE FAIT SYLLABIS — style landing-page-12
+          ══════════════════════════════════════════════ */}
+      <section id="decouvrir" className="relative overflow-hidden pt-16 md:pt-24 md:pb-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="max-w-3xl mx-auto text-center">
+          {/* Text */}
+          <div className="mx-auto max-w-3xl text-center mb-16 md:mb-20">
             <p className="text-sm font-semibold text-brand-600 mb-3">
               Ce que fait Syllabis
             </p>
-            <p className="text-display-xs sm:text-display-sm font-medium text-neutral-900 leading-snug">
-              À partir d&apos;une fiche RNCP, Syllabis vous assiste dans la
-              création de vos formations — de l&apos;arborescence pédagogique
-              jusqu&apos;à la création de contenu — et vous assure une{" "}
-              <span className="text-brand-600">conformité absolue</span> entre
-              les attentes des certificateurs et la validation des compétences
-              des apprenants.
+            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+              De la fiche RNCP à la formation complète
+            </h2>
+            <p className="mt-5 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
+              Syllabis vous assiste dans la création de vos formations — de
+              l&apos;arborescence pédagogique jusqu&apos;à la création de
+              contenu — et vous assure une{" "}
+              <strong className="text-neutral-900">conformité absolue</strong>{" "}
+              entre les attentes des certificateurs et la validation des
+              compétences des apprenants.
             </p>
           </div>
 
-          <div className="mt-12 max-w-4xl mx-auto">
-            <BrowserMockup
-              src="/screenshots/creer-formation.png"
-              alt="Création de formation avec Syllabis"
-            />
+          {/* Mockup — PC frame style landing-page-12 */}
+          <div className="mx-auto max-w-5xl">
+            <div className="rounded-[8px] bg-[#0A1E3D] p-0.5 shadow-[0_32px_64px_-12px_rgba(10,30,61,0.25),0_0_0_1px_rgba(10,30,61,0.08)] md:rounded-[24px] md:p-1">
+              <Image
+                src="/screenshots/mindmap.jpg"
+                alt="Arborescence pédagogique — Mind Map Syllabis"
+                width={1280}
+                height={800}
+                className="w-full h-auto rounded-[6px] md:rounded-[20px]"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── 3. Qui sommes-nous — Le constat ── */}
-      <section className="py-16 sm:py-24">
+      {/* ══════════════════════════════════════════════
+          3. QUI SOMMES-NOUS
+          ══════════════════════════════════════════════ */}
+      <section className="py-16 sm:py-24 bg-neutral-50">
         <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="max-w-3xl mx-auto">
-            {/* Constat */}
-            <div className="text-center mb-12">
-              <p className="text-sm font-semibold text-brand-600 mb-3">
-                Qui sommes-nous
-              </p>
-              <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-                Organisme de formation depuis 25 ans
-              </h2>
-              <p className="mt-5 text-lg text-neutral-600">
-                Nous assistons aux premières loges à la mutation de notre secteur.
-              </p>
-            </div>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-brand-600 mb-3">
+              Qui sommes-nous
+            </p>
+            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+              Organisme de formation depuis 25 ans
+            </h2>
+            <p className="mt-5 text-lg text-neutral-600 max-w-2xl mx-auto">
+              Nous assistons aux premières loges à la mutation de notre secteur.
+            </p>
+          </div>
 
-            {/* 4 problèmes */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-              {problems.map((p) => (
-                <div
-                  key={p}
-                  className="flex items-center gap-3 rounded-xl border border-neutral-200 bg-white p-5"
-                >
-                  <span className="shrink-0 w-2 h-2 rounded-full bg-amber-400" />
-                  <span className="text-md text-neutral-800">{p}</span>
+          {/* 4 problèmes — cards avec icônes */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto mb-12">
+            {problems.map((p) => (
+              <div
+                key={p.title}
+                className="rounded-2xl border border-neutral-200 bg-white p-6 text-center"
+              >
+                <div className="mx-auto mb-4 flex items-center justify-center size-10 rounded-full bg-amber-50 border border-amber-200">
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
                 </div>
-              ))}
-            </div>
+                <h3 className="text-md font-semibold text-neutral-900 mb-1">
+                  {p.title}
+                </h3>
+                <p className="text-sm text-neutral-500 leading-relaxed">
+                  {p.desc}
+                </p>
+              </div>
+            ))}
+          </div>
 
-            {/* Transition */}
-            <div className="rounded-xl bg-[#0A1E3D] p-6 sm:p-8 text-center mb-16">
-              <p className="text-md sm:text-lg text-white/90 leading-relaxed">
-                Ces bouleversements ont un impact direct sur nos marges et la
-                rentabilité de nos structures.{" "}
-                <span className="font-semibold text-white">
-                  Ainsi nous avons lancé la création de Syllabis en 2025.
-                </span>
-              </p>
-            </div>
+          {/* Transition — encart navy */}
+          <div className="rounded-2xl bg-[#0A1E3D] p-8 sm:p-10 max-w-3xl mx-auto mb-16">
+            <p className="text-center text-md sm:text-lg text-white/85 leading-relaxed">
+              Ces bouleversements ont un impact direct sur nos marges et la
+              rentabilité de nos structures.
+            </p>
+            <p className="text-center text-lg sm:text-xl font-semibold text-white mt-3">
+              Ainsi nous avons lancé la création de Syllabis en 2025.
+            </p>
+          </div>
 
-            {/* 3 solutions */}
-            <div className="text-center mb-6">
-              <h3 className="text-xl font-semibold text-neutral-900">
-                Un outil permettant de :
-              </h3>
-            </div>
+          {/* 3 solutions */}
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-center text-xl font-semibold text-neutral-900 mb-8">
+              Un outil permettant de :
+            </h3>
             <div className="space-y-4 mb-16">
               {solutions.map((s, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-4 rounded-xl border border-neutral-200 bg-white p-5"
+                  className="flex gap-4 rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6"
                 >
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-bold leading-none">
+                  <div className="shrink-0 size-10 rounded-xl bg-brand-600 text-white flex items-center justify-center text-md font-bold">
                     {i + 1}
                   </div>
-                  <p className="text-md text-neutral-700 leading-relaxed">
+                  <p className="text-md text-neutral-700 leading-relaxed pt-1.5">
                     {s}
                   </p>
                 </div>
@@ -201,7 +235,7 @@ export default function Home() {
             </div>
 
             {/* Résultats */}
-            <div className="text-center mb-8">
+            <div className="text-center mb-10">
               <p className="text-sm font-semibold text-brand-600 mb-3">
                 Résultats
               </p>
@@ -210,16 +244,18 @@ export default function Home() {
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {results.map((r) => (
                 <div
                   key={r.value}
-                  className="rounded-xl border border-neutral-200 bg-white p-6 text-center"
+                  className="rounded-2xl border border-neutral-200 bg-white p-5 text-center"
                 >
-                  <div className="text-3xl sm:text-4xl font-bold text-[#0A1E3D]">
+                  <div className="text-2xl sm:text-3xl font-bold text-[#0A1E3D]">
                     {r.value}
                   </div>
-                  <p className="text-sm text-neutral-600 mt-2">{r.label}</p>
+                  <p className="text-xs sm:text-sm text-neutral-500 mt-2 leading-snug">
+                    {r.label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -227,8 +263,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 4. Tableau comparatif réel ── */}
-      <section className="py-16 sm:py-24 bg-neutral-50">
+      {/* ══════════════════════════════════════════════
+          4. TABLEAU COMPARATIF
+          ══════════════════════════════════════════════ */}
+      <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold text-brand-600 mb-3">
@@ -262,7 +300,7 @@ export default function Home() {
                   <div
                     key={row.label}
                     className={`grid grid-cols-3 gap-2 sm:gap-4 px-3 sm:px-5 py-3 sm:py-4 items-center ${
-                      isTotal ? "bg-neutral-50 font-bold" : ""
+                      isTotal ? "bg-neutral-50" : ""
                     }`}
                   >
                     <span
@@ -274,11 +312,11 @@ export default function Home() {
                     </span>
                     <span className="text-xs sm:text-sm text-red-600 text-center flex items-center justify-center gap-0.5 sm:gap-1">
                       <X className="size-3 sm:size-4 text-red-400 shrink-0" />
-                      {row.before}
+                      <span className={isTotal ? "font-bold" : ""}>{row.before}</span>
                     </span>
                     <span className="text-xs sm:text-sm text-emerald-600 font-semibold text-center flex items-center justify-center gap-0.5 sm:gap-1">
                       <Check className="size-3 sm:size-4 text-emerald-500 shrink-0" />
-                      {row.after}
+                      <span className={isTotal ? "font-bold" : ""}>{row.after}</span>
                     </span>
                   </div>
                 );
@@ -288,7 +326,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 5. Chiffres clés (bandeau) ── */}
+      {/* ══════════════════════════════════════════════
+          5. BANDEAU CHIFFRES
+          ══════════════════════════════════════════════ */}
       <section className="py-8 sm:py-12 border-y border-neutral-200 bg-white">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm font-medium text-neutral-700">
@@ -307,7 +347,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 6. Fonctionnalités (3 blocs) ── */}
+      {/* ══════════════════════════════════════════════
+          6. FONCTIONNALITÉS (3 blocs)
+          ══════════════════════════════════════════════ */}
       <section id="fonctionnalites" className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-16">
@@ -340,7 +382,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 7. CTA final ── */}
+      {/* ══════════════════════════════════════════════
+          7. CTA FINAL
+          ══════════════════════════════════════════════ */}
       <CTABanner
         title="Prêt à décupler la productivité de votre organisme ?"
         description="Demandez une démo et découvrez comment Syllabis divise par 7 le temps de création de vos formations."
