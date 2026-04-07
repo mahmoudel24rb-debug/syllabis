@@ -375,36 +375,53 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════════
-          6. FONCTIONNALITÉS (3 blocs)
+          6. FONCTIONNALITÉS — style landing-page-13
           ══════════════════════════════════════════════ */}
-      <section id="fonctionnalites" className="py-16 sm:py-24">
+      <section id="fonctionnalites" className="overflow-hidden bg-neutral-50 pt-16 lg:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-brand-600 mb-3">
-              Fonctionnalités
-            </p>
-            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Principales fonctionnalités
-            </h2>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left — header + feature grid */}
+            <div>
+              <p className="text-sm font-semibold text-brand-600 mb-3">
+                Fonctionnalités
+              </p>
+              <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+                Principales fonctionnalités
+              </h2>
+              <p className="mt-5 text-lg text-neutral-600 max-w-lg">
+                Tout ce dont vous avez besoin pour créer, structurer et déployer
+                vos formations e-learning.
+              </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {features.map((f) => (
-              <div
-                key={f.title}
-                className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 hover:shadow-lg hover:border-brand-200 transition-all"
-              >
-                <div className="flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 mb-5">
-                  <f.icon className="size-6 text-[#0A1E3D]" />
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-                  {f.title}
-                </h3>
-                <p className="text-md text-neutral-600 leading-relaxed">
-                  {f.description}
-                </p>
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8">
+                {features.map((f) => (
+                  <div key={f.title}>
+                    <div className="flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 mb-4">
+                      <f.icon className="size-6 text-[#0A1E3D]" />
+                    </div>
+                    <h3 className="text-md font-semibold text-neutral-900 mb-1">
+                      {f.title}
+                    </h3>
+                    <p className="text-sm text-neutral-600 leading-relaxed">
+                      {f.description}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Right — mockup PC débordant */}
+            <div className="relative lg:-mr-[15%] xl:-mr-[20%]">
+              <div className="rounded-[8px] bg-[#0A1E3D] p-0.5 shadow-[0_32px_64px_-12px_rgba(10,30,61,0.25),0_0_0_1px_rgba(10,30,61,0.08)] md:rounded-[24px] md:p-1">
+                <Image
+                  src="/screenshots/editor.png"
+                  alt="Éditeur de contenu Syllabis"
+                  width={1280}
+                  height={800}
+                  className="w-full h-auto rounded-[6px] md:rounded-[20px]"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
