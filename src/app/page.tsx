@@ -297,7 +297,8 @@ export default function Home() {
           ══════════════════════════════════════════════ */}
       <section className="py-16 sm:py-24 bg-neutral-50">
         <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="text-center mb-12">
+          {/* Header */}
+          <div className="max-w-xl mb-12 md:mb-16">
             <p className="text-sm font-semibold text-brand-600 mb-3">Avant / Après</p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
               Divisé par 7 le temps de création
@@ -307,40 +308,28 @@ export default function Home() {
             </p>
           </div>
 
-          {/* KPIs gros */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
-            {results.map((r) => (
-              <div key={r.value} className="rounded-2xl border border-neutral-200 bg-white p-6 text-center">
-                <div className="text-display-sm sm:text-display-md font-bold text-[#0A1E3D]">{r.value}</div>
-                <p className="mt-2 text-md font-semibold text-neutral-900">{r.title}</p>
-                <p className="mt-1 text-sm text-neutral-500 leading-snug">{r.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Tableau */}
-          <div className="max-w-3xl mx-auto">
+          {/* 2 colonnes : tableau gauche + KPIs droite */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-start">
+            {/* Tableau gauche */}
             <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden">
-              {/* Header */}
               <div className="grid grid-cols-3 bg-[#0A1E3D] px-4 sm:px-6 py-3">
                 <span className="text-sm font-semibold text-white">Étape</span>
                 <span className="text-sm font-semibold text-red-300 text-center">Sans Syllabis</span>
                 <span className="text-sm font-semibold text-emerald-300 text-center">Avec Syllabis</span>
               </div>
-              {/* Rows */}
               <div className="divide-y divide-neutral-100">
                 {comparison.map((row) => {
                   const isTotal = row.label === "TOTAL";
                   return (
                     <div key={row.label} className={`grid grid-cols-3 px-4 sm:px-6 py-4 items-center ${isTotal ? "bg-neutral-50" : ""}`}>
                       <span className={`text-sm text-neutral-900 ${isTotal ? "font-bold" : "font-medium"}`}>{row.label}</span>
-                      <div className="flex items-center justify-center gap-1.5">
+                      <div className="flex items-center justify-center">
                         <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-sm ${isTotal ? "bg-red-100 text-red-700 font-bold" : "bg-red-50 text-red-600"}`}>
                           <X className="size-3.5" />
                           {row.before}
                         </span>
                       </div>
-                      <div className="flex items-center justify-center gap-1.5">
+                      <div className="flex items-center justify-center">
                         <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-sm ${isTotal ? "bg-emerald-100 text-emerald-700 font-bold" : "bg-emerald-50 text-emerald-600"}`}>
                           <Check className="size-3.5" />
                           {row.after}
@@ -350,6 +339,17 @@ export default function Home() {
                   );
                 })}
               </div>
+            </div>
+
+            {/* KPIs droite — grille 2x2 */}
+            <div className="grid grid-cols-2 gap-4">
+              {results.map((r) => (
+                <div key={r.value} className="rounded-2xl border border-neutral-200 bg-white p-6">
+                  <div className="text-display-xs sm:text-display-sm font-bold text-[#0A1E3D]">{r.value}</div>
+                  <p className="mt-2 text-md font-semibold text-neutral-900">{r.title}</p>
+                  <p className="mt-1 text-sm text-neutral-500 leading-snug">{r.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
