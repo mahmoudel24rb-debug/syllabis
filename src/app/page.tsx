@@ -1,23 +1,28 @@
 import Image from "next/image";
-import { Check, X, ArrowRight, LayersThree01, Edit04, Download01 } from "@untitledui/icons";
+import { Check, X, ArrowRight, LayersThree01, Edit04, Download01, TrendDown01, Shield01, Monitor01, Users01 } from "@untitledui/icons";
+import type { ComponentType } from "react";
 import { Button } from "@/components/base/buttons/button";
 import CTABanner from "./components/CTABanner";
 import BrowserMockup from "./components/BrowserMockup";
 
-const problems = [
+const problems: { icon: ComponentType<{ className?: string }>; title: string; desc: string }[] = [
   {
+    icon: TrendDown01,
     title: "Réduction des NPEC",
     desc: "Baisse des niveaux de prise en charge, compression des marges.",
   },
   {
+    icon: Shield01,
     title: "Exigences certificateurs",
     desc: "Les certificateurs demandent toujours plus de preuves de conformité.",
   },
   {
+    icon: Monitor01,
     title: "Développement de la FOAD",
     desc: "Obligation de digitaliser les formations ouvertes à distance.",
   },
   {
+    icon: Users01,
     title: "Dépendance formateurs",
     desc: "Dépendance coûteuse aux formateurs externes pour la création de contenu.",
   },
@@ -122,51 +127,6 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════════
-          2. CE QUE FAIT SYLLABIS — style landing-page-12
-          ══════════════════════════════════════════════ */}
-      <section id="decouvrir" className="relative overflow-hidden pt-16 md:pt-24">
-        <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left — Text */}
-            <div className="max-w-lg">
-              <p className="text-sm font-semibold text-brand-600 mb-3">
-                Ce que fait Syllabis
-              </p>
-              <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-                De la fiche RNCP à la formation complète
-              </h2>
-              <p className="mt-5 text-lg text-neutral-600 leading-relaxed">
-                Syllabis vous assiste dans la création de vos formations — de
-                l&apos;arborescence pédagogique jusqu&apos;à la création de
-                contenu — et vous assure une{" "}
-                <strong className="text-neutral-900">conformité absolue</strong>{" "}
-                entre les attentes des certificateurs et la validation des
-                compétences des apprenants.
-              </p>
-              <div className="mt-8">
-                <Button color="primary" size="lg" href="/fonctionnalites" iconTrailing={<ArrowRight data-icon />}>
-                  Découvrir les fonctionnalités
-                </Button>
-              </div>
-            </div>
-
-            {/* Right — Mockup desktop, débordant à droite */}
-            <div className="relative lg:-mr-[15%] xl:-mr-[20%]">
-              <div className="rounded-[8px] bg-[#0A1E3D] p-0.5 shadow-[0_32px_64px_-12px_rgba(10,30,61,0.25),0_0_0_1px_rgba(10,30,61,0.08)] md:rounded-[24px] md:p-1">
-                <Image
-                  src="/screenshots/mindmap.jpg"
-                  alt="Arborescence pédagogique — Mind Map Syllabis"
-                  width={1280}
-                  height={800}
-                  className="w-full h-auto rounded-[6px] md:rounded-[20px]"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════
           3. QUI SOMMES-NOUS — style landing-page-06
           ══════════════════════════════════════════════ */}
       <section className="py-16 sm:py-24">
@@ -193,7 +153,7 @@ export default function Home() {
                 {problems.map((p) => (
                   <div key={p.title} className="flex gap-4">
                     <div className="shrink-0 flex items-center justify-center size-12 rounded-xl bg-amber-50 border border-amber-200">
-                      <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                      <p.icon className="size-6 text-amber-600" />
                     </div>
                     <div>
                       <h3 className="text-md font-semibold text-neutral-900">
@@ -278,6 +238,51 @@ export default function Home() {
                     Demander une démo
                   </Button>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
+          2. CE QUE FAIT SYLLABIS — style landing-page-12
+          ══════════════════════════════════════════════ */}
+      <section id="decouvrir" className="relative overflow-hidden pt-16 md:pt-24">
+        <div className="mx-auto max-w-container px-4 sm:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left — Text */}
+            <div className="max-w-lg">
+              <p className="text-sm font-semibold text-brand-600 mb-3">
+                Ce que fait Syllabis
+              </p>
+              <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+                De la fiche RNCP à la formation complète
+              </h2>
+              <p className="mt-5 text-lg text-neutral-600 leading-relaxed">
+                Syllabis vous assiste dans la création de vos formations — de
+                l&apos;arborescence pédagogique jusqu&apos;à la création de
+                contenu — et vous assure une{" "}
+                <strong className="text-neutral-900">conformité absolue</strong>{" "}
+                entre les attentes des certificateurs et la validation des
+                compétences des apprenants.
+              </p>
+              <div className="mt-8">
+                <Button color="primary" size="lg" href="/fonctionnalites" iconTrailing={<ArrowRight data-icon />}>
+                  Découvrir les fonctionnalités
+                </Button>
+              </div>
+            </div>
+
+            {/* Right — Mockup desktop, débordant à droite */}
+            <div className="relative lg:-mr-[15%] xl:-mr-[20%]">
+              <div className="rounded-[8px] bg-[#0A1E3D] p-0.5 shadow-[0_32px_64px_-12px_rgba(10,30,61,0.25),0_0_0_1px_rgba(10,30,61,0.08)] md:rounded-[24px] md:p-1">
+                <Image
+                  src="/screenshots/mindmap.jpg"
+                  alt="Arborescence pédagogique — Mind Map Syllabis"
+                  width={1280}
+                  height={800}
+                  className="w-full h-auto rounded-[6px] md:rounded-[20px]"
+                />
               </div>
             </div>
           </div>
