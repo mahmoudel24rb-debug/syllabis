@@ -3,6 +3,7 @@ import { Check, X, ArrowRight, LayersThree01, Edit04, Share07, Zap, TrendDown01,
 import type { ComponentType } from "react";
 import { Button } from "@/components/base/buttons/button";
 import CTABanner from "./components/CTABanner";
+import BrowserMockup from "./components/BrowserMockup";
 
 const problems: { icon: ComponentType<{ className?: string }>; title: string; desc: string }[] = [
   {
@@ -114,9 +115,9 @@ export default function Home() {
         {/* Mockup — cadre 3D landing-page-01, coupé en bas */}
         <div className="mx-auto mt-16 h-90 w-full max-w-container overflow-hidden px-4 md:h-124 md:px-8">
           <div className="mx-auto flex h-auto w-full items-center justify-center md:items-start">
-            <div className="size-full rounded-[24px] bg-[#0A1E3D] p-[3px] shadow-lg ring-[1.5px] ring-neutral-300 ring-inset md:rounded-[32px] md:p-1 md:ring-[2px]">
-              <div className="size-full rounded-[21px] bg-[#0A1E3D] p-1 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06),inset_0_2px_8px_rgba(0,0,0,0.3)] md:rounded-[28px] md:p-[5.4px]">
-                <div className="relative size-full overflow-hidden rounded-[18px] bg-neutral-50 ring-[1.5px] ring-neutral-200 md:rounded-[24px] md:ring-[2px]">
+            <div className="size-full rounded-[23.89px] bg-primary p-[3px] shadow-lg ring-[1.5px] ring-utility-neutral-300 ring-inset md:rounded-[32px] md:p-1 md:ring-[2px]">
+              <div className="size-full rounded-[20.91px] bg-primary p-1 shadow-modern-mockup-inner-sm md:rounded-[28px] md:p-[5.4px] md:shadow-modern-mockup-inner-lg">
+                <div className="relative size-full overflow-hidden rounded-[17.92px] bg-utility-neutral-50 ring-[1.5px] ring-utility-neutral-200 md:rounded-[24px] md:ring-[2px]">
                   <Image
                     src="/screenshots/formation-creation.png"
                     alt="Arborescence pédagogique générée par Syllabis"
@@ -250,7 +251,7 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           4. CE QUE FAIT SYLLABIS
           ══════════════════════════════════════════════ */}
-      <section id="decouvrir" className="relative overflow-hidden pt-16 md:pt-24">
+      <section id="decouvrir" className="relative overflow-hidden pt-16 pb-16 md:pt-24 md:pb-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="max-w-lg">
@@ -271,11 +272,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Mockup — cadre 3D complet (pas coupé) */}
+            {/* Mockup — cadre 3D template (pas coupé) */}
             <div className="relative lg:-mr-[10%]">
-              <div className="rounded-[24px] bg-[#0A1E3D] p-[3px] shadow-lg ring-[1.5px] ring-neutral-300 ring-inset md:rounded-[32px] md:p-1 md:ring-[2px]">
-                <div className="rounded-[21px] bg-[#0A1E3D] p-1 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06),inset_0_2px_8px_rgba(0,0,0,0.3)] md:rounded-[28px] md:p-[5.4px]">
-                  <div className="relative overflow-hidden rounded-[18px] bg-neutral-50 ring-[1.5px] ring-neutral-200 md:rounded-[24px] md:ring-[2px]">
+              <div className="rounded-[23.89px] bg-primary p-[3px] shadow-lg ring-[1.5px] ring-utility-neutral-300 ring-inset md:rounded-[32px] md:p-1 md:ring-[2px]">
+                <div className="rounded-[20.91px] bg-primary p-1 shadow-modern-mockup-inner-sm md:rounded-[28px] md:p-[5.4px] md:shadow-modern-mockup-inner-lg">
+                  <div className="relative overflow-hidden rounded-[17.92px] bg-utility-neutral-50 ring-[1.5px] ring-utility-neutral-200 md:rounded-[24px] md:ring-[2px]">
                     <Image
                       src="/screenshots/mindmap.jpg"
                       alt="Arborescence pédagogique — Mind Map Syllabis"
@@ -382,21 +383,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Mockup — cadre 3D complet */}
+            {/* Mockup — navigateur Safari */}
             <div className="relative lg:-mr-[15%] xl:-mr-[20%]">
-              <div className="rounded-[24px] bg-[#0A1E3D] p-[3px] shadow-lg ring-[1.5px] ring-neutral-300 ring-inset md:rounded-[32px] md:p-1 md:ring-[2px]">
-                <div className="rounded-[21px] bg-[#0A1E3D] p-1 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06),inset_0_2px_8px_rgba(0,0,0,0.3)] md:rounded-[28px] md:p-[5.4px]">
-                  <div className="relative overflow-hidden rounded-[18px] bg-neutral-50 ring-[1.5px] ring-neutral-200 md:rounded-[24px] md:ring-[2px]">
-                    <Image
-                      src="/screenshots/editor.png"
-                      alt="Éditeur de contenu Syllabis"
-                      width={1280}
-                      height={800}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              </div>
+              <BrowserMockup
+                src="/screenshots/editor.png"
+                alt="Éditeur de contenu Syllabis"
+              />
             </div>
           </div>
         </div>
