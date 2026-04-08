@@ -167,120 +167,119 @@ export default function Home() {
       </section>
 
       {/* ══════════════════════════════════════════════
-          3. QUI SOMMES-NOUS
+          3. QUI SOMMES-NOUS — style landing-page-06
           ══════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-24 bg-neutral-50">
+      <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="max-w-xl mb-12 md:mb-16">
             <p className="text-sm font-semibold text-brand-600 mb-3">
               Qui sommes-nous
             </p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
               Organisme de formation depuis 25 ans
             </h2>
-            <p className="mt-5 text-lg text-neutral-600 max-w-2xl mx-auto">
+            <p className="mt-5 text-lg text-neutral-600">
               Nous assistons aux premières loges à la mutation de notre secteur.
             </p>
           </div>
 
-          {/* 4 problèmes — cards avec icônes */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto mb-12">
-            {problems.map((p) => (
-              <div
-                key={p.title}
-                className="rounded-2xl border border-neutral-200 bg-white p-6 text-center"
-              >
-                <div className="mx-auto mb-4 flex items-center justify-center size-10 rounded-full bg-amber-50 border border-amber-200">
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-                </div>
-                <h3 className="text-md font-semibold text-neutral-900 mb-1">
-                  {p.title}
-                </h3>
-                <p className="text-sm text-neutral-500 leading-relaxed">
-                  {p.desc}
+          {/* 2 colonnes : contenu gauche + card résultats droite */}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-16 items-start">
+            {/* ── Gauche : problèmes + transition + solutions ── */}
+            <div>
+              {/* 4 problèmes */}
+              <div className="space-y-8 mb-12">
+                {problems.map((p) => (
+                  <div key={p.title} className="flex gap-4">
+                    <div className="shrink-0 flex items-center justify-center size-12 rounded-xl bg-amber-50 border border-amber-200">
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-md font-semibold text-neutral-900">
+                        {p.title}
+                      </h3>
+                      <p className="mt-1 text-sm text-neutral-600 leading-relaxed">
+                        {p.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Transition navy */}
+              <div className="rounded-2xl bg-[#0A1E3D] p-6 sm:p-8 mb-12">
+                <p className="text-md text-white/85 leading-relaxed">
+                  Ces bouleversements ont un impact direct sur nos marges et la
+                  rentabilité de nos structures.
+                </p>
+                <p className="text-lg font-semibold text-white mt-3">
+                  Ainsi nous avons lancé la création de Syllabis en 2025.
                 </p>
               </div>
-            ))}
-          </div>
 
-          {/* Transition — encart navy */}
-          <div className="rounded-2xl bg-[#0A1E3D] p-8 sm:p-10 max-w-3xl mx-auto mb-16">
-            <p className="text-center text-md sm:text-lg text-white/85 leading-relaxed">
-              Ces bouleversements ont un impact direct sur nos marges et la
-              rentabilité de nos structures.
-            </p>
-            <p className="text-center text-lg sm:text-xl font-semibold text-white mt-3">
-              Ainsi nous avons lancé la création de Syllabis en 2025.
-            </p>
-          </div>
-
-          {/* 3 solutions */}
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-center text-xl font-semibold text-neutral-900 mb-8">
-              Un outil permettant de :
-            </h3>
-            <div className="space-y-4 mb-16">
-              {solutions.map((s, i) => (
-                <div
-                  key={i}
-                  className="flex gap-4 rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6"
-                >
-                  <div className="shrink-0 size-10 rounded-xl bg-brand-600 text-white flex items-center justify-center text-md font-bold">
-                    {i + 1}
+              {/* 3 solutions */}
+              <h3 className="text-lg font-semibold text-neutral-900 mb-6">
+                Un outil permettant de :
+              </h3>
+              <div className="space-y-6">
+                {solutions.map((s, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="shrink-0 flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10">
+                      <span className="text-md font-bold text-[#0A1E3D]">{i + 1}</span>
+                    </div>
+                    <p className="text-md text-neutral-600 leading-relaxed pt-2">
+                      {s}
+                    </p>
                   </div>
-                  <p className="text-md text-neutral-700 leading-relaxed pt-1.5">
-                    {s}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* ── Résultats — style landing-page-14 ── */}
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-container px-4 sm:px-8">
-          {/* Header */}
-          <div className="max-w-xl mb-12 md:mb-16">
-            <p className="text-sm font-semibold text-brand-600 mb-3">
-              Résultats
-            </p>
-            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Des résultats concrets
-            </h2>
-            <p className="mt-5 text-lg text-neutral-600">
-              Les chiffres parlent d&apos;eux-mêmes. Voici ce que Syllabis a changé
-              pour notre organisme de formation.
-            </p>
-          </div>
-
-          {/* 2-col: stats grid left, image right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Stats 2x2 */}
-            <div className="grid grid-cols-2 gap-x-8 gap-y-10">
-              {results.map((r) => (
-                <div key={r.value}>
-                  <div className="text-display-md sm:text-display-lg font-semibold text-brand-600">
-                    {r.value}
+            {/* ── Droite : card résultats (sticky) ── */}
+            <div className="lg:sticky lg:top-28">
+              <div className="rounded-2xl border border-neutral-200 bg-white shadow-lg overflow-hidden">
+                {/* Card header */}
+                <div className="px-6 py-5 border-b border-neutral-100">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-lg font-semibold text-neutral-900">
+                        Résultats concrets
+                      </h3>
+                      <p className="text-sm text-neutral-500 mt-0.5">
+                        Nos chiffres après Syllabis
+                      </p>
+                    </div>
+                    <span className="rounded-full bg-amber-50 border border-amber-200 px-2.5 py-0.5 text-xs font-medium text-amber-800">
+                      2025
+                    </span>
                   </div>
-                  <p className="mt-2 text-md font-semibold text-neutral-900">
-                    {r.title}
-                  </p>
-                  <p className="mt-1 text-sm text-neutral-500">
-                    {r.desc}
-                  </p>
                 </div>
-              ))}
-            </div>
 
-            {/* Image — browser mockup Safari style */}
-            <BrowserMockup
-              src="/screenshots/global-dashboard.png"
-              alt="Dashboard Syllabis — résultats concrets"
-            />
+                {/* Stats */}
+                <div className="px-6 py-6 space-y-5">
+                  {results.map((r) => (
+                    <div key={r.value} className="flex items-start gap-3">
+                      <div className="shrink-0 mt-0.5">
+                        <Check className="size-5 text-emerald-500" />
+                      </div>
+                      <div>
+                        <span className="text-lg font-bold text-[#0A1E3D]">{r.value}</span>
+                        <span className="text-md text-neutral-700 ml-1.5">{r.title}</span>
+                        <p className="text-sm text-neutral-500 mt-0.5">{r.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <div className="px-6 pb-6">
+                  <Button color="primary" size="xl" href="/demo" className="w-full">
+                    Demander une démo
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
