@@ -52,12 +52,12 @@ const featureBlocks: {
   },
   {
     icon: VideoRecorder,
-    title: "NotebookLM — Médias IA automatiques",
+    title: "NotebookLM : Médias IA automatiques",
     description: "Fonctionnalité unique : générez 7 types de médias depuis votre contenu existant.",
     bullets: [
       "Vidéos pédagogiques auto-générées à partir du texte de la formation",
       "Podcasts audio (Deep Dive / Briefing) pour l\u2019apprentissage mobile",
-      "Quiz IA, flashcards, mindmaps et infographies — sans production supplémentaire",
+      "Quiz IA, flashcards, mindmaps et infographies, sans production supplémentaire",
       "Pipeline asynchrone avec suivi de progression en temps réel",
     ],
     image: "/screenshots/mindmap.jpg",
@@ -71,7 +71,7 @@ const featureBlocks: {
       "Chat IA embarqué : les apprenants posent des questions dans le module",
       "Blocs interactifs fonctionnels dans le SCORM (Drag & Drop, Tri, Scénarios)",
       "Compatible Moodle, 360Learning, Talentsoft, Canvas, Docebo…",
-      "Package à votre marque : logo, couleurs, nom — zéro mention Syllabis",
+      "Package à votre marque : logo, couleurs, nom. Zéro mention Syllabis",
     ],
     image: "/screenshots/formation-creation.png",
     imageAlt: "Export SCORM marque blanche",
@@ -122,7 +122,7 @@ const faqs = [
   { q: "Syllabis est-il adapté aux organismes multi-sites ?", a: "Oui. Gestion multi-organisations avec 5 niveaux de rôles, branding par entité et suivi des coûts IA par utilisateur." },
   { q: "Peut-on tester Syllabis avant de s\u2019engager ?", a: "Oui, essai gratuit 14 jours. Nous proposons aussi une démo personnalisée de 30 minutes sur votre propre référentiel." },
   { q: "Syllabis aide-t-il à la conformité Qualiopi ?", a: "Oui. L\u2019alignement entre objectifs pédagogiques, contenus et évaluations est traçable et exportable en un clic, ce qui facilite les audits Qualiopi." },
-  { q: "Le SCORM exporté est-il à ma marque ?", a: "Entièrement. Logo, couleurs, nom de votre organisme — aucune mention de Syllabis n\u2019apparaît dans le package déployé auprès des apprenants." },
+  { q: "Le SCORM exporté est-il à ma marque ?", a: "Entièrement. Logo, couleurs, nom de votre organisme. Aucune mention de Syllabis n\u2019apparaît dans le package déployé auprès des apprenants." },
 ];
 
 /* ─── PAGE ─── */
@@ -141,13 +141,13 @@ export default function Home() {
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
               Uploadez votre fiche RNCP, Syllabis génère l&apos;arborescence complète,
-              le contenu, les médias et l&apos;export SCORM — en quelques heures au lieu de
+              le contenu, les médias et l&apos;export SCORM, en quelques heures au lieu de
               plusieurs semaines.
             </p>
 
             {/* Social proof line */}
             <p className="mt-4 text-sm text-neutral-500">
-              Utilisé par des organismes de formation — TP, BTS, CAP, CQP, BPJEPS
+              Utilisé par des organismes de formation : TP, BTS, CAP, CQP, BPJEPS
             </p>
 
             {/* CTAs */}
