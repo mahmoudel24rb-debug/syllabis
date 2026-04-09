@@ -168,8 +168,8 @@ export default function Home() {
                 <div className="rounded-[21px] bg-white p-1 shadow-[inset_0_0_4px_1.5px_rgba(10,13,18,0.08),inset_0_0_3px_1.5px_rgba(10,13,18,0.03)] md:rounded-[28px] md:p-[5.4px]">
                   <div className="relative overflow-hidden rounded-[18px] bg-neutral-50 ring-[2px] ring-neutral-200 md:rounded-[24px]">
                     <Image
-                      src="/screenshots/formation-creation.png"
-                      alt="Arborescence pédagogique générée par Syllabis"
+                      src="/screenshots/hero.png"
+                      alt="Architecture pédagogique générée par Syllabis"
                       width={1920}
                       height={1080}
                       className="w-full h-auto"
@@ -177,15 +177,15 @@ export default function Home() {
                     />
                     {/* Callouts annotations - desktop only */}
                     <div className="hidden md:block">
-                      <div className="absolute top-[12%] left-[3%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
-                        <Stars01 className="size-3.5" />
-                        Panneau IA
-                      </div>
-                      <div className="absolute top-[25%] left-[28%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+                      <div className="absolute top-[8%] left-[2%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg animate-pulse">
                         <Share07 className="size-3.5" />
-                        Arborescence générée
+                        Arborescence pédagogique
                       </div>
-                      <div className="absolute top-[12%] right-[8%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+                      <div className="absolute top-[18%] left-[35%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+                        <Stars01 className="size-3.5" />
+                        Contenu généré par l&apos;IA
+                      </div>
+                      <div className="absolute top-[4%] right-[2%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
                         <ArrowRight className="size-3.5" />
                         Export SCORM
                       </div>
