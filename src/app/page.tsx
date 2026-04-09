@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Check, X, ArrowRight, Stars01, Edit04, VideoRecorder, Share07, Calendar, Users01 } from "@untitledui/icons";
+import { Check, ArrowRight, Stars01, Edit04, VideoRecorder, Share07, Calendar, Users01 } from "@untitledui/icons";
 import type { ComponentType } from "react";
 import { Button } from "@/components/base/buttons/button";
 import CTABanner from "./components/CTABanner";
+import ComparisonToggle from "./components/ComparisonToggle";
 
 /* ─── DATA ─── */
 
@@ -106,14 +106,6 @@ const featureBlocks: {
   },
 ];
 
-const comparison = [
-  { label: "Création de l\u2019arborescence pédagogique", before: 80, after: 8 },
-  { label: "Création du contenu + validation des compétences", before: 1600, after: 80 },
-  { label: "Contrôle qualité", before: 40, after: 40 },
-];
-const totalBefore = comparison.reduce((s, r) => s + r.before, 0);
-const totalAfter = comparison.reduce((s, r) => s + r.after, 0);
-
 const faqs = [
   { q: "À quels types de certifications Syllabis est-il adapté ?", a: "Titres professionnels (TP), BTS, CAP, CQP, BPJEPS et certifications personnalisées. L\u2019IA analyse la fiche RNCP et détecte automatiquement la structure." },
   { q: "Combien de temps faut-il pour créer une formation complète ?", a: "L\u2019arborescence est générée en quelques minutes. Le contenu complet prend entre 1h et 8h selon la complexité, contre plusieurs centaines d\u2019heures manuellement." },
@@ -183,6 +175,21 @@ export default function Home() {
                       className="w-full h-auto"
                       priority
                     />
+                    {/* Callouts annotations - desktop only */}
+                    <div className="hidden md:block">
+                      <div className="absolute top-[12%] left-[3%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+                        <Stars01 className="size-3.5" />
+                        Panneau IA
+                      </div>
+                      <div className="absolute top-[25%] left-[28%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+                        <Share07 className="size-3.5" />
+                        Arborescence générée
+                      </div>
+                      <div className="absolute top-[12%] right-[8%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+                        <ArrowRight className="size-3.5" />
+                        Export SCORM
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -276,7 +283,7 @@ export default function Home() {
         </section>
       ))}
 
-      {/* ═══ 5. AVANT / APRÈS (barres visuelles) ═══ */}
+      {/* ═══ 5. AVANT / APRÈS (toggle diplôme) ═══ */}
       <section className="py-16 sm:py-24 bg-neutral-50">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-12">
@@ -285,65 +292,12 @@ export default function Home() {
               Divisez par 7 le temps de création
             </h2>
             <p className="mt-5 text-lg text-neutral-600">
-              Exemple avec le titre : <strong>Formateur pour adultes</strong>
+              Sélectionnez un type de diplôme pour voir le comparatif.
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-8">
-            {/* Barre totale */}
-            <div className="space-y-4">
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-red-600 flex items-center gap-1">
-                    <X className="size-4" /> Sans Syllabis
-                  </span>
-                  <span className="text-sm font-bold text-red-700">{totalBefore.toLocaleString("fr")}h</span>
-                </div>
-                <div className="h-10 bg-red-100 rounded-xl w-full flex items-center px-4">
-                  <div className="h-6 bg-red-500 rounded-lg w-full" />
-                </div>
-              </div>
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-emerald-600 flex items-center gap-1">
-                    <Check className="size-4" /> Avec Syllabis
-                  </span>
-                  <span className="text-sm font-bold text-emerald-700">{totalAfter}h</span>
-                </div>
-                <div className="h-10 bg-emerald-100 rounded-xl w-full flex items-center px-4">
-                  <div className="h-6 bg-emerald-500 rounded-lg" style={{ width: `${(totalAfter / totalBefore) * 100}%` }} />
-                </div>
-              </div>
-            </div>
-
-            {/* Détail */}
-            <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden">
-              <div className="grid grid-cols-3 bg-[#0A1E3D] px-4 sm:px-6 py-3">
-                <span className="text-sm font-semibold text-white">Étape</span>
-                <span className="text-sm font-semibold text-red-300 text-center">Sans Syllabis</span>
-                <span className="text-sm font-semibold text-emerald-300 text-center">Avec Syllabis</span>
-              </div>
-              <div className="divide-y divide-neutral-100">
-                {[...comparison, { label: "TOTAL", before: totalBefore, after: totalAfter }].map((row) => {
-                  const isTotal = row.label === "TOTAL";
-                  return (
-                    <div key={row.label} className={`grid grid-cols-3 px-4 sm:px-6 py-4 items-center ${isTotal ? "bg-neutral-50" : ""}`}>
-                      <span className={`text-xs sm:text-sm text-neutral-900 ${isTotal ? "font-bold" : "font-medium"}`}>{row.label}</span>
-                      <div className="flex justify-center">
-                        <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-sm ${isTotal ? "bg-red-100 text-red-700 font-bold" : "bg-red-50 text-red-600"}`}>
-                          <X className="size-3.5" />{row.before.toLocaleString("fr")}h
-                        </span>
-                      </div>
-                      <div className="flex justify-center">
-                        <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-sm ${isTotal ? "bg-emerald-100 text-emerald-700 font-bold" : "bg-emerald-50 text-emerald-600"}`}>
-                          <Check className="size-3.5" />{row.after}h
-                        </span>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+          <div className="max-w-3xl mx-auto">
+            <ComparisonToggle />
           </div>
         </div>
       </section>
