@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/components/base/buttons/button";
 
 const features = [
   { label: "Génération IA", href: "/fonctionnalites/generation-ia", desc: "Du PDF au cours en 3 clics" },
@@ -91,12 +92,11 @@ export default function Navbar() {
 
         {/* Right actions */}
         <div className="flex items-center gap-2">
-          <Link
-            href="/demo"
-            className="hidden sm:inline-flex items-center rounded-lg border border-brand-600 bg-brand-600 px-4 py-2.5 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors"
-          >
-            Demander une démo
-          </Link>
+          <div className="hidden sm:block">
+            <Button color="primary" size="md" href="/demo">
+              Demander une démo
+            </Button>
+          </div>
           <button
             className="lg:hidden p-2 rounded-lg hover:bg-neutral-50 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -133,9 +133,9 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-2 border-t border-neutral-100">
-            <Link href="/demo" className="block w-full text-center rounded-lg bg-brand-600 px-4 py-2.5 text-md font-semibold text-white hover:bg-brand-700 transition-colors" onClick={() => setMobileOpen(false)}>
+            <Button color="primary" size="lg" href="/demo" className="w-full">
               Demander une démo
-            </Link>
+            </Button>
           </div>
         </div>
       )}
