@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Check, X, ArrowRight, LayersThree01, Edit04, Share07, Zap, TrendDown01, Shield01, Monitor01, Users01 } from "@untitledui/icons";
+import { Check, X, ArrowRight, Share07, Edit04, FileDownload01, MagicWand02, TrendDown01, Shield01, Monitor01, Users01 } from "@untitledui/icons";
 import type { ComponentType } from "react";
 import { Button } from "@/components/base/buttons/button";
 import CTABanner from "./components/CTABanner";
@@ -50,7 +50,7 @@ const comparison = [
 
 const features: { icon: ComponentType<{ className?: string }>; title: string; description: string }[] = [
   {
-    icon: LayersThree01,
+    icon: Share07,
     title: "Arborescence pédagogique",
     description: "À partir d\u2019une fiche RNCP, Syllabis vous permet de créer vos blocs, modules, séquences et séances pédagogiques.",
   },
@@ -60,12 +60,12 @@ const features: { icon: ComponentType<{ className?: string }>; title: string; de
     description: "Création du contenu des formations pour les séances en FOAD et en présentiel. Génération d\u2019images, vidéos, quiz...",
   },
   {
-    icon: Share07,
+    icon: FileDownload01,
     title: "Export SCORM",
     description: "Export en format SCORM 1.2 & 2004 pour utilisation dans n\u2019importe quel LMS : Moodle, Canvas, Docebo, TalentLMS...",
   },
   {
-    icon: Zap,
+    icon: MagicWand02,
     title: "Génération IA",
     description: "4 modèles IA entraînés pour analyser vos référentiels et générer du contenu pédagogique de qualité professionnelle.",
   },
@@ -260,8 +260,8 @@ export default function Home() {
                 De la fiche RNCP à la formation complète
               </h2>
               <p className="mt-5 text-lg text-neutral-600 leading-relaxed">
-                Syllabis vous assiste dans la création de vos formations — de
-                l&apos;arborescence pédagogique jusqu&apos;à la création de contenu — et vous assure une{" "}
+                Syllabis vous assiste dans la création de vos formations, de
+                l&apos;arborescence pédagogique jusqu&apos;à la création de contenu, et vous assure une{" "}
                 <strong className="text-neutral-900">conformité absolue</strong>{" "}
                 entre les attentes des certificateurs et la validation des compétences des apprenants.
               </p>
@@ -301,7 +301,7 @@ export default function Home() {
           <div className="max-w-xl mb-12 md:mb-16">
             <p className="text-sm font-semibold text-brand-600 mb-3">Avant / Après</p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Divisé par 7 le temps de création
+              Divisez par 7 le temps de création
             </h2>
             <p className="mt-5 text-lg text-neutral-600">
               Exemple avec le titre : <strong>Formateur pour adultes</strong>
