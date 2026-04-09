@@ -113,10 +113,10 @@ export default function Home() {
         </div>
 
         {/* Mockup — cadre 3D avec fond gradient pour contraste */}
-        <div className="relative mt-16">
+        <div className="relative mt-10 md:mt-16">
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-neutral-100" />
-          <div className="relative mx-auto h-[360px] w-full max-w-container overflow-hidden px-4 md:h-[496px] md:px-8">
-            <div className="mx-auto w-full max-w-[280px] md:max-w-none">
+          <div className="relative mx-auto h-[240px] sm:h-[360px] w-full max-w-container overflow-hidden px-4 md:h-[496px] md:px-8">
+            <div className="mx-auto w-full">
               <div className="rounded-[24px] bg-white p-[3px] shadow-[0_12px_24px_-4px_rgba(0,0,0,0.1),0_4px_8px_-2px_rgba(0,0,0,0.06)] ring-[2px] ring-neutral-200 ring-inset md:rounded-[32px] md:p-1">
                 <div className="rounded-[21px] bg-white p-1 shadow-[inset_0_0_4px_1.5px_rgba(10,13,18,0.08),inset_0_0_3px_1.5px_rgba(10,13,18,0.03)] md:rounded-[28px] md:p-[5.4px]">
                   <div className="relative overflow-hidden rounded-[18px] bg-neutral-50 ring-[2px] ring-neutral-200 md:rounded-[24px]">
