@@ -112,18 +112,18 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Mockup — copie exacte landing-page-01 */}
-        <div className="mx-auto mt-16 h-90 w-full max-w-container overflow-hidden px-4 md:h-124 md:px-8">
-          <div className="mx-auto flex h-auto w-full max-w-70 items-center justify-center md:w-full md:max-w-none md:items-start">
-            <div className="size-full rounded-[23.89px] bg-primary p-[3px] shadow-lg ring-[1.5px] ring-utility-neutral-300 ring-inset md:rounded-[32px] md:p-1 md:ring-[2px]">
-              <div className="size-full rounded-[20.91px] bg-primary p-1 shadow-modern-mockup-inner-sm md:rounded-[28px] md:p-[5.4px] md:shadow-modern-mockup-inner-lg">
-                <div className="relative size-full overflow-hidden rounded-[17.92px] bg-utility-neutral-50 ring-[1.5px] ring-utility-neutral-200 md:rounded-[24px] md:ring-[2px]">
+        {/* Mockup — cadre 3D avec bordure visible au crop */}
+        <div className="mx-auto mt-16 h-[360px] w-full max-w-container overflow-hidden px-4 md:h-[496px] md:px-8">
+          <div className="mx-auto w-full max-w-[280px] md:max-w-none">
+            <div className="rounded-[24px] bg-white p-[3px] shadow-[0_12px_16px_-4px_rgba(0,0,0,0.08),0_4px_6px_-2px_rgba(0,0,0,0.03)] ring-[2px] ring-neutral-200/80 ring-inset md:rounded-[32px] md:p-1">
+              <div className="rounded-[21px] bg-white p-1 shadow-[inset_0_0_4px_1.5px_rgba(10,13,18,0.08),inset_0_0_3px_1.5px_rgba(10,13,18,0.03)] md:rounded-[28px] md:p-[5.4px]">
+                <div className="relative overflow-hidden rounded-[18px] bg-neutral-50 ring-[2px] ring-neutral-200 md:rounded-[24px]">
                   <Image
                     src="/screenshots/formation-creation.png"
                     alt="Arborescence pédagogique générée par Syllabis"
                     width={1920}
                     height={1080}
-                    className="size-full object-cover"
+                    className="w-full h-auto"
                     priority
                   />
                 </div>
