@@ -4,14 +4,15 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/base/buttons/button";
+import { Stars01, Edit04, VideoRecorder, Share07, Calendar, Users01 } from "@untitledui/icons";
 
 const features = [
-  { label: "Génération IA", href: "/fonctionnalites/generation-ia", desc: "Du PDF au cours en 3 clics" },
-  { label: "Éditeur 39+ blocs", href: "/fonctionnalites/editeur", desc: "Quiz, vidéos, mind maps..." },
-  { label: "Médias IA", href: "/fonctionnalites/medias-ia", desc: "Vidéos, podcasts, flashcards" },
-  { label: "Export SCORM", href: "/fonctionnalites/export-scorm", desc: "Déploiement LMS universel" },
-  { label: "Pilotage & Planning", href: "/fonctionnalites/pilotage-planning", desc: "Calendrier et suivi" },
-  { label: "Multi-tenant", href: "/fonctionnalites/multi-tenant", desc: "Organisations & Enterprise" },
+  { label: "Génération IA", href: "/fonctionnalites/generation-ia", desc: "Upload PDF → formation complète", Icon: Stars01 },
+  { label: "Éditeur 39+ blocs", href: "/fonctionnalites/editeur", desc: "Quiz, vidéos, mind maps...", Icon: Edit04 },
+  { label: "NotebookLM", href: "/fonctionnalites/medias-ia", desc: "Vidéos, podcasts, flashcards", Icon: VideoRecorder },
+  { label: "Export SCORM", href: "/fonctionnalites/export-scorm", desc: "Marque blanche + chat IA", Icon: Share07 },
+  { label: "Pilotage & Planning", href: "/fonctionnalites/pilotage-planning", desc: "Dashboard, calendrier, mindmap", Icon: Calendar },
+  { label: "Gestion d\u2019équipe", href: "/fonctionnalites/multi-tenant", desc: "Rôles, organisations, suivi", Icon: Users01 },
 ];
 
 const navLinks = [
@@ -56,10 +57,15 @@ export default function Navbar() {
                       <Link
                         key={f.href}
                         href={f.href}
-                        className="flex flex-col gap-0.5 rounded-lg px-3 py-2.5 hover:bg-neutral-50 transition-colors"
+                        className="flex items-start gap-3 rounded-lg px-3 py-2.5 hover:bg-neutral-50 transition-colors"
                       >
-                        <span className="text-sm font-semibold text-neutral-900">{f.label}</span>
-                        <span className="text-xs text-neutral-500">{f.desc}</span>
+                        <div className="shrink-0 mt-0.5 flex items-center justify-center size-9 rounded-lg bg-[#0A1E3D]/5 border border-[#0A1E3D]/10">
+                          <f.Icon className="size-4 text-[#0A1E3D]" />
+                        </div>
+                        <div>
+                          <span className="block text-sm font-semibold text-neutral-900">{f.label}</span>
+                          <span className="block text-xs text-neutral-500">{f.desc}</span>
+                        </div>
                       </Link>
                     ))}
                   </div>
