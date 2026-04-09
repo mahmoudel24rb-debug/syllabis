@@ -127,6 +127,17 @@ export default function Home() {
         <div className="absolute inset-0 hero-grid hero-grid-mask" />
         <div className="relative mx-auto max-w-container px-4 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-amber-300 bg-amber-50 pl-1 pr-3.5 py-1 mb-6">
+              <span className="flex items-center gap-1.5 rounded-full bg-white border border-amber-300 px-2.5 py-0.5 text-xs font-semibold text-amber-800">
+                <span className="w-2 h-2 rounded-full bg-amber-400" />
+                Nouveau
+              </span>
+              <span className="text-sm font-medium text-amber-800">
+                Créé par un OF, pour les OF
+              </span>
+            </div>
+
             <h1 className="text-display-md sm:text-display-lg md:text-display-xl font-semibold text-neutral-900">
               Créez une formation certifiante complète en{" "}
               <span className="text-brand-600">7× moins de temps</span>
@@ -320,24 +331,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ 7. TÉMOIGNAGE ═══ */}
+      {/* ═══ 7. TÉMOIGNAGES ═══ */}
       <section className="py-16 sm:py-24 bg-neutral-50">
         <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-sm font-semibold text-brand-600 mb-6">Témoignage</p>
-            <blockquote className="text-display-xs sm:text-display-sm font-medium text-neutral-900 leading-snug">
-              &ldquo;Avec Syllabis, nous traitons 3× plus d&apos;appels d&apos;offres
-              qu&apos;avant. La génération automatique de l&apos;arborescence et du contenu
-              nous a fait gagner un temps considérable sur chaque titre
-              professionnel.&rdquo;
-            </blockquote>
-            <div className="mt-8 flex items-center justify-center gap-4">
-              <div className="size-14 rounded-full bg-[#0A1E3D] flex items-center justify-center text-white font-semibold text-lg">
-                DP
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold text-brand-600 mb-3">Témoignages</p>
+            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+              Ils utilisent Syllabis
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Samuel */}
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 flex flex-col">
+              <blockquote className="text-md text-neutral-700 leading-relaxed flex-1">
+                &ldquo;Syllabis nous a permis de traiter 3× plus d&apos;appels d&apos;offres.
+                La génération automatique de l&apos;arborescence et du contenu nous fait
+                gagner un temps considérable sur chaque titre professionnel.&rdquo;
+              </blockquote>
+              <div className="mt-6 flex items-center gap-3 pt-6 border-t border-neutral-100">
+                <Image src="/temoins/Samuel.webp" alt="Samuel Guerreiro" width={48} height={48} className="size-12 rounded-full object-cover" />
+                <div>
+                  <p className="text-sm font-semibold text-neutral-900">Samuel Guerreiro</p>
+                  <p className="text-xs text-neutral-500">Directeur général, IPMS</p>
+                </div>
               </div>
-              <div className="text-left">
-                <p className="text-lg font-semibold text-neutral-900">Directeur pédagogique</p>
-                <p className="text-md text-neutral-600">Organisme de formation, 25+ ans d&apos;expérience</p>
+            </div>
+
+            {/* Jérémy */}
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 flex flex-col">
+              <blockquote className="text-md text-neutral-700 leading-relaxed flex-1">
+                &ldquo;Nous utilisons Syllabis pour créer les formations MadSkills.
+                L&apos;éditeur 39+ blocs et la génération IA nous permettent de produire
+                du contenu pédagogique de qualité en une fraction du temps habituel.&rdquo;
+              </blockquote>
+              <div className="mt-6 flex items-center gap-3 pt-6 border-t border-neutral-100">
+                <Image src="/temoins/jeremy.jpg" alt="Jérémy Wild" width={48} height={48} className="size-12 rounded-full object-cover" />
+                <div>
+                  <p className="text-sm font-semibold text-neutral-900">Jérémy Wild</p>
+                  <p className="text-xs text-neutral-500">Co-fondateur, MadSkills</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Emmanuelle */}
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 flex flex-col">
+              <blockquote className="text-md text-neutral-700 leading-relaxed flex-1">
+                &ldquo;Syllabis a été un vrai accélérateur pour nos formations NTC chez Pikango.
+                La conformité entre les référentiels et le contenu pédagogique est
+                assurée automatiquement, c&apos;est un gain de temps énorme.&rdquo;
+              </blockquote>
+              <div className="mt-6 flex items-center gap-3 pt-6 border-t border-neutral-100">
+                <Image src="/temoins/emmanuelle.webp" alt="Emmanuelle Buard" width={48} height={48} className="size-12 rounded-full object-cover" />
+                <div>
+                  <p className="text-sm font-semibold text-neutral-900">Emmanuelle Buard</p>
+                  <p className="text-xs text-neutral-500">Directrice Pédagogique, CFA Pikango</p>
+                </div>
               </div>
             </div>
           </div>
