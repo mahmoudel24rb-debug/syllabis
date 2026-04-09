@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Check, X, ArrowRight, Share07, Edit04, FileDownload01, MagicWand02, TrendDown01, Shield01, Monitor01, Users01 } from "@untitledui/icons";
+import { Check, X, ArrowRight, Share07, Edit04, FileDownload01, Stars01, TrendDown01, Shield01, Monitor01, Users01 } from "@untitledui/icons";
 import type { ComponentType } from "react";
 import { Button } from "@/components/base/buttons/button";
 import CTABanner from "./components/CTABanner";
@@ -65,7 +65,7 @@ const features: { icon: ComponentType<{ className?: string }>; title: string; de
     description: "Export en format SCORM 1.2 & 2004 pour utilisation dans n\u2019importe quel LMS : Moodle, Canvas, Docebo, TalentLMS...",
   },
   {
-    icon: MagicWand02,
+    icon: Stars01,
     title: "Génération IA",
     description: "4 modèles IA entraînés pour analyser vos référentiels et générer du contenu pédagogique de qualité professionnelle.",
   },
