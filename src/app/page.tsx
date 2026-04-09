@@ -141,7 +141,7 @@ export default function Home() {
           ══════════════════════════════════════════════ */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="max-w-xl mb-12 md:mb-16">
+          <div className="max-w-xl mb-12 md:mb-16 text-center lg:text-left mx-auto lg:mx-0">
             <p className="text-sm font-semibold text-brand-600 mb-3">
               Qui sommes-nous
             </p>
@@ -178,7 +178,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <h3 className="text-lg font-semibold text-neutral-900 mb-6">Un outil permettant de :</h3>
+              <h3 className="text-lg font-semibold text-neutral-900 mb-6 text-center lg:text-left">Un outil permettant de :</h3>
               <div className="space-y-6">
                 {solutions.map((s, i) => (
                   <div key={i} className="flex gap-4">
@@ -231,7 +231,7 @@ export default function Home() {
       <section className="py-8 sm:py-12">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="flex flex-col gap-x-8 gap-y-6 rounded-2xl bg-neutral-50 px-6 py-10 lg:flex-row lg:items-center lg:p-16">
-            <div className="flex max-w-3xl flex-1 flex-col">
+            <div className="flex max-w-3xl flex-1 flex-col text-center lg:text-left">
               <h2 className="text-display-sm font-semibold text-neutral-900">
                 Essayez Syllabis pendant 14 jours
               </h2>
@@ -239,7 +239,7 @@ export default function Home() {
                 Rejoignez les organismes de formation qui ont déjà transformé leur productivité avec Syllabis.
               </p>
             </div>
-            <div className="flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-start shrink-0">
+            <div className="flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center shrink-0">
               <Button color="secondary" size="xl" href="/fonctionnalites">
                 En savoir plus
               </Button>
@@ -257,7 +257,7 @@ export default function Home() {
       <section id="decouvrir" className="relative overflow-hidden pt-16 pb-16 md:pt-24 md:pb-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="max-w-lg">
+            <div className="max-w-lg text-center lg:text-left mx-auto lg:mx-0">
               <p className="text-sm font-semibold text-brand-600 mb-3">Ce que fait Syllabis</p>
               <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
                 De la fiche RNCP à la formation complète
@@ -268,7 +268,7 @@ export default function Home() {
                 <strong className="text-neutral-900">conformité absolue</strong>{" "}
                 entre les attentes des certificateurs et la validation des compétences des apprenants.
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex justify-center lg:justify-start">
                 <Button color="primary" size="lg" href="/fonctionnalites" iconTrailing={<ArrowRight data-icon />}>
                   Découvrir les fonctionnalités
                 </Button>
@@ -301,7 +301,7 @@ export default function Home() {
       <section className="py-16 sm:py-24 bg-neutral-50">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           {/* Header */}
-          <div className="max-w-xl mb-12 md:mb-16">
+          <div className="max-w-xl mb-12 md:mb-16 text-center lg:text-left mx-auto lg:mx-0">
             <p className="text-sm font-semibold text-brand-600 mb-3">Avant / Après</p>
             <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
               Divisez par 7 le temps de création
@@ -364,19 +364,19 @@ export default function Home() {
       <section id="fonctionnalites" className="overflow-hidden bg-white pt-16 lg:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
+            <div className="text-center lg:text-left">
               <p className="text-sm font-semibold text-brand-600 mb-3">Fonctionnalités</p>
               <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
                 Principales fonctionnalités
               </h2>
-              <p className="mt-5 text-lg text-neutral-600 max-w-lg">
+              <p className="mt-5 text-lg text-neutral-600 max-w-lg mx-auto lg:mx-0">
                 Tout ce dont vous avez besoin pour créer, structurer et déployer vos formations e-learning.
               </p>
 
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8">
                 {features.map((f) => (
-                  <div key={f.title}>
-                    <div className="flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 mb-4">
+                  <div key={f.title} className="text-center lg:text-left">
+                    <div className="flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 mb-4 mx-auto lg:mx-0">
                       <f.icon className="size-6 text-[#0A1E3D]" />
                     </div>
                     <h3 className="text-md font-semibold text-neutral-900 mb-1">{f.title}</h3>
