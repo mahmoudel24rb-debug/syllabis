@@ -188,15 +188,15 @@ export default function Home() {
                     />
                     {/* Callouts annotations - desktop only */}
                     <div className="hidden md:block">
-                      <div className="absolute top-[8%] left-[2%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg animate-pulse">
+                      <div className="absolute top-[8%] left-[2%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
                         <Share07 className="size-3.5" />
                         Arborescence pédagogique
                       </div>
-                      <div className="absolute top-[18%] left-[35%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+                      <div className="absolute top-[18%] left-[35%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg animate-pulse">
                         <Stars01 className="size-3.5" />
                         Contenu généré par l&apos;IA
                       </div>
-                      <div className="absolute top-[4%] right-[2%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+                      <div className="absolute top-[4%] right-[2%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg animate-pulse">
                         <ArrowRight className="size-3.5" />
                         Export SCORM
                       </div>
