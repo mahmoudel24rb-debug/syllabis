@@ -1,6 +1,15 @@
 "use client";
 
-import { ReactCompareSlider, ReactCompareSliderImage } from "react-compare-slider";
+import dynamic from "next/dynamic";
+
+const ReactCompareSlider = dynamic(
+  () => import("react-compare-slider").then((mod) => mod.ReactCompareSlider),
+  { ssr: false }
+);
+const ReactCompareSliderImage = dynamic(
+  () => import("react-compare-slider").then((mod) => mod.ReactCompareSliderImage),
+  { ssr: false }
+);
 
 export default function HeroSlider() {
   return (

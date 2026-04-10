@@ -1,40 +1,52 @@
-import CTABanner from "../components/CTABanner";
-import { Check } from "@untitledui/icons";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Demander une démo | Syllabis — Voyez l'IA générer une formation en direct",
-  description: "Réservez 30 minutes de démo. Upload d'un vrai référentiel, génération en direct, tour de l'éditeur et export SCORM.",
-};
+import { useState } from "react";
+import { Check } from "@untitledui/icons";
+import { Button } from "@/components/base/buttons/button";
+import { Checkbox } from "@/components/base/checkbox/checkbox";
+import { InputBase } from "@/components/base/input/input";
+import { InputGroup } from "@/components/base/input/input-group";
+import { NativeSelect } from "@/components/base/select/select-native";
+import { Select } from "@/components/base/select/select";
+import { DateTimePicker } from "@/components/application/date-picker/date-time-picker";
 
 const demoIncludes = [
-  "Upload d\u2019un vrai référentiel",
-  "Génération en direct par l\u2019IA",
-  "Tour de l\u2019éditeur 39+ blocs",
-  "Export SCORM en live",
+  "Upload de votre propre référentiel",
+  "Génération de l'arborescence en direct",
+  "Tour complet de l'éditeur 40+ blocs",
+  "Export SCORM marque blanche en live",
+  "Questions/réponses avec l'équipe produit",
+];
+
+const sizeOptions = [
+  { id: "1-5", label: "1 à 5 personnes" },
+  { id: "6-15", label: "6 à 15 personnes" },
+  { id: "16-50", label: "16 à 50 personnes" },
+  { id: "50+", label: "50+ personnes" },
 ];
 
 export default function DemoPage() {
+  const [accepted, setAccepted] = useState(false);
+
   return (
     <>
-      {/* ── Hero ── */}
+      {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 hero-grid hero-grid-mask" />
         <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-20">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm font-semibold text-brand-600 mb-3">Démo</p>
             <h1 className="text-display-md sm:text-display-lg font-semibold text-neutral-900">
-              Voyez Syllabis en action
+              Réservez votre démo personnalisée
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              30 minutes pour découvrir comment l&apos;IA transforme vos
-              référentiels en formations complètes.
+              30 minutes sur votre propre référentiel. Sans engagement, réponse sous 24h.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── Form + Sidebar ── */}
+      {/* Form + Sidebar */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
@@ -44,79 +56,89 @@ export default function DemoPage() {
                 Réservez votre créneau
               </h2>
               <div className="grid grid-cols-1 gap-5">
+                {/* Prénom + Nom */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-1.5">
-                      Nom
+                  <InputGroup label="Prénom" isRequired>
+                    <InputBase type="text" placeholder="Votre prénom" />
+                  </InputGroup>
+                  <InputGroup label="Nom" isRequired>
+                    <InputBase type="text" placeholder="Votre nom" />
+                  </InputGroup>
+                </div>
+
+                {/* Email + Téléphone */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <InputGroup label="Email professionnel" isRequired>
+                    <InputBase type="email" placeholder="vous@organisme.fr" />
+                  </InputGroup>
+                  <InputGroup
+                    label="Téléphone"
+                    isRequired
+                    leadingAddon={
+                      <NativeSelect
+                        aria-label="Indicatif pays"
+                        options={[
+                          { value: "FR", label: "FR" },
+                          { value: "BE", label: "BE" },
+                          { value: "CH", label: "CH" },
+                          { value: "CA", label: "CA" },
+                        ]}
+                      />
+                    }
+                  >
+                    <InputBase type="tel" placeholder="+33 6 12 34 56 78" />
+                  </InputGroup>
+                </div>
+
+                {/* Organisme */}
+                <InputGroup label="Organisme / Entreprise" isRequired>
+                  <InputBase type="text" placeholder="Nom de votre organisme" />
+                </InputGroup>
+
+                {/* Taille + Date/Heure */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <Select
+                    label="Taille de l'établissement"
+                    placeholder="Sélectionnez"
+                    isRequired
+                    items={sizeOptions}
+                    size="md"
+                  >
+                    {(item) => <Select.Item id={item.id}>{item.label}</Select.Item>}
+                  </Select>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-sm font-medium text-primary">
+                      Date et horaire <span className="text-red-500">*</span>
                     </label>
-                    <input
-                      type="text"
-                      placeholder="Votre nom"
-                      className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-md text-neutral-900 placeholder:text-neutral-500 shadow-xs focus:border-brand-300 focus:ring-4 focus:ring-brand-100 outline-none transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-1.5">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="vous@exemple.com"
-                      className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-md text-neutral-900 placeholder:text-neutral-500 shadow-xs focus:border-brand-300 focus:ring-4 focus:ring-brand-100 outline-none transition-colors"
-                    />
+                    <DateTimePicker />
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1.5">
-                    Organisme
-                  </label>
-                  <input
+                {/* Type de titre */}
+                <InputGroup label="Type de titre sur lequel vous travaillez" hint="Optionnel">
+                  <InputBase
                     type="text"
-                    placeholder="Nom de votre organisme"
-                    className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-md text-neutral-900 placeholder:text-neutral-500 shadow-xs focus:border-brand-300 focus:ring-4 focus:ring-brand-100 outline-none transition-colors"
+                    placeholder="ex : Titre Pro Négociateur Technico-Commercial, BTS Commerce..."
                   />
-                </div>
+                </InputGroup>
 
-                <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1.5">
-                    Nombre de formations/an
-                  </label>
-                  <select className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-md text-neutral-900 shadow-xs focus:border-brand-300 focus:ring-4 focus:ring-brand-100 outline-none transition-colors">
-                    <option value="">Sélectionnez</option>
-                    <option value="1-10">1-10</option>
-                    <option value="10-50">10-50</option>
-                    <option value="50-200">50-200</option>
-                    <option value="200+">200+</option>
-                  </select>
-                </div>
+                {/* Checkbox */}
+                <Checkbox
+                  label="J'accepte la politique de confidentialité"
+                  size="sm"
+                  isSelected={accepted}
+                  onChange={setAccepted}
+                />
 
-                <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1.5">
-                    Certifications concernées
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="RNCP, BTS, CAP, CQP..."
-                    className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-md text-neutral-900 placeholder:text-neutral-500 shadow-xs focus:border-brand-300 focus:ring-4 focus:ring-brand-100 outline-none transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-1.5">
-                    Créneau préféré
-                  </label>
-                  <select className="w-full rounded-lg border border-neutral-300 bg-white px-3.5 py-2.5 text-md text-neutral-900 shadow-xs focus:border-brand-300 focus:ring-4 focus:ring-brand-100 outline-none transition-colors">
-                    <option value="">Sélectionnez</option>
-                    <option value="matin">Matin</option>
-                    <option value="apres-midi">Après-midi</option>
-                    <option value="flexible">Flexible</option>
-                  </select>
-                </div>
-
-                <button className="w-full rounded-lg border border-brand-600 bg-brand-600 px-[18px] py-3 text-md font-semibold text-white shadow-xs hover:bg-brand-700 transition-colors">
+                {/* Submit */}
+                <Button color="primary" size="xl" className="w-full">
                   Réserver ma démo
-                </button>
+                </Button>
+
+                {/* Réassurance */}
+                <p className="text-center text-xs text-neutral-400">
+                  Gratuit · Sans engagement · Démo sur votre propre référentiel
+                </p>
               </div>
             </div>
 
@@ -128,22 +150,18 @@ export default function DemoPage() {
                 </h3>
                 <ul className="space-y-4">
                   {demoIncludes.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-sm text-neutral-700"
-                    >
-                      <Check className="size-5 text-[#002A5A] shrink-0" />
+                    <li key={item} className="flex items-start gap-3 text-sm text-neutral-700">
+                      <Check className="size-5 text-brand-600 shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-8 bg-[#FEF3C7] border border-[#F59E0B]/30 rounded-xl p-6 text-center">
-                  <div className="text-display-sm font-semibold text-[#002A5A]">
-                    De 3 semaines à 3 minutes
-                  </div>
-                  <p className="mt-2 text-sm text-neutral-600">
-                    pour créer une formation complète
+                <div className="mt-8 pt-6 border-t border-neutral-200">
+                  <p className="text-sm text-neutral-600">
+                    Nous répondons généralement sous{" "}
+                    <span className="font-semibold text-neutral-900">24 heures</span>{" "}
+                    les jours ouvrables.
                   </p>
                 </div>
               </div>

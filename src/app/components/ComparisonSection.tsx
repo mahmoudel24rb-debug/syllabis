@@ -1,119 +1,69 @@
-"use client";
-
 import { Button } from "@/components/base/buttons/button";
 
-const data = {
-  name: "TP Formateur pour adultes",
-  ratio: "÷10",
-  rows: [
-    { label: "Création de l\u2019arborescence pédagogique", sans: "80h", avec: "8h" },
-    { label: "Création du contenu + validation des compétences", sans: "1 600h", avec: "80h" },
-  ],
-  totalSans: "1 680h",
-  totalAvec: "88h",
-  saved: "1 592h",
-};
+const rows = [
+  { label: "Arborescence pédagogique", sans: "80h", avec: "8h" },
+  { label: "Contenu + validation compétences", sans: "1 600h", avec: "80h" },
+  { label: "Contrôle qualité", sans: "40h", avec: "40h" },
+];
 
 export default function ComparisonSection() {
   return (
-    <section className="py-16 sm:py-24 bg-neutral-50">
+    <section className="py-16 sm:py-24">
       <div className="mx-auto max-w-container px-4 sm:px-8">
-        <div className="text-center mb-10">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <p className="text-sm font-semibold text-brand-600 mb-3">Gain de temps</p>
           <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
             1 592 heures économisées sur un seul titre professionnel
           </h2>
+          <p className="mt-5 text-lg text-neutral-600 max-w-2xl mx-auto">
+            Temps réel de production mesuré sur un TP Formateur pour adultes.
+          </p>
         </div>
 
-        <div className="rounded-2xl overflow-hidden border border-neutral-200 shadow-sm bg-white">
-          <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr]">
-            {/* Panneau navy */}
-            <div className="bg-[#002A5A] p-8 lg:p-10 flex flex-col justify-center">
-              <h3 className="text-lg lg:text-xl font-semibold text-white mb-2">
-                Divisez par 10 le temps de création
-              </h3>
-              <p className="text-sm text-white/60 mb-8 leading-relaxed">
-                Temps réel de production mesuré sur des titres professionnels
-                créés avec Syllabis.
-              </p>
-
-              <div className="text-5xl lg:text-6xl font-semibold text-emerald-400 mb-1 tabular-nums">
-                {data.ratio}
-              </div>
-              <p className="text-sm text-white/40 mb-8">plus rapide en moyenne</p>
-
-              <div className="rounded-lg bg-white/15 border border-white/30 px-4 py-3 text-sm font-medium text-white">
-                {data.name}
-              </div>
-            </div>
-
-            {/* Tableau */}
-            <div className="p-6 lg:p-8 bg-white">
-              {/* Header */}
-              <div className="grid grid-cols-[1fr_80px_80px] sm:grid-cols-[1fr_100px_100px] gap-2 pb-3 border-b border-neutral-200">
-                <span className="text-xs uppercase text-neutral-400 font-medium tracking-wide">
-                  Étape
-                </span>
-                <span className="text-xs uppercase text-neutral-400 font-medium tracking-wide text-center">
-                  Sans
-                </span>
-                <span className="text-xs uppercase text-neutral-400 font-medium tracking-wide text-center">
-                  Avec
-                </span>
-              </div>
-
-              {/* Rows */}
-              <div>
-                {data.rows.map((row) => (
-                  <div
-                    key={row.label}
-                    className="grid grid-cols-[1fr_80px_80px] sm:grid-cols-[1fr_100px_100px] gap-2 py-3.5 border-b border-neutral-100 items-center"
-                  >
-                    <span className="text-xs sm:text-sm text-neutral-700">
-                      {row.label}
-                    </span>
-                    <span className="text-xs sm:text-sm font-medium text-red-500 text-center tabular-nums">
-                      {row.sans}
-                    </span>
-                    <span className="text-xs sm:text-sm font-medium text-emerald-500 text-center tabular-nums">
-                      {row.avec}
-                    </span>
+        <div className="rounded-2xl border border-neutral-200 bg-white shadow-sm overflow-hidden max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="bg-neutral-50 p-6 sm:p-8 md:border-r md:border-neutral-200">
+              <p className="text-xs uppercase tracking-wide font-semibold text-neutral-500 mb-1">Sans Syllabis</p>
+              <p className="text-display-md sm:text-display-lg font-bold text-neutral-700 tabular-nums">1 720h</p>
+              <p className="text-sm text-neutral-500 mt-1 mb-6">~12 mois de production</p>
+              <div className="divide-y divide-neutral-200">
+                {rows.map((row) => (
+                  <div key={row.label} className="flex items-center justify-between py-4">
+                    <span className="text-sm text-neutral-600">{row.label}</span>
+                    <span className="text-sm font-semibold text-neutral-700 tabular-nums">{row.sans}</span>
                   </div>
                 ))}
               </div>
-
-              {/* Total */}
-              <div className="grid grid-cols-[1fr_80px_80px] sm:grid-cols-[1fr_100px_100px] gap-2 py-4 mt-1 border-t-2 border-neutral-200 items-center">
-                <span className="text-sm font-bold text-neutral-900 uppercase tracking-wide">
-                  Total
-                </span>
-                <span className="text-md font-bold text-red-600 text-center tabular-nums">
-                  {data.totalSans}
-                </span>
-                <span className="text-md font-bold text-emerald-600 text-center tabular-nums">
-                  {data.totalAvec}
-                </span>
+              <div className="mt-4 rounded-xl bg-neutral-100 px-5 py-4 text-center">
+                <span className="text-sm font-semibold text-neutral-600">Total : 1 720h</span>
               </div>
-
-              {/* Saved */}
-              <div className="mt-4 p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl flex justify-between items-center">
-                <span className="text-sm font-semibold text-emerald-800">
-                  Temps économisé
-                </span>
-                <span className="text-lg font-bold text-emerald-600 tabular-nums">
-                  {data.saved}
-                </span>
+            </div>
+            <div className="bg-white p-6 sm:p-8">
+              <p className="text-xs uppercase tracking-wide font-semibold text-brand-600 mb-1">Avec Syllabis</p>
+              <p className="text-display-md sm:text-display-lg font-bold text-brand-600 tabular-nums">128h</p>
+              <p className="text-sm text-neutral-600 mt-1 mb-6">~4 semaines de production</p>
+              <div className="divide-y divide-neutral-100">
+                {rows.map((row) => (
+                  <div key={row.label} className="flex items-center justify-between py-4">
+                    <span className="text-sm text-neutral-700">{row.label}</span>
+                    <span className="text-sm font-bold text-emerald-600 tabular-nums">{row.avec}</span>
+                  </div>
+                ))}
               </div>
-
-              {/* Réassurance */}
-              <p className="mt-4 text-xs text-neutral-500 leading-relaxed">
-                Le contrôle qualité reste entre vos mains — Syllabis élimine le travail de
-                production répétitif, pas votre expertise pédagogique.
-              </p>
+              <div className="mt-4 rounded-xl bg-emerald-50 border border-emerald-200 px-5 py-4 text-center">
+                <span className="text-sm font-semibold text-emerald-700">Temps économisé : 1 592h</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* CTA post-tableau */}
+        {/* Réassurance */}
+        <p className="text-center text-sm text-neutral-500 mt-6 max-w-2xl mx-auto">
+          Le contrôle qualité reste entre vos mains. Syllabis élimine le travail de production répétitif, pas votre expertise pédagogique.
+        </p>
+
+        {/* CTA */}
         <div className="text-center mt-10">
           <Button color="primary" size="xl" href="/demo">
             Estimez le gain sur votre prochain titre

@@ -1,161 +1,148 @@
-import Link from "next/link";
+import Image from "next/image";
+import { Check } from "@untitledui/icons";
+import { Button } from "@/components/base/buttons/button";
 import CTABanner from "../components/CTABanner";
-import BrowserMockup from "../components/BrowserMockup";
-import { Zap, Edit04, VideoRecorder, Download01, Calendar, Building07, ArrowRight } from "@untitledui/icons";
-import type { ComponentType } from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Fonctionnalités | Syllabis — 6 modules pour créer des formations e-learning",
-  description: "Découvrez les 6 piliers de Syllabis : génération IA, éditeur 39+ blocs, médias IA, export SCORM, pilotage et multi-tenant.",
-};
-
-const featureIconMap: Record<string, ComponentType<{ className?: string }>> = {
-  "Génération IA": Zap,
-  "Éditeur 39+ blocs": Edit04,
-  "Médias IA": VideoRecorder,
-  "Export SCORM": Download01,
-  "Pilotage & Planning": Calendar,
-  "Multi-tenant": Building07,
+  title: "Fonctionnalités | Syllabis — Créez vos formations RNCP avec l'IA",
+  description:
+    "Génération IA, éditeur 40+ blocs interactifs, export SCORM marque blanche, pilotage et gestion d'équipe. Tout ce dont votre organisme a besoin.",
 };
 
 const features = [
   {
-    title: "Génération IA",
-    href: "/fonctionnalites/generation-ia",
+    tag: "Génération IA",
+    title: "Uploadez un référentiel, récupérez une formation structurée",
     description:
-      "Upload d'un référentiel RNCP en PDF, l'IA analyse et génère toute la hiérarchie pédagogique en quelques minutes.",
+      "Depuis une fiche RNCP ou tout autre document de référence, Syllabis analyse la structure du diplôme et génère l'arborescence pédagogique complète en quelques minutes. Vous gardez la main sur chaque étape grâce au feedback loop intégré.",
+    points: [
+      "Génération en cascade : blocs de compétences, modules, séquences, séances, contenu",
+      "Détection automatique du type de diplôme (TP, BTS, CAP, CQP, BPJEPS)",
+      "Coût et temps estimés affichés avant de lancer la génération",
+      "Feedback loop : rejetez avec un commentaire, l'IA se corrige et régénère",
+      "Presets de génération sauvegardables pour relancer rapidement sur d'autres titres",
+      "Création from scratch possible, sans référentiel certifiant",
+    ],
+    image: "/screenshots/feat-generation.png",
   },
   {
-    title: "Éditeur 39+ blocs",
-    href: "/fonctionnalites/editeur",
+    tag: "Éditeur 40+ blocs interactifs",
+    title: "Des formations que vos apprenants ont envie de suivre",
     description:
-      "Éditeur style Notion avec quiz interactifs, médias riches, blocs pédagogiques et visualisation.",
+      "Un éditeur pensé pour la pédagogie avec plus de 40 types de blocs interactifs. Chaque bloc est régénérable par l'IA. Générez automatiquement des vidéos pédagogiques, podcasts audio, mindmaps et infographies depuis votre contenu existant.",
+    points: [
+      "Quiz QCM, Drag & Drop, Scénario branché, Hotspot, Timeline, Flashcards et plus",
+      "Chaque bloc régénérable par l'IA avec feedback loop intégré",
+      "Vidéos pédagogiques et podcasts audio auto-générés depuis votre contenu",
+      "Mindmaps et infographies générés automatiquement",
+      "10+ thèmes SCORM personnalisables à votre marque",
+      "Interface intuitive style Notion, prise en main immédiate",
+    ],
+    image: "/screenshots/feat-editeur.png",
   },
   {
-    title: "Médias IA",
-    href: "/fonctionnalites/medias-ia",
+    tag: "Export SCORM marque blanche",
+    title: "Exportez en SCORM, déployez partout sous votre marque",
     description:
-      "Génération automatique de vidéos, podcasts, quiz, flashcards, mind maps à partir du contenu.",
+      "Package SCORM 1.2 et 2004 entièrement à votre marque. Votre logo, vos couleurs, le nom de votre organisme. Aucune mention de Syllabis dans le contenu déployé auprès de vos apprenants.",
+    points: [
+      "SCORM 1.2 et 2004 compatible tous les LMS du marché",
+      "Votre logo, vos couleurs, le nom de votre organisme. Zéro mention de Syllabis",
+      "Chat IA embarqué : vos apprenants posent des questions directement dans le module",
+      "Blocs interactifs fonctionnels dans le SCORM (Drag & Drop, Tri, Scénarios branchés)",
+      "Compatible Moodle, 360Learning, Talentsoft, Canvas, Docebo",
+    ],
+    image: "/screenshots/feat-scorm.png",
   },
   {
-    title: "Export SCORM",
-    href: "/fonctionnalites/export-scorm",
+    tag: "Pilotage & Équipes",
+    title: "Gardez la main sur chaque formation et chaque collaborateur",
     description:
-      "Export SCORM 1.2 & 2004 compatible avec tous les LMS, player React moderne.",
+      "Dashboard de pilotage complet, gestion d'équipe granulaire avec 5 niveaux de rôles, et consignes pédagogiques propagées automatiquement à chaque niveau de l'arborescence.",
+    points: [
+      "Dashboard par formation avec progression et volumes horaires calculés automatiquement",
+      "5 niveaux de rôles : propriétaire, administrateur, concepteur, formateur, lecture seule",
+      "Consignes pédagogiques définissables par niveau avec propagation automatique",
+      "Vue calendrier des séances planifiées avec drag & drop",
+      "Suivi des crédits IA par utilisateur et par formation",
+      "Multi-organisations cloisonnées avec branding et équipes propres",
+    ],
+    image: "/screenshots/feat-pilotage.png",
   },
-  {
-    title: "Pilotage & Planning",
-    href: "/fonctionnalites/pilotage-planning",
-    description:
-      "Vue calendrier, tableau, assignment formateurs, export Excel 7 onglets.",
-  },
-  {
-    title: "Multi-tenant",
-    href: "/fonctionnalites/multi-tenant",
-    description:
-      "Organisations, 5 roles, branch access, cost tracking, analytics.",
-  },
-];
-
-const stats = [
-  { value: "39+", label: "blocs" },
-  { value: "7", label: "types de médias" },
-  { value: "4", label: "modèles IA" },
-  { value: "5", label: "rôles" },
-  { value: "2", label: "formats SCORM" },
 ];
 
 export default function FonctionnalitesPage() {
   return (
     <>
-      {/* ── Hero ── */}
+      {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 hero-grid hero-grid-mask" />
         <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-20">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-300 bg-amber-50 px-3 py-1 mb-4">
-              <span className="text-sm font-medium text-amber-800">
-                6 modules intégrés
-              </span>
-            </div>
+            <p className="text-sm font-semibold text-brand-600 mb-3">Fonctionnalités</p>
             <h1 className="text-display-md sm:text-display-lg font-semibold text-neutral-900">
-              Tout ce dont vous avez besoin pour créer des formations{" "}
-              <span className="text-brand-600">e-learning</span>
+              Tout ce dont vous avez besoin pour créer, structurer et déployer vos formations
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              6 modules intégrés, de l&apos;analyse du référentiel au
-              déploiement sur votre LMS.
+              De l&apos;upload de votre référentiel à l&apos;export SCORM marque blanche,
+              chaque étape de votre production pédagogique dans un seul outil.
             </p>
           </div>
-
-          <div className="mt-12 max-w-4xl mx-auto">
-            <BrowserMockup src="/screenshots/global-dashboard.png" alt="Dashboard global Syllabis" />
-          </div>
         </div>
       </section>
 
-      {/* ── Feature cards grid ── */}
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="group rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 hover:border-brand-200 hover:shadow-lg transition-all"
-              >
-                {(() => {
-                  const Icon = featureIconMap[feature.title];
-                  return (
-                    <div className="flex items-center justify-center size-12 rounded-xl bg-[#002A5A]/5 border border-[#002A5A]/10 mb-5">
-                      {Icon && <Icon className="size-6 text-[#002A5A]" />}
-                    </div>
-                  );
-                })()}
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-md text-neutral-600 leading-relaxed mb-5">
-                  {feature.description}
-                </p>
-                <Link
-                  href={feature.href}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 group-hover:text-brand-700 transition-colors"
-                >
-                  Découvrir
-                  <ArrowRight className="size-4" />
-                </Link>
+      {/* Features empilées */}
+      {features.map((f, i) => (
+        <section key={f.tag} className={`py-16 sm:py-24 ${i % 2 === 0 ? "bg-neutral-50" : ""}`}>
+          <div className="mx-auto max-w-container px-4 sm:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              {/* Text */}
+              <div>
+                <p className="text-sm font-semibold text-brand-600 mb-3">{f.tag}</p>
+                <h2 className="text-display-xs sm:text-display-sm font-semibold text-neutral-900 mb-3">
+                  {f.title}
+                </h2>
+                <p className="text-lg text-neutral-600 mb-6 max-w-lg">{f.description}</p>
+                <ul className="space-y-3 max-w-lg">
+                  {f.points.map((p) => (
+                    <li key={p} className="flex items-start gap-2.5">
+                      <Check className="size-5 text-emerald-500 shrink-0 mt-0.5" />
+                      <span className="text-md text-neutral-700">{p}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8">
+                  {/* TODO: remplacer par /register quand la route existe */}
+                  <Button color="primary" size="lg" href="/contact">
+                    Créer ma première formation gratuitement
+                  </Button>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ── Stats band ── */}
-      <section className="py-8 sm:py-12 border-y border-neutral-200 bg-neutral-50">
-        <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium text-neutral-600">
-            {stats.map((stat) => (
-              <span key={stat.label} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />
-                <span className="font-semibold text-neutral-900">
-                  {stat.value}
-                </span>{" "}
-                {stat.label}
-              </span>
-            ))}
+              {/* Image */}
+              <div className={i % 2 === 1 ? "lg:order-first" : ""}>
+                <div className="rounded-[24px] bg-white p-[3px] shadow-2xl ring-[2px] ring-neutral-200 ring-inset md:rounded-[32px] md:p-1">
+                  <div className="rounded-[21px] bg-white p-1 shadow-[inset_0_0_4px_1.5px_rgba(10,13,18,0.08),inset_0_0_3px_1.5px_rgba(10,13,18,0.03)] md:rounded-[28px] md:p-[5.4px]">
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-[18px] bg-neutral-50 ring-[2px] ring-neutral-200 md:rounded-[24px]">
+                      <Image src={f.image} alt={f.title} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
-      {/* ── CTA ── */}
+      {/* CTA final */}
       <CTABanner
-        title="Prêt à découvrir Syllabis ?"
-        description="Demandez une démo et voyez comment l'IA transforme vos référentiels en formations."
-        primaryLabel="Demander une démo"
-        primaryHref="/demo"
-        secondaryLabel="Voir les tarifs"
-        secondaryHref="/tarifs"
+        title="Votre prochain titre professionnel est prêt en moins de 3 semaines"
+        description="Créez votre compte gratuitement et lancez votre première génération, ou réservez une démo sur votre propre référentiel."
+        primaryLabel="Commencer gratuitement"
+        primaryHref="/contact"
+        secondaryLabel="Réserver ma démo"
+        secondaryHref="/demo"
       />
     </>
   );

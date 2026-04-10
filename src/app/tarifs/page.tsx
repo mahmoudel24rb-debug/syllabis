@@ -1,173 +1,323 @@
-import Link from "next/link";
-import CTABanner from "../components/CTABanner";
-import { Check } from "@untitledui/icons";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Tarifs | Syllabis — Plans Starter, Pro et Enterprise",
-  description: "Des tarifs simples et transparents. Starter à 29\u20AC/mois, Pro à 99\u20AC/mois, Enterprise sur mesure. Essai gratuit 14 jours.",
-};
+import { useState } from "react";
+import type { ReactNode } from "react";
+import Link from "next/link";
+import { Check, Minus } from "@untitledui/icons";
+import { Button } from "@/components/base/buttons/button";
+import CTABanner from "../components/CTABanner";
+
+function SectionHeader({ children }: { children: ReactNode }) {
+  return (
+    <tr className="border-b border-neutral-200">
+      <td colSpan={5} className="pt-8 pb-3 text-sm font-semibold text-neutral-900">{children}</td>
+    </tr>
+  );
+}
+
+function Row({ label, values }: { label: string; values: (boolean | string)[] }) {
+  return (
+    <tr className="border-b border-neutral-100">
+      <td className="py-3.5 pr-4 text-sm text-neutral-700">{label}</td>
+      {values.map((v, i) => (
+        <td key={i} className="py-3.5 px-4 text-center">
+          {v === true ? (
+            <Check className="size-5 text-emerald-500 mx-auto" />
+          ) : v === false ? (
+            <Minus className="size-5 text-neutral-300 mx-auto" />
+          ) : (
+            <span className="text-sm text-neutral-700">{v}</span>
+          )}
+        </td>
+      ))}
+    </tr>
+  );
+}
 
 const plans = [
   {
-    name: "Starter",
-    audience: "Formateur indépendant",
-    price: "À partir de 29\u20AC/mois",
-    badge: null,
+    name: "Découverte",
+    audience: "Pour évaluer Syllabis",
+    price: "0 €",
+    period: "14 jours gratuits",
+    annualPrice: null,
+    includes: null,
     features: [
-      "5 formations/mois",
+      "500 crédits IA/mois",
+      "43 blocs éditeur",
       "1 utilisateur",
-      "Blocs éditeur de base",
-      "Export SCORM 1.2",
-      "Support email",
+      "Export SCORM (partiel)",
+      "Export Excel",
+      "Support communauté",
     ],
-    cta: "Commencer l\u2019essai gratuit",
-    href: "/demo",
+    cta: "Commencer gratuitement",
+    href: "/contact",
     highlighted: false,
   },
   {
     name: "Pro",
-    audience: "Organisme de formation",
-    price: "À partir de 99\u20AC/mois",
-    badge: "Populaire",
+    audience: "Indépendant / Petit OF",
+    price: "149 €",
+    period: "/mois",
+    annualPrice: "1 430 €/an",
+    annualMonthly: "119 €",
+    includes: "Tout Découverte, plus :",
     features: [
-      "Formations illimitées",
-      "Jusqu\u2019à 10 utilisateurs",
-      "Tous les 39+ blocs éditeur",
-      "Export SCORM 1.2 & 2004",
-      "Médias IA (vidéos, podcasts)",
-      "Planning & pilotage",
-      "Support prioritaire",
+      "1 000 crédits IA/mois",
+      "1 utilisateur",
+      "Génération niveau par niveau",
+      "Export SCORM complet",
+      "5 thèmes SCORM",
+      "Support email 48h",
     ],
-    cta: "Commencer l\u2019essai gratuit",
-    href: "/demo",
+    cta: "Commencer l'essai",
+    href: "/contact",
+    highlighted: false,
+  },
+  {
+    name: "Business",
+    audience: "OF moyen / Équipe de conception",
+    price: "449 €",
+    period: "/mois",
+    annualPrice: "4 310 €/an",
+    annualMonthly: "359 €",
+    badge: "Populaire",
+    includes: "Tout Pro, plus :",
+    features: [
+      "5 000 crédits IA/mois",
+      "3 utilisateurs inclus (+25 €/siège)",
+      "Génération en cascade complète",
+      "Intégration NotebookLM",
+      "Marque blanche SCORM",
+      "Planification automatique",
+      "Support prioritaire 24h",
+    ],
+    cta: "Nous contacter",
+    href: "/contact",
     highlighted: true,
   },
   {
     name: "Enterprise",
-    audience: "Multi-tenant",
+    audience: "Grand groupe / Université",
     price: "Sur mesure",
-    badge: null,
+    period: "",
+    annualPrice: "7 670 €/an",
+    annualMonthly: "639 €",
+    annualPriceOriginal: "12 500 €/an",
+    badge: "Offre premiers clients",
+    includes: "Tout Business, plus :",
     features: [
-      "Tout Pro +",
-      "Multi-organisations",
-      "Branding custom",
-      "Branch access",
-      "Cost tracking & analytics avancés",
-      "SSO / API (227+ routes)",
-      "Account manager dédié",
+      "Formations et utilisateurs illimités",
+      "Multi-organisations cloisonnées",
+      "Personnalisation complète à votre marque",
+      "API et intégrations sur mesure",
+      "Interlocuteur dédié",
+      "Support garanti sous 4h",
     ],
-    cta: "Contacter l\u2019équipe commerciale",
-    href: "/demo",
+    cta: "Nous contacter",
+    href: "/contact",
     highlighted: false,
   },
 ];
 
 const faqs = [
   {
+    question: "Comment choisir l'offre adaptée à mon organisme ?",
+    answer:
+      "Le choix dépend de la taille de votre équipe et de votre volume de production. Contactez-nous pour un échange de 15 minutes, nous vous conseillerons l'offre la plus adaptée à votre situation.",
+  },
+  {
     question: "Y a-t-il un essai gratuit ?",
     answer:
-      "Oui, 14 jours gratuits sans carte bancaire sur les plans Starter et Pro.",
+      "Oui. Le plan Découverte vous permet de tester Syllabis gratuitement pendant 14 jours, sans carte bancaire, sur un vrai projet.",
   },
   {
-    question: "Puis-je changer de plan ?",
+    question: "Comment obtenir un devis ?",
     answer:
-      "Oui, vous pouvez upgrader ou downgrader à tout moment.",
-  },
-  {
-    question: "Comment fonctionne la facturation IA ?",
-    answer:
-      "Les crédits IA sont inclus dans chaque plan. Au-delà, facturation à l\u2019usage transparente.",
-  },
-  {
-    question: "Y a-t-il un engagement minimum ?",
-    answer:
-      "Non, tous les plans sont sans engagement. Annulation en 1 clic.",
+      "Contactez-nous via la page contact ou réservez une démo. Nous vous enverrons un devis personnalisé sous 24h, adapté à la taille et aux besoins de votre organisme.",
   },
 ];
 
 export default function TarifsPage() {
+  const [annual, setAnnual] = useState(true);
+
   return (
     <>
-      {/* ── Hero ── */}
+      {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 hero-grid hero-grid-mask" />
         <div className="relative mx-auto max-w-container px-4 sm:px-8 pt-16 sm:pt-24 pb-16 sm:pb-20">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm font-semibold text-brand-600 mb-3">Tarifs</p>
             <h1 className="text-display-md sm:text-display-lg font-semibold text-neutral-900">
-              Des tarifs simples et transparents
+              Une offre adaptée à chaque organisme
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Choisissez le plan adapté à vos besoins. Sans engagement.
+              Du formateur indépendant au grand groupe, choisissez l&apos;offre qui correspond à vos besoins. Sans engagement.
             </p>
+
+            {/* Toggle mensuel / annuel */}
+            <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-neutral-200 bg-white p-1 shadow-xs">
+              <button
+                onClick={() => setAnnual(false)}
+                className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                  !annual ? "bg-brand-600 text-white" : "text-neutral-600 hover:text-neutral-900"
+                }`}
+              >
+                Mensuel
+              </button>
+              <button
+                onClick={() => setAnnual(true)}
+                className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                  annual ? "bg-brand-600 text-white" : "text-neutral-600 hover:text-neutral-900"
+                }`}
+              >
+                Annuel <span className="text-xs font-medium opacity-80">-20%</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Pricing Cards ── */}
+      {/* Pricing Cards */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto items-start">
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative rounded-2xl border p-8 flex flex-col ${
+                className={`relative rounded-2xl border p-6 sm:p-8 flex flex-col ${
                   plan.highlighted
-                    ? "border-brand-300 bg-white shadow-xl ring-2 ring-[#002A5A] relative -mt-4 mb-4 lg:-mt-8 lg:mb-8"
+                    ? "border-brand-300 bg-white shadow-xl ring-2 ring-brand-600 lg:-mt-4 lg:mb-4"
                     : "border-neutral-200 bg-white shadow-sm"
                 }`}
               >
-                {plan.badge && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-3 py-1 text-xs font-semibold text-amber-900">
+                {"badge" in plan && plan.badge && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-600 px-4 py-1 text-xs font-semibold text-white whitespace-nowrap">
                     {plan.badge}
                   </span>
                 )}
 
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-neutral-900">
-                    {plan.name}
-                  </h3>
-                  <p className="text-sm text-neutral-500 mt-1">
-                    {plan.audience}
-                  </p>
+                  <h3 className="text-lg font-semibold text-neutral-900">{plan.name}</h3>
+                  <p className="text-sm text-neutral-500 mt-1">{plan.audience}</p>
                 </div>
 
-                <div className="mb-8">
-                  <span className="text-display-sm font-semibold text-neutral-900">
-                    {plan.price}
-                  </span>
+                <div className="mb-6">
+                  {plan.price === "0 €" ? (
+                    <>
+                      <span className="text-display-xs font-semibold text-neutral-900">0 €</span>
+                      <span className="text-sm text-neutral-500 ml-1">{plan.period}</span>
+                    </>
+                  ) : annual && "annualMonthly" in plan ? (
+                    <>
+                      <span className="text-display-xs font-semibold text-neutral-900">{plan.annualMonthly}</span>
+                      <span className="text-sm text-neutral-500">/mois</span>
+                      {"annualPriceOriginal" in plan && plan.annualPriceOriginal ? (
+                        <>
+                          <p className="text-sm text-neutral-400 line-through mt-1">{plan.annualPriceOriginal}</p>
+                          <p className="text-xs text-emerald-600 font-medium">Facturé {plan.annualPrice}</p>
+                        </>
+                      ) : (
+                        <p className="text-xs text-neutral-500 mt-1">Facturé {plan.annualPrice}</p>
+                      )}
+                    </>
+                  ) : plan.price === "Sur mesure" ? (
+                    <span className="text-display-xs font-semibold text-neutral-900">Sur mesure</span>
+                  ) : (
+                    <>
+                      <span className="text-display-xs font-semibold text-neutral-900">{plan.price}</span>
+                      <span className="text-sm text-neutral-500">{plan.period}</span>
+                    </>
+                  )}
                 </div>
+
+                {plan.includes && (
+                  <p className="text-sm font-medium text-neutral-900 mb-3">{plan.includes}</p>
+                )}
 
                 <ul className="space-y-3 mb-8 flex-1">
                   {plan.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-start gap-3 text-sm text-neutral-700"
-                    >
-                      <Check className="size-5 text-emerald-500 shrink-0" />
+                    <li key={feature} className="flex items-start gap-3 text-sm text-neutral-700">
+                      <Check className="size-5 text-emerald-500 shrink-0 mt-0.5" />
                       {feature}
                     </li>
                   ))}
                 </ul>
 
-                <Link
+                <Button
+                  color={plan.highlighted ? "primary" : "secondary"}
+                  size="lg"
                   href={plan.href}
-                  className={`w-full inline-flex items-center justify-center rounded-lg px-[18px] py-3 text-md font-semibold shadow-xs transition-colors ${
-                    plan.highlighted
-                      ? "border border-[#002A5A] bg-[#002A5A] text-white hover:bg-[#002A5A]/90"
-                      : "border border-neutral-300 bg-white text-neutral-700 hover:bg-neutral-50"
-                  }`}
+                  className="w-full"
                 >
                   {plan.cta}
-                </Link>
+                </Button>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── FAQ Tarifs ── */}
+      {/* Comparison Table */}
+      <section className="py-16 sm:py-24 bg-neutral-50">
+        <div className="mx-auto max-w-container px-4 sm:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold text-brand-600 mb-3">Comparaison</p>
+            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+              Comparez les offres en détail
+            </h2>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[720px]">
+              <thead>
+                <tr className="border-b border-neutral-200">
+                  <th className="text-left py-4 pr-4 text-sm font-semibold text-neutral-900 w-[280px]"></th>
+                  <th className="py-4 px-4 text-center text-sm font-semibold text-neutral-900">Découverte</th>
+                  <th className="py-4 px-4 text-center text-sm font-semibold text-neutral-900">Pro</th>
+                  <th className="py-4 px-4 text-center text-sm font-semibold text-brand-600">Business</th>
+                  <th className="py-4 px-4 text-center text-sm font-semibold text-neutral-900">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <SectionHeader>Volumes</SectionHeader>
+                <Row label="Crédits IA inclus/mois" values={["500", "1 000", "5 000", "Illimité"]} />
+                <Row label="Utilisateurs inclus" values={["1", "1", "3", "Illimité"]} />
+                <Row label="Sièges supplémentaires" values={["—", "—", "25 €/mois/siège", "Négocié"]} />
+                <Row label="Historique des générations" values={["30 jours", "90 jours", "Illimité", "Illimité"]} />
+
+                <SectionHeader>Génération IA</SectionHeader>
+                <Row label="Analyse de référentiel PDF" values={[true, true, true, true]} />
+                <Row label="Génération en cascade complète" values={[false, false, true, true]} />
+
+                <SectionHeader>Éditeur et blocs</SectionHeader>
+                <Row label="43 blocs éditeur" values={[true, true, true, true]} />
+                <Row label="Quiz et flashcards IA" values={[true, true, true, true]} />
+                <Row label="Intégration NotebookLM" values={[false, false, true, true]} />
+
+                <SectionHeader>Exports et intégrations</SectionHeader>
+                <Row label="Export SCORM 1.2 et 2004" values={["Partiel", true, true, true]} />
+                <Row label="Export Excel (structure)" values={[true, true, true, true]} />
+                <Row label="Thèmes SCORM prédéfinis" values={[false, true, true, true]} />
+                <Row label="Thèmes SCORM personnalisés" values={[false, "Add-on", true, true]} />
+                <Row label="Planification automatique" values={[false, "Add-on", true, true]} />
+                <Row label="Chat apprenants dans le SCORM" values={[false, "Add-on", "Add-on", true]} />
+                <Row label="API et webhooks" values={[false, "Add-on", "Add-on", true]} />
+                <Row label="Intégrations tierces" values={["—", "—", "3 max", "Illimité"]} />
+                <Row label="Personnalisation complète à votre marque" values={[false, false, false, true]} />
+                <Row label="Multi-organisations" values={[false, false, false, true]} />
+
+                <SectionHeader>Support</SectionHeader>
+                <Row label="Support inclus" values={["Communauté", "Email 48h", "Prioritaire 24h", "Dédié sous 4h"]} />
+                <Row label="Interlocuteur dédié" values={[false, false, "Add-on", true]} />
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Tarifs */}
       <section className="py-16 sm:py-24 bg-neutral-50">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-16">
@@ -181,40 +331,28 @@ export default function TarifsPage() {
             {faqs.map((faq) => (
               <details key={faq.question} className="group py-6">
                 <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <h3 className="text-lg font-semibold text-neutral-900 pr-4">
-                    {faq.question}
-                  </h3>
-                  <span className="shrink-0 w-10 h-10 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-400 group-open:text-brand-600 group-open:border-brand-200 transition-colors">
-                    <svg
-                      className="w-5 h-5 transition-transform group-open:rotate-45"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 4.5v15m7.5-7.5h-15"
-                      />
+                  <h3 className="text-lg font-semibold text-neutral-900 pr-4">{faq.question}</h3>
+                  <span className="shrink-0 size-10 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-400 group-open:text-brand-600 group-open:border-brand-200 transition-colors">
+                    <svg className="size-5 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>
                   </span>
                 </summary>
-                <p className="mt-2 text-md text-neutral-600 leading-relaxed pr-14">
-                  {faq.answer}
-                </p>
+                <p className="mt-2 text-md text-neutral-600 leading-relaxed pr-14">{faq.answer}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* CTA */}
       <CTABanner
-        title="Prêt à créer vos formations ?"
-        description="Commencez gratuitement pendant 14 jours, sans carte bancaire."
-        primaryLabel="Commencer l'essai gratuit"
-        primaryHref="/demo"
+        title="Besoin d'un devis personnalisé ?"
+        description="Contactez-nous et recevez une proposition adaptée à votre organisme sous 24h."
+        primaryLabel="Nous contacter"
+        primaryHref="/contact"
+        secondaryLabel="Réserver une démo"
+        secondaryHref="/demo"
       />
     </>
   );
