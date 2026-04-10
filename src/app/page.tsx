@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Check, ArrowRight, Stars01, Edit04, VideoRecorder, Share07, Calendar, Users01 } from "@untitledui/icons";
-import type { ComponentType } from "react";
+import { ArrowRight, Stars01, Share07 } from "@untitledui/icons";
 import { Button } from "@/components/base/buttons/button";
 import CTABanner from "./components/CTABanner";
-import ComparisonToggle from "./components/ComparisonToggle";
+import FeaturesTabsSection from "./components/FeaturesTabsSection";
+import ComparisonSection from "./components/ComparisonSection";
 
 /* ─── DATA ─── */
 
@@ -12,98 +12,6 @@ const metrics = [
   { value: "×3", label: "Appels d\u2019offres traités", desc: "avec un taux de conversion de 20-30%" },
   { value: "+20%", label: "de FOAD", desc: "en moyenne dans nos formations" },
   { value: "100%", label: "Maîtrise du contenu", desc: "dispensé aux apprenants" },
-];
-
-const featureBlocks: {
-  icon: ComponentType<{ className?: string }>;
-  title: string;
-  description: string;
-  bullets: string[];
-  image: string;
-  imageAlt: string;
-  reversed?: boolean;
-}[] = [
-  {
-    icon: Stars01,
-    title: "Génération IA one-click",
-    description: "Uploadez une fiche RNCP et obtenez une formation complète en quelques minutes.",
-    bullets: [
-      "Génération en cascade : blocs → modules → séquences → séances → contenu",
-      "Détection automatique du type de diplôme (TP, BTS, CAP, CQP, BPJEPS)",
-      "Visualisation du coût et du temps estimés avant de lancer",
-      "Feedback loop : rejetez une génération avec un commentaire, l\u2019IA se corrige",
-    ],
-    image: "/screenshots/creer-formation.png",
-    imageAlt: "Création de formation par IA",
-  },
-  {
-    icon: Edit04,
-    title: "Éditeur 39+ blocs interactifs",
-    description: "Un éditeur style Notion pensé pour la pédagogie, avec 39 types de blocs.",
-    bullets: [
-      "Quiz QCM, Drag & Drop, Scénario branché, Hotspot, Timeline, Flashcards, Code…",
-      "Chaque bloc peut être régénéré individuellement par l\u2019IA",
-      "Système de feedback loop : rejetez avec un commentaire, l\u2019IA se corrige",
-      "10+ thèmes personnalisables pour vos formations",
-    ],
-    image: "/screenshots/editor.png",
-    imageAlt: "Éditeur de contenu pédagogique",
-    reversed: true,
-  },
-  {
-    icon: VideoRecorder,
-    title: "NotebookLM : Médias IA automatiques",
-    description: "Fonctionnalité unique : générez 7 types de médias depuis votre contenu existant.",
-    bullets: [
-      "Vidéos pédagogiques auto-générées à partir du texte de la formation",
-      "Podcasts audio (Deep Dive / Briefing) pour l\u2019apprentissage mobile",
-      "Quiz IA, flashcards, mindmaps et infographies, sans production supplémentaire",
-      "Pipeline asynchrone avec suivi de progression en temps réel",
-    ],
-    image: "/screenshots/mindmap.jpg",
-    imageAlt: "Génération de médias IA",
-  },
-  {
-    icon: Share07,
-    title: "Export SCORM marque blanche + chat IA",
-    description: "Déployez sur n\u2019importe quel LMS avec votre marque, sans mention de Syllabis.",
-    bullets: [
-      "Chat IA embarqué : les apprenants posent des questions dans le module",
-      "Blocs interactifs fonctionnels dans le SCORM (Drag & Drop, Tri, Scénarios)",
-      "Compatible Moodle, 360Learning, Talentsoft, Canvas, Docebo…",
-      "Package à votre marque : logo, couleurs, nom. Zéro mention Syllabis",
-    ],
-    image: "/screenshots/formation-creation.png",
-    imageAlt: "Export SCORM marque blanche",
-    reversed: true,
-  },
-  {
-    icon: Calendar,
-    title: "Pilotage et planification",
-    description: "Suivez chaque formation de bout en bout avec des outils de pilotage intégrés.",
-    bullets: [
-      "Dashboard par formation avec progression et volumes horaires automatiques",
-      "Tableau de pilotage sur toute la hiérarchie pédagogique",
-      "Vue calendrier des séances planifiées avec drag & drop",
-      "Mindmap arborescente interactive pour visualiser la structure complète",
-    ],
-    image: "/screenshots/formation-dashboard.png",
-    imageAlt: "Dashboard de pilotage",
-  },
-  {
-    icon: Users01,
-    title: "Gestion d\u2019équipe et organisations",
-    description: "Chaque organisme dispose de son propre espace avec des rôles granulaires.",
-    bullets: [
-      "5 niveaux de rôles : propriétaire, administrateur, concepteur, formateur, lecture seule",
-      "Les formateurs n\u2019accèdent qu\u2019aux blocs et modules qui leur sont assignés",
-      "Invitation par email, suivi de la consommation IA par utilisateur",
-      "Multi-organisations indépendantes avec branding et équipes propres",
-    ],
-    image: "/screenshots/global-dashboard.png",
-    imageAlt: "Gestion d\u2019équipe multi-organisations",
-    reversed: true,
-  },
 ];
 
 const faqs = [
@@ -254,64 +162,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ 4. FONCTIONNALITÉS (6 blocs alternés) ═══ */}
-      {featureBlocks.map((f, i) => (
-        <section key={f.title} className={`py-16 sm:py-24 ${i % 2 === 1 ? "bg-neutral-50" : ""}`}>
-          <div className="mx-auto max-w-container px-4 sm:px-8">
-            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${f.reversed ? "lg:[direction:rtl] *:lg:[direction:ltr]" : ""}`}>
-              {/* Text */}
-              <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
-                  <div className="flex items-center justify-center size-10 rounded-lg bg-[#0A1E3D]/5 border border-[#0A1E3D]/10">
-                    <f.icon className="size-5 text-[#0A1E3D]" />
-                  </div>
-                  <h2 className="text-display-xs sm:text-display-sm font-semibold text-neutral-900">
-                    {f.title}
-                  </h2>
-                </div>
-                <p className="text-lg text-neutral-600 mb-6 max-w-lg mx-auto lg:mx-0">{f.description}</p>
-                <ul className="space-y-3 text-left max-w-lg mx-auto lg:mx-0">
-                  {f.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2.5">
-                      <Check className="size-5 text-emerald-500 shrink-0 mt-0.5" />
-                      <span className="text-md text-neutral-700">{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* Image */}
-              <div>
-                <div className="rounded-[24px] bg-white p-[3px] shadow-[0_12px_24px_-4px_rgba(0,0,0,0.1),0_4px_8px_-2px_rgba(0,0,0,0.06)] ring-[2px] ring-neutral-200 ring-inset md:rounded-[32px] md:p-1">
-                  <div className="rounded-[21px] bg-white p-1 shadow-[inset_0_0_4px_1.5px_rgba(10,13,18,0.08),inset_0_0_3px_1.5px_rgba(10,13,18,0.03)] md:rounded-[28px] md:p-[5.4px]">
-                    <div className="relative overflow-hidden rounded-[18px] bg-neutral-50 ring-[2px] ring-neutral-200 md:rounded-[24px]">
-                      <Image src={f.image} alt={f.imageAlt} width={1280} height={800} className="w-full h-auto" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
+      {/* ═══ 4. FONCTIONNALITÉS (onglets) ═══ */}
+      <FeaturesTabsSection />
 
-      {/* ═══ 5. AVANT / APRÈS (toggle diplôme) ═══ */}
-      <section className="py-16 sm:py-24 bg-neutral-50">
-        <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold text-brand-600 mb-3">Avant / Après</p>
-            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Divisez par 7 le temps de création
-            </h2>
-            <p className="mt-5 text-lg text-neutral-600">
-              Sélectionnez un type de diplôme pour voir le comparatif.
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <ComparisonToggle />
-          </div>
-        </div>
-      </section>
+      {/* ═══ 5. AVANT / APRÈS (panneau navy + tableau) ═══ */}
+      <ComparisonSection />
 
       {/* ═══ 6. NOTRE HISTOIRE (condensée) ═══ */}
       <section className="py-16 sm:py-24">
