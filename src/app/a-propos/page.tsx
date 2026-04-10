@@ -26,7 +26,7 @@ const results = [
   { value: "+20%", label: "de FOAD en moyenne dans nos formations" },
   { value: "100%", label: "de maîtrise du contenu dispensé aux élèves" },
   { value: "×3", label: "appels d\u2019offres traités, avec 20 à 30% de conversion" },
-  { value: "÷7", label: "le temps de création d\u2019un titre professionnel" },
+  { value: "÷10", label: "le temps de création d\u2019un titre professionnel" },
 ];
 
 const values = [
@@ -38,7 +38,7 @@ const values = [
   {
     title: "Productivité",
     description:
-      "Division par 7 du temps de création d\u2019un titre professionnel. Plus d\u2019appels d\u2019offres traités, avec un meilleur taux de conversion.",
+      "Division par 10 du temps de création d\u2019un titre professionnel. Plus d\u2019appels d\u2019offres traités, avec un meilleur taux de conversion.",
   },
   {
     title: "Autonomie",
@@ -190,7 +190,7 @@ export default function AProposPage() {
       {/* ── CTA ── */}
       <CTABanner
         title="Prêt à décupler la productivité de votre organisme ?"
-        description="Demandez une démo et découvrez comment Syllabis divise par 7 le temps de création de vos formations."
+        description="Demandez une démo et découvrez comment Syllabis divise par 10 le temps de création de vos formations."
         primaryLabel="Demander une démo"
         primaryHref="/demo"
       />

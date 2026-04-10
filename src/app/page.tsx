@@ -8,7 +8,7 @@ import ComparisonSection from "./components/ComparisonSection";
 /* ─── DATA ─── */
 
 const metrics = [
-  { value: "÷7", label: "Temps de création", desc: "d\u2019un titre professionnel complet" },
+  { value: "÷10", label: "Temps de création", desc: "minimum, sur un titre professionnel complet" },
   { value: "×3", label: "Appels d\u2019offres traités", desc: "avec un taux de conversion de 20-30%" },
   { value: "+20%", label: "de FOAD", desc: "en moyenne dans nos formations" },
   { value: "100%", label: "Maîtrise du contenu", desc: "dispensé aux apprenants" },
@@ -48,7 +48,7 @@ export default function Home() {
 
             <h1 className="text-display-md sm:text-display-lg md:text-display-xl font-semibold text-neutral-900">
               Créez une formation certifiante complète en{" "}
-              <span className="text-brand-600">7× moins de temps</span>
+              <span className="text-brand-600">10× moins de temps</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
               Uploadez votre fiche RNCP, Syllabis génère l&apos;arborescence complète,
@@ -96,15 +96,51 @@ export default function Home() {
                     />
                     {/* Callouts annotations - desktop only */}
                     <div className="hidden md:block">
-                      <div className="absolute top-[8%] left-[2%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
+                      {/* SVG arrows */}
+                      <svg
+                        className="absolute inset-0 w-full h-full pointer-events-none"
+                        viewBox="0 0 1000 600"
+                        preserveAspectRatio="none"
+                        fill="none"
+                      >
+                        {/* Arborescence: from badge top-left to sidebar */}
+                        <path
+                          d="M 165 95 Q 175 130 175 165"
+                          stroke="#0A1E3D"
+                          strokeWidth="2"
+                          strokeDasharray="4 4"
+                          strokeLinecap="round"
+                        />
+                        {/* Contenu IA: from badge top-center to cards */}
+                        <path
+                          d="M 480 130 Q 480 180 500 220"
+                          stroke="#0A1E3D"
+                          strokeWidth="2"
+                          strokeDasharray="4 4"
+                          strokeLinecap="round"
+                        />
+                        {/* SCORM: from badge top-right to button */}
+                        <path
+                          d="M 880 60 Q 920 75 920 95"
+                          stroke="#0A1E3D"
+                          strokeWidth="2"
+                          strokeDasharray="4 4"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+
+                      {/* Badge: Arborescence */}
+                      <div className="absolute top-[8%] left-[8%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
                         <Share07 className="size-3.5" />
                         Arborescence pédagogique
                       </div>
-                      <div className="absolute top-[18%] left-[35%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg animate-pulse">
+                      {/* Badge: Contenu IA */}
+                      <div className="absolute top-[14%] left-[40%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
                         <Stars01 className="size-3.5" />
                         Contenu généré par l&apos;IA
                       </div>
-                      <div className="absolute top-[4%] right-[2%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg animate-pulse">
+                      {/* Badge: SCORM */}
+                      <div className="absolute top-[5%] right-[12%] flex items-center gap-2 rounded-full bg-[#0A1E3D] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
                         <ArrowRight className="size-3.5" />
                         Export SCORM
                       </div>
@@ -230,7 +266,7 @@ export default function Home() {
               { value: "+20%", color: "text-emerald-500", label: "de FOAD dans nos formations" },
               { value: "100%", color: "text-[#0A1E3D]", label: "maîtrise du contenu dispensé" },
               { value: "×3", color: "text-blue-500", label: "appels d\u2019offres traités" },
-              { value: "÷7", color: "text-purple-500", label: "temps de création d\u2019un titre pro" },
+              { value: "÷10", color: "text-purple-500", label: "temps de création d\u2019un titre pro" },
             ].map((k) => (
               <div key={k.value} className="border border-neutral-200 rounded-xl p-5 text-center">
                 <div className={`text-3xl font-semibold ${k.color}`}>{k.value}</div>
@@ -333,7 +369,7 @@ export default function Home() {
       {/* ═══ 9. CTA FINAL ═══ */}
       <CTABanner
         title="Prêt à décupler la productivité de votre organisme ?"
-        description="Demandez une démo et découvrez comment Syllabis divise par 7 le temps de création de vos formations."
+        description="Demandez une démo et découvrez comment Syllabis divise par 10 le temps de création de vos formations."
         primaryLabel="Demander une démo"
         primaryHref="/demo"
         secondaryLabel="Découvrir les fonctionnalités"
