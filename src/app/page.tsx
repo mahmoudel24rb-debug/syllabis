@@ -4,6 +4,7 @@ import { Button } from "@/components/base/buttons/button";
 import CTABanner from "./components/CTABanner";
 import FeaturesTabsSection from "./components/FeaturesTabsSection";
 import ComparisonSection from "./components/ComparisonSection";
+import HeroSlider from "./components/HeroSlider";
 
 /* ─── DATA ─── */
 
@@ -87,38 +88,8 @@ export default function Home() {
             <div className="mx-auto w-full">
               <div className="rounded-[24px] bg-white p-[3px] shadow-[0_12px_24px_-4px_rgba(0,0,0,0.1),0_4px_8px_-2px_rgba(0,0,0,0.06)] ring-[2px] ring-neutral-200 ring-inset md:rounded-[32px] md:p-1">
                 <div className="rounded-[21px] bg-white p-1 shadow-[inset_0_0_4px_1.5px_rgba(10,13,18,0.08),inset_0_0_3px_1.5px_rgba(10,13,18,0.03)] md:rounded-[28px] md:p-[5.4px]">
-                  <div className="relative overflow-hidden rounded-[18px] bg-neutral-50 ring-[2px] ring-neutral-200 md:rounded-[24px]">
-                    <Image
-                      src="/screenshots/hero.png"
-                      alt="Architecture pédagogique générée par Syllabis depuis une fiche RNCP"
-                      width={1920}
-                      height={1080}
-                      className="w-full h-auto"
-                      priority
-                    />
-                    {/* Callouts annotations - desktop only */}
-                    <div className="hidden md:block">
-                      <svg
-                        className="absolute inset-0 w-full h-full pointer-events-none"
-                        viewBox="0 0 1000 600"
-                        preserveAspectRatio="none"
-                        fill="none"
-                      >
-                        <path d="M 165 95 Q 175 130 175 165" stroke="#002A5A" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
-                        <path d="M 480 130 Q 480 180 500 220" stroke="#002A5A" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
-                        <path d="M 880 60 Q 920 75 920 95" stroke="#002A5A" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
-                      </svg>
-
-                      <div className="absolute top-[8%] left-[8%] flex items-center gap-2 rounded-full bg-[#002A5A] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
-                        Arborescence pédagogique
-                      </div>
-                      <div className="absolute top-[14%] left-[40%] flex items-center gap-2 rounded-full bg-[#002A5A] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
-                        Contenu généré par l&apos;IA
-                      </div>
-                      <div className="absolute top-[5%] right-[12%] flex items-center gap-2 rounded-full bg-[#002A5A] px-3 py-1.5 text-xs font-medium text-white shadow-lg">
-                        Export SCORM
-                      </div>
-                    </div>
+                  <div className="overflow-hidden rounded-[18px] bg-neutral-50 ring-[2px] ring-neutral-200 md:rounded-[24px]">
+                    <HeroSlider />
                   </div>
                 </div>
               </div>
