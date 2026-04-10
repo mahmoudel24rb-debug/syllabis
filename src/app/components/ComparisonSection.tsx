@@ -1,69 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { Button } from "@/components/base/buttons/button";
 
-const diplomaData = [
-  {
-    name: "TP Formateur pour adultes",
-    ratio: "÷13",
-    rows: [
-      { label: "Création de l\u2019arborescence pédagogique", sans: "80h", avec: "8h" },
-      { label: "Création du contenu + validation des compétences", sans: "1 600h", avec: "80h" },
-      { label: "Contrôle qualité", sans: "40h", avec: "40h" },
-    ],
-    totalSans: "1 720h",
-    totalAvec: "128h",
-    saved: "1 592h",
-  },
-  {
-    name: "BTS Commerce International",
-    ratio: "÷11",
-    rows: [
-      { label: "Création de l\u2019arborescence pédagogique", sans: "40h", avec: "5h" },
-      { label: "Création du contenu + validation des compétences", sans: "800h", avec: "50h" },
-      { label: "Contrôle qualité", sans: "20h", avec: "20h" },
-    ],
-    totalSans: "860h",
-    totalAvec: "75h",
-    saved: "785h",
-  },
-  {
-    name: "CQP Agent de prévention",
-    ratio: "÷10",
-    rows: [
-      { label: "Création de l\u2019arborescence pédagogique", sans: "20h", avec: "3h" },
-      { label: "Création du contenu + validation des compétences", sans: "400h", avec: "22h" },
-      { label: "Contrôle qualité", sans: "10h", avec: "20h" },
-    ],
-    totalSans: "430h",
-    totalAvec: "45h",
-    saved: "385h",
-  },
-];
+const data = {
+  name: "TP Formateur pour adultes",
+  ratio: "÷10",
+  rows: [
+    { label: "Création de l\u2019arborescence pédagogique", sans: "80h", avec: "8h" },
+    { label: "Création du contenu + validation des compétences", sans: "1 600h", avec: "80h" },
+  ],
+  totalSans: "1 680h",
+  totalAvec: "88h",
+  saved: "1 592h",
+};
 
 export default function ComparisonSection() {
-  const [active, setActive] = useState(0);
-  const data = diplomaData[active];
-
   return (
     <section className="py-16 sm:py-24 bg-neutral-50">
       <div className="mx-auto max-w-container px-4 sm:px-8">
         <div className="text-center mb-10">
           <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-            Un gain de temps sans précédent
+            1 592 heures économisées sur un seul titre professionnel
           </h2>
         </div>
 
         <div className="rounded-2xl overflow-hidden border border-neutral-200 shadow-sm bg-white">
           <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr]">
             {/* Panneau navy */}
-            <div className="bg-[#0A1E3D] p-8 lg:p-10 flex flex-col justify-center">
+            <div className="bg-[#002A5A] p-8 lg:p-10 flex flex-col justify-center">
               <h3 className="text-lg lg:text-xl font-semibold text-white mb-2">
-                Divisez par {data.ratio.replace("÷", "")} le temps de création
+                Divisez par 10 le temps de création
               </h3>
               <p className="text-sm text-white/60 mb-8 leading-relaxed">
-                Comparez le temps de production d&apos;un titre professionnel
-                complet, avec et sans Syllabis.
+                Temps réel de production mesuré sur des titres professionnels
+                créés avec Syllabis.
               </p>
 
               <div className="text-5xl lg:text-6xl font-semibold text-emerald-400 mb-1 tabular-nums">
@@ -71,20 +41,8 @@ export default function ComparisonSection() {
               </div>
               <p className="text-sm text-white/40 mb-8">plus rapide en moyenne</p>
 
-              <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible scrollbar-hide -mx-1 px-1 lg:mx-0 lg:px-0">
-                {diplomaData.map((d, i) => (
-                  <button
-                    key={d.name}
-                    onClick={() => setActive(i)}
-                    className={`shrink-0 lg:w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all border ${
-                      i === active
-                        ? "bg-white/15 border-white/30 text-white"
-                        : "bg-white/5 border-white/15 text-white/70 hover:bg-white/10 hover:text-white"
-                    }`}
-                  >
-                    {d.name}
-                  </button>
-                ))}
+              <div className="rounded-lg bg-white/15 border border-white/30 px-4 py-3 text-sm font-medium text-white">
+                {data.name}
               </div>
             </div>
 
@@ -145,8 +103,21 @@ export default function ComparisonSection() {
                   {data.saved}
                 </span>
               </div>
+
+              {/* Réassurance */}
+              <p className="mt-4 text-xs text-neutral-500 leading-relaxed">
+                Le contrôle qualité reste entre vos mains — Syllabis élimine le travail de
+                production répétitif, pas votre expertise pédagogique.
+              </p>
             </div>
           </div>
+        </div>
+
+        {/* CTA post-tableau */}
+        <div className="text-center mt-10">
+          <Button color="primary" size="xl" href="/demo">
+            Estimez le gain sur votre prochain titre
+          </Button>
         </div>
       </div>
     </section>

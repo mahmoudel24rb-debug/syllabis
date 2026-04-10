@@ -8,87 +8,59 @@ import { Check, ArrowRight } from "@untitledui/icons";
 const features = [
   {
     tab: "Génération IA",
-    title: "Génération IA one-click",
+    title: "Uploadez un référentiel, récupérez une formation structurée",
     description:
-      "Uploadez une fiche RNCP et obtenez une formation complète en quelques minutes.",
+      "Depuis une fiche RNCP ou tout autre document, Syllabis génère l\u2019arborescence complète en quelques minutes.",
     points: [
       "Génération en cascade : blocs → modules → séquences → séances → contenu",
       "Détection automatique du type de diplôme (TP, BTS, CAP, CQP, BPJEPS)",
-      "Visualisation du coût et du temps estimés avant de lancer",
-      "Feedback loop : rejetez une génération avec un commentaire, l\u2019IA se corrige",
+      "Coût et temps estimés affichés avant de lancer la génération",
+      "Feedback loop : rejetez avec un commentaire, l\u2019IA se corrige et régénère",
     ],
     image: "/screenshots/creer-formation.png",
     href: "/fonctionnalites/generation-ia",
   },
   {
-    tab: "Éditeur 39+",
-    title: "Éditeur 39+ blocs interactifs",
+    tab: "Éditeur & Médias IA",
+    title: "Des formations que vos apprenants ont envie de suivre",
     description:
-      "Un éditeur style Notion pensé pour la pédagogie, avec 39 types de blocs.",
+      "Plus de 40 blocs interactifs et une génération automatique de médias pédagogiques unique sur le marché.",
     points: [
-      "Quiz QCM, Drag & Drop, Scénario branché, Hotspot, Timeline, Flashcards, Code…",
-      "Chaque bloc peut être régénéré individuellement par l\u2019IA",
-      "Système de feedback loop : rejetez avec un commentaire, l\u2019IA se corrige",
-      "10+ thèmes personnalisables pour vos formations",
+      "Quiz QCM, Drag & Drop, Scénario branché, Hotspot, Timeline, Flashcards et plus",
+      "Chaque bloc régénérable par l\u2019IA — feedback loop intégré",
+      "Vidéos pédagogiques, podcasts audio, mindmaps et infographies auto-générés depuis votre contenu",
+      "10+ thèmes SCORM personnalisables à votre marque",
     ],
     image: "/screenshots/formation-creation.png",
     href: "/fonctionnalites/editeur",
   },
   {
-    tab: "Médias IA",
-    title: "NotebookLM : Médias IA automatiques",
-    description:
-      "Fonctionnalité unique : générez 7 types de médias depuis votre contenu existant.",
-    points: [
-      "Vidéos pédagogiques auto-générées à partir du texte de la formation",
-      "Podcasts audio (Deep Dive / Briefing) pour l\u2019apprentissage mobile",
-      "Quiz IA, flashcards, mindmaps et infographies, sans production supplémentaire",
-      "Pipeline asynchrone avec suivi de progression en temps réel",
-    ],
-    image: "/screenshots/global-dashboard.png",
-    href: "/fonctionnalites/medias-ia",
-  },
-  {
     tab: "Export SCORM",
-    title: "Export SCORM marque blanche + chat IA",
+    title: "Exportez en SCORM marque blanche, déployez partout",
     description:
-      "Déployez sur n\u2019importe quel LMS avec votre marque, sans mention de Syllabis.",
+      "Package SCORM 1.2 et 2004 entièrement à votre marque, compatible tous les LMS du marché.",
     points: [
-      "Chat IA embarqué : les apprenants posent des questions dans le module",
-      "Blocs interactifs fonctionnels dans le SCORM (Drag & Drop, Tri, Scénarios)",
-      "Compatible Moodle, 360Learning, Talentsoft, Canvas, Docebo…",
-      "Package à votre marque : logo, couleurs, nom. Zéro mention Syllabis",
+      "Votre logo, vos couleurs, le nom de votre organisme — zéro mention de Syllabis",
+      "Chat IA embarqué : vos apprenants posent des questions directement dans le module",
+      "Blocs interactifs fonctionnels dans le SCORM (Drag & Drop, Tri, Scénarios branchés)",
+      "Compatible Moodle, 360Learning, Talentsoft, Canvas, Docebo et tout LMS SCORM",
     ],
     image: "/screenshots/global-dashboard.png",
     href: "/fonctionnalites/export-scorm",
   },
   {
-    tab: "Pilotage",
-    title: "Pilotage et planification",
+    tab: "Pilotage & Équipes",
+    title: "Gardez la main sur chaque formation et chaque collaborateur",
     description:
-      "Suivez chaque formation de bout en bout avec des outils de pilotage intégrés.",
+      "Dashboard de pilotage, gestion d\u2019équipe granulaire et consignes pédagogiques propagées automatiquement.",
     points: [
-      "Dashboard par formation avec progression et volumes horaires automatiques",
-      "Tableau de pilotage sur toute la hiérarchie pédagogique",
-      "Vue calendrier des séances planifiées avec drag & drop",
-      "Mindmap arborescente interactive pour visualiser la structure complète",
+      "Dashboard par formation avec progression et volumes horaires calculés automatiquement",
+      "5 niveaux de rôles : propriétaire, administrateur, concepteur, formateur, lecture seule",
+      "Consignes pédagogiques définissables par niveau (organisation, formation, branche) — propagation automatique",
+      "Multi-organisations cloisonnées avec branding et équipes propres",
     ],
     image: "/screenshots/formation-dashboard.png",
     href: "/fonctionnalites/pilotage-planning",
-  },
-  {
-    tab: "Équipes",
-    title: "Gestion d\u2019équipe et organisations",
-    description:
-      "Chaque organisme dispose de son propre espace avec des rôles granulaires.",
-    points: [
-      "5 niveaux de rôles : propriétaire, administrateur, concepteur, formateur, lecture seule",
-      "Les formateurs n\u2019accèdent qu\u2019aux blocs et modules qui leur sont assignés",
-      "Invitation par email, suivi de la consommation IA par utilisateur",
-      "Multi-organisations indépendantes avec branding et équipes propres",
-    ],
-    image: "/screenshots/global-dashboard.png",
-    href: "/fonctionnalites/multi-tenant",
   },
 ];
 
@@ -105,11 +77,11 @@ export default function FeaturesTabsSection() {
             Fonctionnalités
           </p>
           <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-            Principales fonctionnalités
+            Tout le chemin, du référentiel au SCORM déployé
           </h2>
           <p className="mt-5 text-lg text-neutral-600 max-w-2xl mx-auto">
-            Tout ce dont vous avez besoin pour créer, structurer et déployer vos
-            formations e-learning.
+            Chaque étape de votre production pédagogique — génération, édition, export,
+            pilotage — dans un seul outil.
           </p>
         </div>
 
@@ -122,7 +94,7 @@ export default function FeaturesTabsSection() {
                 onClick={() => setActive(i)}
                 className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
                   i === active
-                    ? "text-[#0A1E3D] border-[#0A1E3D]"
+                    ? "text-[#002A5A] border-[#002A5A]"
                     : "text-neutral-500 border-transparent hover:text-neutral-900"
                 }`}
               >
@@ -134,7 +106,7 @@ export default function FeaturesTabsSection() {
 
         {/* Panel */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          {/* Text — hauteur min fixe pour éviter le saut */}
+          {/* Text */}
           <div className="text-center lg:text-left lg:min-h-[420px]">
             <h3 className="text-display-xs sm:text-display-sm font-semibold text-neutral-900 mb-3">
               {current.title}
@@ -162,7 +134,7 @@ export default function FeaturesTabsSection() {
             </div>
           </div>
 
-          {/* Image — toutes préchargées, opacity bascule */}
+          {/* Image */}
           <div className="w-full">
             <div className="rounded-[24px] bg-white p-[3px] shadow-2xl ring-[2px] ring-neutral-200 ring-inset md:rounded-[32px] md:p-1">
               <div className="rounded-[21px] bg-white p-1 shadow-[inset_0_0_4px_1.5px_rgba(10,13,18,0.08),inset_0_0_3px_1.5px_rgba(10,13,18,0.03)] md:rounded-[28px] md:p-[5.4px]">

@@ -132,14 +132,14 @@ export default function DemoPage() {
                       key={item}
                       className="flex items-start gap-3 text-sm text-neutral-700"
                     >
-                      <Check className="size-5 text-[#0A1E3D] shrink-0" />
+                      <Check className="size-5 text-[#002A5A] shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
 
                 <div className="mt-8 bg-[#FEF3C7] border border-[#F59E0B]/30 rounded-xl p-6 text-center">
-                  <div className="text-display-sm font-semibold text-[#0A1E3D]">
+                  <div className="text-display-sm font-semibold text-[#002A5A]">
                     De 3 semaines à 3 minutes
                   </div>
                   <p className="mt-2 text-sm text-neutral-600">

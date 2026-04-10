@@ -114,7 +114,7 @@ export default function TarifsPage() {
                 key={plan.name}
                 className={`relative rounded-2xl border p-8 flex flex-col ${
                   plan.highlighted
-                    ? "border-brand-300 bg-white shadow-xl ring-2 ring-[#0A1E3D] relative -mt-4 mb-4 lg:-mt-8 lg:mb-8"
+                    ? "border-brand-300 bg-white shadow-xl ring-2 ring-[#002A5A] relative -mt-4 mb-4 lg:-mt-8 lg:mb-8"
                     : "border-neutral-200 bg-white shadow-sm"
                 }`}
               >
@@ -155,7 +155,7 @@ export default function TarifsPage() {
                   href={plan.href}
                   className={`w-full inline-flex items-center justify-center rounded-lg px-[18px] py-3 text-md font-semibold shadow-xs transition-colors ${
                     plan.highlighted
-                      ? "border border-[#0A1E3D] bg-[#0A1E3D] text-white hover:bg-[#0A1E3D]/90"
+                      ? "border border-[#002A5A] bg-[#002A5A] text-white hover:bg-[#002A5A]/90"
                       : "border border-neutral-300 bg-white text-neutral-700 hover:bg-neutral-50"
                   }`}
                 >

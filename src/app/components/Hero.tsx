@@ -83,8 +83,8 @@ export default function Hero() {
                 {/* Sidebar header */}
                 <div className="px-5 py-5 border-b border-neutral-100">
                   <div className="flex items-center gap-1.5">
-                    <Image src="/sylbi.png" alt="Sylbi" width={28} height={28} className="size-7 rounded-md" />
-                    <span className="text-md font-bold text-[#0A1E3D]">
+                    <Image src="/sylbi.webp" alt="Sylbi" width={28} height={28} className="size-7 rounded-md" />
+                    <span className="text-md font-bold text-[#002A5A]">
                       Syllabis
                     </span>
                   </div>

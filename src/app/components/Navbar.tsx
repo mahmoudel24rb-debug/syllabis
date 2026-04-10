@@ -18,7 +18,6 @@ const features = [
 const navLinks = [
   { label: "Tarifs", href: "/tarifs" },
   { label: "Cas d'usage", href: "/cas-usage" },
-  { label: "À propos", href: "/a-propos" },
 ];
 
 export default function Navbar() {
@@ -30,8 +29,8 @@ export default function Navbar() {
       <nav className="mx-auto max-w-container bg-white rounded-xl border border-neutral-200 shadow-sm px-4 sm:px-5 flex items-center justify-between h-[64px]">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5">
-          <Image src="/sylbi.png" alt="Sylbi" width={36} height={36} className="size-9 rounded-lg" />
-          <span className="text-lg font-bold text-[#0A1E3D]">Syllabis</span>
+          <Image src="/sylbi.webp" alt="Sylbi" width={36} height={36} className="size-9 rounded-lg" />
+          <span className="text-lg font-bold text-[#002A5A]">Syllabis</span>
         </Link>
 
         {/* Desktop nav */}
@@ -59,8 +58,8 @@ export default function Navbar() {
                         href={f.href}
                         className="flex items-start gap-3 rounded-lg px-3 py-2.5 hover:bg-neutral-50 transition-colors"
                       >
-                        <div className="shrink-0 mt-0.5 flex items-center justify-center size-9 rounded-lg bg-[#0A1E3D]/5 border border-[#0A1E3D]/10">
-                          <f.Icon className="size-4 text-[#0A1E3D]" />
+                        <div className="shrink-0 mt-0.5 flex items-center justify-center size-9 rounded-lg bg-[#002A5A]/5 border border-[#002A5A]/10">
+                          <f.Icon className="size-4 text-[#002A5A]" />
                         </div>
                         <div>
                           <span className="block text-sm font-semibold text-neutral-900">{f.label}</span>
@@ -98,7 +97,11 @@ export default function Navbar() {
 
         {/* Right actions */}
         <div className="flex items-center gap-2">
-          <div className="hidden sm:block">
+          <div className="hidden sm:flex items-center gap-2">
+            {/* TODO: remplacer par /register quand la route existe */}
+            <Button color="secondary" size="md" href="/demo">
+              Essai gratuit
+            </Button>
             <Button color="primary" size="md" href="/demo">
               Demander une démo
             </Button>
@@ -138,7 +141,11 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <div className="pt-2 border-t border-neutral-100">
+          <div className="pt-2 border-t border-neutral-100 space-y-2">
+            {/* TODO: remplacer par /register quand la route existe */}
+            <Button color="secondary" size="lg" href="/demo" className="w-full">
+              Essai gratuit
+            </Button>
             <Button color="primary" size="lg" href="/demo" className="w-full">
               Demander une démo
             </Button>

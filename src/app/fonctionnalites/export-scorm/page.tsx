@@ -97,7 +97,7 @@ export default function ExportScormPage() {
                 className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
               >
                 <div className="w-10 h-10 rounded-lg bg-brand-50 border border-brand-100 flex items-center justify-center mb-4">
-                  <Check className="size-5 text-[#0A1E3D]" />
+                  <Check className="size-5 text-[#002A5A]" />
                 </div>
                 <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                   {feature.title}
@@ -165,7 +165,7 @@ export default function ExportScormPage() {
                 className="flex items-center gap-4 px-6 py-4"
               >
                 <div className="w-8 h-8 rounded-lg bg-brand-50 border border-brand-100 flex items-center justify-center shrink-0">
-                  <Check className="size-4 text-[#0A1E3D]" />
+                  <Check className="size-4 text-[#002A5A]" />
                 </div>
                 <div>
                   <span className="text-md font-semibold text-neutral-900">

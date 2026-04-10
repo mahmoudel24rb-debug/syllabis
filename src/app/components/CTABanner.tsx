@@ -21,7 +21,7 @@ export default function CTABanner({
   return (
     <section className="py-16 sm:py-24">
       <div className="mx-auto max-w-container px-4 sm:px-8">
-        <div className="rounded-2xl bg-[#0A1E3D] px-8 sm:px-16 py-14 sm:py-16 text-center">
+        <div className="rounded-2xl bg-[#002A5A] px-8 sm:px-16 py-14 sm:py-16 text-center">
           <h2 className="text-display-sm sm:text-display-md font-semibold text-white">
             {title}
           </h2>

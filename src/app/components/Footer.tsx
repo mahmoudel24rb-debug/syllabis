@@ -40,7 +40,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A1E3D] pt-12 sm:pt-16 pb-8 sm:pb-12">
+    <footer className="bg-[#002A5A] pt-12 sm:pt-16 pb-8 sm:pb-12">
       <div className="mx-auto max-w-container px-6 sm:px-8">
         {/* Link columns */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-10 pb-10 border-b border-white/10">
@@ -63,7 +63,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6">
           <div className="flex items-center gap-1.5">
-            <Image src="/sylbi.png" alt="Sylbi" width={36} height={36} className="size-9 rounded-lg" />
+            <Image src="/sylbi.webp" alt="Sylbi" width={36} height={36} className="size-9 rounded-lg" />
             <span className="text-lg font-bold text-white">Syllabis</span>
           </div>
           <p className="text-md text-white/40">&copy; 2026 Syllabis. Tous droits réservés.</p>

@@ -89,7 +89,7 @@ export default function Services({ services }: { services: Service[] }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 sm:gap-y-16">
           {services.map((service) => (
             <div key={service._id} className="text-center">
-              <div className="mx-auto mb-5 flex items-center justify-center w-12 h-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 text-[#0A1E3D]">
+              <div className="mx-auto mb-5 flex items-center justify-center w-12 h-12 rounded-xl bg-[#002A5A]/5 border border-[#002A5A]/10 text-[#002A5A]">
                 <ServiceIcon name={service.icon} />
               </div>
               <h3 className="text-lg font-semibold text-neutral-900 mb-2">

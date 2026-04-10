@@ -91,7 +91,7 @@ export default function AProposPage() {
               ))}
             </div>
 
-            <div className="rounded-xl bg-[#0A1E3D] p-6 sm:p-8 text-center">
+            <div className="rounded-xl bg-[#002A5A] p-6 sm:p-8 text-center">
               <p className="text-md sm:text-lg text-white/90 leading-relaxed">
                 Ces bouleversements ont un impact direct sur nos marges et la
                 rentabilité de nos structures.{" "}
@@ -144,7 +144,7 @@ export default function AProposPage() {
                   key={r.value}
                   className="rounded-xl border border-neutral-200 bg-white p-6 text-center"
                 >
-                  <div className="text-3xl sm:text-4xl font-bold text-[#0A1E3D]">
+                  <div className="text-3xl sm:text-4xl font-bold text-[#002A5A]">
                     {r.value}
                   </div>
                   <p className="text-sm text-neutral-600 mt-2">{r.label}</p>
@@ -172,7 +172,7 @@ export default function AProposPage() {
                 key={v.title}
                 className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8"
               >
-                <div className="w-12 h-12 rounded-lg bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 flex items-center justify-center text-[#0A1E3D] mb-5">
+                <div className="w-12 h-12 rounded-lg bg-[#002A5A]/5 border border-[#002A5A]/10 flex items-center justify-center text-[#002A5A] mb-5">
                   <Check className="size-6" />
                 </div>
                 <h3 className="text-lg font-semibold text-neutral-900 mb-2">

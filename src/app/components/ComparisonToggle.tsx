@@ -46,7 +46,7 @@ export default function ComparisonToggle() {
             onClick={() => setActive(i)}
             className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
               i === active
-                ? "bg-[#0A1E3D] text-white"
+                ? "bg-[#002A5A] text-white"
                 : "bg-white text-neutral-600 border border-neutral-200 hover:bg-neutral-50"
             }`}
           >
@@ -86,7 +86,7 @@ export default function ComparisonToggle() {
 
       {/* Tableau détail */}
       <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden">
-        <div className="grid grid-cols-3 bg-[#0A1E3D] px-4 sm:px-6 py-3">
+        <div className="grid grid-cols-3 bg-[#002A5A] px-4 sm:px-6 py-3">
           <span className="text-sm font-semibold text-white">Étape</span>
           <span className="text-sm font-semibold text-red-300 text-center">Sans Syllabis</span>
           <span className="text-sm font-semibold text-emerald-300 text-center">Avec Syllabis</span>

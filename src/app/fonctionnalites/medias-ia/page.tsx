@@ -108,10 +108,10 @@ export default function MediasIAPage() {
                 key={media.title}
                 className="rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8 hover:border-brand-200 hover:shadow-sm transition-all"
               >
-                <div className="flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 mb-5">
+                <div className="flex items-center justify-center size-12 rounded-xl bg-[#002A5A]/5 border border-[#002A5A]/10 mb-5">
                   {(() => {
                     const Icon = mediaIconMap[media.title];
-                    return Icon ? <Icon className="size-6 text-[#0A1E3D]" /> : null;
+                    return Icon ? <Icon className="size-6 text-[#002A5A]" /> : null;
                   })()}
                 </div>
                 <div className="flex items-center gap-2 mb-2">

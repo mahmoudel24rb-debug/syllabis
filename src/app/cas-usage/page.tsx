@@ -102,8 +102,8 @@ export default function CasUsagePage() {
                 {(() => {
                   const Icon = iconMap[uc.title];
                   return (
-                    <div className="flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10">
-                      {Icon ? <Icon className="size-6 text-[#0A1E3D]" /> : null}
+                    <div className="flex items-center justify-center size-12 rounded-xl bg-[#002A5A]/5 border border-[#002A5A]/10">
+                      {Icon ? <Icon className="size-6 text-[#002A5A]" /> : null}
                     </div>
                   );
                 })()}

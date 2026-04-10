@@ -169,7 +169,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="rounded-2xl bg-[#0A1E3D] p-6 sm:p-8 mb-12">
+              <div className="rounded-2xl bg-[#002A5A] p-6 sm:p-8 mb-12">
                 <p className="text-md text-white/85 leading-relaxed">
                   Ces bouleversements ont un impact direct sur nos marges et la rentabilité de nos structures.
                 </p>
@@ -182,8 +182,8 @@ export default function Home() {
               <div className="space-y-6">
                 {solutions.map((s, i) => (
                   <div key={i} className="flex gap-4">
-                    <div className="shrink-0 flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10">
-                      <span className="text-md font-bold text-[#0A1E3D]">{i + 1}</span>
+                    <div className="shrink-0 flex items-center justify-center size-12 rounded-xl bg-[#002A5A]/5 border border-[#002A5A]/10">
+                      <span className="text-md font-bold text-[#002A5A]">{i + 1}</span>
                     </div>
                     <p className="text-md text-neutral-600 leading-relaxed pt-2">{s}</p>
                   </div>
@@ -207,7 +207,7 @@ export default function Home() {
                     <div key={r.value} className="flex items-start gap-3">
                       <Check className="size-5 text-emerald-500 shrink-0 mt-0.5" />
                       <div>
-                        <span className="text-lg font-bold text-[#0A1E3D]">{r.value}</span>
+                        <span className="text-lg font-bold text-[#002A5A]">{r.value}</span>
                         <span className="text-md text-neutral-700 ml-1.5">{r.title}</span>
                         <p className="text-sm text-neutral-500 mt-0.5">{r.desc}</p>
                       </div>
@@ -315,7 +315,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-start">
             {/* Tableau gauche */}
             <div className="rounded-2xl border border-neutral-200 bg-white overflow-hidden">
-              <div className="grid grid-cols-3 bg-[#0A1E3D] px-4 sm:px-6 py-3">
+              <div className="grid grid-cols-3 bg-[#002A5A] px-4 sm:px-6 py-3">
                 <span className="text-sm font-semibold text-white">Étape</span>
                 <span className="text-sm font-semibold text-red-300 text-center">Sans Syllabis</span>
                 <span className="text-sm font-semibold text-emerald-300 text-center">Avec Syllabis</span>
@@ -348,7 +348,7 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4">
               {results.map((r) => (
                 <div key={r.value} className="rounded-2xl border border-neutral-200 bg-white p-6">
-                  <div className="text-display-xs sm:text-display-sm font-bold text-[#0A1E3D]">{r.value}</div>
+                  <div className="text-display-xs sm:text-display-sm font-bold text-[#002A5A]">{r.value}</div>
                   <p className="mt-2 text-md font-semibold text-neutral-900">{r.title}</p>
                   <p className="mt-1 text-sm text-neutral-500 leading-snug">{r.desc}</p>
                 </div>
@@ -376,8 +376,8 @@ export default function Home() {
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8">
                 {features.map((f) => (
                   <div key={f.title} className="text-center lg:text-left">
-                    <div className="flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 mb-4 mx-auto lg:mx-0">
-                      <f.icon className="size-6 text-[#0A1E3D]" />
+                    <div className="flex items-center justify-center size-12 rounded-xl bg-[#002A5A]/5 border border-[#002A5A]/10 mb-4 mx-auto lg:mx-0">
+                      <f.icon className="size-6 text-[#002A5A]" />
                     </div>
                     <h3 className="text-md font-semibold text-neutral-900 mb-1">{f.title}</h3>
                     <p className="text-sm text-neutral-600 leading-relaxed">{f.description}</p>

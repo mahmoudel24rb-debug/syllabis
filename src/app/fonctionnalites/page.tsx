@@ -107,8 +107,8 @@ export default function FonctionnalitesPage() {
                 {(() => {
                   const Icon = featureIconMap[feature.title];
                   return (
-                    <div className="flex items-center justify-center size-12 rounded-xl bg-[#0A1E3D]/5 border border-[#0A1E3D]/10 mb-5">
-                      {Icon && <Icon className="size-6 text-[#0A1E3D]" />}
+                    <div className="flex items-center justify-center size-12 rounded-xl bg-[#002A5A]/5 border border-[#002A5A]/10 mb-5">
+                      {Icon && <Icon className="size-6 text-[#002A5A]" />}
                     </div>
                   );
                 })()}
