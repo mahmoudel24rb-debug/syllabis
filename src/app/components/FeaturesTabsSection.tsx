@@ -133,9 +133,9 @@ export default function FeaturesTabsSection() {
         </div>
 
         {/* Panel */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Text */}
-          <div className="text-center lg:text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          {/* Text — hauteur min fixe pour éviter le saut */}
+          <div className="text-center lg:text-left lg:min-h-[420px]">
             <h3 className="text-display-xs sm:text-display-sm font-semibold text-neutral-900 mb-3">
               {current.title}
             </h3>
@@ -162,19 +162,24 @@ export default function FeaturesTabsSection() {
             </div>
           </div>
 
-          {/* Image — ratio fixe 16/10 pour éviter le saut entre onglets */}
+          {/* Image — toutes préchargées, opacity bascule */}
           <div className="w-full">
             <div className="rounded-[24px] bg-white p-[3px] shadow-2xl ring-[2px] ring-neutral-200 ring-inset md:rounded-[32px] md:p-1">
               <div className="rounded-[21px] bg-white p-1 shadow-[inset_0_0_4px_1.5px_rgba(10,13,18,0.08),inset_0_0_3px_1.5px_rgba(10,13,18,0.03)] md:rounded-[28px] md:p-[5.4px]">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-[18px] bg-neutral-50 ring-[2px] ring-neutral-200 md:rounded-[24px]">
-                  <Image
-                    key={current.image}
-                    src={current.image}
-                    alt={current.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-top"
-                  />
+                  {features.map((f, i) => (
+                    <Image
+                      key={f.tab}
+                      src={f.image}
+                      alt={f.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className={`object-cover object-top transition-opacity duration-300 ${
+                        i === active ? "opacity-100" : "opacity-0"
+                      }`}
+                      priority={i === 0}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
