@@ -162,18 +162,18 @@ export default function FeaturesTabsSection() {
             </div>
           </div>
 
-          {/* Image */}
+          {/* Image — ratio fixe 16/10 pour éviter le saut entre onglets */}
           <div className="w-full">
             <div className="rounded-[24px] bg-white p-[3px] shadow-2xl ring-[2px] ring-neutral-200 ring-inset md:rounded-[32px] md:p-1">
               <div className="rounded-[21px] bg-white p-1 shadow-[inset_0_0_4px_1.5px_rgba(10,13,18,0.08),inset_0_0_3px_1.5px_rgba(10,13,18,0.03)] md:rounded-[28px] md:p-[5.4px]">
-                <div className="relative overflow-hidden rounded-[18px] bg-neutral-50 ring-[2px] ring-neutral-200 md:rounded-[24px]">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[18px] bg-neutral-50 ring-[2px] ring-neutral-200 md:rounded-[24px]">
                   <Image
                     key={current.image}
                     src={current.image}
                     alt={current.title}
-                    width={1920}
-                    height={1080}
-                    className="w-full h-auto"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-top"
                   />
                 </div>
               </div>
