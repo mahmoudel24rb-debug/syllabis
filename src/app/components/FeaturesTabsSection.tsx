@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Check } from "@untitledui/icons";
+import Link from "next/link";
+import { Check, ArrowRight } from "@untitledui/icons";
 
 const features = [
   {
@@ -17,6 +18,7 @@ const features = [
       "Feedback loop : rejetez une génération avec un commentaire, l\u2019IA se corrige",
     ],
     image: "/screenshots/creer-formation.png",
+    href: "/fonctionnalites/generation-ia",
   },
   {
     tab: "Éditeur 39+",
@@ -30,6 +32,7 @@ const features = [
       "10+ thèmes personnalisables pour vos formations",
     ],
     image: "/screenshots/formation-creation.png",
+    href: "/fonctionnalites/editeur",
   },
   {
     tab: "Médias IA",
@@ -43,6 +46,7 @@ const features = [
       "Pipeline asynchrone avec suivi de progression en temps réel",
     ],
     image: "/screenshots/global-dashboard.png",
+    href: "/fonctionnalites/medias-ia",
   },
   {
     tab: "Export SCORM",
@@ -56,6 +60,7 @@ const features = [
       "Package à votre marque : logo, couleurs, nom. Zéro mention Syllabis",
     ],
     image: "/screenshots/global-dashboard.png",
+    href: "/fonctionnalites/export-scorm",
   },
   {
     tab: "Pilotage",
@@ -69,6 +74,7 @@ const features = [
       "Mindmap arborescente interactive pour visualiser la structure complète",
     ],
     image: "/screenshots/formation-dashboard.png",
+    href: "/fonctionnalites/pilotage-planning",
   },
   {
     tab: "Équipes",
@@ -82,6 +88,7 @@ const features = [
       "Multi-organisations indépendantes avec branding et équipes propres",
     ],
     image: "/screenshots/global-dashboard.png",
+    href: "/fonctionnalites/multi-tenant",
   },
 ];
 
@@ -143,19 +150,29 @@ export default function FeaturesTabsSection() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-6 flex justify-center lg:justify-start">
+              <Link
+                href={current.href}
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700"
+              >
+                En savoir plus
+                <ArrowRight className="size-4" />
+              </Link>
+            </div>
           </div>
 
           {/* Image */}
-          <div>
-            <div className="rounded-[24px] bg-white p-[3px] shadow-[0_12px_24px_-4px_rgba(0,0,0,0.1),0_4px_8px_-2px_rgba(0,0,0,0.06)] ring-[2px] ring-neutral-200 ring-inset md:rounded-[32px] md:p-1">
+          <div className="w-full">
+            <div className="rounded-[24px] bg-white p-[3px] shadow-2xl ring-[2px] ring-neutral-200 ring-inset md:rounded-[32px] md:p-1">
               <div className="rounded-[21px] bg-white p-1 shadow-[inset_0_0_4px_1.5px_rgba(10,13,18,0.08),inset_0_0_3px_1.5px_rgba(10,13,18,0.03)] md:rounded-[28px] md:p-[5.4px]">
                 <div className="relative overflow-hidden rounded-[18px] bg-neutral-50 ring-[2px] ring-neutral-200 md:rounded-[24px]">
                   <Image
                     key={current.image}
                     src={current.image}
                     alt={current.title}
-                    width={1280}
-                    height={800}
+                    width={1920}
+                    height={1080}
                     className="w-full h-auto"
                   />
                 </div>

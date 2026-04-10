@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, Stars01, Share07 } from "@untitledui/icons";
+import { ArrowRight, Stars01, Share07, TrendDown01, CheckCircle, Globe01, Users01 } from "@untitledui/icons";
 import { Button } from "@/components/base/buttons/button";
 import CTABanner from "./components/CTABanner";
 import FeaturesTabsSection from "./components/FeaturesTabsSection";
@@ -168,20 +168,75 @@ export default function Home() {
       {/* ═══ 5. AVANT / APRÈS (panneau navy + tableau) ═══ */}
       <ComparisonSection />
 
-      {/* ═══ 6. NOTRE HISTOIRE (condensée) ═══ */}
+      {/* ═══ 6. NOTRE HISTOIRE (2 colonnes) ═══ */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="text-center mb-12">
             <p className="text-sm font-semibold text-brand-600 mb-3">Notre histoire</p>
-            <h2 className="text-display-xs sm:text-display-sm font-semibold text-neutral-900">
-              Né d&apos;un organisme de formation de 25 ans
-            </h2>
-            <p className="mt-5 text-lg text-neutral-600 leading-relaxed">
-              Syllabis est né d&apos;un OF confronté à la baisse des NPEC, aux exigences
-              croissantes des certificateurs et à l&apos;obligation de digitaliser les formations.
-              Après avoir divisé par 7 notre propre temps de création, nous avons décidé
-              de rendre l&apos;outil accessible à tous les organismes de formation.
-            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Gauche : titre + paragraphe + 4 problèmes */}
+            <div>
+              <h2 className="text-xl lg:text-2xl font-semibold text-neutral-900 mb-4">
+                Né d&apos;un organisme de formation de 25 ans
+              </h2>
+              <p className="text-md text-neutral-600 leading-relaxed mb-8">
+                Nous assistons aux premières loges à la mutation du secteur de la
+                formation professionnelle. Ces bouleversements ont un impact direct
+                sur les marges et la rentabilité de nos structures.
+              </p>
+
+              <div className="space-y-3">
+                {[
+                  { Icon: TrendDown01, label: "Réduction des niveaux de prise en charge (NPEC)", bg: "bg-red-50", text: "text-red-800" },
+                  { Icon: CheckCircle, label: "Exigences des certificateurs de plus en plus fortes", bg: "bg-orange-50", text: "text-orange-800" },
+                  { Icon: Globe01, label: "Développement des formations ouvertes à distance (FOAD)", bg: "bg-blue-50", text: "text-blue-800" },
+                  { Icon: Users01, label: "Dépendance aux formateurs externes", bg: "bg-purple-50", text: "text-purple-800" },
+                ].map((p) => (
+                  <div key={p.label} className="flex items-center gap-3 border border-neutral-200 rounded-lg px-4 py-3">
+                    <div className={`shrink-0 size-8 rounded-lg ${p.bg} flex items-center justify-center`}>
+                      <p.Icon className={`size-4 ${p.text}`} />
+                    </div>
+                    <span className="text-sm text-neutral-700">{p.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Droite : card solution */}
+            <div className="bg-neutral-50 rounded-2xl p-8">
+              <p className="text-sm font-semibold text-neutral-900 mb-6">
+                Ainsi nous avons créé Syllabis en 2025, un outil permettant :
+              </p>
+              <ul className="space-y-5">
+                {[
+                  "Créer des programmes pédagogiques complets, assistés par l\u2019IA, pour répondre plus rapidement aux appels d\u2019offres",
+                  "Générer l\u2019ensemble des contenus, pour permettre aux formateurs de se concentrer sur l\u2019animation des formations",
+                  "Prouver en un export l\u2019alignement parfait entre les validations des compétences et les objectifs pédagogiques",
+                ].map((point) => (
+                  <li key={point} className="flex items-start gap-3">
+                    <span className="shrink-0 mt-1.5 size-3 rounded-full border-2 border-emerald-500" />
+                    <span className="text-md text-neutral-700 leading-relaxed">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Chiffres clés */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-10 max-w-6xl mx-auto">
+            {[
+              { value: "+20%", color: "text-emerald-500", label: "de FOAD dans nos formations" },
+              { value: "100%", color: "text-[#0A1E3D]", label: "maîtrise du contenu dispensé" },
+              { value: "×3", color: "text-blue-500", label: "appels d\u2019offres traités" },
+              { value: "÷7", color: "text-purple-500", label: "temps de création d\u2019un titre pro" },
+            ].map((k) => (
+              <div key={k.value} className="border border-neutral-200 rounded-xl p-5 text-center">
+                <div className={`text-3xl font-semibold ${k.color}`}>{k.value}</div>
+                <p className="text-xs text-neutral-500 mt-1">{k.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

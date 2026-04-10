@@ -49,9 +49,8 @@ export default function ComparisonSection() {
     <section className="py-16 sm:py-24 bg-neutral-50">
       <div className="mx-auto max-w-container px-4 sm:px-8">
         <div className="text-center mb-10">
-          <p className="text-sm font-semibold text-brand-600 mb-3">Avant / Après</p>
           <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-            Divisez par 7 le temps de création
+            Un gain de temps sans précédent
           </h2>
         </div>
 
@@ -60,7 +59,7 @@ export default function ComparisonSection() {
             {/* Panneau navy */}
             <div className="bg-[#0A1E3D] p-8 lg:p-10 flex flex-col justify-center">
               <h3 className="text-lg lg:text-xl font-semibold text-white mb-2">
-                Divisez par 7 le temps de création
+                Divisez par {data.ratio.replace("÷", "")} le temps de création
               </h3>
               <p className="text-sm text-white/60 mb-8 leading-relaxed">
                 Comparez le temps de production d&apos;un titre professionnel
