@@ -1,15 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { Check } from "@untitledui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { InputBase } from "@/components/base/input/input";
 import { InputGroup } from "@/components/base/input/input-group";
 import { NativeSelect } from "@/components/base/select/select-native";
 import { TextArea } from "@/components/base/textarea/textarea";
+import { sendToWebhook } from "@/utils/webhook";
 
 export default function ContactPage() {
   const [accepted, setAccepted] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = formRef.current;
+    if (!form) return;
+    const fd = new FormData(form);
+    sendToWebhook({
+      source: "contact",
+      timestamp: new Date().toISOString(),
+      page: "/contact",
+      data: {
+        prenom: fd.get("prenom") as string,
+        nom: fd.get("nom") as string,
+        email: fd.get("email") as string,
+        telephone: fd.get("telephone") as string,
+        indicatif: fd.get("indicatif") as string,
+        organisme: fd.get("organisme") as string,
+        message: fd.get("message") as string,
+        accepte_confidentialite: accepted,
+      },
+    });
+    setSubmitted(true);
+  }
 
   return (
     <>
@@ -35,24 +62,34 @@ export default function ContactPage() {
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
+              {submitted ? (
+                <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center">
+                  <div className="mx-auto mb-4 flex items-center justify-center size-12 rounded-full bg-emerald-100">
+                    <Check className="size-6 text-emerald-600" />
+                  </div>
+                  <h2 className="text-xl font-semibold text-neutral-900 mb-2">Message envoyé</h2>
+                  <p className="text-md text-neutral-600">Nous vous recontactons sous 24h.</p>
+                </div>
+              ) : (
+              <>
               <h2 className="text-xl font-semibold text-neutral-900 mb-8">
                 Envoyez-nous un message
               </h2>
-              <div className="grid grid-cols-1 gap-5">
+              <form ref={formRef} onSubmit={handleContactSubmit} className="grid grid-cols-1 gap-5">
                 {/* Prénom + Nom */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <InputGroup label="Prénom" isRequired>
-                    <InputBase type="text" placeholder="Votre prénom" />
+                    <InputBase type="text" name="prenom" placeholder="Votre prénom" />
                   </InputGroup>
                   <InputGroup label="Nom" isRequired>
-                    <InputBase type="text" placeholder="Votre nom" />
+                    <InputBase type="text" name="nom" placeholder="Votre nom" />
                   </InputGroup>
                 </div>
 
                 {/* Email + Téléphone */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <InputGroup label="Email professionnel" isRequired>
-                    <InputBase type="email" placeholder="vous@organisme.fr" />
+                    <InputBase type="email" name="email" placeholder="vous@organisme.fr" />
                   </InputGroup>
                   <InputGroup
                     label="Téléphone"
@@ -60,6 +97,7 @@ export default function ContactPage() {
                     leadingAddon={
                       <NativeSelect
                         aria-label="Indicatif pays"
+                        name="indicatif"
                         options={[
                           { value: "FR", label: "FR" },
                           { value: "BE", label: "BE" },
@@ -69,18 +107,19 @@ export default function ContactPage() {
                       />
                     }
                   >
-                    <InputBase type="tel" placeholder="+33 6 12 34 56 78" />
+                    <InputBase type="tel" name="telephone" placeholder="+33 6 12 34 56 78" />
                   </InputGroup>
                 </div>
 
                 {/* Organisme */}
                 <InputGroup label="Organisme / Entreprise" hint="Optionnel">
-                  <InputBase type="text" placeholder="Nom de votre organisme" />
+                  <InputBase type="text" name="organisme" placeholder="Nom de votre organisme" />
                 </InputGroup>
 
                 {/* Message */}
                 <InputGroup label="Message" isRequired>
                   <TextArea
+                    name="message"
                     placeholder="Décrivez votre besoin, votre question ou ce que vous aimeriez tester..."
                     rows={5}
                   />
@@ -95,10 +134,12 @@ export default function ContactPage() {
                 />
 
                 {/* Submit */}
-                <Button color="primary" size="xl" className="w-full">
+                <Button color="primary" size="xl" className="w-full" type="submit">
                   Envoyer
                 </Button>
-              </div>
+              </form>
+              </>
+              )}
             </div>
 
             {/* Sidebar Info */}

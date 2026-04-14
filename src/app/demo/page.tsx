@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Check } from "@untitledui/icons";
 import { Button } from "@/components/base/buttons/button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
@@ -9,6 +9,7 @@ import { InputGroup } from "@/components/base/input/input-group";
 import { NativeSelect } from "@/components/base/select/select-native";
 import { Select } from "@/components/base/select/select";
 import { DateTimePicker } from "@/components/application/date-picker/date-time-picker";
+import { sendToWebhook } from "@/utils/webhook";
 
 const demoIncludes = [
   "Upload de votre propre référentiel",
@@ -27,6 +28,35 @@ const sizeOptions = [
 
 export default function DemoPage() {
   const [accepted, setAccepted] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [taille, setTaille] = useState<string | null>(null);
+  const [dateHeure, setDateHeure] = useState<string>("");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  function handleDemoSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = formRef.current;
+    if (!form) return;
+    const fd = new FormData(form);
+    sendToWebhook({
+      source: "demo",
+      timestamp: new Date().toISOString(),
+      page: "/demo",
+      data: {
+        prenom: fd.get("prenom") as string,
+        nom: fd.get("nom") as string,
+        email: fd.get("email") as string,
+        telephone: fd.get("telephone") as string,
+        indicatif: fd.get("indicatif") as string,
+        organisme: fd.get("organisme") as string,
+        titre: fd.get("titre") as string,
+        taille_etablissement: taille,
+        date_heure_demo: dateHeure,
+        accepte_confidentialite: accepted,
+      },
+    });
+    setSubmitted(true);
+  }
 
   return (
     <>
@@ -52,24 +82,34 @@ export default function DemoPage() {
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
+              {submitted ? (
+                <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center">
+                  <div className="mx-auto mb-4 flex items-center justify-center size-12 rounded-full bg-emerald-100">
+                    <Check className="size-6 text-emerald-600" />
+                  </div>
+                  <h2 className="text-xl font-semibold text-neutral-900 mb-2">Demande envoyée</h2>
+                  <p className="text-md text-neutral-600">Nous vous recontactons sous 24h pour confirmer votre créneau.</p>
+                </div>
+              ) : (
+              <>
               <h2 className="text-xl font-semibold text-neutral-900 mb-8">
                 Réservez votre créneau
               </h2>
-              <div className="grid grid-cols-1 gap-5">
+              <form ref={formRef} onSubmit={handleDemoSubmit} className="grid grid-cols-1 gap-5">
                 {/* Prénom + Nom */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <InputGroup label="Prénom" isRequired>
-                    <InputBase type="text" placeholder="Votre prénom" />
+                    <InputBase type="text" name="prenom" placeholder="Votre prénom" />
                   </InputGroup>
                   <InputGroup label="Nom" isRequired>
-                    <InputBase type="text" placeholder="Votre nom" />
+                    <InputBase type="text" name="nom" placeholder="Votre nom" />
                   </InputGroup>
                 </div>
 
                 {/* Email + Téléphone */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <InputGroup label="Email professionnel" isRequired>
-                    <InputBase type="email" placeholder="vous@organisme.fr" />
+                    <InputBase type="email" name="email" placeholder="vous@organisme.fr" />
                   </InputGroup>
                   <InputGroup
                     label="Téléphone"
@@ -77,6 +117,7 @@ export default function DemoPage() {
                     leadingAddon={
                       <NativeSelect
                         aria-label="Indicatif pays"
+                        name="indicatif"
                         options={[
                           { value: "FR", label: "FR" },
                           { value: "BE", label: "BE" },
@@ -86,13 +127,13 @@ export default function DemoPage() {
                       />
                     }
                   >
-                    <InputBase type="tel" placeholder="+33 6 12 34 56 78" />
+                    <InputBase type="tel" name="telephone" placeholder="+33 6 12 34 56 78" />
                   </InputGroup>
                 </div>
 
                 {/* Organisme */}
                 <InputGroup label="Organisme / Entreprise" isRequired>
-                  <InputBase type="text" placeholder="Nom de votre organisme" />
+                  <InputBase type="text" name="organisme" placeholder="Nom de votre organisme" />
                 </InputGroup>
 
                 {/* Taille + Date/Heure */}
@@ -103,6 +144,7 @@ export default function DemoPage() {
                     isRequired
                     items={sizeOptions}
                     size="md"
+                    onSelectionChange={(key) => setTaille(key as string)}
                   >
                     {(item) => <Select.Item id={item.id}>{item.label}</Select.Item>}
                   </Select>
@@ -110,7 +152,7 @@ export default function DemoPage() {
                     <label className="text-sm font-medium text-primary">
                       Date et horaire <span className="text-red-500">*</span>
                     </label>
-                    <DateTimePicker />
+                    <DateTimePicker onValueChange={setDateHeure} />
                   </div>
                 </div>
 
@@ -118,6 +160,7 @@ export default function DemoPage() {
                 <InputGroup label="Type de titre sur lequel vous travaillez" hint="Optionnel">
                   <InputBase
                     type="text"
+                    name="titre"
                     placeholder="ex : Titre Pro Négociateur Technico-Commercial, BTS Commerce..."
                   />
                 </InputGroup>
@@ -131,7 +174,7 @@ export default function DemoPage() {
                 />
 
                 {/* Submit */}
-                <Button color="primary" size="xl" className="w-full">
+                <Button color="primary" size="xl" className="w-full" type="submit">
                   Réserver ma démo
                 </Button>
 
@@ -139,7 +182,9 @@ export default function DemoPage() {
                 <p className="text-center text-xs text-neutral-400">
                   Gratuit · Sans engagement · Démo sur votre propre référentiel
                 </p>
-              </div>
+              </form>
+              </>
+              )}
             </div>
 
             {/* Sidebar */}

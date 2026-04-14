@@ -22,10 +22,23 @@ const TIME_SLOTS = Array.from({ length: 17 }, (_, i) => {
 
 interface DateTimePickerProps {
     className?: string;
+    onValueChange?: (formatted: string) => void;
 }
 
-export const DateTimePicker = ({ className }: DateTimePickerProps) => {
-    const [value, setValue] = useState<DateValue | null>(null);
+export const DateTimePicker = ({ className, onValueChange }: DateTimePickerProps) => {
+    const [value, setValueState] = useState<DateValue | null>(null);
+
+    const setValue = (v: DateValue | null) => {
+        setValueState(v);
+        if (v && onValueChange) {
+            try {
+                const d = v.toDate(getLocalTimeZone());
+                onValueChange(d.toISOString());
+            } catch {
+                onValueChange(v.toString());
+            }
+        }
+    };
     const [focusedValue, setFocusedValue] = useState<DateValue | null>(() => toCalendarDateTime(today(getLocalTimeZone())));
     const dateFormatter = useDateFormatter({ day: "numeric", month: "short", year: "numeric" });
     const timeFormatter = useDateFormatter({ hour: "numeric", minute: "numeric", hour12: false });
@@ -40,12 +53,27 @@ export const DateTimePicker = ({ className }: DateTimePickerProps) => {
     const handleTimeClick = (key: Key | null) => {
         const slot = TIME_SLOTS.find((s) => s.id === key);
         if (!slot) return;
-        const date = value ?? toCalendarDateTime(today(getLocalTimeZone()));
+        // Si value est un CalendarDate (sans heure), le convertir en CalendarDateTime
+        let date;
+        if (value && "hour" in value) {
+            date = value;
+        } else if (value) {
+            date = toCalendarDateTime(value);
+        } else {
+            date = toCalendarDateTime(today(getLocalTimeZone()));
+        }
         setValue(date.set({ hour: slot.hour, minute: slot.minute }));
     };
 
     return (
-        <AriaDatePicker shouldCloseOnSelect={false} aria-label="Date et heure" value={value} onChange={setValue} className={className}>
+        <AriaDatePicker shouldCloseOnSelect={false} aria-label="Date et heure" value={value} onChange={(newValue) => {
+            // Préserver l'heure si elle était déjà sélectionnée
+            if (newValue && value && "hour" in value && !("hour" in newValue)) {
+                setValue(toCalendarDateTime(newValue).set({ hour: value.hour, minute: value.minute }));
+            } else {
+                setValue(newValue);
+            }
+        }} className={className}>
             <AriaGroup>
                 <Button size="md" color="secondary" iconLeading={CalendarIcon} className="w-full justify-start">
                     {value ? (
