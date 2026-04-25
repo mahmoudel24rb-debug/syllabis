@@ -23,7 +23,7 @@ const solutions = [
 ];
 
 const results = [
-  { value: "+20%", label: "de FOAD en moyenne dans nos formations" },
+  { value: "5 à 15%+", label: "de FOAD en moyenne dans nos formations" },
   { value: "100%", label: "de maîtrise du contenu dispensé aux élèves" },
   { value: "×3", label: "appels d\u2019offres traités, avec 20 à 30% de conversion" },
   { value: "÷10", label: "le temps de création d\u2019un titre professionnel" },

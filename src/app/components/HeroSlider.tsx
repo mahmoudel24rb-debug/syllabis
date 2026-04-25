@@ -18,14 +18,14 @@ export default function HeroSlider() {
       style={{ width: "100%", height: "100%" }}
       itemOne={
         <ReactCompareSliderImage
-          src="/screenshots/hero-avant.png"
-          alt="Fiche RNCP uploadée"
+          src="/screenshots/hero-avant2.png"
+          alt="Fiche RNCP chargée"
           style={{ objectFit: "cover" }}
         />
       }
       itemTwo={
         <ReactCompareSliderImage
-          src="/screenshots/hero-apres.png"
+          src="/screenshots/hero-apres2.png"
           alt="Formation complète générée par Syllabis"
           style={{ objectFit: "cover" }}
         />

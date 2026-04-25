@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Génération IA | Syllabis — Du PDF au cours complet en 3 minutes",
-  description: "Uploadez un référentiel RNCP et l'IA génère la formation complète : blocs, modules, séances, quiz. 6 certifications supportées.",
+  description: "Chargez un référentiel RNCP et l'IA génère la formation complète : blocs, modules, séances, quiz. 6 certifications supportées.",
 };
 
 const certifications = [
@@ -81,7 +81,7 @@ export default function GenerationIAPage() {
               Du PDF au cours en 3 clics
             </p>
             <p className="mt-6 text-lg text-neutral-600 max-w-2xl mx-auto">
-              Upload d&apos;un référentiel RNCP (TP, BTS, CAP, CQP, BPJEPS) en
+              Chargement d&apos;un référentiel RNCP (TP, BTS, CAP, CQP, BPJEPS) en
               PDF. L&apos;IA analyse le document et détecte automatiquement type
               de certification, blocs de compétences, modules, heures, prérequis,
               RNCP ID. Génération de toute la hiérarchie pédagogique.
@@ -193,7 +193,7 @@ export default function GenerationIAPage() {
       {/* ── CTA ── */}
       <CTABanner
         title="Testez la génération IA"
-        description="Uploadez un référentiel et voyez le résultat en quelques minutes."
+        description="Chargez un référentiel et voyez le résultat en quelques minutes."
         primaryLabel="Demander une démo"
         primaryHref="/demo"
         secondaryLabel="Toutes les fonctionnalités"

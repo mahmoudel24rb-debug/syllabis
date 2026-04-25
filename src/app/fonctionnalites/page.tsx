@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Check } from "@untitledui/icons";
+import { Check, Clock } from "@untitledui/icons";
 import { Button } from "@/components/base/buttons/button";
 import CTABanner from "../components/CTABanner";
 import type { Metadata } from "next";
@@ -13,16 +13,17 @@ export const metadata: Metadata = {
 const features = [
   {
     tag: "Génération IA",
-    title: "Uploadez un référentiel, récupérez une formation structurée",
+    title: "Chargez un référentiel, récupérez une formation structurée",
     description:
       "Depuis une fiche RNCP ou tout autre document de référence, Syllabis analyse la structure du diplôme et génère l'arborescence pédagogique complète en quelques minutes. Vous gardez la main sur chaque étape grâce au feedback loop intégré.",
     points: [
-      "Génération en cascade : blocs de compétences, modules, séquences, séances, contenu",
-      "Détection automatique du type de diplôme (TP, BTS, CAP, CQP, BPJEPS)",
-      "Coût et temps estimés affichés avant de lancer la génération",
-      "Feedback loop : rejetez avec un commentaire, l'IA se corrige et régénère",
-      "Presets de génération sauvegardables pour relancer rapidement sur d'autres titres",
-      "Création from scratch possible, sans référentiel certifiant",
+      { text: "Génération en cascade : blocs de compétences, modules, séquences, séances, contenu" },
+      { text: "Détection automatique du type de diplôme (TP, BTS, CAP, CQP, BPJEPS)" },
+      { text: "Coût et temps estimés affichés avant de lancer la génération" },
+      { text: "Feedback loop : rejetez avec un commentaire, l'IA se corrige et régénère" },
+      { text: "Presets de génération sauvegardables pour relancer rapidement sur d'autres titres" },
+      { text: "Création from scratch possible, sans référentiel certifiant" },
+      { text: "Génération one-click : produisez votre formation entière en un seul clic", soon: true },
     ],
     image: "/screenshots/feat-generation.png",
   },
@@ -32,12 +33,12 @@ const features = [
     description:
       "Un éditeur pensé pour la pédagogie avec plus de 40 types de blocs interactifs. Chaque bloc est régénérable par l'IA. Générez automatiquement des vidéos pédagogiques, podcasts audio, mindmaps et infographies depuis votre contenu existant.",
     points: [
-      "Quiz QCM, Drag & Drop, Scénario branché, Hotspot, Timeline, Flashcards et plus",
-      "Chaque bloc régénérable par l'IA avec feedback loop intégré",
-      "Vidéos pédagogiques et podcasts audio auto-générés depuis votre contenu",
-      "Mindmaps et infographies générés automatiquement",
-      "10+ thèmes SCORM personnalisables à votre marque",
-      "Interface intuitive style Notion, prise en main immédiate",
+      { text: "Quiz QCM, Drag & Drop, Scénario branché, Hotspot, Timeline, Flashcards et plus" },
+      { text: "Chaque bloc régénérable par l'IA avec feedback loop intégré" },
+      { text: "Vidéos pédagogiques et podcasts audio auto-générés depuis votre contenu" },
+      { text: "Mindmaps et infographies générés automatiquement" },
+      { text: "Interface intuitive style Notion, prise en main immédiate" },
+      { text: "Quiz adaptatif et évolutif au niveau de chaque apprenant", soon: true },
     ],
     image: "/screenshots/feat-editeur.png",
   },
@@ -47,11 +48,11 @@ const features = [
     description:
       "Package SCORM 1.2 et 2004 entièrement à votre marque. Votre logo, vos couleurs, le nom de votre organisme. Aucune mention de Syllabis dans le contenu déployé auprès de vos apprenants.",
     points: [
-      "SCORM 1.2 et 2004 compatible tous les LMS du marché",
-      "Votre logo, vos couleurs, le nom de votre organisme. Zéro mention de Syllabis",
-      "Chat IA embarqué : vos apprenants posent des questions directement dans le module",
-      "Blocs interactifs fonctionnels dans le SCORM (Drag & Drop, Tri, Scénarios branchés)",
-      "Compatible Moodle, 360Learning, Talentsoft, Canvas, Docebo",
+      { text: "SCORM 1.2 et 2004 compatible tous les LMS du marché" },
+      { text: "Votre logo, vos couleurs, le nom de votre organisme. Zéro mention de Syllabis" },
+      { text: "Blocs interactifs fonctionnels dans le SCORM (Drag & Drop, Tri, Scénarios branchés)" },
+      { text: "Compatible Moodle, 360Learning, Talentsoft, Canvas, Docebo" },
+      { text: "Chat IA embarqué : vos apprenants posent des questions directement dans le module", soon: true },
     ],
     image: "/screenshots/feat-scorm.png",
   },
@@ -61,12 +62,12 @@ const features = [
     description:
       "Dashboard de pilotage complet, gestion d'équipe granulaire avec 5 niveaux de rôles, et consignes pédagogiques propagées automatiquement à chaque niveau de l'arborescence.",
     points: [
-      "Dashboard par formation avec progression et volumes horaires calculés automatiquement",
-      "5 niveaux de rôles : propriétaire, administrateur, concepteur, formateur, lecture seule",
-      "Consignes pédagogiques définissables par niveau avec propagation automatique",
-      "Vue calendrier des séances planifiées avec drag & drop",
-      "Suivi des crédits IA par utilisateur et par formation",
-      "Multi-organisations cloisonnées avec branding et équipes propres",
+      { text: "Dashboard par formation avec progression et volumes horaires calculés automatiquement" },
+      { text: "5 niveaux de rôles : propriétaire, administrateur, concepteur, formateur, lecture seule" },
+      { text: "Consignes pédagogiques définissables par niveau avec propagation automatique" },
+      { text: "Suivi des crédits IA par utilisateur et par formation" },
+      { text: "Multi-organisations cloisonnées avec branding et équipes propres" },
+      { text: "Vue calendrier des séances planifiées avec drag & drop", soon: true },
     ],
     image: "/screenshots/feat-pilotage.png",
   },
@@ -85,7 +86,7 @@ export default function FonctionnalitesPage() {
               Tout ce dont vous avez besoin pour créer, structurer et déployer vos formations
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              De l&apos;upload de votre référentiel à l&apos;export SCORM marque blanche,
+              Du chargement de votre référentiel à l&apos;export SCORM marque blanche,
               chaque étape de votre production pédagogique dans un seul outil.
             </p>
           </div>
@@ -106,9 +107,20 @@ export default function FonctionnalitesPage() {
                 <p className="text-lg text-neutral-600 mb-6 max-w-lg">{f.description}</p>
                 <ul className="space-y-3 max-w-lg">
                   {f.points.map((p) => (
-                    <li key={p} className="flex items-start gap-2.5">
-                      <Check className="size-5 text-emerald-500 shrink-0 mt-0.5" />
-                      <span className="text-md text-neutral-700">{p}</span>
+                    <li key={p.text} className="flex items-start gap-2.5">
+                      {p.soon ? (
+                        <Clock className="size-5 text-amber-500 shrink-0 mt-0.5" />
+                      ) : (
+                        <Check className="size-5 text-emerald-500 shrink-0 mt-0.5" />
+                      )}
+                      <span className="text-md text-neutral-700">
+                        {p.text}
+                        {p.soon && (
+                          <span className="ml-2 inline-flex items-center rounded-full bg-amber-50 border border-amber-200 px-2 py-0.5 text-xs font-semibold text-amber-700 align-middle">
+                            À venir
+                          </span>
+                        )}
+                      </span>
                     </li>
                   ))}
                 </ul>

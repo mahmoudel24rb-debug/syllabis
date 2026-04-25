@@ -1,30 +1,48 @@
 import Image from "next/image";
-import { TrendDown01, TrendUp01, Calendar, Users01 } from "@untitledui/icons";
+import { Share07, Edit04, Download01, Calendar, TrendDown01, CheckCircle, Globe01, Users01 } from "@untitledui/icons";
 import { Button } from "@/components/base/buttons/button";
 import CTABanner from "./components/CTABanner";
-import FeaturesTabsSection from "./components/FeaturesTabsSection";
 import ComparisonSection from "./components/ComparisonSection";
-import HeroSlider from "./components/HeroSlider";
 import ArcadeEmbed from "./components/ArcadeEmbed";
+import HeroSlider from "./components/HeroSlider";
 
 /* ─── DATA ─── */
 
-const metrics = [
-  { value: "÷10", label: "Temps de création", desc: "Un titre professionnel complet en moins de 3 semaines au lieu de 12 mois" },
-  { value: "×3", label: "Appels d\u2019offres traités", desc: "Même équipe, même taux de réussite, 3× plus de réponses déposées" },
-  { value: "+20%", label: "de FOAD", desc: "Part de formation à distance dans les parcours, levier direct sur les marges" },
+const whatWeDoFeatures = [
+  {
+    Icon: Share07,
+    title: "Arborescence pédagogique",
+    desc: "À partir d'une fiche RNCP, créez vos blocs, modules, séquences et séances.",
+  },
+  {
+    Icon: Edit04,
+    title: "Création de contenu",
+    desc: "Contenu pour séances FOAD et présentiel : images, vidéos, quiz, scénarios branchés...",
+  },
+  {
+    Icon: Download01,
+    title: "Export SCORM",
+    desc: "Export SCORM 1.2 & 2004 compatible Moodle, Canvas, Docebo, 360Learning...",
+  },
+  {
+    Icon: Calendar,
+    title: "Pilotage opérationnel",
+    desc: "Planifiez vos séances, assignez vos formateurs et suivez vos heures et votre charge de production en temps réel.",
+  },
 ];
 
-const faqs = [
-  { q: "À quels types de formations Syllabis est-il adapté ?", a: "Syllabis couvre les certifications enregistrées au RNCP (Titres Professionnels, BTS, CAP, CQP, BPJEPS) ainsi que les certifications personnalisées. Vous pouvez aussi créer des formations courtes ou des parcours complets sans référentiel certifiant, à partir d\u2019un simple brief ou d\u2019un document de votre choix." },
-  { q: "Combien de temps faut-il pour créer une formation complète ?", a: "L\u2019arborescence pédagogique est générée en une journée. Pour un titre professionnel complet, le contenu est prêt en moins de 3 semaines, contre jusqu\u2019à 12 mois en production classique. Les formations courtes se bouclent en quelques jours." },
-  { q: "Est-ce que je garde le contrôle sur le contenu ?", a: "Intégralement. L\u2019IA génère une première version que vous pouvez modifier mot par mot, réorganiser, enrichir ou supprimer. Si un résultat ne convient pas, rejetez-le avec un commentaire et l\u2019IA régénère en tenant compte de votre retour." },
-  { q: "Y a-t-il une offre adaptée à ma structure ?", a: "Oui. Syllabis propose une offre gratuite pour évaluer l\u2019outil, une offre pour les indépendants et petits organismes, une offre pour les équipes de conception, et une offre sur mesure pour les grands groupes et universités. Chaque offre est sans engagement." },
-  { q: "Le SCORM exporté est-il vraiment à ma marque ?", a: "Entièrement. Logo, couleurs, nom de votre organisme dans tout le package. Aucune mention de Syllabis n\u2019apparaît dans le contenu déployé auprès de vos apprenants. Les blocs interactifs (drag & drop, scénarios branchés, quiz) restent pleinement fonctionnels." },
-  { q: "Est-ce compatible avec mon LMS ?", a: "Syllabis exporte en SCORM 1.2 et SCORM 2004, supportés par tous les LMS du marché : Moodle, 360Learning, Talentsoft, Docebo, Canvas et les autres. Si votre LMS supporte SCORM, il supporte Syllabis." },
-  { q: "Syllabis facilite-t-il la conformité Qualiopi ?", a: "Oui. L\u2019alignement entre objectifs pédagogiques, contenus et évaluations est traçable à chaque niveau de l\u2019arborescence. Un export Excel permet de fournir cette traçabilité complète en un clic pour vos audits Qualiopi." },
-  { q: "Syllabis est-il adapté aux organismes multi-sites ?", a: "Oui. Gestion multi-organisations avec espaces cloisonnés, 5 niveaux de rôles, branding par entité et suivi des crédits IA par utilisateur et par formation." },
-  { q: "Comment tester Syllabis ?", a: "Le plan Découverte est gratuit, sans carte bancaire. Il vous permet de créer une formation complète pour évaluer l\u2019outil sur un vrai projet. Nous proposons aussi une démo personnalisée de 30 minutes sur votre propre référentiel." },
+const enjeux = [
+  { Icon: TrendDown01, label: "Réduction des niveaux de prise en charge (NPEC)" },
+  { Icon: CheckCircle, label: "Exigences des certificateurs de plus en plus fortes" },
+  { Icon: Globe01, label: "Développement des formations ouvertes à distance (FOAD)" },
+  { Icon: Users01, label: "Dépendance aux formateurs externes" },
+];
+
+const kpis = [
+  { value: "5 à 15%+", label: "de FOAD dans nos formations" },
+  { value: "100%", label: "maîtrise du contenu dispensé" },
+  { value: "×3", label: "appels d'offres traités" },
+  { value: "÷7", label: "temps de création d'un titre pro" },
 ];
 
 /* ─── PAGE ─── */
@@ -44,41 +62,35 @@ export default function Home() {
                 OF
               </span>
               <span className="text-sm font-medium text-brand-800">
-                Créé par un organisme de formation depuis 25 ans
+                Créé par un OF, pour les OF
               </span>
             </div>
 
             <h1 className="text-display-md sm:text-display-lg md:text-display-xl font-semibold text-neutral-900">
-              La plateforme IA des organismes de formation.{" "}
-              <span className="text-brand-600">Du RNCP au SCORM, sous votre contrôle.</span>
+              Le copilote IA des{" "}
+              <span className="text-brand-600">organismes de formation</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-neutral-600 max-w-2xl mx-auto">
-              Syllabis génère l&apos;arborescence complète, le contenu de chaque séance et
-              l&apos;export SCORM depuis votre référentiel. Vous reprenez le contrôle de
-              votre production pédagogique, sans formateur externe.
+              Pour une conformité absolue et une productivité décuplée.
             </p>
 
             {/* CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Button color="primary" size="xl" href="/contact">
-                Créer ma première formation gratuitement
+              <Button color="primary" size="xl" href="/demo">
+                Demander une démo
               </Button>
-              <div className="flex flex-col items-center gap-1">
-                <ArcadeEmbed />
-                <p className="text-xs font-medium text-red-500">Modifier vers titre FPA + Rendu Scorm</p>
-              </div>
+              <ArcadeEmbed />
             </div>
 
             {/* Réassurance */}
             <p className="mt-4 text-xs text-neutral-400">
-              Gratuit, sans carte bancaire · Démo sur votre propre référentiel · Réponse sous 24h
+              Sans engagement · Démo sur votre propre référentiel · Réponse sous 24h
             </p>
           </div>
         </div>
 
         {/* Hero mockup */}
         <div className="relative mt-10 md:mt-16 -mb-20 md:-mb-32">
-          <p className="text-center text-xs font-medium text-red-500 mb-3">Modifier vers titre FPA + Rendu Scorm</p>
           <div className="relative mx-auto w-full max-w-container px-4 md:px-8">
             <div className="rounded-[24px] bg-white p-[3px] shadow-[0_12px_24px_-4px_rgba(0,0,0,0.1),0_4px_8px_-2px_rgba(0,0,0,0.06)] border-[2px] border-neutral-200 md:rounded-[32px] md:p-1">
               <div className="rounded-[21px] bg-white p-1 shadow-[inset_0_0_4px_1.5px_rgba(10,13,18,0.08),inset_0_0_3px_1.5px_rgba(10,13,18,0.03)] md:rounded-[28px] md:p-[5.4px]">
@@ -86,7 +98,7 @@ export default function Home() {
                   {/* Mobile : image statique */}
                   <div className="md:hidden">
                     <Image
-                      src="/screenshots/hero-apres.png"
+                      src="/screenshots/hero-apres2.png"
                       alt="Formation complète générée par Syllabis"
                       width={1920}
                       height={1080}
@@ -97,10 +109,10 @@ export default function Home() {
                   {/* Desktop : slider before/after */}
                   <div className="hidden md:block">
                     <HeroSlider />
-                    <div className="pointer-events-none absolute bottom-4 left-4 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-neutral-700 shadow-sm backdrop-blur-sm">
+                    <div className="pointer-events-none absolute top-4 left-4 z-20 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-neutral-700 shadow-sm backdrop-blur-sm">
                       Avant
                     </div>
-                    <div className="pointer-events-none absolute bottom-4 right-4 rounded-full bg-brand-600 px-3 py-1 text-xs font-semibold text-white shadow-sm">
+                    <div className="pointer-events-none absolute top-4 right-4 z-20 rounded-full bg-brand-600 px-3 py-1 text-xs font-semibold text-white shadow-sm">
                       Après
                     </div>
                   </div>
@@ -111,85 +123,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ 2. BARRE DE PREUVE SOCIALE ═══ */}
-      <section className="relative z-10 py-8 bg-neutral-50 border-b border-neutral-200">
-        <div className="mx-auto max-w-container px-4 sm:px-8">
-          <p className="text-sm font-semibold text-brand-600 text-center mb-6">Déjà adopté par</p>
-          <div className="flex items-center justify-center gap-12 sm:gap-16 md:gap-20">
-            <Image src="/logos/ipms-dark.png" alt="IPMS" width={300} height={80} className="h-16 sm:h-20 w-auto object-contain" />
-            <Image src="/logos/madskills-dark.png" alt="MadSkills" width={300} height={80} className="h-16 sm:h-20 w-auto object-contain" />
-            <Image src="/logos/pikango-dark.png" alt="CFA Pikango" width={300} height={80} className="h-16 sm:h-20 w-auto object-contain" />
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 3. SECTION PROBLÈME (douleurs ICP) ═══ */}
-      <section className="py-16 sm:py-24">
+      {/* ═══ 2. CE QUE FAIT SYLLABIS (4 cards) ═══ */}
+      <section className="relative z-10 py-16 sm:py-24 bg-neutral-50">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold text-brand-600 mb-3">Le constat</p>
-            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900 max-w-3xl mx-auto">
-              Les marges fondent, les exigences explosent, et vous devez produire plus avec moins
+            <p className="text-sm font-semibold text-brand-600 mb-3">Ce que fait Syllabis</p>
+            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
+              De la fiche RNCP à la formation complète
             </h2>
+            <p className="mt-5 text-lg text-neutral-600 max-w-3xl mx-auto">
+              Syllabis vous assiste dans la création de vos formations, de l&apos;arborescence
+              pédagogique jusqu&apos;à la création de contenu, et vous assure une conformité
+              absolue entre les attentes des certificateurs et la validation des compétences
+              des apprenants.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
-            {[
-              {
-                Icon: TrendDown01,
-                title: "Les NPEC baissent chaque année",
-                desc: "Vos niveaux de prise en charge se réduisent, mais le niveau d\u2019exigence des certificateurs ne baisse pas. Chaque titre professionnel rapporte moins qu\u2019avant.",
-                bg: "bg-brand-50", text: "text-brand-600",
-              },
-              {
-                Icon: Calendar,
-                title: "Créer une formation prend des mois",
-                desc: "Un titre professionnel complet, c\u2019est 1 500 à 2 000 heures de conception. Chaque appel d\u2019offres non traité part chez un concurrent plus rapide.",
-                bg: "bg-brand-50", text: "text-brand-600",
-              },
-              {
-                Icon: TrendUp01,
-                title: "La FOAD, un levier de marge",
-                desc: "La formation à distance réduit vos coûts de salle, de déplacement et de formateur. Mais produire du contenu e-learning de qualité prend du temps que vous n\u2019avez pas.",
-                bg: "bg-brand-50", text: "text-brand-600",
-              },
-              {
-                Icon: Users01,
-                title: "Vos formateurs créent le contenu... et le gardent",
-                desc: "Quand un formateur part, son contenu part avec lui. Pas de capitalisation, pas de continuité pédagogique.",
-                bg: "bg-brand-50", text: "text-brand-600",
-              },
-            ].map((p) => (
-              <div key={p.title} className="border border-neutral-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className={`shrink-0 size-10 rounded-lg ${p.bg} flex items-center justify-center`}>
-                    <p.Icon className={`size-5 ${p.text}`} />
-                  </div>
-                  <h3 className="text-md font-semibold text-neutral-900">{p.title}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {whatWeDoFeatures.map((f) => (
+              <div key={f.title} className="rounded-2xl border border-neutral-200 bg-white p-6 text-center">
+                <div className="mx-auto mb-4 flex items-center justify-center size-12 rounded-xl bg-brand-50 border border-brand-100">
+                  <f.Icon className="size-6 text-brand-600" />
                 </div>
-                <p className="text-sm text-neutral-600 leading-relaxed">{p.desc}</p>
+                <h3 className="text-md font-semibold text-neutral-900 mb-2">{f.title}</h3>
+                <p className="text-sm text-neutral-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Button color="secondary" size="lg" href="/fonctionnalites">
+              Découvrez toutes nos fonctionnalités
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* ═══ 4. MÉTRIQUES ROI ═══ */}
-      <section className="py-12 sm:py-16 bg-neutral-50">
-        <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x sm:divide-neutral-200">
-            {metrics.map((m) => (
-              <div key={m.value} className="text-center px-4">
-                <div className="text-display-sm sm:text-display-md font-bold text-brand-600">{m.value}</div>
-                <p className="mt-1 text-md font-semibold text-neutral-900">{m.label}</p>
-                <p className="mt-0.5 text-sm text-neutral-500">{m.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ 5. QUI SOMMES-NOUS ═══ */}
+      {/* ═══ 3. QUI SOMMES-NOUS ═══ */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-12">
@@ -206,12 +176,7 @@ export default function Home() {
 
           {/* 4 enjeux */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto mb-12">
-            {[
-              { Icon: TrendDown01, label: "Réduction des niveaux de prise en charge (NPEC)" },
-              { Icon: Calendar, label: "Exigences des certificateurs de plus en plus fortes" },
-              { Icon: TrendUp01, label: "Développement des formations ouvertes à distance (FOAD)" },
-              { Icon: Users01, label: "Dépendance aux formateurs externes" },
-            ].map((e) => (
+            {enjeux.map((e) => (
               <div key={e.label} className="flex items-center gap-3 border border-neutral-200 rounded-xl p-5">
                 <div className="shrink-0 size-10 rounded-lg bg-brand-50 flex items-center justify-center">
                   <e.Icon className="size-5 text-brand-600" />
@@ -223,92 +188,35 @@ export default function Home() {
 
           {/* Citation */}
           <div className="max-w-3xl mx-auto mb-12">
-            <blockquote className="text-lg text-neutral-700 leading-relaxed font-medium italic text-center border-t-2 border-b-2 border-brand-600 py-6">
+            <blockquote className="text-lg text-neutral-700 leading-relaxed font-medium italic text-center border-l-0 border-t-2 border-b-2 border-brand-600 py-6">
               &ldquo;Ainsi nous avons lancé la création de Syllabis en 2025, pour
               reprendre le contrôle de notre production pédagogique.&rdquo;
             </blockquote>
           </div>
 
-        </div>
-      </section>
-
-      {/* ═══ 6. COMMENT ÇA MARCHE ═══ */}
-      <section className="py-16 sm:py-24 bg-neutral-50">
-        <div className="mx-auto max-w-container px-4 sm:px-8">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold text-brand-600 mb-3">Comment ça marche</p>
-            <h2 className="text-display-sm sm:text-display-md font-semibold text-neutral-900">
-              Trois étapes pour passer du référentiel à la formation déployée
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                step: "1",
-                title: "Uploadez votre référentiel",
-                desc: "Fiche RNCP, programme existant ou simple brief. Syllabis détecte la structure et génère l\u2019arborescence complète en quelques minutes.",
-              },
-              {
-                step: "2",
-                title: "Affinez et enrichissez",
-                desc: "Modifiez le contenu généré, ajoutez vos blocs interactifs, générez vidéos et podcasts. Vous gardez le contrôle total.",
-              },
-              {
-                step: "3",
-                title: "Exportez et déployez",
-                desc: "Un clic pour exporter en SCORM marque blanche, compatible avec votre LMS. Vos apprenants accèdent à la formation sous votre marque.",
-              },
-            ].map((s) => (
-              <div key={s.step} className="text-center">
-                <div className="mx-auto mb-4 flex items-center justify-center size-12 rounded-full bg-brand-600 text-white text-lg font-bold">
-                  {s.step}
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">{s.title}</h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">{s.desc}</p>
+          {/* 4 KPIs */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mb-10">
+            {kpis.map((k) => (
+              <div key={k.value} className="border border-neutral-200 rounded-xl bg-neutral-50 p-5 text-center">
+                <div className="text-display-xs font-bold text-brand-600">{k.value}</div>
+                <p className="text-xs text-neutral-500 mt-1">{k.label}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ═══ 6. CTA INTERMÉDIAIRE ═══ */}
-      <section className="bg-primary py-16 md:py-24">
-        <div className="mx-auto max-w-container px-4 md:px-8">
-          <div className="flex flex-col justify-center text-center">
-            <h2 className="text-display-sm font-semibold text-primary md:text-display-md">
-              Créez votre première formation en moins de 3 semaines
-            </h2>
-            <p className="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">
-              Uploadez votre référentiel, laissez l&apos;IA structurer le contenu, exportez en SCORM. Testez gratuitement.
-            </p>
-            <div className="mt-8 flex flex-col-reverse gap-3 self-stretch md:flex-row md:self-center">
-              <Button color="secondary" size="xl" href="/demo">
-                Réserver une démo
-              </Button>
-              <Button size="xl" href="/contact">
-                Commencer gratuitement
-              </Button>
-            </div>
+          {/* CTA */}
+          <div className="text-center">
+            <Button color="primary" size="xl" href="/demo">
+              Demander une démo
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* ═══ 6. FONCTIONNALITÉS (onglets) ═══ */}
-      <FeaturesTabsSection />
-
-      {/* CTA post-features */}
-      <div className="text-center py-12 bg-neutral-50">
-        <Button color="primary" size="xl" href="/contact">
-          Créer ma première formation gratuitement
-        </Button>
-        <p className="mt-3 text-xs text-neutral-400">Gratuit, sans carte bancaire</p>
-      </div>
-
-      {/* ═══ 8. AVANT / APRÈS (panneau navy + tableau) ═══ */}
+      {/* ═══ 5. AVANT / APRÈS ═══ */}
       <ComparisonSection />
 
-      {/* ═══ 8. TÉMOIGNAGES ═══ */}
+      {/* ═══ 6. TÉMOIGNAGES ═══ */}
       <section className="py-16 sm:py-24 bg-neutral-50">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-12">
@@ -358,7 +266,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ 10. FAQ ═══ */}
+      {/* ═══ 7. FAQ ═══ */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-container px-4 sm:px-8">
           <div className="text-center mb-16">
@@ -368,7 +276,16 @@ export default function Home() {
             </h2>
           </div>
           <div className="max-w-3xl mx-auto divide-y divide-neutral-200">
-            {faqs.map((faq) => (
+            {[
+              { q: "À quels types de formations Syllabis est-il adapté ?", a: "Syllabis couvre les certifications enregistrées au RNCP (Titres Professionnels, BTS, CAP, CQP, BPJEPS) ainsi que les certifications personnalisées. Vous pouvez aussi créer des formations courtes ou des parcours complets sans référentiel certifiant, à partir d’un simple brief ou d’un document de votre choix." },
+              { q: "Combien de temps faut-il pour créer une formation complète ?", a: "L’arborescence pédagogique est générée en une journée. Pour un titre professionnel complet, le contenu est prêt en moins de 3 semaines, contre jusqu’à 12 mois en production classique. Les formations courtes se bouclent en quelques jours." },
+              { q: "Est-ce que je garde le contrôle sur le contenu ?", a: "Intégralement. L’IA génère une première version que vous pouvez modifier mot par mot, réorganiser, enrichir ou supprimer. Si un résultat ne convient pas, rejetez-le avec un commentaire et l’IA régénère en tenant compte de votre retour." },
+              { q: "Y a-t-il une offre adaptée à ma structure ?", a: "Oui. Syllabis propose une offre gratuite pour évaluer l’outil, une offre pour les indépendants et petits organismes, une offre pour les équipes de conception, et une offre sur mesure pour les grands groupes et universités. Chaque offre est sans engagement." },
+              { q: "Le SCORM exporté est-il vraiment à ma marque ?", a: "Entièrement. Logo, couleurs, nom de votre organisme dans tout le package. Aucune mention de Syllabis n’apparaît dans le contenu déployé auprès de vos apprenants. Les blocs interactifs (drag & drop, scénarios branchés, quiz) restent pleinement fonctionnels." },
+              { q: "Est-ce compatible avec mon LMS ?", a: "Syllabis exporte en SCORM 1.2 et SCORM 2004, supportés par tous les LMS du marché : Moodle, 360Learning, Talentsoft, Docebo, Canvas et les autres. Si votre LMS supporte SCORM, il supporte Syllabis." },
+              { q: "Syllabis facilite-t-il la conformité Qualiopi ?", a: "Oui. L’alignement entre objectifs pédagogiques, contenus et évaluations est traçable à chaque niveau de l’arborescence. Un export Excel permet de fournir cette traçabilité complète en un clic pour vos audits Qualiopi." },
+              { q: "Comment tester Syllabis ?", a: "Le plan Découverte est gratuit, sans carte bancaire. Il vous permet de créer une formation complète pour évaluer l’outil sur un vrai projet. Nous proposons aussi une démo personnalisée de 30 minutes sur votre propre référentiel." },
+            ].map((faq) => (
               <details key={faq.q} className="group py-6">
                 <summary className="flex items-center justify-between cursor-pointer list-none">
                   <h3 className="text-lg font-semibold text-neutral-900 pr-4">{faq.q}</h3>
@@ -385,22 +302,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ 11. CTA FINAL ═══ */}
+      {/* ═══ 8. CTA FINAL ═══ */}
       <CTABanner
-        title="Votre prochain titre professionnel est prêt en moins de 3 semaines"
-        description="Créez votre compte gratuitement et lancez votre première génération, ou réservez une démo sur votre propre référentiel."
-        primaryLabel="Commencer gratuitement"
-        primaryHref="/contact"
-        secondaryLabel="Réserver ma démo"
-        secondaryHref="/demo"
+        title="Prêt à transformer votre production pédagogique ?"
+        description="Demandez une démo et découvrez comment Syllabis accélère la création de vos formations."
+        primaryLabel="Demander une démo"
+        primaryHref="/demo"
+        secondaryLabel="Nous contacter"
+        secondaryHref="/contact"
       />
-
-      {/* Réassurance sous CTA */}
-      <div className="text-center pb-8 -mt-12">
-        <p className="text-xs text-neutral-400">
-          Gratuit, sans carte bancaire · Démo sur votre propre référentiel · Réponse sous 24h
-        </p>
-      </div>
     </>
   );
 }

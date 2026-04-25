@@ -12,7 +12,7 @@ import { DateTimePicker } from "@/components/application/date-picker/date-time-p
 import { sendToWebhook } from "@/utils/webhook";
 
 const demoIncludes = [
-  "Upload de votre propre référentiel",
+  "Chargement de votre propre référentiel",
   "Génération de l'arborescence en direct",
   "Tour complet de l'éditeur 40+ blocs",
   "Export SCORM marque blanche en live",

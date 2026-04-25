@@ -140,8 +140,8 @@ export default function ArcadeEmbed() {
 
       <iframe
         ref={arcadeIframeRef}
-        src="https://demo.arcade.software/5A1mzdGUlRlcXFp6pRp0?embed&embed_custom&show_copy_link=true"
-        title="Créer et structurer un parcours de formation à partir d'un référentiel PDF"
+        src="https://demo.arcade.software/QzTgQJRB9Th4HQecBgd2?embed&embed_mobile=modal&embed_desktop=modal&show_copy_link=true"
+        title="Créer un parcours de formation à partir d'un référentiel RNCP"
         frameBorder="0"
         loading="lazy"
         allowFullScreen

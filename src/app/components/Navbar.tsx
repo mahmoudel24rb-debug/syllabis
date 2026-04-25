@@ -6,9 +6,9 @@ import Image from "next/image";
 import { Button } from "@/components/base/buttons/button";
 
 const navLinks = [
+  { label: "Accueil", href: "/" },
   { label: "Fonctionnalités", href: "/fonctionnalites" },
-  { label: "Landing 1", href: "/" },
-  { label: "Landing 2", href: "/landing-2" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 

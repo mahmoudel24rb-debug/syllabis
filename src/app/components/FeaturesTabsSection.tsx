@@ -10,7 +10,7 @@ import { Pointer } from "@/components/ui/pointer";
 const features = [
   {
     tag: "Génération IA",
-    title: "Uploadez un référentiel, récupérez une formation structurée",
+    title: "Chargez un référentiel, récupérez une formation structurée",
     description:
       "Depuis une fiche RNCP ou tout autre document, Syllabis génère l\u2019arborescence complète en quelques minutes.",
     points: [
