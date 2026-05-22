@@ -38,7 +38,7 @@ Dashboard par formation avec progression et volumes horaires calculés automatiq
 ## Pricing
 ⚠️ Tarification indicative susceptible d'évoluer.
 
-- **Découverte** : 0 € — évaluation, 1 formation active, 500 crédits IA/mois, 1 utilisateur
+- **Découverte** : 0 € — évaluation, 1 formation active, 500 crédits IA/mois, jusqu'à 3 utilisateurs
 - **Pro** : 149 €/mois (ou 1 430 €/an, −20 %) — indépendant / solo, 3 formations/mois, 10 formations actives max, 1 000 crédits IA/mois, 1 utilisateur
 - **Business** : 449 €/mois (ou 4 310 €/an, −20 %) — OF moyen / équipe, 5 formations/mois, 30 formations actives max, 5 000 crédits IA/mois, 3 utilisateurs inclus
 - **Enterprise** : 799 €/mois (ou 7 670 €/an, −20 %) — grand groupe / université, formations et utilisateurs illimités, white-label complet, SSO, multi-organisations, account manager dédié
