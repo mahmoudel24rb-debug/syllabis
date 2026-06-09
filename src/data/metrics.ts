@@ -44,6 +44,28 @@ export const METRIC_NTC_PRODUCTION_BREAKDOWN = {
 export const METRIC_NTC_DURATION_WITHOUT = '9 mois'
 export const METRIC_NTC_DURATION_WITH = '2 semaines'
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Métriques CAP AEPE (Accompagnant Éducatif Petite Enfance, RNCP28048)
+// ─────────────────────────────────────────────────────────────────────────────
+// Référentiel = 3 blocs professionnels (UP1/UP2/UP3) + 4 blocs généraux (UG)
+// + 1 bloc facultatif (langue vivante). 14 compétences professionnelles sur
+// les 3 blocs pros. Volume de production proche du FPA (mêmes ordres de
+// grandeur pour un CAP en formation continue avec gros volume de
+// pédagogie pratique et protocoles).
+
+export const METRIC_AEPE_HOURS_WITHOUT = 1480
+export const METRIC_AEPE_HOURS_WITH = 112
+export const METRIC_AEPE_HOURS_SAVED = METRIC_AEPE_HOURS_WITHOUT - METRIC_AEPE_HOURS_WITH
+
+export const METRIC_AEPE_PRODUCTION_BREAKDOWN = {
+  arborescence: { withoutSyllabis: 70, withSyllabis: 7 },
+  contenu: { withoutSyllabis: 1370, withSyllabis: 70 },
+  controleQualite: { withoutSyllabis: 40, withSyllabis: 35 },
+} as const
+
+export const METRIC_AEPE_DURATION_WITHOUT = '11 mois'
+export const METRIC_AEPE_DURATION_WITH = '3 semaines'
+
 const NBSP = ' '
 
 /**
