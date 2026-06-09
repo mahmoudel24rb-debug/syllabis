@@ -251,14 +251,27 @@ export default function InteractiveArborescenceBuilder({
                 )}
               </AnimatePresence>
 
-              {/* Grid Blocs/CCPs */}
+              {/* Grid Blocs/CCPs — grille adaptative au nombre de blocs.
+                  Avant : grid-cols-2 lg:grid-cols-4 hardcodé pour FPA (4 blocs)
+                  → NTC (2) et AEPE (3) collaient à gauche sur 4 col.
+                  Maintenant : nb de colonnes égal au nb de blocs jusqu'à 6,
+                  avec max-width + mx-auto pour centrer la grille quand elle
+                  est plus étroite que le container. Tailwind exige les
+                  classes en clair (no concat dynamique) pour le purge JIT. */}
               <AnimatePresence>
                 {showCcps && (
                   <motion.div
                     key="ccps-grid"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-2"
+                    className={`grid gap-4 sm:gap-6 mt-2 mx-auto ${
+                      blocs.length === 1 ? 'grid-cols-1 max-w-xs' :
+                      blocs.length === 2 ? 'grid-cols-2 max-w-2xl' :
+                      blocs.length === 3 ? 'grid-cols-1 sm:grid-cols-3 max-w-4xl' :
+                      blocs.length === 4 ? 'grid-cols-2 lg:grid-cols-4' :
+                      blocs.length === 5 ? 'grid-cols-2 lg:grid-cols-5' :
+                      'grid-cols-2 lg:grid-cols-6'
+                    }`}
                   >
                     {blocs.map((bloc, i) => {
                       const modules = bloc.children ?? []
