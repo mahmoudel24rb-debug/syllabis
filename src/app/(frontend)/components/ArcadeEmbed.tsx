@@ -52,6 +52,22 @@ export default function ArcadeEmbed({
     if (saved) setUnlocked(true);
   }, []);
 
+  // Workaround Arcade : pré-mount silencieux 2s post-mount.
+  // Arcade.software a un bug d'hydratation React #418 dans son embed
+  // (https://demo.arcade.software/ tourne sur Vercel et plante au premier
+  // mount). Si on attend que l'utilisateur clique pour mount l'iframe, leur
+  // React crashe et ne nous envoie jamais le message 'arcade-init' → la
+  // modale ne s'ouvre pas au 1er clic. En pré-mountant en background 2s
+  // après la page, Arcade a le temps d'init + se régénérer avant l'action
+  // utilisateur. L'iframe reste invisible (height=0) jusqu'au clic.
+  useEffect(() => {
+    if (iframeMounted) return;
+    const t = setTimeout(() => {
+      setIframeMounted(true);
+    }, 2000);
+    return () => clearTimeout(t);
+  }, [iframeMounted]);
+
   useEffect(() => {
     if (!iframeMounted) return;
 
