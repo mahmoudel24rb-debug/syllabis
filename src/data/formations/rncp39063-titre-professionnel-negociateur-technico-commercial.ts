@@ -517,7 +517,7 @@ export const FORMATION_NTC: Formation = {
     alt: 'Arborescence pédagogique TP NTC générée par Syllabis : 2 CCP, 9 compétences, séances FOAD interactives',
   },
   ogImage: {
-    src: '/og/rncp39063-ntc.png',
+    src: '/og/rncp39063-ntc.jpg',
     alt: 'Titre Professionnel Négociateur Technico-Commercial (NTC) — Syllabis',
     width: 1200,
     height: 630,
