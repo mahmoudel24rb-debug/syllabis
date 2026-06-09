@@ -98,10 +98,12 @@ export default function HardcodedHome() {
             <div className="rounded-[24px] bg-white p-[3px] shadow-[0_12px_24px_-4px_rgba(0,0,0,0.1),0_4px_8px_-2px_rgba(0,0,0,0.06)] border-[2px] border-neutral-200 md:rounded-[32px] md:p-1">
               <div className="rounded-[21px] bg-white p-1 shadow-[inset_0_0_4px_1.5px_rgba(10,13,18,0.08),inset_0_0_3px_1.5px_rgba(10,13,18,0.03)] md:rounded-[28px] md:p-[5.4px]">
                 <div className="relative rounded-[18px] bg-neutral-50 md:rounded-[24px] overflow-hidden">
-                  {/* Mobile : image statique. Pas de `priority` car Next 16
-                      émet alors un srcSet 1x/2x sans honorer `sizes`, faisant
-                      télécharger la variante 3840w en retina mobile. Le preload
-                      est injecté côté page (`(frontend)/page.tsx`). */}
+                  {/* Mobile : image statique. Preload injecté côté page
+                      (`(frontend)/page.tsx`) avec `media="(max-width: 767px)"`.
+                      Pas de `loading="eager"` ni `fetchPriority="high"` ici :
+                      Next émet alors un 2e preload sans media, desktop
+                      télécharge l'image mobile inutilement. Le preload manuel
+                      page-side fait le boulot pour le LCP mobile. */}
                   <div className="md:hidden">
                     <Image
                       src="/screenshots/hero-apres2.png"
@@ -110,8 +112,6 @@ export default function HardcodedHome() {
                       height={1080}
                       className="w-full h-auto"
                       sizes="100vw"
-                      loading="eager"
-                      fetchPriority="high"
                     />
                   </div>
                   {/* Desktop : slider before/after — aspect-ratio fixé pour
